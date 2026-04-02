@@ -42,7 +42,7 @@ const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
     {logo.src ? (
       <img src={logo.src} alt={logo.alt} className="h-20 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
     ) : (
-      <div className="h-20 w-28 rounded-lg border border-dashed flex items-center justify-center text-xs font-label uppercase tracking-widest" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'rgba(255,255,255,0.4)' }}>
+      <div className="h-20 w-28 rounded-lg border border-dashed flex items-center justify-center text-xs font-label uppercase tracking-widest" style={{ borderColor: 'var(--ochre)', color: 'var(--ochre)', opacity: 0.35 }}>
         Logo
       </div>
     )}
