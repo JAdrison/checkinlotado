@@ -10,7 +10,7 @@ const FinalCTA = () => {
         <div className="reveal">
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-5">
             Não deixe o próximo<br />
-            <em className="text-ochre">fim de semana</em> passar vazio
+            <em className="shimmer-text">fim de semana</em> passar vazio
           </h2>
           <p className="text-night/55 text-[0.95rem] leading-relaxed mb-10 max-w-[520px] mx-auto">
             Cada fim de semana sem hóspedes é dinheiro que não volta. O método está pronto. A decisão é sua.

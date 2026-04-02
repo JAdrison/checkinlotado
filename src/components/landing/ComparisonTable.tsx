@@ -15,7 +15,7 @@ const ComparisonTable = () => {
           <div className="label-text mb-3.5">Antes e depois</div>
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night">
             O que muda com o<br />
-            <em className="text-ochre">Check-in Lotado</em>
+            <em className="shimmer-text">Check-in Lotado</em>
           </h2>
         </div>
         <div className="reveal border rounded-lg overflow-hidden" style={{ borderColor: "rgba(200,148,58,0.15)" }}>
