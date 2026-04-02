@@ -37,7 +37,7 @@ const Testimonials = () => {
         </div>
 
         {/* Two-panel layout */}
-        <div className="reveal grid md:grid-cols-[1fr_1.1fr] gap-8 items-start">
+        <div className="reveal grid md:grid-cols-2 gap-8 items-stretch">
           {/* Left — WhatsApp screenshot */}
           <div className="landing-card p-3 overflow-hidden">
             <img
