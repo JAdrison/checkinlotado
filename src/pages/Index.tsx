@@ -10,6 +10,7 @@ import ComparisonTable from "@/components/landing/ComparisonTable";
 import AccordionSection from "@/components/landing/AccordionSection";
 import Testimonials from "@/components/landing/Testimonials";
 import ResultsSection from "@/components/landing/ResultsSection";
+import GallerySection from "@/components/landing/GallerySection";
 import PricingSection from "@/components/landing/PricingSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
