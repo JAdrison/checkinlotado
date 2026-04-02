@@ -1,6 +1,12 @@
+import heroBg from "@/assets/hero-bg.jpg";
+
 const Hero = () => {
   return (
-    <section id="hero" className="relative overflow-hidden" style={{ background: "#F2EDE0" }}>
+    <section id="hero" className="relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0" style={{ background: "rgba(242, 237, 224, 0.88)" }} />
+      </div>
       <div className="pt-32 pb-16 px-7 max-w-[1100px] mx-auto">
         {/* Headline */}
         <div className="text-center mb-14 reveal">
