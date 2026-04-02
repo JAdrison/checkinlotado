@@ -49,7 +49,7 @@ const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
   </div>
 );
 
-const ForWhom = () => {
+const ForWhom: React.FC = () => {
   const { containerRef, videoRef } = useScrollVideo();
 
   return (
