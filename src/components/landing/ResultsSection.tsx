@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import print1 from "@/assets/prints/print-1.jpg";
 import print2 from "@/assets/prints/print-2.jpg";
@@ -63,26 +63,27 @@ const tabletRows = Math.ceil(allPrints.length / TABLET_COLS);
 const mobileRows = allPrints.length; // 1 col = each item is a row
 
 const ResultsSection = () => {
-  // revealStep: 0 = initial (1 row + half of 2nd), 1 = 2 rows + half of 3rd, etc.
   const [revealStep, setRevealStep] = useState(0);
 
+  // Detect current breakpoint
+  const [breakpoint, setBreakpoint] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 1024) setBreakpoint('desktop');
+      else if (window.innerWidth >= 640) setBreakpoint('tablet');
+      else setBreakpoint('mobile');
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const currentRows = breakpoint === 'desktop' ? desktopRows : breakpoint === 'tablet' ? tabletRows : mobileRows;
+
   const isFullyExpanded = (totalRows: number) => {
-    // Each step reveals one more row. We start showing 1.5 rows.
-    // At step 0: 1.5 rows visible. Step 1: 2.5. Step 2: 3.5. etc.
-    // Fully expanded when 1.5 + step >= totalRows
     return 1.5 + revealStep >= totalRows;
   };
 
-  const handleToggle = (totalRows: number) => {
-    if (isFullyExpanded(totalRows)) {
-      setRevealStep(0);
-    } else {
-      setRevealStep(revealStep + 1);
-    }
-  };
-
-  // Estimate card height for calculating maxHeight
-  // Desktop cards ~280px, tablet ~320px, mobile ~350px, gap 16px
   const getMaxHeight = (cardH: number, gap: number, rowsToShow: number, offset: number = 0) => {
     return offset + rowsToShow * cardH + (Math.floor(rowsToShow) - 1) * gap;
   };
@@ -193,9 +194,7 @@ const ResultsSection = () => {
         <div className="flex justify-center mt-8">
           <button
             onClick={() => {
-              // Use desktop rows as reference for the button label, but each layout handles its own expansion
-              const maxRows = Math.max(desktopRows, tabletRows, mobileRows);
-              if (1.5 + revealStep >= maxRows) {
+              if (isFullyExpanded(currentRows)) {
                 setRevealStep(0);
               } else {
                 setRevealStep(revealStep + 1);
@@ -203,10 +202,10 @@ const ResultsSection = () => {
             }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-night text-cream text-[0.85rem] font-semibold tracking-wide hover:bg-night/90 transition-all duration-300"
           >
-            {1.5 + revealStep >= Math.max(desktopRows, tabletRows, mobileRows) ? "Ver menos" : "Ver + reservas"}
+            {isFullyExpanded(currentRows) ? "Ver menos" : "Ver + reservas"}
             <ChevronDown
               className={`w-4 h-4 transition-transform duration-300 ${
-                1.5 + revealStep >= Math.max(desktopRows, tabletRows, mobileRows) ? "rotate-180" : ""
+                isFullyExpanded(currentRows) ? "rotate-180" : ""
               }`}
             />
           </button>
