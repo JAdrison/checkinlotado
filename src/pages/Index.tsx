@@ -60,7 +60,7 @@ const Index = () => {
       />
       <FinalCTA />
       <Footer />
-      <StickyBar />
+      
     </div>
   );
 };
