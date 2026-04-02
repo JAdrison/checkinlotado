@@ -9,6 +9,8 @@ import imgCabana from "@/assets/forwhom/cabana.png";
 import imgPousada from "@/assets/forwhom/pousada.png";
 import imgHotel from "@/assets/forwhom/hotel.png";
 
+import logoIparai from "@/assets/logo-iparai.png";
+
 const items: CardStackItem[] = [
   { id: 1, title: "Apartamentos e Studios", description: "Maximize a ocupação do seu espaço urbano", imageSrc: imgApartamento },
   { id: 2, title: "Quartos Privativos", description: "Transforme quartos vazios em receita constante", imageSrc: imgQuarto },
@@ -18,6 +20,10 @@ const items: CardStackItem[] = [
   { id: 6, title: "Cabanas", description: "Crie experiências que vendem sozinhas", imageSrc: imgCabana },
   { id: 7, title: "Pousadas", description: "Ocupação previsível sem depender de OTAs", imageSrc: imgPousada },
   { id: 8, title: "Hotéis", description: "Estratégia comercial que enche quartos", imageSrc: imgHotel },
+];
+
+const trustedLogos = [
+  { src: logoIparai, alt: "Iparaí" },
 ];
 
 const ForWhom = () => {
@@ -49,6 +55,21 @@ const ForWhom = () => {
           tiltXDeg={10}
           activeLiftPx={18}
         />
+
+        {/* Quem confia no método */}
+        <div className="reveal text-center mt-20">
+          <div className="label-text mb-6">Quem confia no método</div>
+          <div className="flex items-center justify-center gap-10 flex-wrap">
+            {trustedLogos.map((logo) => (
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-14 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
