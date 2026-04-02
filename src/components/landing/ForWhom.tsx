@@ -1,3 +1,4 @@
+import React from "react";
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 import { useScrollVideo } from "@/hooks/useScrollVideo";
 
