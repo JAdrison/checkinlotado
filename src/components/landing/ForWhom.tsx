@@ -5,7 +5,7 @@ import imgQuarto from "@/assets/forwhom/quarto-privativo.jpg";
 import imgPraia from "@/assets/forwhom/casa-praia.png";
 import imgSerra from "@/assets/forwhom/casa-serra.png";
 import imgChacara from "@/assets/forwhom/chacara.jpg";
-import imgCabana from "@/assets/forwhom/cabana.jpg";
+import imgCabana from "@/assets/forwhom/cabana.png";
 import imgPousada from "@/assets/forwhom/pousada.png";
 import imgHotel from "@/assets/forwhom/hotel.png";
 
