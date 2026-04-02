@@ -1,19 +1,29 @@
 
 
-## Plano: Layout desconstruído na seção Resultados Reais
+## Plano: Cortar seção pela metade + botão "Ver +reservas"
 
-### Mudanças
+### Conceito
 
-Refatorar o grid da `ResultsSection` para um layout masonry/desconstruído com 4 colunas, inspirado na referência:
+Mostrar apenas a primeira "fileira" completa de cards e a segunda fileira cortada ao meio (usando `overflow-hidden` com altura fixa), criando um efeito de "tem mais conteúdo". Abaixo, um botão "Ver +reservas" com seta para baixo.
 
-- **4 colunas** no desktop (em vez de 3), com cards menores
-- **Offsets verticais alternados** por coluna usando `margin-top` diferente em cada coluna (ex: col1 = 0, col2 = 60px, col3 = 30px, col4 = 80px) para criar o efeito escalonado
-- Trocar de CSS Grid para layout manual por colunas (`flex` com 4 divs verticais), distribuindo os 9 cards entre as colunas (3-2-2-2 ou 2-3-2-2)
-- **Responsivo**: 1 coluna mobile, 2 tablet, 4 desktop
-- Reduzir o `max-width` do container de cards e diminuir levemente o tamanho dos cards
-- Manter headers WhatsApp, placeholders de imagem e footers iguais, apenas menor escala
-- Cada coluna terá um `paddingTop` diferente para o efeito staggered
+### Mudanças em `src/components/landing/ResultsSection.tsx`
 
-### Arquivo alterado
-- `src/components/landing/ResultsSection.tsx`
+**Desktop (4 colunas):**
+- Envolver o grid de colunas em um container com `max-height` calculado para mostrar ~1.5 fileiras e `overflow: hidden`
+- Aplicar um gradiente fade-out na parte inferior (pseudo-elemento ou div com `bg-gradient-to-b from-transparent to-[#EAE3CF]`) para suavizar o corte
+- Adicionar botão "Ver +reservas ↓" abaixo, estilizado como pill escuro (similar à referência)
+- Ao clicar, expandir para mostrar todos os cards (toggle `max-height` com transição suave)
+
+**Mobile (1 coluna):**
+- Mostrar apenas os primeiros 2-3 cards, cortar o próximo pela metade com o mesmo efeito de gradiente
+- Mesmo botão "Ver +reservas" abaixo
+
+**Tablet (2 colunas):**
+- Mostrar primeira fileira completa (2 cards), segunda cortada, mesmo padrão
+
+### Implementação técnica
+- Usar `useState` para controlar expandido/colapsado
+- Container com `max-h-[Xpx]` quando colapsado, `max-h-none` quando expandido, com `transition-all duration-700`
+- Overlay gradiente posicionado `absolute bottom-0` que desaparece quando expandido
+- Botão com ícone de seta que rotaciona quando expandido
 
