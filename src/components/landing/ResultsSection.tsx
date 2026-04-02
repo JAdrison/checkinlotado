@@ -12,10 +12,43 @@ const placeholders = [
   { type: "WhatsApp · Reserva confirmada", subtitle: "Pousada — Litoral Sul" },
 ];
 
+// Distribute cards into 4 columns: 3-2-2-2
+const columns = [
+  [placeholders[0], placeholders[1], placeholders[2]],
+  [placeholders[3], placeholders[4]],
+  [placeholders[5], placeholders[6]],
+  [placeholders[7], placeholders[8]],
+];
+
+const columnOffsets = [0, 64, 28, 80];
+
+const Card = ({ item, delay }: { item: typeof placeholders[0]; delay: number }) => (
+  <div
+    className="landing-card reveal overflow-hidden"
+    style={{ transitionDelay: `${delay}s` }}
+  >
+    <div className="flex items-center gap-2 px-3 py-2" style={{ borderBottom: "1px solid rgba(200,148,58,0.1)" }}>
+      <span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
+      <span className="text-night/50 text-[0.68rem] font-medium">{item.type}</span>
+    </div>
+    <div
+      className="w-full flex items-center justify-center"
+      style={{ aspectRatio: "920 / 1350", background: "rgba(200,148,58,0.06)" }}
+    >
+      <ImageIcon className="w-8 h-8 text-ochre/30" />
+    </div>
+    <div className="px-3 py-2" style={{ borderTop: "1px solid rgba(200,148,58,0.1)" }}>
+      <p className="text-night/45 text-[0.68rem]">{item.subtitle}</p>
+    </div>
+  </div>
+);
+
 const ResultsSection = () => {
+  let globalIndex = 0;
+
   return (
     <section style={{ background: "#EAE3CF", padding: "96px 28px" }}>
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-[1000px] mx-auto">
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">Resultados reais</div>
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-4">
@@ -31,35 +64,29 @@ const ResultsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {placeholders.map((item, i) => (
-            <div
-              key={i}
-              className="landing-card reveal overflow-hidden"
-              style={{ transitionDelay: `${(i + 1) * 0.05}s` }}
-            >
-              {/* WhatsApp-style header */}
-              <div className="flex items-center gap-2 px-4 py-3" style={{ borderBottom: "1px solid rgba(200,148,58,0.1)" }}>
-                <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0" />
-                <span className="text-night/50 text-[0.75rem] font-medium">{item.type}</span>
-              </div>
-
-              {/* Image placeholder */}
-              <div
-                className="w-full flex items-center justify-center"
-                style={{
-                  aspectRatio: "920 / 1350",
-                  background: "rgba(200,148,58,0.06)",
-                }}
-              >
-                <ImageIcon className="w-10 h-10 text-ochre/30" />
-              </div>
-
-              {/* Footer */}
-              <div className="px-4 py-3" style={{ borderTop: "1px solid rgba(200,148,58,0.1)" }}>
-                <p className="text-night/45 text-[0.75rem]">{item.subtitle}</p>
-              </div>
+        {/* Desktop: 4 columns masonry */}
+        <div className="hidden lg:flex gap-4 justify-center">
+          {columns.map((col, colIdx) => (
+            <div key={colIdx} className="flex-1 max-w-[230px] flex flex-col gap-4" style={{ paddingTop: columnOffsets[colIdx] }}>
+              {col.map((item) => {
+                const idx = globalIndex++;
+                return <Card key={idx} item={item} delay={(idx + 1) * 0.05} />;
+              })}
             </div>
+          ))}
+        </div>
+
+        {/* Tablet: 2 columns */}
+        <div className="hidden sm:grid lg:hidden grid-cols-2 gap-4">
+          {placeholders.map((item, i) => (
+            <Card key={i} item={item} delay={(i + 1) * 0.05} />
+          ))}
+        </div>
+
+        {/* Mobile: 1 column */}
+        <div className="grid sm:hidden grid-cols-1 gap-4">
+          {placeholders.map((item, i) => (
+            <Card key={i} item={item} delay={(i + 1) * 0.05} />
           ))}
         </div>
       </div>
