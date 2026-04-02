@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type CardStackItem = {
@@ -33,6 +34,7 @@ export type CardStackProps<T extends CardStackItem> = {
   intervalMs?: number;
   pauseOnHover?: boolean;
   showDots?: boolean;
+  showArrows?: boolean;
   className?: string;
   onChangeIndex?: (index: number, item: T) => void;
   renderCard?: (item: T, state: { active: boolean }) => React.ReactNode;
@@ -71,6 +73,7 @@ export function CardStack<T extends CardStackItem>({
   intervalMs = 2800,
   pauseOnHover = true,
   showDots = true,
+  showArrows = true,
   className,
   onChangeIndex,
   renderCard,
@@ -230,24 +233,46 @@ export function CardStack<T extends CardStackItem>({
         </AnimatePresence>
       </div>
 
-      {showDots && (
-        <div className="flex items-center gap-4">
-          <div className="flex gap-1.5">
-            {items.map((it, idx) => {
-              const on = idx === active;
-              return (
-                <button
-                  key={it.id}
-                  onClick={() => setActive(idx)}
-                  className={cn(
-                    "h-2 w-2 rounded-full transition",
-                    on ? "bg-night" : "bg-night/30 hover:bg-night/50"
-                  )}
-                  aria-label={`Ir para ${it.title}`}
-                />
-              );
-            })}
-          </div>
+      {(showDots || showArrows) && (
+        <div className="flex items-center gap-3">
+          {showArrows && (
+            <button
+              onClick={prev}
+              disabled={!canGoPrev}
+              className="w-9 h-9 rounded-full border border-night/20 flex items-center justify-center hover:bg-night/10 transition disabled:opacity-30"
+              aria-label="Anterior"
+            >
+              <ChevronLeft size={18} className="text-night" />
+            </button>
+          )}
+          {showDots && (
+            <div className="flex gap-1.5">
+              {items.map((it, idx) => {
+                const on = idx === active;
+                return (
+                  <button
+                    key={it.id}
+                    onClick={() => setActive(idx)}
+                    className={cn(
+                      "h-2 w-2 rounded-full transition",
+                      on ? "bg-night" : "bg-night/30 hover:bg-night/50"
+                    )}
+                    aria-label={`Ir para ${it.title}`}
+                  />
+                );
+              })}
+            </div>
+          )}
+          {showArrows && (
+            <button
+              onClick={next}
+              disabled={!canGoNext}
+              className="w-9 h-9 rounded-full border border-night/20 flex items-center justify-center hover:bg-night/10 transition disabled:opacity-30"
+              aria-label="Próximo"
+            >
+              <ChevronRight size={18} className="text-night" />
+            </button>
+          )}
         </div>
       )}
     </div>
