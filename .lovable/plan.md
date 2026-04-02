@@ -1,17 +1,21 @@
 
 
-## Plan: Adjust WhatsApp image to match right column height
+## Plano: Substituir 5 imagens no carrossel "Para quem é"
 
-The right column contains 3 metric cards + 1 testimonial card. The image currently has `max-h-[500px]` which may be too small. The goal is to make the image naturally fill the same height as the right column content.
+As 5 imagens enviadas serão copiadas para `src/assets/forwhom/`, substituindo as imagens existentes dos seguintes cards:
 
-### Changes to `src/components/landing/Testimonials.tsx`
+| Imagem enviada | Card destino | Arquivo substituído |
+|---|---|---|
+| image-10 (pousada com piscina) | Pousadas | `pousada.jpg` |
+| image-11 (studio moderno) | Apartamentos e Studios | `apartamento.jpg` |
+| image-12 (entrada de hotel/resort) | Hotéis | `hotel.jpg` |
+| image-13 (casa de serra) | Casas de Serra | `casa-serra.jpg` |
+| image-14 (casa de praia) | Casas de Praia | `casa-praia.jpg` |
 
-1. **Replace the uploaded image** — copy `user-uploads://Untitled_920_x_1350_px.png` to `src/assets/case-study/whatsapp-iparai.png` (overwrite the existing one).
+### Alterações
 
-2. **Update image container and styling** — Use `items-stretch` on the grid (already present) and make the image container + image fill the full column height:
-   - Change image container to `flex items-center justify-center overflow-hidden rounded-lg`
-   - Change image className to `rounded-lg h-full object-contain` (remove `max-h-[500px]`, use `h-full` so it stretches to match the right column's natural height)
-   - The `items-stretch` on the grid ensures both columns are the same height; `h-full` + `object-contain` makes the image fill that height without cropping.
+1. Copiar cada imagem de `user-uploads://` para o respectivo arquivo em `src/assets/forwhom/`, sobrescrevendo os existentes.
+2. Atualizar as extensões dos imports em `ForWhom.tsx` de `.jpg` para `.png` nos 5 arquivos alterados.
 
-This way the image height is driven by the right column's content height (3 cards + testimonial), keeping them perfectly aligned.
+Nenhuma outra alteração de layout ou código necessária.
 
