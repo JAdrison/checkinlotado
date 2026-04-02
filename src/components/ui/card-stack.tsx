@@ -73,6 +73,7 @@ export function CardStack<T extends CardStackItem>({
   intervalMs = 2800,
   pauseOnHover = true,
   showDots = true,
+  showArrows = true,
   className,
   onChangeIndex,
   renderCard,
