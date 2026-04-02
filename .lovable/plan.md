@@ -1,44 +1,37 @@
 
 
-## Landing Page — Check-in Lotado
+## Plano: Seção "Resultados Reais" + Shimmer em todas as headlines
 
-Reconstrução completa da landing page de vendas do curso "Check-in Lotado" em React + Tailwind, mantendo fielmente o design, conteúdo e animações do HTML original.
+### 1. Nova seção — ResultsSection
 
-### Design System
-- **Paleta**: Cream (#F5EFE0 / #F2EDE0 / #EAE3CF), Ochre (#C8943A / #D4A843), Night (#1A1208)
-- **Fontes**: Playfair Display (headings), DM Sans (body), Syne (labels/buttons)
-- **Estilo**: Elegante, luxo acessível, com efeitos shimmer, pulse glow e float
+Criar `src/components/landing/ResultsSection.tsx` com o layout da imagem de referência:
 
-### Seções da Página
+- **Header**: Label "RESULTADOS REAIS" (pill com dot dourado), headline "Quem aplica o método, vende." com "Todo. Dia." em shimmer, subtítulo descritivo, e badge "+300 reservas confirmadas"
+- **Grid de prints**: Layout 3 colunas (desktop) com 9 cards simulando notificações WhatsApp. Cada card terá:
+  - Header com dot verde + tipo (ex: "WhatsApp · Reserva confirmada")
+  - Placeholder de imagem (920×1350 aspect ratio) com fundo cinza claro e ícone indicando onde o print será inserido
+  - Subtítulo com tipo de hospedagem e localização
+- Cards distribuídos em 3 colunas com espaçamento, seguindo o padrão masonry da referência
+- Responsivo: 1 coluna mobile, 2 tablet, 3 desktop
 
-1. **Navbar fixa** — Logo centralizado + botão CTA, com efeito de scroll (blur/background)
-2. **Hero** — Título com shimmer dourado, subtítulo, botão CTA com animação de brilho
-3. **Ticker animado** — Faixa dourada com texto em loop infinito
-4. **Estatísticas** — Cards com números (GPTs, Calendário 90 dias, Suporte WhatsApp, Garantia 7 dias)
-5. **Seção de vídeo** — Box com play button animado (placeholder de vídeo)
-6. **Gráfico de aprendizado** — SVG com curva ascendente + marcadores das 5 fases com animação reveal
-7. **Cards das 5 fases** — Grid com módulos do curso (diagnóstico, estratégia, criativos, WhatsApp, otimização)
-8. **Tabela comparativa** — Antes vs Depois lado a lado
-9. **Objeções (accordion)** — 5 perguntas com respostas expansíveis
-10. **Depoimentos** — 3 cards com avaliações 5 estrelas
-11. **Seção de oferta/preço** — R$497, lista de benefícios, botão CTA, garantia 7 dias
-12. **FAQ (accordion)** — 4 perguntas frequentes
-13. **CTA final** — Seção de fechamento com chamada emocional
-14. **Footer** — Logo, suporte, garantia, copyright
-15. **Sticky bottom bar** — Barra fixa inferior que aparece ao scrollar
+### 2. Shimmer em todas as headlines
 
-### Animações e Interações
-- Scroll reveal (fade up) em todas as seções
-- Shimmer text no título principal
-- Pulse glow nos botões CTA
-- Float suave no botão de play e selo de garantia
-- Ticker infinito na faixa dourada
-- Chart reveal com overlay animado
-- Accordion com transição suave
-- Navbar que muda ao scrollar
-- Sticky bar aparece após scroll
+Substituir `className="text-ochre"` por `className="shimmer-text"` em todos os `<em>` de headlines nos seguintes componentes:
 
-### Estrutura de Componentes
-- `Index.tsx` — página principal orquestrando todas as seções
-- Componentes individuais para cada seção (Hero, Ticker, Stats, VideoSection, LearningChart, PhaseCards, ComparisonTable, Objections, Testimonials, PricingSection, FAQ, FinalCTA, Footer, Navbar, StickyBar)
+- `ProblemSection.tsx` — "depende de feriados"
+- `ForWhom.tsx` — "você?"
+- `ModulesSection.tsx` — "Check-in Lotado"
+- `ComparisonTable.tsx` — "Check-in Lotado"
+- `Testimonials.tsx` — "já aplicou o método"
+- `FinalCTA.tsx` — "fim de semana"
+- `AccordionSection.tsx` — trocar o `style="color:#C8943A"` inline por classe shimmer-text
+
+### 3. Integração no Index
+
+Importar `ResultsSection` e posicionar após `Testimonials` e antes de `PricingSection` no `Index.tsx`.
+
+### Detalhes técnicos
+
+- Os 9 placeholders de imagem usarão `aspect-ratio: 920/1350` com background `#EAE3CF` e um ícone de imagem centralizado, prontos para receber os prints reais depois
+- A classe `.shimmer-text` já existe no CSS com a animação de gradiente dourado passando pelas letras
 
