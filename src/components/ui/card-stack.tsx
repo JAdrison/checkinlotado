@@ -299,12 +299,12 @@ function DefaultFanCard({ item }: { item: CardStackItem; active: boolean }) {
 
       <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/70 to-transparent" />
 
-      <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-        <h3 className="text-lg font-semibold leading-tight drop-shadow-md">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+        <h3 className="text-2xl font-bold leading-tight drop-shadow-md">
           {item.title}
         </h3>
         {item.description && (
-          <p className="mt-1 text-sm text-white/80 line-clamp-2 drop-shadow-sm">
+          <p className="mt-1.5 text-base text-white/85 line-clamp-2 drop-shadow-sm">
             {item.description}
           </p>
         )}
