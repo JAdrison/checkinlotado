@@ -1,0 +1,38 @@
+import ShuffleGrid from "@/components/ui/shuffle-grid";
+
+const GallerySection = () => {
+  return (
+    <section className="py-20 px-7" style={{ background: "#EAE3CF" }}>
+      <div className="max-w-[1100px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Text */}
+          <div className="reveal">
+            <div className="inline-block border border-ochre/30 rounded-full px-6 py-2.5 mb-6">
+              <span className="label-text">HOSPEDAGENS QUE APLICARAM O MÉTODO</span>
+            </div>
+            <h2 className="font-heading text-[clamp(1.8rem,4vw,3rem)] font-black text-night leading-[1.1] mb-5">
+              De ponta a ponta do Brasil,{" "}
+              <em className="shimmer-text">lotando fins de semana</em>
+            </h2>
+            <p className="text-night/55 text-lg leading-relaxed mb-8">
+              Pousadas de praia, chalés de serra, flats urbanos e casas de campo.
+              O método funciona para qualquer tipo de hospedagem que quer parar de
+              depender de feriado.
+            </p>
+            <a href="#comprar" className="btn-cta btn-cta-lg">
+              <span>QUERO O MESMO RESULTADO</span>
+              <span className="relative z-[1]">↗</span>
+            </a>
+          </div>
+
+          {/* Shuffle Grid */}
+          <div className="reveal">
+            <ShuffleGrid />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default GallerySection;
