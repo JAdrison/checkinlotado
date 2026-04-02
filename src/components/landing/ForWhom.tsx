@@ -86,7 +86,7 @@ const ForWhom = () => {
       </section>
 
       {/* Scroll-driven video section */}
-      <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
+      <div ref={containerRef} className="relative" style={{ height: "150vh" }}>
         <div className="sticky top-0 h-screen w-full overflow-hidden">
           <video
             ref={videoRef}
