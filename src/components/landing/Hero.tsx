@@ -23,12 +23,15 @@ const Hero = () => {
             <p className="font-heading text-xl font-bold text-night text-center mb-6">
               Assista à aula de introdução e aprenda:
             </p>
-            <div className="video-box">
-              <div className="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M8 5v14l11-7L8 5z" fill="#C8943A" />
-                </svg>
-              </div>
+            <div className="video-box relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full rounded-2xl"
+                src="https://www.youtube.com/embed/m_EClZVmHXY?modestbranding=1&rel=0&showinfo=0&controls=0&disablekb=1&iv_load_policy=3"
+                title="VSL - Check in Lotado"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
 
