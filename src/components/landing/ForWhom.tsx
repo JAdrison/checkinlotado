@@ -25,9 +25,8 @@ const ForWhom = () => {
     <section style={{ background: "#F2EDE0", padding: "96px 28px" }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="reveal text-center mb-10">
-          <div className="label-text mb-3.5">Esse método é para</div>
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-4">
-            Qualquer tipo de <em className="shimmer-text">hospedagem</em>
+            Esse método é para o seu tipo de <em className="shimmer-text">hospedagem</em>
           </h2>
           <p className="text-night/55 text-[0.95rem] leading-relaxed max-w-[520px] mx-auto">
             De apartamentos urbanos a pousadas no interior — o método funciona para quem quer lotar com estratégia.
