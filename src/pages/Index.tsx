@@ -42,13 +42,6 @@ const Index = () => {
       <ForWhom />
       <ModulesSection />
       <ComparisonTable />
-      <AccordionSection
-        bgColor="#EAE3CF"
-        label="Suas dúvidas respondidas"
-        titleBefore={'"Mas no meu caso'}
-        titleHighlight={'é diferente..."'}
-        items={objections}
-      />
       <Testimonials />
       <PricingSection />
       <AccordionSection
@@ -56,7 +49,7 @@ const Index = () => {
         label="Perguntas frequentes"
         titleBefore="Ainda tem"
         titleHighlight="dúvidas?"
-        items={faq}
+        items={[...objections, ...faq]}
       />
       <FinalCTA />
       <Footer />
