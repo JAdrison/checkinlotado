@@ -1,121 +1,176 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Sparkles, Calendar, Megaphone, MessageCircle, Repeat } from "lucide-react";
 
 const phases = [
   {
-    phase: "Fase 01 (Módulo 1)",
+    phase: "Fase 01",
+    module: "Módulo 1",
     title: "Diagnóstico e Posicionamento",
     desc: "Entenda o que de fato impede sua hospedagem de vender em fins de semana comuns. Avalie ocupação, precificação, diferenciais e oportunidades reais.",
     meta: "Mapa de ação pessoal",
     time: "5 dias",
+    icon: Sparkles,
     highlight: false,
   },
   {
-    phase: "Fase 02 (Módulo 2)",
+    phase: "Fase 02",
+    module: "Módulo 2",
     title: "Estratégia e Calendário Comercial",
     desc: "Monte um calendário de 90 dias. Saiba qual oferta criar, para qual público e em qual janela exata de tempo.",
     meta: "Plano trimestral ativo",
     time: "7 dias",
+    icon: Calendar,
     highlight: false,
   },
   {
-    phase: "Fase 03 (Módulo 3)",
+    phase: "Fase 03",
+    module: "Módulo 3",
     title: "Criativos e Campanhas",
     desc: "Crie anúncios, posts e disparos que geram ação. Cronograma de divulgação e configuração da campanha.",
     meta: "Receber os primeiros leads",
     time: "10 dias",
+    icon: Megaphone,
     highlight: false,
   },
   {
-    phase: "Fase 04 (Módulo 4)",
+    phase: "Fase 04",
+    module: "Módulo 4",
     title: "WhatsApp e Fechamento",
     desc: "Transforme contatos em reservas. Scripts baseados em persuasão, follow-up e um processo eficiente.",
     meta: "Caixa gerado (primeiras reservas)",
     time: "Contínuo",
+    icon: MessageCircle,
     highlight: false,
   },
   {
-    phase: "Fase 05 (Módulo 5)",
+    phase: "Fase 05",
+    module: "Módulo 5",
     title: "Otimização e Repetição",
     desc: "Analise o que funcionou. Corrija o que não funcionou. Repita o ciclo. Transforme cada ação em aprendizado valioso para a próxima campanha e pare de perder dinheiro.",
     meta: "Ocupação previsível e escala de lucro",
     time: "Para toda a vida",
+    icon: Repeat,
     highlight: true,
   },
 ];
 
 const PhaseCards = () => {
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const lineRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Animate the vertical line based on scroll
+  useEffect(() => {
     const container = containerRef.current;
-    const track = trackRef.current;
-    if (!container || !track) return;
+    const line = lineRef.current;
+    if (!container || !line) return;
 
-    const ctx = gsap.context(() => {
-      const totalScroll = track.scrollWidth - container.offsetWidth;
+    const handleScroll = () => {
+      const rect = container.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      const containerTop = rect.top;
+      const containerH = rect.height;
 
-      gsap.to(track, {
-        x: -totalScroll,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          pin: true,
-          scrub: 1,
-          end: () => "+=" + totalScroll,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, container);
+      if (containerTop > windowH) {
+        line.style.transform = "scaleY(0)";
+        return;
+      }
 
-    return () => ctx.revert();
+      const scrolledInto = Math.max(0, windowH - containerTop);
+      const progress = Math.min(1, scrolledInto / (containerH + windowH * 0.3));
+      line.style.transform = `scaleY(${progress})`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div ref={containerRef} className="overflow-hidden">
-      <div ref={trackRef} className="flex gap-5" style={{ width: "max-content" }}>
-        {phases.map((p, i) => (
+    <div ref={containerRef} className="timeline-container max-w-[1000px] mx-auto relative">
+      {/* Central vertical line */}
+      <div className="timeline-line-track">
+        <div ref={lineRef} className="timeline-line-fill" />
+      </div>
+
+      {phases.map((p, i) => {
+        const Icon = p.icon;
+        const isEven = i % 2 === 0;
+
+        return (
           <div
             key={i}
-            className="landing-card p-6 shrink-0"
-            style={{
-              width: "min(85vw, 450px)",
-              ...(p.highlight
-                ? { background: "rgba(200,148,58,0.06)", borderColor: "rgba(200,148,58,0.22)" }
-                : {}),
-            }}
+            ref={(el) => { cardsRef.current[i] = el; }}
+            className={`timeline-item reveal ${isEven ? "timeline-right" : "timeline-left"}`}
+            style={{ transitionDelay: `${i * 0.08}s` }}
           >
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-ochre text-lg">{p.highlight ? "★" : "⚑"}</span>
-              <span className="text-night/85 text-[0.75rem] font-bold uppercase tracking-[0.05em]">
-                {p.phase}
-              </span>
+            {/* Number circle on the line */}
+            <div className="timeline-node">
+              <span className="timeline-node-num">{i + 1}</span>
             </div>
-            <h3
-              className={`text-[1.05rem] font-semibold mb-3 ${p.highlight ? "text-ochre" : "text-night"}`}
+
+            {/* Card */}
+            <div
+              className={`timeline-card ${p.highlight ? "timeline-card-highlight" : ""}`}
             >
-              {p.title}
-            </h3>
-            <p className="text-night/85 text-[0.85rem] leading-relaxed mb-5">
-              {p.desc}
-            </p>
-            <div className="pt-4 border-t" style={{ borderColor: p.highlight ? "rgba(200,148,58,0.15)" : "rgba(200,148,58,0.1)" }}>
-              <p className="text-night/65 text-[0.75rem] mb-1">Meta da Fase:</p>
-              <p className={`text-[0.85rem] font-semibold ${p.highlight ? "text-night" : "text-ochre"}`}>
-                {p.meta}
+              <div className="flex items-center gap-3 mb-3">
+                <div className={`timeline-icon ${p.highlight ? "timeline-icon-highlight" : ""}`}>
+                  <Icon size={20} />
+                </div>
+                <div>
+                  <span className="text-ochre text-[0.7rem] font-bold uppercase tracking-[0.08em] font-label">
+                    {p.phase} · {p.module}
+                  </span>
+                </div>
+              </div>
+
+              <h3 className={`text-[1.1rem] font-semibold mb-2 ${p.highlight ? "text-ochre" : "text-night"}`}>
+                {p.title}
+              </h3>
+
+              <p className="text-night/85 text-[0.85rem] leading-relaxed mb-4">
+                {p.desc}
               </p>
-              <p className="text-night/65 text-[0.75rem] mt-2">
-                Tempo estimado:{" "}
-                <span className={p.highlight ? "text-ochre" : "text-night"}>{p.time}</span>
-              </p>
+
+              <div className="pt-3 border-t" style={{ borderColor: p.highlight ? "rgba(200,148,58,0.25)" : "rgba(200,148,58,0.12)" }}>
+                <div className="flex items-center justify-between gap-4 flex-wrap">
+                  <div>
+                    <p className="text-night/65 text-[0.7rem] mb-0.5">Meta da Fase</p>
+                    <p className={`text-[0.82rem] font-semibold ${p.highlight ? "text-night" : "text-ochre"}`}>
+                      {p.meta}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-night/65 text-[0.7rem] mb-0.5">Tempo</p>
+                    <p className={`text-[0.82rem] font-semibold ${p.highlight ? "text-ochre" : "text-night"}`}>
+                      {p.time}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+        );
+      })}
     </div>
   );
 };
