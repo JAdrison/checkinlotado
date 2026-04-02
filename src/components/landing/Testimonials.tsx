@@ -27,7 +27,7 @@ const Testimonials = () => {
           <div className="label-text mb-3.5">Resultados reais</div>
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night">
             O que dizem quem<br />
-            <em className="text-ochre">já aplicou o método</em>
+            <em className="shimmer-text">já aplicou o método</em>
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-5">

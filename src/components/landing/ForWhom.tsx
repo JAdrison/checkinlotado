@@ -12,7 +12,7 @@ const ForWhom = () => {
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">Para quem é</div>
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night">
-            Este treinamento é para <em className="text-ochre">você?</em>
+            Este treinamento é para <em className="shimmer-text">você?</em>
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
