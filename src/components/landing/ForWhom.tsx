@@ -1,32 +1,55 @@
-const ForWhom = () => {
-  const items = [
-    "Donos de pousada que querem ocupação previsível",
-    "Gestores de hospedagem que cansaram de improvisar",
-    "Casas de temporada com ocupação irregular",
-    "Quem quer vender mais sem baixar preço",
-  ];
+import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
+import imgApartamento from "@/assets/forwhom/apartamento.jpg";
+import imgQuarto from "@/assets/forwhom/quarto-privativo.jpg";
+import imgPraia from "@/assets/forwhom/casa-praia.jpg";
+import imgSerra from "@/assets/forwhom/casa-serra.jpg";
+import imgChacara from "@/assets/forwhom/chacara.jpg";
+import imgCabana from "@/assets/forwhom/cabana.jpg";
+import imgPousada from "@/assets/forwhom/pousada.jpg";
+import imgHotel from "@/assets/forwhom/hotel.jpg";
+
+const items: CardStackItem[] = [
+  { id: 1, title: "Apartamentos e Studios", description: "Maximize a ocupação do seu espaço urbano", imageSrc: imgApartamento },
+  { id: 2, title: "Quartos Privativos", description: "Transforme quartos vazios em receita constante", imageSrc: imgQuarto },
+  { id: 3, title: "Casas de Praia", description: "Lote fins de semana e temporadas inteiras", imageSrc: imgPraia },
+  { id: 4, title: "Casas de Serra", description: "Atraia hóspedes o ano todo, não só no frio", imageSrc: imgSerra },
+  { id: 5, title: "Chácaras e Sítios", description: "Preencha a agenda com grupos e famílias", imageSrc: imgChacara },
+  { id: 6, title: "Cabanas", description: "Crie experiências que vendem sozinhas", imageSrc: imgCabana },
+  { id: 7, title: "Pousadas", description: "Ocupação previsível sem depender de OTAs", imageSrc: imgPousada },
+  { id: 8, title: "Hotéis", description: "Estratégia comercial que enche quartos", imageSrc: imgHotel },
+];
+
+const ForWhom = () => {
   return (
     <section style={{ background: "#F2EDE0", padding: "96px 28px" }}>
-      <div className="max-w-[800px] mx-auto">
-        <div className="reveal text-center mb-14">
-          <div className="label-text mb-3.5">Para quem é</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night">
-            Este treinamento é para <em className="shimmer-text">você?</em>
+      <div className="max-w-[1100px] mx-auto">
+        <div className="reveal text-center mb-10">
+          <div className="label-text mb-3.5">Esse método é para</div>
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-4">
+            Qualquer tipo de <em className="shimmer-text">hospedagem</em>
           </h2>
+          <p className="text-night/55 text-[0.95rem] leading-relaxed max-w-[520px] mx-auto">
+            De apartamentos urbanos a pousadas no interior — o método funciona para quem quer lotar com estratégia.
+          </p>
         </div>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {items.map((item, i) => (
-            <div
-              key={i}
-              className="landing-card reveal p-5 flex items-start gap-3"
-              style={{ transitionDelay: `${i * 0.08}s` }}
-            >
-              <span className="text-ochre text-lg">✓</span>
-              <p className="text-night/70 text-[0.9rem] leading-relaxed">{item}</p>
-            </div>
-          ))}
-        </div>
+
+        <CardStack
+          items={items}
+          cardWidth={480}
+          cardHeight={300}
+          autoAdvance
+          intervalMs={3000}
+          pauseOnHover
+          overlap={0.45}
+          spreadDeg={40}
+          maxVisible={5}
+          activeScale={1.04}
+          inactiveScale={0.92}
+          depthPx={120}
+          tiltXDeg={10}
+          activeLiftPx={18}
+        />
       </div>
     </section>
   );
