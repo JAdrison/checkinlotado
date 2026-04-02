@@ -194,9 +194,7 @@ const ResultsSection = () => {
         <div className="flex justify-center mt-8">
           <button
             onClick={() => {
-              // Use desktop rows as reference for the button label, but each layout handles its own expansion
-              const maxRows = Math.max(desktopRows, tabletRows, mobileRows);
-              if (1.5 + revealStep >= maxRows) {
+              if (isFullyExpanded(currentRows)) {
                 setRevealStep(0);
               } else {
                 setRevealStep(revealStep + 1);
@@ -204,10 +202,10 @@ const ResultsSection = () => {
             }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-night text-cream text-[0.85rem] font-semibold tracking-wide hover:bg-night/90 transition-all duration-300"
           >
-            {1.5 + revealStep >= Math.max(desktopRows, tabletRows, mobileRows) ? "Ver menos" : "Ver + reservas"}
+            {isFullyExpanded(currentRows) ? "Ver menos" : "Ver + reservas"}
             <ChevronDown
               className={`w-4 h-4 transition-transform duration-300 ${
-                1.5 + revealStep >= Math.max(desktopRows, tabletRows, mobileRows) ? "rotate-180" : ""
+                isFullyExpanded(currentRows) ? "rotate-180" : ""
               }`}
             />
           </button>
