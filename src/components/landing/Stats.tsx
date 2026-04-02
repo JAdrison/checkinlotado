@@ -9,14 +9,6 @@ const Stats = () => {
   return (
     <section style={{ background: "#F2EDE0", padding: "56px 28px", borderBottom: "1px solid rgba(200,148,58,0.1)" }}>
       <div className="max-w-[1000px] mx-auto">
-        <div className="reveal text-center mb-10">
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night leading-[1.15]">
-            O passo a passo de <em className="shimmer-text">90 dias</em>
-          </h2>
-          <p className="text-night/60 mt-3 text-[0.95rem] max-w-[600px] mx-auto">
-            Passo a passo completo para sua hospedagem alugar todos os finais de semana do mês em até 90 dias
-          </p>
-        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((s, i) => (
           <div key={i} className="reveal text-center" style={{ transitionDelay: `${i * 0.08}s` }}>
