@@ -10,6 +10,9 @@ const ModulesSection = () => {
             O plano detalhado que vai fazer a sua hospedagem{" "}
             <em className="shimmer-text">decolar</em>
           </h2>
+          <p className="text-night/80 text-lg max-w-[640px] mx-auto mt-5 leading-relaxed">
+            Baseado no processo usado pelos maiores hotéis e pousadas ao redor do mundo — uma metodologia que transforma uma operação complexa em passos simples e aplicáveis, para você sair do improviso e construir uma máquina de reservas previsível.
+          </p>
         </div>
         <PhaseCards />
       </div>
