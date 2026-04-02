@@ -50,7 +50,7 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
               </button>
               <div className={`acc-body ${openIndex === i ? "open" : ""}`}>
                 <div
-                  className="px-5 pb-5 pt-4 text-night/60 text-[0.87rem] leading-[1.75]"
+                  className="px-5 pb-5 pt-4 text-night/80 text-[0.87rem] leading-[1.75]"
                   style={{ borderTop: "1px solid rgba(200,148,58,0.1)" }}
                   dangerouslySetInnerHTML={{ __html: item.answer }}
                 />

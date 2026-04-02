@@ -91,7 +91,7 @@ const PhaseCards = () => {
           >
             <div className="flex items-center gap-2 mb-3">
               <span className="text-ochre text-lg">{p.highlight ? "★" : "⚑"}</span>
-              <span className="text-night/50 text-[0.75rem] font-bold uppercase tracking-[0.05em]">
+              <span className="text-night/85 text-[0.75rem] font-bold uppercase tracking-[0.05em]">
                 {p.phase}
               </span>
             </div>
@@ -100,15 +100,15 @@ const PhaseCards = () => {
             >
               {p.title}
             </h3>
-            <p className="text-night/55 text-[0.85rem] leading-relaxed mb-5">
+            <p className="text-night/85 text-[0.85rem] leading-relaxed mb-5">
               {p.desc}
             </p>
             <div className="pt-4 border-t" style={{ borderColor: p.highlight ? "rgba(200,148,58,0.15)" : "rgba(200,148,58,0.1)" }}>
-              <p className="text-night/45 text-[0.75rem] mb-1">Meta da Fase:</p>
+              <p className="text-night/65 text-[0.75rem] mb-1">Meta da Fase:</p>
               <p className={`text-[0.85rem] font-semibold ${p.highlight ? "text-night" : "text-ochre"}`}>
                 {p.meta}
               </p>
-              <p className="text-night/45 text-[0.75rem] mt-2">
+              <p className="text-night/65 text-[0.75rem] mt-2">
                 Tempo estimado:{" "}
                 <span className={p.highlight ? "text-ochre" : "text-night"}>{p.time}</span>
               </p>

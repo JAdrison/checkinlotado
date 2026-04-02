@@ -18,7 +18,7 @@ const StickyBar = () => {
         <span className="font-heading font-bold text-night text-[0.9rem]">
           Check-in <span className="text-ochre">Lotado</span>
         </span>
-        <span className="text-night/40 text-[0.78rem] hidden sm:inline">
+        <span className="text-night/80 text-[0.78rem] hidden sm:inline">
           R$497 · Acesso imediato
         </span>
       </div>

@@ -59,7 +59,7 @@ const ComparisonTable = () => {
             <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
               <TrendingDown className="w-6 h-6 text-red-500" />
             </div>
-            <h3 className="font-heading text-xl text-night/60 mb-6">
+            <h3 className="font-heading text-xl text-night/80 mb-6">
               Sem o método
             </h3>
             <ul className="space-y-0">
@@ -71,7 +71,7 @@ const ComparisonTable = () => {
                   <span className="mt-0.5 w-5 h-5 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
                     <X className="w-3 h-3 text-red-400" strokeWidth={3} />
                   </span>
-                  <span className="text-night/50 text-[0.95rem] leading-snug">{item}</span>
+                  <span className="text-night/85 text-[0.95rem] leading-snug">{item}</span>
                 </li>
               ))}
             </ul>

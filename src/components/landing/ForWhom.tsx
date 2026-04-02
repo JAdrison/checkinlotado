@@ -28,7 +28,7 @@ const ForWhom = () => {
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-4">
             Esse método é para o seu tipo de <em className="shimmer-text">hospedagem</em>
           </h2>
-          <p className="text-night/55 text-[0.95rem] leading-relaxed max-w-[520px] mx-auto">
+          <p className="text-night/85 text-[0.95rem] leading-relaxed max-w-[520px] mx-auto">
             De apartamentos urbanos a pousadas no interior — o método funciona para quem quer lotar com estratégia.
           </p>
         </div>

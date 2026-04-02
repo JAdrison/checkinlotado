@@ -27,7 +27,7 @@ const Card = ({ img, delay }: { img: string; delay: number }) => (
   >
     <div className="flex items-center gap-2 px-3 py-2" style={{ borderBottom: "1px solid rgba(200,148,58,0.1)" }}>
       <span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
-      <span className="text-night/50 text-[0.68rem] font-medium">WhatsApp · Reserva confirmada</span>
+      <span className="text-night/85 text-[0.68rem] font-medium">WhatsApp · Reserva confirmada</span>
     </div>
     <div className="w-full overflow-hidden">
       <img
@@ -116,7 +116,7 @@ const ResultsSection = () => {
             Quem aplica o método, vende.<br />
             <em className="shimmer-text">Todo. Dia.</em>
           </h2>
-          <p className="text-night/55 text-[0.95rem] leading-relaxed max-w-[560px] mx-auto mb-6">
+          <p className="text-night/85 text-[0.95rem] leading-relaxed max-w-[560px] mx-auto mb-6">
             Prints reais de hospedagens que aplicaram o método Check-in Lotado e transformaram fins de semana vazios em reservas confirmadas.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ochre/[0.12] text-ochre text-[0.82rem] font-semibold tracking-wide">
