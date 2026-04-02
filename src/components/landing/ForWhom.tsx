@@ -24,7 +24,28 @@ const items: CardStackItem[] = [
 
 const trustedLogos = [
   { src: logoIparai, alt: "Iparaí" },
+  { src: null, alt: "Em breve 1" },
+  { src: null, alt: "Em breve 2" },
+  { src: null, alt: "Em breve 3" },
+  { src: null, alt: "Em breve 4" },
+  { src: null, alt: "Em breve 5" },
+  { src: null, alt: "Em breve 6" },
+  { src: null, alt: "Em breve 7" },
+  { src: null, alt: "Em breve 8" },
+  { src: null, alt: "Em breve 9" },
+  { src: null, alt: "Em breve 10" },
 ];
+const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
+  <div className="flex-shrink-0 px-8 flex items-center justify-center" style={{ minWidth: 160 }}>
+    {logo.src ? (
+      <img src={logo.src} alt={logo.alt} className="h-20 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+    ) : (
+      <div className="h-20 w-28 rounded-lg border border-dashed flex items-center justify-center text-xs font-label uppercase tracking-widest" style={{ borderColor: 'var(--ochre)', color: 'var(--ochre)', opacity: 0.35 }}>
+        Logo
+      </div>
+    )}
+  </div>
+);
 
 const ForWhom = () => {
   return (
@@ -59,15 +80,15 @@ const ForWhom = () => {
         {/* Quem confia no método */}
         <div className="reveal text-center mt-20">
           <div className="label-text mb-6">Quem confia no método</div>
-          <div className="flex items-center justify-center gap-10 flex-wrap">
-            {trustedLogos.map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-14 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-              />
-            ))}
+          <div className="overflow-hidden w-full">
+            <div className="flex whitespace-nowrap" style={{ animation: 'ticker 30s linear infinite' }}>
+              {trustedLogos.map((logo, i) => (
+                <LogoItem key={`a-${i}`} logo={logo} />
+              ))}
+              {trustedLogos.map((logo, i) => (
+                <LogoItem key={`b-${i}`} logo={logo} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
