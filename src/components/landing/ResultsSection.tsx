@@ -63,26 +63,27 @@ const tabletRows = Math.ceil(allPrints.length / TABLET_COLS);
 const mobileRows = allPrints.length; // 1 col = each item is a row
 
 const ResultsSection = () => {
-  // revealStep: 0 = initial (1 row + half of 2nd), 1 = 2 rows + half of 3rd, etc.
   const [revealStep, setRevealStep] = useState(0);
 
+  // Detect current breakpoint
+  const [breakpoint, setBreakpoint] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 1024) setBreakpoint('desktop');
+      else if (window.innerWidth >= 640) setBreakpoint('tablet');
+      else setBreakpoint('mobile');
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const currentRows = breakpoint === 'desktop' ? desktopRows : breakpoint === 'tablet' ? tabletRows : mobileRows;
+
   const isFullyExpanded = (totalRows: number) => {
-    // Each step reveals one more row. We start showing 1.5 rows.
-    // At step 0: 1.5 rows visible. Step 1: 2.5. Step 2: 3.5. etc.
-    // Fully expanded when 1.5 + step >= totalRows
     return 1.5 + revealStep >= totalRows;
   };
 
-  const handleToggle = (totalRows: number) => {
-    if (isFullyExpanded(totalRows)) {
-      setRevealStep(0);
-    } else {
-      setRevealStep(revealStep + 1);
-    }
-  };
-
-  // Estimate card height for calculating maxHeight
-  // Desktop cards ~280px, tablet ~320px, mobile ~350px, gap 16px
   const getMaxHeight = (cardH: number, gap: number, rowsToShow: number, offset: number = 0) => {
     return offset + rowsToShow * cardH + (Math.floor(rowsToShow) - 1) * gap;
   };
