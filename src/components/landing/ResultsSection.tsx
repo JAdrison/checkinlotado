@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import print1 from "@/assets/prints/print-1.jpg";
 import print2 from "@/assets/prints/print-2.jpg";
 import print3 from "@/assets/prints/print-3.jpg";
@@ -22,7 +24,6 @@ const placeholders = [
   { type: "WhatsApp · Pagamento confirmado", subtitle: "Village — Nordeste", img: print10 },
 ];
 
-// Distribute cards into 4 columns: 3-3-2-2
 const columns = [
   [placeholders[0], placeholders[1], placeholders[2]],
   [placeholders[3], placeholders[4], placeholders[5]],
@@ -56,6 +57,7 @@ const Card = ({ item, delay }: { item: typeof placeholders[0]; delay: number }) 
 );
 
 const ResultsSection = () => {
+  const [expanded, setExpanded] = useState(false);
   let globalIndex = 0;
 
   return (
@@ -77,29 +79,81 @@ const ResultsSection = () => {
         </div>
 
         {/* Desktop: 4 columns masonry */}
-        <div className="hidden lg:flex gap-4 justify-center">
-          {columns.map((col, colIdx) => (
-            <div key={colIdx} className="flex-1 max-w-[230px] flex flex-col gap-4" style={{ paddingTop: columnOffsets[colIdx] }}>
-              {col.map((item) => {
-                const idx = globalIndex++;
-                return <Card key={idx} item={item} delay={(idx + 1) * 0.05} />;
-              })}
+        <div className="hidden lg:block relative">
+          <div
+            className="overflow-hidden transition-all duration-700 ease-in-out"
+            style={{ maxHeight: expanded ? "3000px" : "480px" }}
+          >
+            <div className="flex gap-4 justify-center">
+              {columns.map((col, colIdx) => (
+                <div key={colIdx} className="flex-1 max-w-[230px] flex flex-col gap-4" style={{ paddingTop: columnOffsets[colIdx] }}>
+                  {col.map((item) => {
+                    const idx = globalIndex++;
+                    return <Card key={idx} item={item} delay={(idx + 1) * 0.05} />;
+                  })}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          {!expanded && (
+            <div
+              className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+              style={{ background: "linear-gradient(to bottom, transparent, #EAE3CF)" }}
+            />
+          )}
         </div>
 
         {/* Tablet: 2 columns */}
-        <div className="hidden sm:grid lg:hidden grid-cols-2 gap-4">
-          {placeholders.map((item, i) => (
-            <Card key={i} item={item} delay={(i + 1) * 0.05} />
-          ))}
+        <div className="hidden sm:block lg:hidden relative">
+          <div
+            className="overflow-hidden transition-all duration-700 ease-in-out"
+            style={{ maxHeight: expanded ? "5000px" : "520px" }}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {placeholders.map((item, i) => (
+                <Card key={i} item={item} delay={(i + 1) * 0.05} />
+              ))}
+            </div>
+          </div>
+          {!expanded && (
+            <div
+              className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+              style={{ background: "linear-gradient(to bottom, transparent, #EAE3CF)" }}
+            />
+          )}
         </div>
 
         {/* Mobile: 1 column */}
-        <div className="grid sm:hidden grid-cols-1 gap-4">
-          {placeholders.map((item, i) => (
-            <Card key={i} item={item} delay={(i + 1) * 0.05} />
-          ))}
+        <div className="block sm:hidden relative">
+          <div
+            className="overflow-hidden transition-all duration-700 ease-in-out"
+            style={{ maxHeight: expanded ? "8000px" : "680px" }}
+          >
+            <div className="grid grid-cols-1 gap-4">
+              {placeholders.map((item, i) => (
+                <Card key={i} item={item} delay={(i + 1) * 0.05} />
+              ))}
+            </div>
+          </div>
+          {!expanded && (
+            <div
+              className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+              style={{ background: "linear-gradient(to bottom, transparent, #EAE3CF)" }}
+            />
+          )}
+        </div>
+
+        {/* Toggle button */}
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-night text-cream text-[0.85rem] font-semibold tracking-wide hover:bg-night/90 transition-all duration-300"
+          >
+            {expanded ? "Ver menos" : "Ver + reservas"}
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+            />
+          </button>
         </div>
       </div>
     </section>
