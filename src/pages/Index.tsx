@@ -41,10 +41,10 @@ const Index = () => {
       <Ticker />
       <Stats />
       <ForWhom />
-      <ProblemSection />
+      <Testimonials />
       <ModulesSection />
       <ComparisonTable />
-      <Testimonials />
+      <ProblemSection />
       <ResultsSection />
       <GallerySection />
       <PricingSection />
