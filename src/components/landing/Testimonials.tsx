@@ -31,7 +31,7 @@ const Testimonials = () => {
             4 Meses de Reservas Vendidas<br />
             <em className="shimmer-text">em Apenas 60 Dias</em>
           </h2>
-          <p className="text-night/60 mt-4 text-[0.95rem] max-w-[500px] mx-auto">
+          <p className="text-night/80 mt-4 text-[0.95rem] max-w-[500px] mx-auto">
             Todos os finais de semana esgotados até janeiro
           </p>
         </div>
@@ -63,7 +63,7 @@ const Testimonials = () => {
                   <p className="text-night font-bold text-[1.15rem] leading-tight">
                     {m.value}
                   </p>
-                  <p className="text-night/55 text-[0.82rem]">{m.label}</p>
+                  <p className="text-night/85 text-[0.82rem]">{m.label}</p>
                 </div>
               </div>
             ))}
@@ -71,7 +71,7 @@ const Testimonials = () => {
             {/* Testimonial */}
             <div className="landing-card p-7 mt-1">
               <div className="text-ochre mb-3">★★★★★</div>
-              <p className="text-night/70 text-[0.85rem] leading-[1.75] mb-5">
+              <p className="text-night/85 text-[0.85rem] leading-[1.75] mb-5">
                 "Essa semana a gente completa 7 meses e o salto em reservas foi
                 grande, principalmente nesse final de semana. De sábado até
                 agora já finalizei 04 reservas, fora as que ainda estão com
@@ -92,7 +92,7 @@ const Testimonials = () => {
                   <p className="text-night text-[0.85rem] font-semibold">
                     Guilherme Couto
                   </p>
-                  <p className="text-night/45 text-[0.72rem]">
+                  <p className="text-night/65 text-[0.72rem]">
                     Proprietário — Casa Iparaí
                   </p>
                 </div>

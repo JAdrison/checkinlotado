@@ -14,7 +14,7 @@ const GallerySection = () => {
               De ponta a ponta do Brasil,{" "}
               <em className="shimmer-text">lotando fins de semana</em>
             </h2>
-            <p className="text-night/55 text-lg leading-relaxed mb-8">
+            <p className="text-night/85 text-lg leading-relaxed mb-8">
               Pousadas de praia, chalés de serra, flats urbanos e casas de campo.
               O método funciona para qualquer tipo de hospedagem que quer parar de
               depender de feriado.

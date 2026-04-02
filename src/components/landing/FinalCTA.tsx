@@ -12,7 +12,7 @@ const FinalCTA = () => {
             Não deixe o próximo<br />
             <em className="shimmer-text">fim de semana</em> passar vazio
           </h2>
-          <p className="text-night/55 text-[0.95rem] leading-relaxed mb-10 max-w-[520px] mx-auto">
+          <p className="text-night/85 text-[0.95rem] leading-relaxed mb-10 max-w-[520px] mx-auto">
             Cada fim de semana sem hóspedes é dinheiro que não volta. O método está pronto. A decisão é sua.
           </p>
           <a href="#comprar" className="btn-cta btn-cta-lg">

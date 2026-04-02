@@ -17,7 +17,7 @@ const Hero = () => {
             Como lotar sua hospedagem em{" "}
             <em className="shimmer-text">fins de semana comuns</em>
           </h1>
-          <p className="text-night/55 text-lg max-w-[560px] mx-auto leading-relaxed">
+          <p className="text-night/85 text-lg max-w-[560px] mx-auto leading-relaxed">
             Sem depender de feriados, sem baixar preço, sem improvisar campanha em cima da hora.
           </p>
         </div>
@@ -52,7 +52,7 @@ const Hero = () => {
               ].map((text, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="text-ochre mt-1">◆</span>
-                  <p className="text-night/60 text-[0.95rem] leading-relaxed">{text}</p>
+                  <p className="text-night/80 text-[0.95rem] leading-relaxed">{text}</p>
                 </div>
               ))}
             </div>
