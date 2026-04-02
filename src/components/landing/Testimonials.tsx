@@ -39,11 +39,11 @@ const Testimonials = () => {
         {/* Two-panel layout */}
         <div className="reveal grid md:grid-cols-2 gap-8 items-stretch">
           {/* Left — WhatsApp screenshot */}
-          <div className="flex items-start justify-center">
+          <div className="flex items-center justify-center overflow-hidden rounded-lg">
             <img
               src={whatsappImg}
               alt="Print de conversa no WhatsApp mostrando reservas da Casa Iparaí"
-              className="rounded-lg max-h-[500px] object-contain"
+              className="rounded-lg h-full object-contain"
             />
           </div>
 
