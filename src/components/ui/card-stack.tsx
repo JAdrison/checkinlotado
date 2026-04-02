@@ -34,6 +34,7 @@ export type CardStackProps<T extends CardStackItem> = {
   intervalMs?: number;
   pauseOnHover?: boolean;
   showDots?: boolean;
+  showArrows?: boolean;
   className?: string;
   onChangeIndex?: (index: number, item: T) => void;
   renderCard?: (item: T, state: { active: boolean }) => React.ReactNode;
