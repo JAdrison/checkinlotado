@@ -1,37 +1,19 @@
 
 
-## Plano: Seção "Resultados Reais" + Shimmer em todas as headlines
+## Plano: Layout desconstruído na seção Resultados Reais
 
-### 1. Nova seção — ResultsSection
+### Mudanças
 
-Criar `src/components/landing/ResultsSection.tsx` com o layout da imagem de referência:
+Refatorar o grid da `ResultsSection` para um layout masonry/desconstruído com 4 colunas, inspirado na referência:
 
-- **Header**: Label "RESULTADOS REAIS" (pill com dot dourado), headline "Quem aplica o método, vende." com "Todo. Dia." em shimmer, subtítulo descritivo, e badge "+300 reservas confirmadas"
-- **Grid de prints**: Layout 3 colunas (desktop) com 9 cards simulando notificações WhatsApp. Cada card terá:
-  - Header com dot verde + tipo (ex: "WhatsApp · Reserva confirmada")
-  - Placeholder de imagem (920×1350 aspect ratio) com fundo cinza claro e ícone indicando onde o print será inserido
-  - Subtítulo com tipo de hospedagem e localização
-- Cards distribuídos em 3 colunas com espaçamento, seguindo o padrão masonry da referência
-- Responsivo: 1 coluna mobile, 2 tablet, 3 desktop
+- **4 colunas** no desktop (em vez de 3), com cards menores
+- **Offsets verticais alternados** por coluna usando `margin-top` diferente em cada coluna (ex: col1 = 0, col2 = 60px, col3 = 30px, col4 = 80px) para criar o efeito escalonado
+- Trocar de CSS Grid para layout manual por colunas (`flex` com 4 divs verticais), distribuindo os 9 cards entre as colunas (3-2-2-2 ou 2-3-2-2)
+- **Responsivo**: 1 coluna mobile, 2 tablet, 4 desktop
+- Reduzir o `max-width` do container de cards e diminuir levemente o tamanho dos cards
+- Manter headers WhatsApp, placeholders de imagem e footers iguais, apenas menor escala
+- Cada coluna terá um `paddingTop` diferente para o efeito staggered
 
-### 2. Shimmer em todas as headlines
-
-Substituir `className="text-ochre"` por `className="shimmer-text"` em todos os `<em>` de headlines nos seguintes componentes:
-
-- `ProblemSection.tsx` — "depende de feriados"
-- `ForWhom.tsx` — "você?"
-- `ModulesSection.tsx` — "Check-in Lotado"
-- `ComparisonTable.tsx` — "Check-in Lotado"
-- `Testimonials.tsx` — "já aplicou o método"
-- `FinalCTA.tsx` — "fim de semana"
-- `AccordionSection.tsx` — trocar o `style="color:#C8943A"` inline por classe shimmer-text
-
-### 3. Integração no Index
-
-Importar `ResultsSection` e posicionar após `Testimonials` e antes de `PricingSection` no `Index.tsx`.
-
-### Detalhes técnicos
-
-- Os 9 placeholders de imagem usarão `aspect-ratio: 920/1350` com background `#EAE3CF` e um ícone de imagem centralizado, prontos para receber os prints reais depois
-- A classe `.shimmer-text` já existe no CSS com a animação de gradiente dourado passando pelas letras
+### Arquivo alterado
+- `src/components/landing/ResultsSection.tsx`
 
