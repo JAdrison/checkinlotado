@@ -25,6 +25,7 @@ const Stats = () => {
             <p className="text-night/50 text-[0.78rem] leading-relaxed">{s.desc}</p>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );
