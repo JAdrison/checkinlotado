@@ -106,7 +106,7 @@ const PhaseCards = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="timeline-container max-w-[1000px] mx-auto relative">
+    <div ref={containerRef} className="timeline-container max-w-[1060px] mx-auto relative">
       {/* Central vertical line */}
       <div className="timeline-line-track">
         <div ref={lineRef} className="timeline-line-fill" />
@@ -121,7 +121,7 @@ const PhaseCards = () => {
             key={i}
             ref={(el) => { cardsRef.current[i] = el; }}
             className={`timeline-item reveal ${isEven ? "timeline-right" : "timeline-left"}`}
-            style={{ transitionDelay: `${i * 0.08}s` }}
+            style={{ transitionDelay: `${i * 0.1}s` }}
           >
             {/* Number circle on the line */}
             <div className="timeline-node">
@@ -132,36 +132,36 @@ const PhaseCards = () => {
             <div
               className={`timeline-card ${p.highlight ? "timeline-card-highlight" : ""}`}
             >
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-4 mb-4">
                 <div className={`timeline-icon ${p.highlight ? "timeline-icon-highlight" : ""}`}>
-                  <Icon size={20} />
+                  <Icon size={24} strokeWidth={2} />
                 </div>
                 <div>
-                  <span className="text-ochre text-[0.7rem] font-bold uppercase tracking-[0.08em] font-label">
+                  <span className="text-ochre text-[0.72rem] font-bold uppercase tracking-[0.1em] font-label block">
                     {p.phase} · {p.module}
                   </span>
                 </div>
               </div>
 
-              <h3 className={`text-[1.1rem] font-semibold mb-2 ${p.highlight ? "text-ochre" : "text-night"}`}>
+              <h3 className={`text-[1.2rem] font-semibold mb-2.5 leading-snug ${p.highlight ? "text-ochre" : "text-night"}`}>
                 {p.title}
               </h3>
 
-              <p className="text-night/85 text-[0.85rem] leading-relaxed mb-4">
+              <p className="text-night/85 text-[0.88rem] leading-relaxed mb-5">
                 {p.desc}
               </p>
 
-              <div className="pt-3 border-t" style={{ borderColor: p.highlight ? "rgba(200,148,58,0.25)" : "rgba(200,148,58,0.12)" }}>
+              <div className="pt-4 border-t" style={{ borderColor: p.highlight ? "rgba(200,148,58,0.25)" : "rgba(200,148,58,0.12)" }}>
                 <div className="flex items-center justify-between gap-4 flex-wrap">
                   <div>
-                    <p className="text-night/65 text-[0.7rem] mb-0.5">Meta da Fase</p>
-                    <p className={`text-[0.82rem] font-semibold ${p.highlight ? "text-night" : "text-ochre"}`}>
+                    <p className="text-night/65 text-[0.72rem] mb-1 uppercase tracking-wider font-label">Meta da Fase</p>
+                    <p className={`text-[0.85rem] font-semibold ${p.highlight ? "text-night" : "text-ochre"}`}>
                       {p.meta}
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-night/65 text-[0.7rem] mb-0.5">Tempo</p>
-                    <p className={`text-[0.82rem] font-semibold ${p.highlight ? "text-ochre" : "text-night"}`}>
+                    <p className="text-night/65 text-[0.72rem] mb-1 uppercase tracking-wider font-label">Tempo</p>
+                    <p className={`text-[0.85rem] font-semibold ${p.highlight ? "text-ochre" : "text-night"}`}>
                       {p.time}
                     </p>
                   </div>
