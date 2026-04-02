@@ -1,13 +1,13 @@
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
-import imgApartamento from "@/assets/forwhom/apartamento.jpg";
+import imgApartamento from "@/assets/forwhom/apartamento.png";
 import imgQuarto from "@/assets/forwhom/quarto-privativo.jpg";
-import imgPraia from "@/assets/forwhom/casa-praia.jpg";
-import imgSerra from "@/assets/forwhom/casa-serra.jpg";
+import imgPraia from "@/assets/forwhom/casa-praia.png";
+import imgSerra from "@/assets/forwhom/casa-serra.png";
 import imgChacara from "@/assets/forwhom/chacara.jpg";
 import imgCabana from "@/assets/forwhom/cabana.jpg";
-import imgPousada from "@/assets/forwhom/pousada.jpg";
-import imgHotel from "@/assets/forwhom/hotel.jpg";
+import imgPousada from "@/assets/forwhom/pousada.png";
+import imgHotel from "@/assets/forwhom/hotel.png";
 
 const items: CardStackItem[] = [
   { id: 1, title: "Apartamentos e Studios", description: "Maximize a ocupação do seu espaço urbano", imageSrc: imgApartamento },
