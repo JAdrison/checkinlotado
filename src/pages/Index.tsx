@@ -1,5 +1,5 @@
 import { useReveal } from "@/hooks/useReveal";
-import Navbar from "@/components/landing/Navbar";
+
 import Hero from "@/components/landing/Hero";
 import Ticker from "@/components/landing/Ticker";
 import Stats from "@/components/landing/Stats";
@@ -12,7 +12,7 @@ import Testimonials from "@/components/landing/Testimonials";
 import PricingSection from "@/components/landing/PricingSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
-import StickyBar from "@/components/landing/StickyBar";
+
 
 const objections = [
   { question: "Aqui só lota em feriado. Fora disso, não tem demanda.", answer: 'Se em algum momento enche, então a procura existe. Feriado não cria interesse do zero — apenas concentra atenção. Você está confundindo <strong style="color:#1A1208">ausência de procura espontânea</strong> com ausência de mercado. O método existe para ativar essa demanda que já existe.' },
@@ -34,7 +34,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
+      
       <Hero />
       <Ticker />
       <Stats />
@@ -60,7 +60,7 @@ const Index = () => {
       />
       <FinalCTA />
       <Footer />
-      <StickyBar />
+      
     </div>
   );
 };
