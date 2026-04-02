@@ -1,29 +1,25 @@
 
 
-## Plano: Cortar seção pela metade + botão "Ver +reservas"
+## Plano: Adicionar setas de navegação ao CardStack
 
-### Conceito
+### O que muda
+Adicionar dois botões de seta (esquerda/direita) ao lado dos dots de navegação na seção "Qualquer tipo de hospedagem", permitindo navegação manual.
 
-Mostrar apenas a primeira "fileira" completa de cards e a segunda fileira cortada ao meio (usando `overflow-hidden` com altura fixa), criando um efeito de "tem mais conteúdo". Abaixo, um botão "Ver +reservas" com seta para baixo.
+### Mudança em `src/components/ui/card-stack.tsx`
 
-### Mudanças em `src/components/landing/ResultsSection.tsx`
+1. Importar `ChevronLeft` e `ChevronRight` de `lucide-react`
+2. Adicionar prop `showArrows?: boolean` (default `true`) ao tipo `CardStackProps`
+3. Na área dos dots (linhas 233-252), adicionar dois botões de seta — um antes dos dots e outro depois:
+   - Botão esquerdo: chama `prev()`, desabilitado quando `!canGoPrev`
+   - Botão direito: chama `next()`, desabilitado quando `!canGoNext`
+   - Estilo: círculos com borda, ícone `text-night`, hover com fundo escuro
 
-**Desktop (4 colunas):**
-- Envolver o grid de colunas em um container com `max-height` calculado para mostrar ~1.5 fileiras e `overflow: hidden`
-- Aplicar um gradiente fade-out na parte inferior (pseudo-elemento ou div com `bg-gradient-to-b from-transparent to-[#EAE3CF]`) para suavizar o corte
-- Adicionar botão "Ver +reservas ↓" abaixo, estilizado como pill escuro (similar à referência)
-- Ao clicar, expandir para mostrar todos os cards (toggle `max-height` com transição suave)
+### Mudança em `src/components/landing/ForWhom.tsx`
 
-**Mobile (1 coluna):**
-- Mostrar apenas os primeiros 2-3 cards, cortar o próximo pela metade com o mesmo efeito de gradiente
-- Mesmo botão "Ver +reservas" abaixo
+Nenhuma — o `showArrows` será `true` por padrão, então as setas aparecerão automaticamente.
 
-**Tablet (2 colunas):**
-- Mostrar primeira fileira completa (2 cards), segunda cortada, mesmo padrão
-
-### Implementação técnica
-- Usar `useState` para controlar expandido/colapsado
-- Container com `max-h-[Xpx]` quando colapsado, `max-h-none` quando expandido, com `transition-all duration-700`
-- Overlay gradiente posicionado `absolute bottom-0` que desaparece quando expandido
-- Botão com ícone de seta que rotaciona quando expandido
+### Detalhes técnicos
+- Layout dos controles: `flex items-center gap-3` com `[←] [dots] [→]`
+- Botões: `w-9 h-9 rounded-full border border-night/20 flex items-center justify-center hover:bg-night/10 transition disabled:opacity-30`
+- Ícones: `ChevronLeft` / `ChevronRight` com `size={18}`
 
