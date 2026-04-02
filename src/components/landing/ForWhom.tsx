@@ -11,6 +11,10 @@ import imgPousada from "@/assets/forwhom/pousada.png";
 import imgHotel from "@/assets/forwhom/hotel.png";
 
 import logoIparai from "@/assets/logo-iparai.png";
+import logoButterfly from "@/assets/logos/motel-butterfly.png";
+import logoAgoba from "@/assets/logos/rancho-agoba.png";
+import logoChoca from "@/assets/logos/village-choca.png";
+import logoEncanto from "@/assets/logos/encanto-das-aguas.png";
 
 const items: CardStackItem[] = [
   { id: 1, title: "Apartamentos e Studios", description: "Maximize a ocupação do seu espaço urbano", imageSrc: imgApartamento },
@@ -25,16 +29,10 @@ const items: CardStackItem[] = [
 
 const trustedLogos = [
   { src: logoIparai, alt: "Iparaí" },
-  { src: null, alt: "Em breve 1" },
-  { src: null, alt: "Em breve 2" },
-  { src: null, alt: "Em breve 3" },
-  { src: null, alt: "Em breve 4" },
-  { src: null, alt: "Em breve 5" },
-  { src: null, alt: "Em breve 6" },
-  { src: null, alt: "Em breve 7" },
-  { src: null, alt: "Em breve 8" },
-  { src: null, alt: "Em breve 9" },
-  { src: null, alt: "Em breve 10" },
+  { src: logoButterfly, alt: "Motel Butterfly" },
+  { src: logoAgoba, alt: "Rancho Agobá" },
+  { src: logoChoca, alt: "Village Choça" },
+  { src: logoEncanto, alt: "Encanto das Águas" },
 ];
 
 const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
