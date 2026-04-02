@@ -15,6 +15,7 @@ import logoButterfly from "@/assets/logos/motel-butterfly.png";
 import logoAgoba from "@/assets/logos/rancho-agoba.png";
 import logoChoca from "@/assets/logos/village-choca.png";
 import logoEncanto from "@/assets/logos/encanto-das-aguas.png";
+import logoCasaTropical from "@/assets/logos/casa-tropical.png";
 
 const items: CardStackItem[] = [
   { id: 1, title: "Apartamentos e Studios", description: "Maximize a ocupação do seu espaço urbano", imageSrc: imgApartamento },
@@ -33,12 +34,13 @@ const trustedLogos = [
   { src: logoAgoba, alt: "Rancho Agobá" },
   { src: logoChoca, alt: "Village Choça" },
   { src: logoEncanto, alt: "Encanto das Águas" },
+  { src: logoCasaTropical, alt: "Casa Tropical" },
 ];
 
 const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
-  <div className="flex-shrink-0 px-8 flex items-center justify-center" style={{ minWidth: 160 }}>
+  <div className="flex-shrink-0 px-10 flex items-center justify-center" style={{ minWidth: 140, height: 72 }}>
     {logo.src ? (
-      <img src={logo.src} alt={logo.alt} className="h-20 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+      <img src={logo.src} alt={logo.alt} className="max-h-14 max-w-[140px] object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" style={{ mixBlendMode: 'multiply' }} />
     ) : (
       <div className="h-20 w-28 rounded-lg border border-dashed flex items-center justify-center text-xs font-label uppercase tracking-widest" style={{ borderColor: 'var(--ochre)', color: 'var(--ochre)', opacity: 0.35 }}>
         Logo
