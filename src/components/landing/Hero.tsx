@@ -43,11 +43,9 @@ const Hero = () => {
 
           {/* Bullets + CTA */}
           <div className="reveal flex flex-col justify-center gap-6 lg:pt-16">
-            <h2 className="font-heading text-2xl font-bold text-night">
-              Por que sua hospedagem não lota fins de semana comuns — e como mudar isso
-            </h2>
             <div className="flex flex-col gap-4">
               {[
+                "Por que sua hospedagem não lota fins de semana comuns — e como mudar isso",
                 "Como criar campanhas com antecedência sem depender de feriados",
                 "O que divulgar, quando divulgar e como fechar reservas pelo WhatsApp",
                 "Como vender mais sem baixar preço e sair do improviso de vez",
