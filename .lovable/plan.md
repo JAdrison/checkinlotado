@@ -1,46 +1,30 @@
 
-## Plano: Redesign da seção "O que muda com o Check-in Lotado"
 
-Inspirado na referência enviada, trocar a tabela atual (difícil de ler) por **dois cards lado a lado** — um positivo (com o método) e um negativo (sem o método) — cada um com ícone no topo, título e lista de itens com ícones de check/X.
+## Plano: Escurecer textos secundários em toda a LP
 
-### Layout proposto
+**Problema**: Textos menores usam opacidades baixas (`text-night/40`, `/45`, `/50`, `/55`, `/60`) que dificultam a leitura.
 
-```text
-┌─────────────────────────────────────────────────┐
-│          O que muda com o Check-in Lotado       │
-│                                                 │
-│  ┌──────────────────┐  ┌──────────────────┐     │
-│  │  [✓ icon verde]  │  │  [✕ icon verm.]  │     │
-│  │                  │  │                  │     │
-│  │  Com o Check-in  │  │  Sem o           │     │
-│  │  Lotado          │  │  método          │     │
-│  │                  │  │                  │     │
-│  │  ✓ Item 1        │  │  ✕ Item 1        │     │
-│  │  ✓ Item 2        │  │  ✕ Item 2        │     │
-│  │  ✓ Item 3        │  │  ✕ Item 3        │     │
-│  │  ...             │  │  ...             │     │
-│  └──────────────────┘  └──────────────────┘     │
-└─────────────────────────────────────────────────┘
-```
+**Solução**: Aumentar a opacidade de todos os textos secundários, mantendo a hierarquia visual:
 
-### Alterações em `src/components/landing/ComparisonTable.tsx`
+| Opacidade atual | Nova opacidade | Uso |
+|---|---|---|
+| `text-night/40` | `text-night/60` | Preços riscados, labels mínimos |
+| `text-night/45` | `text-night/65` | Parcelamento, garantia, roles |
+| `text-night/50` | `text-night/70` | Itens "sem método" (comparison) |
+| `text-night/55` | `text-night/75` | Subtítulos, descrições principais |
+| `text-night/60` | `text-night/80` | Bullets, accordion, parágrafos |
+| `text-night/70` | `text-night/85` | Depoimento longo |
+| `text-night/75` | `text-night/85` | Lista de benefícios pricing |
 
-1. **Dados**: Manter os 6 pares de frases existentes, separados em duas listas (`withMethod` e `withoutMethod`).
+### Arquivos afetados (13 componentes)
+- `Hero.tsx` — subtítulo + bullets
+- `ProblemSection.tsx` — parágrafos
+- `ForWhom.tsx` — descrição
+- `ComparisonTable.tsx` — itens "sem método"
+- `Testimonials.tsx` — depoimento, labels, role
+- `AccordionSection.tsx` — respostas
+- `PricingSection.tsx` — benefícios, preços, garantia
+- `ModulesSection.tsx`, `PhaseCards.tsx`, `ResultsSection.tsx`, `GallerySection.tsx`, `FinalCTA.tsx`, `Footer.tsx` — textos secundários
 
-2. **Card "Com o Check-in Lotado"** (esquerda):
-   - Ícone: quadrado arredondado verde (ochre/dourado para manter a identidade) com ícone `TrendingUp` do Lucide
-   - Título: "Com o **Check-in Lotado**" (parte em bold com cor ochre)
-   - Lista com ícones de check verdes/ochre + texto escuro
-   - Background branco, `rounded-2xl`, sombra sutil
+Alteração mecânica: find-and-replace das classes de opacidade em cada arquivo.
 
-3. **Card "Sem o método"** (direita):
-   - Ícone: quadrado arredondado vermelho com ícone `TrendingDown`
-   - Título: "Sem o método"
-   - Lista com ícones X vermelhos + texto cinza médio
-   - Background branco, `rounded-2xl`, sombra sutil
-
-4. **Responsivo**: `grid grid-cols-1 md:grid-cols-2 gap-6` — empilha em mobile.
-
-5. **Estilos**: Cada item da lista terá `py-4` com divisor sutil entre itens (`border-b` no último item não). Ícones check/X em círculos coloridos pequenos (como na referência).
-
-Nenhum arquivo adicional necessário — apenas reescrever o componente `ComparisonTable.tsx`.
