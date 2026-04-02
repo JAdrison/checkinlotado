@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import print1 from "@/assets/prints/print-1.jpg";
 import print2 from "@/assets/prints/print-2.jpg";
