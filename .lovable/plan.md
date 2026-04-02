@@ -1,30 +1,65 @@
 
 
-## Plano: Escurecer textos secundários em toda a LP
+## Plano: Redesign da seção "Trilha de Aprendizado" com timeline vertical
 
-**Problema**: Textos menores usam opacidades baixas (`text-night/40`, `/45`, `/50`, `/55`, `/60`) que dificultam a leitura.
+### O que muda
 
-**Solução**: Aumentar a opacidade de todos os textos secundários, mantendo a hierarquia visual:
+Substituir o layout atual (gráfico SVG horizontal + cards horizontais com scroll GSAP) por uma **timeline vertical zigzag** inspirada nas referências enviadas. Cada fase aparece com animação ao scroll.
 
-| Opacidade atual | Nova opacidade | Uso |
-|---|---|---|
-| `text-night/40` | `text-night/60` | Preços riscados, labels mínimos |
-| `text-night/45` | `text-night/65` | Parcelamento, garantia, roles |
-| `text-night/50` | `text-night/70` | Itens "sem método" (comparison) |
-| `text-night/55` | `text-night/75` | Subtítulos, descrições principais |
-| `text-night/60` | `text-night/80` | Bullets, accordion, parágrafos |
-| `text-night/70` | `text-night/85` | Depoimento longo |
-| `text-night/75` | `text-night/85` | Lista de benefícios pricing |
+### Novo layout
 
-### Arquivos afetados (13 componentes)
-- `Hero.tsx` — subtítulo + bullets
-- `ProblemSection.tsx` — parágrafos
-- `ForWhom.tsx` — descrição
-- `ComparisonTable.tsx` — itens "sem método"
-- `Testimonials.tsx` — depoimento, labels, role
-- `AccordionSection.tsx` — respostas
-- `PricingSection.tsx` — benefícios, preços, garantia
-- `ModulesSection.tsx`, `PhaseCards.tsx`, `ResultsSection.tsx`, `GallerySection.tsx`, `FinalCTA.tsx`, `Footer.tsx` — textos secundários
+```text
+         ┌─────────────────┐
+         │  Fase 01         │  ← direita
+         │  icon + título   │
+         │  descrição        │
+    ─────┤  meta + tempo    │
+    │    └─────────────────┘
+    │
+    ┌─────────────────┐
+    │  Fase 02         │         ← esquerda
+    │  icon + título   │
+    │  descrição        │
+    │  meta + tempo    ├─────
+    └─────────────────┘    │
+                           │
+              ... alternando ...
+```
 
-Alteração mecânica: find-and-replace das classes de opacidade em cada arquivo.
+- Linha vertical central conectando os cards
+- Número circular (1, 2, 3...) no ponto de conexão sobre a linha
+- Cards alternam esquerda/direita (desktop); empilham à direita no mobile
+- Cada card tem um ícone temático (sparkles, calendar, megaphone, message-circle, repeat)
+- Fase 05 (highlight) com borda dourada
+
+### Animação
+
+- Cada card usa `IntersectionObserver` para aplicar classe `.in` ao entrar na viewport
+- Cards começam com `opacity: 0` e `translateY(30px)`, transicionam suavemente
+- Delay escalonado baseado no índice
+- A linha vertical "cresce" conforme o scroll (CSS `scaleY` animado)
+
+### Arquivos
+
+| Arquivo | Ação |
+|---|---|
+| `PhaseCards.tsx` | Reescrever completamente: remover GSAP horizontal, criar timeline vertical com alternância e IntersectionObserver |
+| `LearningChart.tsx` | Remover (substituído pela timeline) |
+| `ModulesSection.tsx` | Simplificar: remover import do LearningChart, renderizar apenas header + PhaseCards |
+| `index.css` | Adicionar estilos da timeline (linha, animações, responsivo) e remover estilos antigos do chart |
+
+### Design dos cards
+
+- Background branco com borda sutil `rgba(200,148,58,0.15)`
+- Ícone em círculo com fundo `rgba(200,148,58,0.08)` e cor ochre
+- Título em negrito `text-night`
+- Descrição em `text-night/85`
+- Rodapé com meta e tempo estimado
+- Hover com leve elevação (`translateY(-2px)` + shadow)
+- Fase 05 com `border-color: ochre` e fundo dourado sutil
+
+### Responsivo
+
+- Desktop (md+): cards alternam esquerda/direita, linha central visível
+- Mobile: linha à esquerda, todos os cards à direita, layout compacto
 
