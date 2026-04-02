@@ -46,6 +46,7 @@ const Index = () => {
       <ComparisonTable />
       <Testimonials />
       <ResultsSection />
+      <GallerySection />
       <PricingSection />
       <AccordionSection
         bgColor="#F2EDE0"
