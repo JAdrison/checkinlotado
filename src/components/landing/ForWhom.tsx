@@ -35,7 +35,6 @@ const trustedLogos = [
   { src: null, alt: "Em breve 9" },
   { src: null, alt: "Em breve 10" },
 ];
-
 const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
   <div className="flex-shrink-0 px-8 flex items-center justify-center" style={{ minWidth: 160 }}>
     {logo.src ? (
@@ -47,6 +46,36 @@ const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
     )}
   </div>
 );
+
+const ForWhom = () => {
+  return (
+    <section style={{ background: "#F2EDE0", padding: "96px 28px" }}>
+      <div className="max-w-[1100px] mx-auto">
+        <div className="reveal text-center mb-10">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-4">
+            Esse método é para o seu tipo de <em className="shimmer-text">hospedagem</em>
+          </h2>
+          <p className="text-night/85 text-[0.95rem] leading-relaxed max-w-[520px] mx-auto">
+            De apartamentos urbanos a pousadas no interior — o método funciona para quem quer lotar com estratégia.
+          </p>
+        </div>
+
+        <CardStack
+          items={items}
+          cardWidth={480}
+          cardHeight={300}
+          autoAdvance
+          intervalMs={3000}
+          pauseOnHover
+          overlap={0.45}
+          spreadDeg={40}
+          maxVisible={5}
+          activeScale={1.04}
+          inactiveScale={0.92}
+          depthPx={120}
+          tiltXDeg={10}
+          activeLiftPx={18}
+        />
 
         {/* Quem confia no método */}
         <div className="reveal text-center mt-20">
