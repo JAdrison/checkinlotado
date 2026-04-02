@@ -10,54 +10,100 @@ import print7 from "@/assets/prints/print-7.jpg";
 import print8 from "@/assets/prints/print-8.jpg";
 import print9 from "@/assets/prints/print-9.jpg";
 import print10 from "@/assets/prints/print-10.png";
+import print11 from "@/assets/prints/print-11.png";
+import print12 from "@/assets/prints/print-12.png";
+import print13 from "@/assets/prints/print-13.png";
+import print14 from "@/assets/prints/print-14.png";
 
-const placeholders = [
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Pousada — Litoral SP", img: print1 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Chalé — Serra Gaúcha", img: print2 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Casa de temporada — MG", img: print3 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Pousada — Litoral RJ", img: print4 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Flat — Nordeste", img: print5 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Chalé — Serra Catarinense", img: print6 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Pousada — Costa Verde", img: print7 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Casa — Chapada dos Veadeiros", img: print8 },
-  { type: "WhatsApp · Reserva confirmada", subtitle: "Pousada — Litoral Sul", img: print9 },
-  { type: "WhatsApp · Pagamento confirmado", subtitle: "Village — Nordeste", img: print10 },
+const allPrints = [
+  print1, print2, print3, print4, print5, print6, print7,
+  print8, print9, print10, print11, print12, print13, print14,
 ];
 
-const columns = [
-  [placeholders[0], placeholders[1], placeholders[2]],
-  [placeholders[3], placeholders[4], placeholders[5]],
-  [placeholders[6], placeholders[7]],
-  [placeholders[8], placeholders[9]],
-];
-
-const columnOffsets = [0, 64, 28, 80];
-
-const Card = ({ item, delay }: { item: typeof placeholders[0]; delay: number }) => (
+const Card = ({ img, delay }: { img: string; delay: number }) => (
   <div
     className="landing-card reveal overflow-hidden"
     style={{ transitionDelay: `${delay}s` }}
   >
     <div className="flex items-center gap-2 px-3 py-2" style={{ borderBottom: "1px solid rgba(200,148,58,0.1)" }}>
       <span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
-      <span className="text-night/50 text-[0.68rem] font-medium">{item.type}</span>
+      <span className="text-night/50 text-[0.68rem] font-medium">WhatsApp · Reserva confirmada</span>
     </div>
     <div className="w-full overflow-hidden">
       <img
-        src={item.img}
-        alt={item.subtitle}
+        src={img}
+        alt="Reserva confirmada"
         className="w-full h-auto object-cover"
         loading="lazy"
       />
     </div>
-    <div className="px-3 py-2" style={{ borderTop: "1px solid rgba(200,148,58,0.1)" }}>
-      <p className="text-night/45 text-[0.68rem]">{item.subtitle}</p>
-    </div>
   </div>
 );
 
+// How many columns per breakpoint
+const DESKTOP_COLS = 4;
+const TABLET_COLS = 2;
+const MOBILE_COLS = 1;
+
+// Distribute prints into columns round-robin style
+const distributeToColumns = (prints: string[], numCols: number): string[][] => {
+  const cols: string[][] = Array.from({ length: numCols }, () => []);
+  prints.forEach((p, i) => cols[i % numCols].push(p));
+  return cols;
+};
+
+const desktopColumns = distributeToColumns(allPrints, DESKTOP_COLS);
+const tabletColumns = distributeToColumns(allPrints, TABLET_COLS);
+
+const columnOffsets = [0, 64, 28, 80];
+
+// Calculate how many "rows" we have for each layout
+const desktopRows = Math.ceil(allPrints.length / DESKTOP_COLS);
+const tabletRows = Math.ceil(allPrints.length / TABLET_COLS);
+const mobileRows = allPrints.length; // 1 col = each item is a row
+
 const ResultsSection = () => {
-  const [expanded, setExpanded] = useState(false);
+  // revealStep: 0 = initial (1 row + half of 2nd), 1 = 2 rows + half of 3rd, etc.
+  const [revealStep, setRevealStep] = useState(0);
+
+  const isFullyExpanded = (totalRows: number) => {
+    // Each step reveals one more row. We start showing 1.5 rows.
+    // At step 0: 1.5 rows visible. Step 1: 2.5. Step 2: 3.5. etc.
+    // Fully expanded when 1.5 + step >= totalRows
+    return 1.5 + revealStep >= totalRows;
+  };
+
+  const handleToggle = (totalRows: number) => {
+    if (isFullyExpanded(totalRows)) {
+      setRevealStep(0);
+    } else {
+      setRevealStep(revealStep + 1);
+    }
+  };
+
+  // Estimate card height for calculating maxHeight
+  // Desktop cards ~280px, tablet ~320px, mobile ~350px, gap 16px
+  const getMaxHeight = (cardH: number, gap: number, rowsToShow: number, offset: number = 0) => {
+    return offset + rowsToShow * cardH + (Math.floor(rowsToShow) - 1) * gap;
+  };
+
+  const desktopCardH = 280;
+  const tabletCardH = 320;
+  const mobileCardH = 380;
+  const gap = 16;
+
+  const desktopRowsToShow = 1.5 + revealStep;
+  const tabletRowsToShow = 1.5 + revealStep;
+  const mobileRowsToShow = 1.5 + revealStep;
+
+  const desktopMaxH = isFullyExpanded(desktopRows) ? 99999 : getMaxHeight(desktopCardH, gap, desktopRowsToShow, 80);
+  const tabletMaxH = isFullyExpanded(tabletRows) ? 99999 : getMaxHeight(tabletCardH, gap, tabletRowsToShow);
+  const mobileMaxH = isFullyExpanded(mobileRows) ? 99999 : getMaxHeight(mobileCardH, gap, mobileRowsToShow);
+
+  const desktopFullyExpanded = isFullyExpanded(desktopRows);
+  const tabletFullyExpanded = isFullyExpanded(tabletRows);
+  const mobileFullyExpanded = isFullyExpanded(mobileRows);
+
   let globalIndex = 0;
 
   return (
@@ -78,24 +124,24 @@ const ResultsSection = () => {
           </div>
         </div>
 
-        {/* Desktop: 4 columns masonry */}
+        {/* Desktop: 4 columns */}
         <div className="hidden lg:block relative">
           <div
             className="overflow-hidden transition-all duration-700 ease-in-out"
-            style={{ maxHeight: expanded ? "3000px" : "480px" }}
+            style={{ maxHeight: `${desktopMaxH}px` }}
           >
             <div className="flex gap-4 justify-center">
-              {columns.map((col, colIdx) => (
+              {desktopColumns.map((col, colIdx) => (
                 <div key={colIdx} className="flex-1 max-w-[230px] flex flex-col gap-4" style={{ paddingTop: columnOffsets[colIdx] }}>
-                  {col.map((item) => {
+                  {col.map((img) => {
                     const idx = globalIndex++;
-                    return <Card key={idx} item={item} delay={(idx + 1) * 0.05} />;
+                    return <Card key={idx} img={img} delay={(idx + 1) * 0.05} />;
                   })}
                 </div>
               ))}
             </div>
           </div>
-          {!expanded && (
+          {!desktopFullyExpanded && (
             <div
               className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
               style={{ background: "linear-gradient(to bottom, transparent, #EAE3CF)" }}
@@ -107,15 +153,15 @@ const ResultsSection = () => {
         <div className="hidden sm:block lg:hidden relative">
           <div
             className="overflow-hidden transition-all duration-700 ease-in-out"
-            style={{ maxHeight: expanded ? "5000px" : "520px" }}
+            style={{ maxHeight: `${tabletMaxH}px` }}
           >
             <div className="grid grid-cols-2 gap-4">
-              {placeholders.map((item, i) => (
-                <Card key={i} item={item} delay={(i + 1) * 0.05} />
+              {allPrints.map((img, i) => (
+                <Card key={i} img={img} delay={(i + 1) * 0.05} />
               ))}
             </div>
           </div>
-          {!expanded && (
+          {!tabletFullyExpanded && (
             <div
               className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
               style={{ background: "linear-gradient(to bottom, transparent, #EAE3CF)" }}
@@ -127,15 +173,15 @@ const ResultsSection = () => {
         <div className="block sm:hidden relative">
           <div
             className="overflow-hidden transition-all duration-700 ease-in-out"
-            style={{ maxHeight: expanded ? "8000px" : "680px" }}
+            style={{ maxHeight: `${mobileMaxH}px` }}
           >
             <div className="grid grid-cols-1 gap-4">
-              {placeholders.map((item, i) => (
-                <Card key={i} item={item} delay={(i + 1) * 0.05} />
+              {allPrints.map((img, i) => (
+                <Card key={i} img={img} delay={(i + 1) * 0.05} />
               ))}
             </div>
           </div>
-          {!expanded && (
+          {!mobileFullyExpanded && (
             <div
               className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
               style={{ background: "linear-gradient(to bottom, transparent, #EAE3CF)" }}
@@ -146,12 +192,22 @@ const ResultsSection = () => {
         {/* Toggle button */}
         <div className="flex justify-center mt-8">
           <button
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => {
+              // Use desktop rows as reference for the button label, but each layout handles its own expansion
+              const maxRows = Math.max(desktopRows, tabletRows, mobileRows);
+              if (1.5 + revealStep >= maxRows) {
+                setRevealStep(0);
+              } else {
+                setRevealStep(revealStep + 1);
+              }
+            }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-night text-cream text-[0.85rem] font-semibold tracking-wide hover:bg-night/90 transition-all duration-300"
           >
-            {expanded ? "Ver menos" : "Ver + reservas"}
+            {1.5 + revealStep >= Math.max(desktopRows, tabletRows, mobileRows) ? "Ver menos" : "Ver + reservas"}
             <ChevronDown
-              className={`w-4 h-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+              className={`w-4 h-4 transition-transform duration-300 ${
+                1.5 + revealStep >= Math.max(desktopRows, tabletRows, mobileRows) ? "rotate-180" : ""
+              }`}
             />
           </button>
         </div>
