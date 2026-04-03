@@ -19,7 +19,7 @@ const StickyBar = () => {
           Check-in <span className="text-ochre">Lotado</span>
         </span>
         <span className="text-night/80 text-[0.78rem] hidden sm:inline">
-          R$497 · Acesso imediato
+          12x R$51,40 · Acesso imediato
         </span>
       </div>
       <a href="#comprar" className="btn-cta btn-cta-sm">
