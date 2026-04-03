@@ -43,7 +43,7 @@ const Testimonials = () => {
             <em className="shimmer-text">em Apenas 60 Dias</em>
           </h2>
           <p className="text-cream/80 mt-4 text-lg max-w-[500px] mx-auto">
-            Todos os finais de semana esgotados até janeiro
+            Todos os finais de semana esgotados
           </p>
         </div>
 
