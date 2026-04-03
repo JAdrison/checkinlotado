@@ -12,7 +12,7 @@ const OTAComparisonSection = () => {
           <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] leading-tight text-night">
             Quanto custa depender
             <br />
-            do <span className="shimmer-text">Airbnb</span>?
+            <span className="shimmer-text">só do Airbnb</span>?
           </h2>
         </div>
 
