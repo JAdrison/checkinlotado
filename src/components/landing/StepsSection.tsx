@@ -8,19 +8,19 @@ const steps = [
     num: "01",
     title: "Diagnóstico & Estratégia",
     description:
-      "Setup completo. Iniciamos os testes de público e ajustamos a IA para o seu perfil de hóspede.",
+      "Vamos identificar o que está travando hoje a sua hospedagem e fazer o seu plano estratégico.",
   },
   {
     num: "02",
-    title: "Lapidação",
+    title: "Geração de Demanda",
     description:
-      "Pegamos as campanhas e fluxos de atendimento que deram certo e otimizamos o custo por reserva.",
+      "Colocar o plano em prática e gerar pessoas interessadas para a tua hospedagem.",
   },
   {
     num: "03",
-    title: "Escala",
+    title: "Atendimento & Otimização",
     description:
-      "Aceleramos o investimento. Máquina validada operando em alta capacidade para lotar sua agenda.",
+      "Conseguir transformar essa demana em hóspedes que vão pagar pela sua estadia",
   },
 ];
 
