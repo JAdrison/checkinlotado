@@ -1,6 +1,6 @@
 import { AnimatedText } from "@/components/ui/animated-text";
 import { InteractiveImageAccordion } from "@/components/ui/interactive-image-accordion";
-import { Globe, Instagram, MapPin } from "lucide-react";
+import { Check } from "lucide-react";
 
 import module1 from "@/assets/module-1.jpg";
 import module2 from "@/assets/module-2.jpg";
@@ -52,24 +52,35 @@ const modules = [
     desc: "Analise, corrija e repita o ciclo. Transforme cada ação em aprendizado para a próxima campanha.",
     imageUrl: module6,
   },
-];
-
-const bonuses = [
   {
-    icon: Globe,
+    id: 7,
+    phase: "+ Bônus 01",
     title: "Como criar seu website com inteligência artificial",
     desc: "Tenha um site profissional para sua hospedagem sem precisar de programador ou designer.",
+    imageUrl: module1,
   },
   {
-    icon: Instagram,
+    id: 8,
+    phase: "+ Bônus 02",
     title: "Como organizar o perfil do Instagram para vender mais",
     desc: "Transforme seu perfil em uma vitrine que atrai e converte seguidores em hóspedes.",
+    imageUrl: module3,
   },
   {
-    icon: MapPin,
+    id: 9,
+    phase: "+ Bônus 03",
     title: "Como configurar o Google Meu Negócio",
     desc: "Apareça nas buscas locais e no Google Maps para quem procura hospedagem na sua região.",
+    imageUrl: module5,
   },
+];
+
+const benefits = [
+  "Entrar mais dinheiro mesmo em fins de semana comuns.",
+  "Vender mais diárias sem precisar dar desconto toda hora.",
+  "Parar de depender de feriadão para respirar financeiramente.",
+  "Reduzir a ansiedade de chegar perto do fim de semana com baixa ocupação.",
+  "Fazer a pousada girar melhor também na baixa temporada.",
 ];
 
 const ModulesSection = () => {
@@ -101,28 +112,27 @@ const ModulesSection = () => {
           <InteractiveImageAccordion items={modules} />
         </div>
 
-        {/* Bônus Exclusivos */}
+        {/* O que você vai conquistar */}
         <div className="reveal mt-20">
           <div className="text-center mb-10">
             <span className="font-label text-sm tracking-[0.22em] uppercase text-ochre">
-              Bônus Exclusivos
+              O que você vai conquistar
             </span>
             <h3 className="font-heading text-[clamp(1.4rem,3vw,2.2rem)] text-night leading-[1.2] mt-3">
-              Você ainda leva <em className="shimmer-text">3 bônus</em> para acelerar seus resultados
+              Com o método, você vai conseguir:
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {bonuses.map((bonus, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[800px] mx-auto">
+            {benefits.map((benefit, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5"
+                className="flex items-start gap-3 bg-white rounded-xl p-5 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5"
               >
-                <div className="w-12 h-12 rounded-xl bg-ochre/10 flex items-center justify-center mb-5">
-                  <bonus.icon className="w-6 h-6 text-ochre" />
+                <div className="w-6 h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5 text-ochre" />
                 </div>
-                <h4 className="font-heading text-night text-lg leading-snug">{bonus.title}</h4>
-                <p className="text-night/60 text-sm leading-relaxed mt-3">{bonus.desc}</p>
+                <p className="text-night/80 text-sm leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>
