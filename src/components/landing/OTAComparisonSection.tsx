@@ -52,7 +52,7 @@ const OTAComparisonSection = () => {
               <div className="flex gap-4 items-start">
                 <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">01</span>
                 <div>
-                  <p className="font-heading text-lg font-bold text-night">Airbnb cobra 16% de comissão por reserva</p>
+                  <p className="font-heading text-lg font-bold text-night">Plataformas de hospedagens cobra 16% de comissão por reserva</p>
                   <p className="text-night/60 text-base">Direto do valor da diária, antes de qualquer imposto</p>
                 </div>
               </div>
