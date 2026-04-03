@@ -172,11 +172,11 @@ const OTAComparisonSection = () => {
               <div className="flex items-center justify-center gap-3 mb-2">
                 <AlertTriangle className="w-7 h-7 text-red-500" />
                 <span className="font-heading text-[2.2rem] md:text-[3rem] text-red-600 font-black transition-all duration-300">
-                  −{fmt(annualLoss)}
+                  −{fmt(annualLoss)}/ano
                 </span>
               </div>
               <p className="text-sm md:text-base text-night/50">
-                200 diárias/ano × {fmt(totalLoss)} = <strong className="text-red-600">{fmt(annualLoss)}/ano</strong> saindo do seu faturamento
+                10 diárias/mês × 12 meses × {fmt(totalLoss)} = <strong className="text-red-600">{fmt(annualLoss)}/ano</strong> saindo do seu faturamento
               </p>
             </div>
           </div>
