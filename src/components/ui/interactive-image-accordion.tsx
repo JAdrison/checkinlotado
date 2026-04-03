@@ -35,17 +35,26 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
       <div className={`absolute inset-0 transition-all duration-500 ${
         isActive
           ? "bg-gradient-to-t from-black/70 via-black/20 to-transparent"
-          : "bg-black/50"
+          : "bg-black/60"
       }`} />
 
-      {/* Vertical label when collapsed */}
-      <div className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-500 ${
+      {/* Vertical label when collapsed (desktop only) */}
+      <div className={`absolute inset-0 hidden md:flex items-center justify-center p-4 transition-opacity duration-500 ${
         isActive ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}>
         <span
-          className="text-white font-heading text-sm md:text-base whitespace-nowrap tracking-wide"
+          className="text-ochre font-heading text-sm md:text-base whitespace-nowrap tracking-wide font-bold"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
+          {item.phase}
+        </span>
+      </div>
+
+      {/* Horizontal label when collapsed (mobile only) */}
+      <div className={`absolute inset-0 flex md:hidden items-center justify-center p-4 transition-opacity duration-500 ${
+        isActive ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}>
+        <span className="text-ochre font-heading text-sm font-bold tracking-wide">
           {item.phase}: {item.title}
         </span>
       </div>
