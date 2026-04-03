@@ -43,7 +43,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
         isActive ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}>
         <span
-          className="text-ochre font-heading text-sm md:text-base whitespace-nowrap tracking-wide font-bold"
+          className="text-ochre font-heading text-base md:text-lg whitespace-nowrap tracking-wide font-bold drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
           {item.phase}
