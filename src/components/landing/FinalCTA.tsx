@@ -1,18 +1,18 @@
 const FinalCTA = () => {
   return (
-    <section style={{ background: "#EAE3CF", padding: "110px 28px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+    <section style={{ background: "#1A1208", padding: "110px 28px", textAlign: "center", position: "relative", overflow: "hidden" }}>
       {/* Blur glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: "rgba(200,148,58,0.06)", filter: "blur(80px)" }}
+        style={{ background: "rgba(200,148,58,0.08)", filter: "blur(80px)" }}
       />
       <div className="max-w-[660px] mx-auto relative">
         <div className="reveal">
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-5">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.2] mb-5">
             Não deixe o próximo<br />
             <em className="shimmer-text font-extrabold">fim de semana</em> passar vazio
           </h2>
-          <p className="text-night/85 text-lg leading-relaxed mb-10 max-w-[520px] mx-auto">
+          <p className="text-cream-mid text-lg leading-relaxed mb-10 max-w-[520px] mx-auto">
             Cada fim de semana sem hóspedes é dinheiro que não volta. O método está pronto. A decisão é sua.
           </p>
           <a href="#comprar" className="btn-cta btn-cta-lg">
