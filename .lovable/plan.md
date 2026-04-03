@@ -1,60 +1,43 @@
 
 
-## Plano: Tornar o site totalmente responsivo para mobile
+## Redesign da Seção de 3 Passos — Visual Premium e Interligado
 
-Após análise completa do site em viewport mobile (375px), identifiquei os seguintes problemas e correções necessárias:
+### Problema Atual
+A seção está genérica: cards brancos soltos sobre fundo bege, sem imagens, sem conexão visual entre os passos. Parece um wireframe, não uma landing page premium.
 
----
+### Nova Abordagem Visual
 
-### 1. Navbar — Botão CTA cortado no mobile
-**Arquivo:** `src/components/landing/Navbar.tsx`
-- Reduzir `px-10` para `px-4` em telas pequenas
-- Esconder o botão "QUERO ENTRAR →" em telas `< sm` e mostrar apenas o logo centralizado, ou reduzir o tamanho do botão
-- Usar classes responsivas: `px-4 sm:px-10`
+A seção terá fundo escuro (`#1A1208`) com uma imagem de hospedagem de luxo em background (com overlay escuro), criando contraste dramático com o restante da página. Os 3 passos serão conectados por uma **linha horizontal contínua** que atravessa os círculos numerados (no desktop) ou vertical (no mobile), dando a ideia de jornada/progresso.
 
-### 2. Hero — Texto "Assista à aula..." cortado
-**Arquivo:** `src/components/landing/Hero.tsx`
-- O texto do subtítulo do vídeo está sendo cortado na lateral. Reduzir padding e font-size no mobile
-- Ajustar `pt-32` para `pt-24` no mobile (navbar é menor)
-- O CTA button `btn-cta-lg` com padding grande precisa de `btn-cta-full` e centralização no mobile
+```text
+┌──────────────────────────────────────────────────────────┐
+│  Background: imagem de hospedagem + overlay escuro       │
+│                                                          │
+│     90 dias para a lapidação e escala                    │
+│                                                          │
+│   ●──────────────────●──────────────────●                │
+│  MÊS 01            MÊS 02            MÊS 03             │
+│  ┌──────┐          ┌──────┐          ┌──────┐            │
+│  │glass │          │glass │          │glass │            │
+│  │card  │          │card  │          │card  │            │
+│  └──────┘          └──────┘          └──────┘            │
+└──────────────────────────────────────────────────────────┘
+```
 
-### 3. ForWhom — CardStack overflow
-**Arquivo:** `src/components/landing/ForWhom.tsx`
-- O `CardStack` tem `cardWidth={480}` fixo, que ultrapassa a tela de 375px
-- Adicionar lógica responsiva: usar `cardWidth={320}` e `cardHeight={200}` em mobile
+### Detalhes do Design
 
-### 4. Testimonials — Layout de 2 colunas no mobile
-**Arquivo:** `src/components/landing/Testimonials.tsx`
-- O grid `md:grid-cols-2` já é responsivo, mas a imagem do WhatsApp pode ser muito grande. Verificar `max-height` da imagem no mobile
+1. **Background**: Fundo `#0F0C06` com imagem de hospedagem em `opacity: 0.15`, blur sutil, e gradient overlay — similar ao tom premium do Hero
+2. **Linha de conexão**: Uma linha horizontal dourada (`ochre`) com `opacity: 0.3` passando pelo centro dos 3 círculos, criando a sensação de timeline/jornada
+3. **Círculos**: Maiores, com borda dourada com glow sutil, fundo com gradiente escuro
+4. **Cards**: Estilo glassmorphism escuro — `rgba(255,255,255,0.05)` com `backdrop-blur`, borda dourada sutil, texto claro
+5. **Tipografia**: Título em cream/branco, subtítulo ochre, descrições em cream com opacidade
+6. **Mobile**: Linha vertical conectando os círculos, cards em coluna
 
-### 5. PricingSection — Garantia layout quebrado
-**Arquivo:** `src/components/landing/PricingSection.tsx`
-- A seção de garantia usa `flex items-center gap-6` com o círculo e texto lado a lado — no mobile fica apertado
-- Mudar para `flex-col sm:flex-row` e centralizar o conteúdo no mobile
-- O `price-box` com `p-10` é muito grande no mobile — usar `p-6 sm:p-10`
+### Arquivos Modificados
 
-### 6. GallerySection — Grid de 2 colunas
-**Arquivo:** `src/components/landing/GallerySection.tsx`  
-- O `lg:grid-cols-2` já funciona (stack no mobile), mas o botão CTA pode precisar de `btn-cta-full` no mobile
-
-### 7. StickyBar — Já funciona bem
-- Já esconde o preço com `hidden sm:inline` — OK
-
-### 8. CSS Global — Botões no mobile
-**Arquivo:** `src/index.css`
-- `.btn-cta-lg` tem `padding: 20px 52px` que é largo demais em telas pequenas
-- Adicionar media query mobile para reduzir padding: `padding: 16px 32px`
-
----
-
-### Resumo das alterações
-
-| Arquivo | Mudança |
-|---------|---------|
-| `Navbar.tsx` | Padding responsivo, esconder/reduzir CTA no mobile |
-| `Hero.tsx` | Reduzir pt-top, centralizar CTA |
-| `ForWhom.tsx` | CardStack com dimensões responsivas |
-| `PricingSection.tsx` | Garantia flex-col no mobile, padding menor |
-| `GallerySection.tsx` | CTA full-width no mobile |
-| `index.css` | Btn-cta-lg padding menor no mobile |
+- **`src/components/landing/StepsSection.tsx`** — Reescrita completa do componente com:
+  - Background escuro com imagem decorativa (usarei uma URL de imagem genérica de hospedagem de luxo via Unsplash)
+  - Linha de conexão horizontal/vertical entre os passos
+  - Cards com glassmorphism escuro
+  - Animação de reveal nos cards
 
