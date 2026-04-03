@@ -44,7 +44,8 @@ const Hero = () => {
         </div>
 
         {/* Bullets 2x2 */}
-        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-10 max-w-[750px]">
+        <p className="reveal text-night/70 text-base font-heading font-semibold mt-10 mb-2">Nessa Aula você vai aprender:</p>
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-[750px]">
           {bullets.map((text, i) => (
             <div key={i} className="flex items-start gap-3">
               <span className="text-ochre mt-1 shrink-0">◆</span>
