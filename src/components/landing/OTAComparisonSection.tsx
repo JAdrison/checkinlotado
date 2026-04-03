@@ -99,6 +99,7 @@ const OTAComparisonSection = () => {
             </p>
           </div>
         </div>
+        </div>
 
         {/* Bottom text */}
         <div className="reveal text-center mt-14">
