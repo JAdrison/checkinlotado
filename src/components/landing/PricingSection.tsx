@@ -17,7 +17,7 @@ const PricingSection = () => {
             Entre no<br />
             <span className="shimmer-text">Check-in Lotado</span>
           </h2>
-          <p className="text-night/85 text-[0.97rem] leading-[1.72] mb-12">
+          <p className="text-night/85 text-lg leading-[1.72] mb-12">
             Você não está comprando apenas aulas. Está adquirindo uma forma mais estratégica de vender sua hospedagem.
           </p>
         </div>
@@ -27,7 +27,7 @@ const PricingSection = () => {
             {benefits.map((b, i) => (
               <div key={i} className="flex gap-2.5">
                 <span className="text-ochre flex-shrink-0">✓</span>
-                <span className="text-night/85 text-[0.87rem]">{b}</span>
+                <span className="text-night/85 text-base">{b}</span>
               </div>
             ))}
           </div>
@@ -35,14 +35,14 @@ const PricingSection = () => {
           <div className="divider-gold mb-8" />
 
           <div className="mb-8">
-            <p className="text-night/80 text-[0.78rem] mb-1 line-through">De R$997</p>
+            <p className="text-night/80 text-sm mb-1 line-through">De R$997</p>
             <div className="flex items-baseline justify-center gap-2">
-              <span className="text-ochre font-label font-bold text-[0.78rem]">POR APENAS</span>
+              <span className="text-ochre font-label font-bold text-sm">POR APENAS</span>
               <span className="font-heading font-black text-[3.2rem] text-night leading-none">
                 R$497
               </span>
             </div>
-            <p className="text-night/65 text-[0.78rem] mt-2">
+            <p className="text-night/65 text-sm mt-2">
               ou 12x de R$49,18
             </p>
           </div>
@@ -61,7 +61,7 @@ const PricingSection = () => {
           </div>
           <div>
             <h3 className="font-semibold text-night mb-2">Risco zero por 7 dias</h3>
-            <p className="text-night/85 text-[0.87rem] leading-[1.7]">
+            <p className="text-night/85 text-base leading-[1.7]">
               Entre, assista e avalie com total tranquilidade. Se perceber que não faz sentido para o seu momento, peça reembolso dentro do prazo. Sem burocracia.
             </p>
           </div>

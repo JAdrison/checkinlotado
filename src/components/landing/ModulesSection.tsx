@@ -8,6 +8,9 @@ import module3 from "@/assets/module-3.jpg";
 import module4 from "@/assets/module-4.jpg";
 import module5 from "@/assets/module-5.jpg";
 import module6 from "@/assets/module-6.jpg";
+import bonus1 from "@/assets/bonus-1.jpg";
+import bonus2 from "@/assets/bonus-2.jpg";
+import bonus3 from "@/assets/bonus-3.jpg";
 
 const modules = [
   {
@@ -57,21 +60,21 @@ const modules = [
     phase: "+ Bônus 01",
     title: "Como criar seu website com inteligência artificial",
     desc: "Tenha um site profissional para sua hospedagem sem precisar de programador ou designer.",
-    imageUrl: module1,
+    imageUrl: bonus1,
   },
   {
     id: 8,
     phase: "+ Bônus 02",
     title: "Como organizar o perfil do Instagram para vender mais",
     desc: "Transforme seu perfil em uma vitrine que atrai e converte seguidores em hóspedes.",
-    imageUrl: module3,
+    imageUrl: bonus2,
   },
   {
     id: 9,
     phase: "+ Bônus 03",
     title: "Como configurar o Google Meu Negócio",
     desc: "Apareça nas buscas locais e no Google Maps para quem procura hospedagem na sua região.",
-    imageUrl: module5,
+    imageUrl: bonus3,
   },
 ];
 
@@ -104,7 +107,7 @@ const ModulesSection = () => {
             O plano detalhado que vai fazer a sua<br />
             <em className="shimmer-text">hospedagem decolar</em>
           </h2>
-          <p className="text-night/80 text-lg max-w-[640px] mx-auto mt-5 leading-relaxed">
+          <p className="text-night/80 text-xl max-w-[640px] mx-auto mt-5 leading-relaxed">
             Uma metodologia que transforma uma operação complexa em passos simples e aplicáveis.
           </p>
         </div>
@@ -133,7 +136,7 @@ const ModulesSection = () => {
                 <div className="w-6 h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5 text-ochre" />
                 </div>
-                <p className="text-night/80 text-sm leading-relaxed">{benefit}</p>
+                <p className="text-night/80 text-base leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>

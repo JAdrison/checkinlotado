@@ -42,7 +42,7 @@ const Testimonials = () => {
             4 Meses de Reservas Vendidas<br />
             <em className="shimmer-text">em Apenas 60 Dias</em>
           </h2>
-          <p className="text-cream/80 mt-4 text-[0.95rem] max-w-[500px] mx-auto">
+          <p className="text-cream/80 mt-4 text-lg max-w-[500px] mx-auto">
             Todos os finais de semana esgotados até janeiro
           </p>
         </div>
@@ -74,7 +74,7 @@ const Testimonials = () => {
                   <p className="text-cream font-bold text-[1.15rem] leading-tight">
                     {m.value}
                   </p>
-                  <p className="text-cream/85 text-[0.82rem]">{m.label}</p>
+                  <p className="text-cream/85 text-sm">{m.label}</p>
                 </div>
               </div>
             ))}
@@ -82,7 +82,7 @@ const Testimonials = () => {
             {/* Testimonial */}
             <div className="p-7 mt-1 rounded-xl" style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}>
               <div className="text-ochre mb-3">★★★★★</div>
-              <p className="text-cream/85 text-[0.85rem] leading-[1.75] mb-5">
+              <p className="text-cream/85 text-base leading-[1.75] mb-5">
                 "Essa semana a gente completa 7 meses e o salto em reservas foi
                 grande, principalmente nesse final de semana. De sábado até
                 agora já finalizei 04 reservas, fora as que ainda estão com
@@ -100,10 +100,10 @@ const Testimonials = () => {
                   className="w-11 h-11 rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-cream text-[0.85rem] font-semibold">
+                  <p className="text-cream text-base font-semibold">
                     Guilherme Couto
                   </p>
-                  <p className="text-cream/65 text-[0.72rem]">
+                  <p className="text-cream/65 text-sm">
                     Proprietário — Casa Iparaí
                   </p>
                 </div>
