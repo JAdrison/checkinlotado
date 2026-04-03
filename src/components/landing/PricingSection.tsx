@@ -13,9 +13,9 @@ const PricingSection = () => {
       <div className="max-w-[680px] mx-auto text-center">
         <div className="reveal">
           <div className="label-text mb-3.5">Sua decisão</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-3.5">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-normal text-night leading-[1.2] mb-3.5">
             Entre no<br />
-            <span className="shimmer-text">Check-in Lotado</span>
+            <span className="shimmer-text font-bold">Check-in Lotado</span>
           </h2>
           <p className="text-night/85 text-lg leading-[1.72] mb-12">
             Você não está comprando apenas aulas. Está adquirindo uma forma mais estratégica de vender sua hospedagem.

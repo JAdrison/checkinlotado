@@ -103,9 +103,9 @@ const ModulesSection = () => {
             delay={0.05}
             className="mb-3.5"
           />
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night leading-[1.15] mt-4">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-normal text-night leading-[1.2] mt-4">
             O plano detalhado que vai fazer a sua<br />
-            <em className="shimmer-text">hospedagem decolar</em>
+            <em className="shimmer-text font-bold">hospedagem decolar</em>
           </h2>
           <p className="text-night/80 text-xl max-w-[640px] mx-auto mt-5 leading-relaxed">
             Uma metodologia que transforma uma operação complexa em passos simples e aplicáveis.
