@@ -3,7 +3,7 @@ import { useReveal } from "@/hooks/useReveal";
 import Hero from "@/components/landing/Hero";
 import Ticker from "@/components/landing/Ticker";
 import Stats from "@/components/landing/Stats";
-import ProblemSection from "@/components/landing/ProblemSection";
+
 import ForWhom from "@/components/landing/ForWhom";
 import ModulesSection from "@/components/landing/ModulesSection";
 import StepsSection from "@/components/landing/StepsSection";
