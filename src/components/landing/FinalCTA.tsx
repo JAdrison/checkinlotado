@@ -8,7 +8,7 @@ const FinalCTA = () => {
       />
       <div className="max-w-[660px] mx-auto relative">
         <div className="reveal">
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-night leading-[1.2] mb-5">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-5">
             Não deixe o próximo<br />
             <em className="shimmer-text font-extrabold">fim de semana</em> passar vazio
           </h2>

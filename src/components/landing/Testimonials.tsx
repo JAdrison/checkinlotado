@@ -38,7 +38,7 @@ const Testimonials = () => {
         {/* Header */}
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5" style={{ color: "rgba(255,255,255,0.7)" }}>Caso real</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-cream leading-[1.2]">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.2]">
             4 Meses de Reservas Vendidas<br />
             <em className="shimmer-text font-extrabold">em Apenas 60 Dias</em>
           </h2>

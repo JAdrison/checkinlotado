@@ -21,7 +21,7 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">{label}</div>
           <h2
-            className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-night leading-[1.2]"
+            className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2]"
             dangerouslySetInnerHTML={{
               __html: `${titleBefore}<br/><em class="shimmer-text font-extrabold">${titleHighlight}</em>`,
             }}

@@ -13,7 +13,7 @@ const PricingSection = () => {
       <div className="max-w-[680px] mx-auto text-center">
         <div className="reveal">
           <div className="label-text mb-3.5">Sua decisão</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-night leading-[1.2] mb-3.5">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-3.5">
             Entre no<br />
             <span className="shimmer-text font-extrabold">Check-in Lotado</span>
           </h2>

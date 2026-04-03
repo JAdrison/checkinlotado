@@ -103,7 +103,7 @@ const ModulesSection = () => {
             delay={0.05}
             className="mb-3.5"
           />
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-night leading-[1.2] mt-4">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mt-4">
             O plano detalhado que vai fazer a sua<br />
             <em className="shimmer-text font-extrabold">hospedagem decolar</em>
           </h2>
