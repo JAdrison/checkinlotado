@@ -101,14 +101,14 @@ const StepsSection: React.FC = () => {
         </div>
         <div className="reveal text-center" style={{ marginBottom: isMobile ? 48 : 64 }}>
           <h2
-            className="font-heading font-normal leading-[1.2]"
+            className="font-heading font-bold leading-[1.2]"
             style={{
               fontSize: "clamp(1.9rem, 4vw, 3.3rem)",
               color: "var(--cream-mid)",
             }}
           >
             90 dias para a lapidação e{" "}
-            <em className="shimmer-text font-bold">escala</em>
+            <em className="shimmer-text font-extrabold">escala</em>
           </h2>
         </div>
 
