@@ -21,7 +21,7 @@ const OTAComparisonSection = () => {
         <div className="reveal grid lg:grid-cols-2 gap-10 items-center mb-16">
           <div className="space-y-6">
             <div>
-              <h3 className="font-heading text-xl md:text-2xl text-night">
+              <h3 className="font-heading text-xl text-night md:text-xl">
                 3 coisas que todo dono de pousada precisa saber:
               </h3>
               <p className="text-night/50 text-sm mt-1">
