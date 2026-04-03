@@ -7,7 +7,7 @@ const Hero = () => {
         <img src={heroBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "rgba(242, 237, 224, 0.88)" }} />
       </div>
-      <div className="relative z-10 pt-32 pb-16 px-7 max-w-[1100px] mx-auto">
+      <div className="relative z-10 pt-24 sm:pt-32 pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto">
         {/* Headline */}
         <div className="text-center mb-14 reveal">
           <div className="inline-block border border-ochre/30 rounded-full px-6 py-2.5 mb-6">
@@ -56,7 +56,7 @@ const Hero = () => {
                 </div>
               ))}
             </div>
-            <a href="#comprar" className="btn-cta btn-cta-lg btn-cta-full mt-2">
+            <a href="#comprar" className="btn-cta btn-cta-lg btn-cta-full mt-2 text-center">
               <span>QUERO LOTAR MINHA HOSPEDAGEM</span>
               <span className="relative z-[1]">↗</span>
             </a>

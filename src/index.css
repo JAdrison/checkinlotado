@@ -187,8 +187,14 @@
 .btn-cta-sm::after { display: none; }
 
 .btn-cta-lg {
-  padding: 20px 52px;
-  font-size: 0.9rem;
+  padding: 16px 28px;
+  font-size: 0.82rem;
+}
+@media (min-width: 640px) {
+  .btn-cta-lg {
+    padding: 20px 52px;
+    font-size: 0.9rem;
+  }
 }
 .btn-cta-full {
   width: 100%;

@@ -1,4 +1,5 @@
 import React from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
 import imgApartamento from "@/assets/forwhom/apartamento.png";
@@ -50,11 +51,12 @@ const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
 );
 
 const ForWhom: React.FC = () => {
+  const isMobile = useIsMobile();
 
   return (
     <>
       {/* Card stack section - cream background */}
-      <section style={{ background: "#F2EDE0", padding: "96px 28px 48px" }}>
+      <section style={{ background: "#F2EDE0", padding: isMobile ? "64px 16px 32px" : "96px 28px 48px" }}>
         <div className="max-w-[1100px] mx-auto">
           <div className="reveal text-center mb-10">
             <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-4">
@@ -67,19 +69,19 @@ const ForWhom: React.FC = () => {
 
           <CardStack
             items={items}
-            cardWidth={480}
-            cardHeight={300}
+            cardWidth={isMobile ? 300 : 480}
+            cardHeight={isMobile ? 200 : 300}
             autoAdvance
             intervalMs={3000}
             pauseOnHover
-            overlap={0.45}
-            spreadDeg={40}
-            maxVisible={5}
+            overlap={isMobile ? 0.5 : 0.45}
+            spreadDeg={isMobile ? 30 : 40}
+            maxVisible={isMobile ? 3 : 5}
             activeScale={1.04}
             inactiveScale={0.92}
-            depthPx={120}
-            tiltXDeg={10}
-            activeLiftPx={18}
+            depthPx={isMobile ? 80 : 120}
+            tiltXDeg={isMobile ? 6 : 10}
+            activeLiftPx={isMobile ? 12 : 18}
           />
         </div>
       </section>

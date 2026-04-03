@@ -22,7 +22,7 @@ const metrics = [
 
 const Testimonials = () => {
   return (
-    <section className="relative overflow-hidden" style={{ padding: "96px 28px" }}>
+    <section className="relative overflow-hidden" style={{ padding: "64px 16px" }}>
       {/* Video background */}
       <video
         src="/videos/iparai-bg.mp4"
@@ -54,7 +54,7 @@ const Testimonials = () => {
             <img
               src={whatsappImg}
               alt="Print de conversa no WhatsApp mostrando reservas da Casa Iparaí"
-              className="rounded-lg h-full object-contain"
+              className="rounded-lg h-full max-h-[400px] md:max-h-full object-contain"
             />
           </div>
 
