@@ -6,7 +6,7 @@ import stepsBg from "@/assets/steps-bg.jpg";
 const steps = [
   {
     num: "01",
-    title: "Exploração",
+    title: "Diagnóstico & Estratégia",
     description:
       "Setup completo. Iniciamos os testes de público e ajustamos a IA para o seu perfil de hóspede.",
   },
