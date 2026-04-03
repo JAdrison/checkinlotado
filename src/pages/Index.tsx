@@ -47,7 +47,7 @@ const Index = () => {
       <ModulesSection />
       <StepsSection />
       <ComparisonTable />
-      <ProblemSection />
+      
       <ResultsSection />
       <GallerySection />
       <OTAComparisonSection />
