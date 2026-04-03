@@ -1,71 +1,42 @@
 
 
-# Plano: Melhorar contraste visual entre as seções
+# Reduzir margens verticais das seções
 
 ## Problema
-De **ComparisonTable** até **FinalCTA**, são 7 seções consecutivas com fundo creme quase idêntico (#EAE3CF, #F2EDE0, cream-dark). Isso cria monotonia visual e dificulta a separação mental entre blocos.
+Todas as seções têm padding vertical excessivo (96px, 110px, etc.), criando grandes espaços vazios que quebram a continuidade da página.
 
-## Estratégia
-Alternar entre 3 tonalidades distintas — **escuro (night)**, **branco/claro**, e **creme** — criando ritmo visual sem fugir da paleta existente.
+## Plano
+Reduzir o padding vertical de cada seção para valores mais compactos, mantendo respiro suficiente sem exagerar.
 
-## Nova sequência de backgrounds
+| Seção | Padding atual | Novo padding |
+|-------|--------------|--------------|
+| Stats | 56px top/bottom | 40px top/bottom |
+| ForWhom (cards) | 96px / 48px | 64px / 32px |
+| ForWhom (logos) | 0 / 96px | 0 / 48px |
+| Testimonials | 64px | 48px |
+| ModulesSection | 96px | 64px |
+| StepsSection | 100px (desktop) / 64px (mobile) | 64px / 48px |
+| ComparisonTable | py-24 (96px) | py-16 (64px) |
+| ResultsSection | 96px | 64px |
+| GallerySection | py-20 (80px) | py-14 (56px) |
+| OTAComparison | py-24 (96px) | py-16 (64px) |
+| PricingSection | 96px | 64px |
+| AccordionSection | 96px | 64px |
+| FinalCTA | 110px | 72px |
+| Footer | py-12 (48px) | py-8 (32px) |
 
-```text
-Seção              Antes              Depois
-─────────────────────────────────────────────────────
-ComparisonTable    cream              #FFFFFF (branco)
-ResultsSection     #EAE3CF            #EAE3CF (mantém — creme)
-GallerySection     #EAE3CF            #1A1208 (night/escuro) + textos claros
-OTAComparison      cream-dark         #FFFFFF (branco)
-PricingSection     #EAE3CF            #1A1208 (night/escuro) + textos claros
-AccordionSection   #F2EDE0            #F2EDE0 (mantém — creme claro)
-FinalCTA           #EAE3CF            #1A1208 (night/escuro) + textos claros
-```
-
-## Detalhes por seção
-
-### 1. ComparisonTable → Fundo branco (#FFFFFF)
-- Mudar background de `hsl(var(--cream))` para `#FFFFFF`
-- Cards internos já são brancos, então adicionar sombra sutil ou borda leve para contraste
-
-### 2. GallerySection → Fundo escuro (#1A1208)
-- Background escuro com textos em cream/cream-mid
-- Botão CTA mantém estilo ochre
-- Cria um bloco de ruptura visual forte entre Results e OTA
-
-### 3. OTAComparisonSection → Fundo branco (#FFFFFF)
-- Trocar `bg-cream-dark` por branco
-- Cards e badges internos ganham mais destaque sobre fundo limpo
-
-### 4. PricingSection → Fundo escuro (#1A1208)
-- Textos em cream, preço em ochre, botão CTA mantém destaque
-- Cria urgência e premium feel para a seção de compra
-- Card de garantia com borda ochre sutil
-
-### 5. FinalCTA → Fundo escuro (#1A1208)
-- Texto em cream, shimmer-text em ochre
-- Continuidade com Pricing criando um bloco "decisão" unificado dark
-
-## Resultado visual
-
-```text
-... Steps (escuro) ...
-ComparisonTable   ██████ BRANCO
-ResultsSection    ▓▓▓▓▓▓ CREME
-GallerySection    ██████ ESCURO
-OTAComparison     ██████ BRANCO
-PricingSection    ██████ ESCURO
-AccordionSection  ▓▓▓▓▓▓ CREME CLARO
-FinalCTA          ██████ ESCURO
-Footer            ██████ ESCURO
-```
-
-Alternância clara: branco → creme → escuro → branco → escuro → creme → escuro → escuro. Nenhuma cor repete mais que 1x consecutivamente (exceto FinalCTA+Footer, que é intencional para criar bloco de fechamento).
-
-## Arquivos editados
-- `src/components/landing/ComparisonTable.tsx` — background
-- `src/components/landing/GallerySection.tsx` — background + cores de texto
-- `src/components/landing/OTAComparisonSection.tsx` — background
-- `src/components/landing/PricingSection.tsx` — background + cores de texto
-- `src/components/landing/FinalCTA.tsx` — background + cores de texto
+## Arquivos editados (14 arquivos)
+- `Stats.tsx` — padding inline
+- `ForWhom.tsx` — padding inline (2 sections)
+- `Testimonials.tsx` — padding inline
+- `ModulesSection.tsx` — padding inline
+- `StepsSection.tsx` — padding inline
+- `ComparisonTable.tsx` — className py
+- `ResultsSection.tsx` — padding inline
+- `GallerySection.tsx` — className py
+- `OTAComparisonSection.tsx` — className py
+- `PricingSection.tsx` — padding inline
+- `AccordionSection.tsx` — padding inline
+- `FinalCTA.tsx` — padding inline
+- `Footer.tsx` — className py
 
