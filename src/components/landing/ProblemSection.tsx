@@ -49,7 +49,7 @@ const ProblemSection = () => {
           style={{ pointerEvents: "none" }}
         />
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* Content on top */}
         <div className="relative z-10 max-w-[800px] mx-auto px-7 text-center">
