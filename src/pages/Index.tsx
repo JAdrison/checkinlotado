@@ -6,6 +6,7 @@ import Stats from "@/components/landing/Stats";
 import ProblemSection from "@/components/landing/ProblemSection";
 import ForWhom from "@/components/landing/ForWhom";
 import ModulesSection from "@/components/landing/ModulesSection";
+import StepsSection from "@/components/landing/StepsSection";
 import ComparisonTable from "@/components/landing/ComparisonTable";
 import AccordionSection from "@/components/landing/AccordionSection";
 import Testimonials from "@/components/landing/Testimonials";
@@ -43,6 +44,7 @@ const Index = () => {
       <ForWhom />
       <Testimonials />
       <ModulesSection />
+      <StepsSection />
       <ComparisonTable />
       <ProblemSection />
       <ResultsSection />
