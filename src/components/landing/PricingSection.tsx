@@ -22,7 +22,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="price-box reveal p-10 mb-6">
+        <div className="price-box reveal p-5 sm:p-10 mb-6">
           <div className="grid sm:grid-cols-2 gap-3 mb-10 text-left">
             {benefits.map((b, i) => (
               <div key={i} className="flex gap-2.5">
