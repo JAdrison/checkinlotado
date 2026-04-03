@@ -74,7 +74,7 @@ const Testimonials = () => {
                   <p className="text-cream font-bold text-[1.15rem] leading-tight">
                     {m.value}
                   </p>
-                  <p className="text-cream/85 text-[0.82rem]">{m.label}</p>
+                  <p className="text-cream/85 text-sm">{m.label}</p>
                 </div>
               </div>
             ))}
