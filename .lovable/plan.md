@@ -1,30 +1,32 @@
 
 
-# Adicionar botões de venda estratégicos na LP
+# Calculadora interativa de perdas com Airbnb
 
-## Situação atual
-CTAs existem em: **Hero**, **Gallery**, **Pricing**, **FinalCTA**, **Navbar** e **StickyBar**.
+## O que será feito
+Substituir o bloco estático de cálculo (linhas 67-101) por uma calculadora interativa onde o visitante insere valor da diária e quantidade de quartos, e vê em tempo real quanto está perdendo por ano ao depender do Airbnb.
 
-Seções sem CTA: Stats, ForWhom, **Testimonials**, Modules, Steps, **ComparisonTable**, Results, **OTAComparison**, **AccordionSection**.
+## Lógica da calculadora
+- **Inputs**: Valor da diária (default R$300) e Quantidade de quartos (default 6)
+- **Cálculo**:
+  - Faturamento por diária = valor × quartos
+  - Taxa Airbnb (16%) = faturamento × 0.16
+  - Imposto NF (8%) = faturamento × 0.08
+  - Total perdido por diária = taxa + imposto (24%)
+  - Perda anual = total perdido × 200 diárias
+- **Exibição**: Breakdown linha a linha + destaque dramático do valor anual perdido
 
-## Estratégia
-Adicionar CTAs nos momentos de maior convicção — logo após provas sociais, comparações e resolução de objeções. Não colocar em todas as seções para evitar saturação.
+## Design
+- Card com fundo `#FAF8F4` e sombra sutil sobre o fundo branco da seção
+- 2 inputs lado a lado (slider + campo numérico ou só campos estilizados) com labels claros
+- Breakdown animado abaixo dos inputs com linhas tipo extrato:
+  - "Faturamento por diária" → R$ X
+  - "Comissão Airbnb (16%)" → −R$ X
+  - "Imposto NF (8%)" → −R$ X  
+  - "Você recebe por diária" → R$ X (em ochre)
+- Divisor + bloco de impacto anual com ícone AlertTriangle e valor grande vermelho/ochre
+- Valores atualizam em tempo real com `useState`
+- Inputs usam range sliders estilizados (diária: R$100-R$1.500, quartos: 1-20) com o valor numérico ao lado
 
-## Onde adicionar (4 pontos)
-
-| Após seção | Motivo | Texto do botão |
-|---|---|---|
-| **Testimonials** | Após prova social, o visitante está convencido | "QUERO LOTAR MINHA HOSPEDAGEM →" |
-| **ComparisonTable** | Após ver antes vs depois, quer agir | "QUERO ENTRAR AGORA →" |
-| **OTAComparisonSection** | Após ver a dor das OTAs, quer a solução | "QUERO VENDER DIRETO →" |
-| **AccordionSection** | Dúvidas resolvidas, pronto para decidir | "QUERO ENTRAR AGORA →" |
-
-## Implementação
-Cada CTA será um bloco centralizado com o botão `btn-cta btn-cta-lg` + `href="#comprar"`, adicionado ao final do conteúdo de cada componente, antes do fechamento da `</section>`.
-
-### Arquivos editados (4)
-- `src/components/landing/Testimonials.tsx` — adicionar CTA ao final
-- `src/components/landing/ComparisonTable.tsx` — adicionar CTA ao final
-- `src/components/landing/OTAComparisonSection.tsx` — adicionar CTA ao final
-- `src/components/landing/AccordionSection.tsx` — adicionar CTA ao final
+## Arquivo editado
+- `src/components/landing/OTAComparisonSection.tsx` — substituir bloco estático (linhas 67-101) pela calculadora com React state
 
