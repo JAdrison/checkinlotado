@@ -8,6 +8,9 @@ import module3 from "@/assets/module-3.jpg";
 import module4 from "@/assets/module-4.jpg";
 import module5 from "@/assets/module-5.jpg";
 import module6 from "@/assets/module-6.jpg";
+import bonus1 from "@/assets/bonus-1.jpg";
+import bonus2 from "@/assets/bonus-2.jpg";
+import bonus3 from "@/assets/bonus-3.jpg";
 
 const modules = [
   {
