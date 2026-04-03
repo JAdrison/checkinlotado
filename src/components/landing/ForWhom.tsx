@@ -64,8 +64,8 @@ const ForWhom: React.FC = () => {
       <section style={{ background: "#F2EDE0", padding: isMobile ? "64px 16px 32px" : "96px 28px 48px" }}>
         <div className="max-w-[1100px] mx-auto">
           <div className="reveal text-center mb-10">
-            <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] text-night mb-4">
-              Esse método é para o seu tipo de <em className="shimmer-text">hospedagem</em>
+            <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-normal text-night leading-[1.2] mb-4">
+              Esse método é para o seu tipo de <em className="shimmer-text font-bold">hospedagem</em>
             </h2>
             <p className="text-night/85 text-lg leading-relaxed max-w-[520px] mx-auto">
               De apartamentos urbanos a pousadas no interior — o método funciona para quem quer lotar com estratégia.
