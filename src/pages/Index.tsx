@@ -50,6 +50,7 @@ const Index = () => {
       <ProblemSection />
       <ResultsSection />
       <GallerySection />
+      <OTAComparisonSection />
       <PricingSection />
       <AccordionSection
         bgColor="#F2EDE0"
