@@ -19,6 +19,11 @@ const OTAComparisonSection = () => {
 
         {/* Subheadline — 3 fatos + imagem lado a lado */}
         <div className="reveal grid lg:grid-cols-2 gap-10 items-center mb-16">
+          {/* Imagem da reportagem */}
+          <div className="rounded-2xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
+            <img src={reformaImg} alt="Reportagem sobre Reforma Tributária 2026 — nova carga tributária para locação" className="w-full h-auto" />
+          </div>
+
           <div className="space-y-6">
             <div>
               <h3 className="font-heading text-2xl md:text-3xl font-black text-night">
@@ -56,11 +61,6 @@ const OTAComparisonSection = () => {
             <p className="text-ochre font-heading text-lg font-bold">
               → A conta precisa ser refeita agora.
             </p>
-          </div>
-
-          {/* Imagem da reportagem */}
-          <div className="rounded-2xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
-            <img src={reformaImg} alt="Reportagem sobre Reforma Tributária 2026 — nova carga tributária para locação" className="w-full h-auto" />
           </div>
         </div>
 
