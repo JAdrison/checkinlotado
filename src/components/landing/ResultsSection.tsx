@@ -197,7 +197,7 @@ const ResultsSection = () => {
               if (isFullyExpanded(currentRows)) {
                 setRevealStep(0);
               } else {
-                setRevealStep(revealStep + 1);
+                setRevealStep(revealStep + 2);
               }
             }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-night text-cream text-[0.85rem] font-semibold tracking-wide hover:bg-night/90 transition-all duration-300"
