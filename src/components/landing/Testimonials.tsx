@@ -100,7 +100,7 @@ const Testimonials = () => {
                   className="w-11 h-11 rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-cream text-[0.85rem] font-semibold">
+                  <p className="text-cream text-base font-semibold">
                     Guilherme Couto
                   </p>
                   <p className="text-cream/65 text-[0.72rem]">
