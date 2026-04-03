@@ -150,7 +150,7 @@ const StepsSection: React.FC = () => {
                     className="block font-label text-[0.6rem] uppercase tracking-[0.18em] mb-1"
                     style={{ color: "var(--ochre)", opacity: 0.7 }}
                   >
-                    Mês {step.num}
+                    Passo {step.num}
                   </span>
                   <h3 className="font-heading text-[1.2rem] mb-2" style={{ color: "var(--cream-mid)" }}>
                     {step.title}
