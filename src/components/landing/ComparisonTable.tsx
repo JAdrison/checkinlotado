@@ -32,7 +32,7 @@ const ComparisonTable = () => {
 
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card positivo */}
-          <div className="bg-white rounded-2xl p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+          <div className="bg-[#FAF8F4] rounded-2xl p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
             <div className="w-12 h-12 rounded-xl bg-ochre/10 flex items-center justify-center mb-5">
               <TrendingUp className="w-6 h-6 text-ochre" />
             </div>
