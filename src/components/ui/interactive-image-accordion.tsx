@@ -40,7 +40,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
 
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-6">
-        <span className="text-ochre text-[0.7rem] font-bold uppercase tracking-[0.15em] font-label">
+        <span className="text-ochre text-xs font-bold uppercase tracking-[0.15em] font-label">
           {item.phase}
         </span>
         <h3 className={`font-heading text-white mt-1 transition-all duration-500 ${
