@@ -90,8 +90,8 @@ const Testimonials = () => {
                 grupo. Os anúncios estão bem estratégicos, chegando no público
                 alvo. O site está super funcional, uma ferramenta excepcional
                 que reduz as dúvidas de novos clientes como também a
-                valorização que dá para o negócio. O grupo XPLO está fazendo um
-                ótimo trabalho, obrigado."
+                valorização que dá para o negócio. O Checkin Lotado foi o
+                diferencial, obrigado."
               </p>
               <div className="flex items-center gap-3">
                 <img
