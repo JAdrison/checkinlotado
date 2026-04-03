@@ -16,6 +16,46 @@ const OTAComparisonSection = () => {
           </h2>
         </div>
 
+        {/* Subheadline — 3 fatos */}
+        <div className="reveal space-y-6 mb-16">
+          <div>
+            <h3 className="font-heading text-xl md:text-2xl text-night">
+              3 coisas que todo dono de pousada precisa saber:
+            </h3>
+            <p className="text-night/50 text-sm mt-1">
+              Antes de precificar a próxima temporada
+            </p>
+          </div>
+
+          <div className="space-y-5">
+            <div className="flex gap-4 items-start">
+              <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">01</span>
+              <div>
+                <p className="font-heading text-base text-night">Airbnb cobra 16% de comissão por reserva</p>
+                <p className="text-night/50 text-sm">Direto do valor da diária, antes de qualquer imposto</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start">
+              <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">02</span>
+              <div>
+                <p className="font-heading text-base text-night">Nota fiscal será obrigatória a partir de 2026</p>
+                <p className="text-night/50 text-sm">Reforma Tributária equiparou temporada a hotelaria</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start">
+              <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">03</span>
+              <div>
+                <p className="font-heading text-base text-night">Impostos podem tirar até 20% a mais da diária</p>
+                <p className="text-night/50 text-sm">ISS municipal + novos tributos federais (IBS e CBS)</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-ochre font-heading text-base">
+            → A conta precisa ser refeita agora.
+          </p>
+        </div>
+
         {/* Cálculo simples */}
         <div className="reveal rounded-2xl p-8 md:p-10 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
           <div className="space-y-0">
