@@ -1,6 +1,6 @@
 const FinalCTA = () => {
   return (
-    <section style={{ background: "#1A1208", padding: "110px 28px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+    <section style={{ background: "#1A1208", padding: "72px 28px", textAlign: "center", position: "relative", overflow: "hidden" }}>
       {/* Blur glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"

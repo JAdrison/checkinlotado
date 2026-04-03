@@ -16,7 +16,7 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
   };
 
   return (
-    <section style={{ background: bgColor, padding: "96px 28px" }}>
+    <section style={{ background: bgColor, padding: "64px 28px" }}>
       <div className="max-w-[800px] mx-auto">
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">{label}</div>
