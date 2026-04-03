@@ -1,4 +1,4 @@
-import { Check, X, AlertTriangle } from "lucide-react";
+import { Check, X, TrendingDown, TrendingUp, AlertTriangle } from "lucide-react";
 
 const otaDisadvantages = [
   "Comissão de 15% a 20% por reserva",
@@ -20,117 +20,56 @@ const methodAdvantages = [
 
 const OTAComparisonSection = () => {
   return (
-    <section
-      className="relative py-24 px-7 overflow-hidden"
-      style={{ background: "#0F0C06" }}
-    >
-      {/* Background overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(15,12,6,0.95) 0%, rgba(26,18,8,0.85) 50%, rgba(15,12,6,0.95) 100%)",
-        }}
-      />
-
-      <div className="relative z-10 max-w-[1000px] mx-auto">
+    <section className="relative py-24 px-7 bg-cream-dark">
+      <div className="max-w-[1000px] mx-auto">
         {/* Headline */}
         <div className="reveal text-center mb-16">
-          <div
-            className="label-text mb-4"
-            style={{ color: "hsl(var(--ochre))" }}
-          >
+          <div className="label-text text-ochre mb-4">
             A conta que ninguém faz
           </div>
-          <h2
-            className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] leading-tight"
-            style={{ color: "hsl(var(--cream))" }}
-          >
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] leading-tight text-night">
             Quanto custa depender
             <br />
-            do <span style={{ color: "#E74C3C" }}>Airbnb</span>?
+            do <span className="shimmer-text">Airbnb</span>?
           </h2>
         </div>
 
         {/* Simulação numérica */}
-        <div
-          className="reveal mx-auto max-w-[700px] rounded-2xl p-8 md:p-10 mb-16 text-center"
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            backdropFilter: "blur(20px)",
-            border: "1px solid rgba(200,148,58,0.15)",
-          }}
-        >
-          <p
-            className="text-sm md:text-base mb-6 tracking-wide uppercase"
-            style={{ color: "hsl(var(--ochre))", opacity: 0.8 }}
-          >
+        <div className="reveal mx-auto max-w-[700px] rounded-2xl p-8 md:p-10 mb-16 text-center bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+          <p className="text-sm md:text-base mb-6 tracking-wide uppercase label-text text-ochre">
             Simulação com números reais
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 mb-8">
             <div>
-              <div
-                className="font-heading text-[2.2rem] md:text-[2.6rem]"
-                style={{ color: "hsl(var(--cream))" }}
-              >
+              <div className="font-heading text-[2.2rem] md:text-[2.6rem] text-night">
                 R$500
               </div>
-              <p
-                className="text-sm mt-1"
-                style={{ color: "hsl(var(--cream))", opacity: 0.5 }}
-              >
-                diária média
-              </p>
+              <p className="text-sm mt-1 text-night/50">diária média</p>
             </div>
             <div>
-              <div
-                className="font-heading text-[2.2rem] md:text-[2.6rem]"
-                style={{ color: "hsl(var(--cream))" }}
-              >
+              <div className="font-heading text-[2.2rem] md:text-[2.6rem] text-night">
                 16%
               </div>
-              <p
-                className="text-sm mt-1"
-                style={{ color: "hsl(var(--cream))", opacity: 0.5 }}
-              >
-                comissão da OTA
-              </p>
+              <p className="text-sm mt-1 text-night/50">comissão da OTA</p>
             </div>
             <div>
-              <div
-                className="font-heading text-[2.2rem] md:text-[2.6rem]"
-                style={{ color: "hsl(var(--cream))" }}
-              >
+              <div className="font-heading text-[2.2rem] md:text-[2.6rem] text-night">
                 300
               </div>
-              <p
-                className="text-sm mt-1"
-                style={{ color: "hsl(var(--cream))", opacity: 0.5 }}
-              >
-                diárias/ano
-              </p>
+              <p className="text-sm mt-1 text-night/50">diárias/ano</p>
             </div>
           </div>
 
-          <div
-            className="h-px w-full mb-8"
-            style={{ background: "rgba(200,148,58,0.2)" }}
-          />
+          <div className="h-px w-full mb-8 bg-night/10" />
 
           <div className="flex items-center justify-center gap-3 mb-2">
-            <AlertTriangle className="w-6 h-6" style={{ color: "#E74C3C" }} />
-            <span
-              className="font-heading text-[2.8rem] md:text-[3.5rem]"
-              style={{ color: "#E74C3C" }}
-            >
+            <AlertTriangle className="w-6 h-6 text-night/40" />
+            <span className="font-heading text-[2.8rem] md:text-[3.5rem] text-night">
               −R$24.000
             </span>
           </div>
-          <p
-            className="text-base md:text-lg"
-            style={{ color: "hsl(var(--cream))", opacity: 0.6 }}
-          >
+          <p className="text-base md:text-lg text-night/50">
             perdidos por ano em comissões
           </p>
         </div>
@@ -138,128 +77,70 @@ const OTAComparisonSection = () => {
         {/* Comparação lado a lado */}
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* OTAs card */}
-          <div
-            className="rounded-2xl p-8"
-            style={{
-              background: "rgba(231,76,60,0.06)",
-              backdropFilter: "blur(20px)",
-              border: "1px solid rgba(231,76,60,0.2)",
-            }}
-          >
-            <h3
-              className="font-heading text-xl mb-6"
-              style={{ color: "#E74C3C" }}
-            >
-              Airbnb / Booking
-            </h3>
+          <div className="rounded-2xl p-8 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+            <div className="flex items-center gap-3 mb-6">
+              <TrendingDown className="w-5 h-5 text-night/40" />
+              <h3 className="font-heading text-xl text-night/70">
+                Airbnb / Booking
+              </h3>
+            </div>
             <ul className="space-y-0">
               {otaDisadvantages.map((item, i) => (
                 <li
                   key={i}
                   className={`flex items-start gap-3 py-3.5 ${
-                    i < otaDisadvantages.length - 1
-                      ? "border-b"
-                      : ""
+                    i < otaDisadvantages.length - 1 ? "border-b border-night/5" : ""
                   }`}
-                  style={{ borderColor: "rgba(231,76,60,0.1)" }}
                 >
-                  <span
-                    className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(231,76,60,0.15)" }}
-                  >
-                    <X
-                      className="w-3 h-3"
-                      style={{ color: "#E74C3C" }}
-                      strokeWidth={3}
-                    />
+                  <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 bg-night/5">
+                    <X className="w-3 h-3 text-night/40" strokeWidth={3} />
                   </span>
-                  <span
-                    className="text-[0.95rem] leading-snug"
-                    style={{ color: "hsl(var(--cream))", opacity: 0.75 }}
-                  >
+                  <span className="text-[0.95rem] leading-snug text-night/60">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
-            <div
-              className="mt-6 pt-5 text-center"
-              style={{ borderTop: "1px solid rgba(231,76,60,0.15)" }}
-            >
-              <span
-                className="font-heading text-2xl"
-                style={{ color: "#E74C3C" }}
-              >
+            <div className="mt-6 pt-5 text-center border-t border-night/5">
+              <span className="font-heading text-2xl text-night/60">
                 −R$24.000/ano
               </span>
-              <p
-                className="text-sm mt-1"
-                style={{ color: "hsl(var(--cream))", opacity: 0.4 }}
-              >
+              <p className="text-sm mt-1 text-night/40">
                 saindo do seu faturamento
               </p>
             </div>
           </div>
 
           {/* Check-in Lotado card */}
-          <div
-            className="rounded-2xl p-8"
-            style={{
-              background: "rgba(200,148,58,0.06)",
-              backdropFilter: "blur(20px)",
-              border: "1px solid rgba(200,148,58,0.2)",
-            }}
-          >
-            <h3
-              className="font-heading text-xl mb-6"
-              style={{ color: "hsl(var(--ochre))" }}
-            >
-              Check-in Lotado
-            </h3>
+          <div className="rounded-2xl p-8 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-ochre/20">
+            <div className="flex items-center gap-3 mb-6">
+              <TrendingUp className="w-5 h-5 text-ochre" />
+              <h3 className="font-heading text-xl text-night">
+                Check-in Lotado
+              </h3>
+            </div>
             <ul className="space-y-0">
               {methodAdvantages.map((item, i) => (
                 <li
                   key={i}
                   className={`flex items-start gap-3 py-3.5 ${
-                    i < methodAdvantages.length - 1
-                      ? "border-b"
-                      : ""
+                    i < methodAdvantages.length - 1 ? "border-b border-ochre/10" : ""
                   }`}
-                  style={{ borderColor: "rgba(200,148,58,0.1)" }}
                 >
-                  <span
-                    className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(200,148,58,0.15)" }}
-                  >
-                    <Check
-                      className="w-3 h-3"
-                      style={{ color: "hsl(var(--ochre))" }}
-                      strokeWidth={3}
-                    />
+                  <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 bg-ochre/10">
+                    <Check className="w-3 h-3 text-ochre" strokeWidth={3} />
                   </span>
-                  <span
-                    className="text-[0.95rem] leading-snug"
-                    style={{ color: "hsl(var(--cream))", opacity: 0.85 }}
-                  >
+                  <span className="text-[0.95rem] leading-snug text-night/80">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
-            <div
-              className="mt-6 pt-5 text-center"
-              style={{ borderTop: "1px solid rgba(200,148,58,0.15)" }}
-            >
-              <span
-                className="font-heading text-lg"
-                style={{ color: "hsl(var(--ochre))" }}
-              >
+            <div className="mt-6 pt-5 text-center border-t border-ochre/10">
+              <span className="font-heading text-lg text-ochre">
                 Investimento único
               </span>
-              <p
-                className="text-sm mt-1"
-                style={{ color: "hsl(var(--cream))", opacity: 0.4 }}
-              >
+              <p className="text-sm mt-1 text-night/40">
                 que se paga na primeira reserva direta
               </p>
             </div>
@@ -268,13 +149,10 @@ const OTAComparisonSection = () => {
 
         {/* Bottom text */}
         <div className="reveal text-center mt-14">
-          <p
-            className="text-base md:text-lg max-w-[600px] mx-auto leading-relaxed"
-            style={{ color: "hsl(var(--cream))", opacity: 0.6 }}
-          >
+          <p className="text-base md:text-lg max-w-[600px] mx-auto leading-relaxed text-night/50">
             Em 10 reservas diretas, você já recuperou o investimento.
             <br />
-            <strong style={{ color: "hsl(var(--ochre))", opacity: 1 }}>
+            <strong className="text-ochre">
               Com o método, você aprende a não depender mais.
             </strong>
           </p>
