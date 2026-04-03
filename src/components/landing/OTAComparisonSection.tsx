@@ -68,6 +68,7 @@ const OTAComparisonSection = () => {
         <div className="max-w-[700px] mx-auto">
 
         {/* Cálculo simples */}
+        <div className="max-w-[700px] mx-auto">
         <div className="reveal rounded-2xl p-8 md:p-10 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
           <div className="space-y-0">
             <div className="flex justify-between items-center py-4 border-b border-night/5">
