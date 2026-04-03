@@ -35,7 +35,7 @@ const PricingSection = () => {
           <div className="divider-gold mb-8" />
 
           <div className="mb-8">
-            <p className="text-night/80 text-[0.78rem] mb-1 line-through">De R$997</p>
+            <p className="text-night/80 text-sm mb-1 line-through">De R$997</p>
             <div className="flex items-baseline justify-center gap-2">
               <span className="text-ochre font-label font-bold text-[0.78rem]">POR APENAS</span>
               <span className="font-heading font-black text-[3.2rem] text-night leading-none">
