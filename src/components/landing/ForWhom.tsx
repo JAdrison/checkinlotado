@@ -17,6 +17,9 @@ import logoAgoba from "@/assets/logos/rancho-agoba.png";
 import logoChoca from "@/assets/logos/village-choca.png";
 import logoEncanto from "@/assets/logos/encanto-das-aguas.png";
 import logoCasaTropical from "@/assets/logos/casa-tropical.png";
+import logoCasaRobelu from "@/assets/logos/casa-robelu.png";
+import logoPousadaEspraidada from "@/assets/logos/pousada-espraidada.png";
+import logoVillaAzul from "@/assets/logos/villa-azul.png";
 
 const items: CardStackItem[] = [
   { id: 1, title: "Apartamentos e Studios", description: "Maximize a ocupação do seu espaço urbano", imageSrc: imgApartamento },
@@ -36,6 +39,9 @@ const trustedLogos = [
   { src: logoChoca, alt: "Village Choça" },
   { src: logoEncanto, alt: "Encanto das Águas" },
   { src: logoCasaTropical, alt: "Casa Tropical" },
+  { src: logoCasaRobelu, alt: "Casa Robelu" },
+  { src: logoPousadaEspraidada, alt: "Pousada Espraidada" },
+  { src: logoVillaAzul, alt: "Villa Azul" },
 ];
 
 const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
