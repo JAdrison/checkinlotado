@@ -36,7 +36,7 @@ const trustedLogos = [
   { src: logoAgoba, alt: "Rancho Agobá" },
   { src: logoChoca, alt: "Village Choça" },
   { src: logoEncanto, alt: "Encanto das Águas" },
-  { src: logoCasaTropical, alt: "Casa Tropical" },
+  
   { src: logoCasaRobelu, alt: "Casa Robelu" },
   { src: logoPousadaEspraidada, alt: "Pousada Espraidada" },
   { src: logoVillaAzul, alt: "Villa Azul" },
