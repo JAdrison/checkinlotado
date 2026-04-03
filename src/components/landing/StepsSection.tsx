@@ -1,5 +1,6 @@
 import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ChevronRight } from "lucide-react";
 import stepsBg from "@/assets/steps-bg.jpg";
 
 const steps = [
@@ -23,6 +24,50 @@ const steps = [
   },
 ];
 
+const StepCircle = ({ num }: { num: string }) => (
+  <div
+    className="relative z-10 flex items-center justify-center rounded-full"
+    style={{
+      width: 130,
+      height: 130,
+      background: "radial-gradient(circle at 40% 35%, #3D2B14 0%, #1A1208 60%, #0F0C06 100%)",
+      border: "3.5px solid var(--ochre)",
+      boxShadow:
+        "0 0 40px rgba(200,148,58,0.25), 0 0 0 1px rgba(200,148,58,0.1), inset 0 2px 20px rgba(200,148,58,0.08)",
+    }}
+  >
+    <div className="text-center">
+      <span
+        className="block font-heading text-[0.85rem] tracking-[0.08em]"
+        style={{ color: "rgba(255,255,255,0.85)", fontStyle: "normal", fontWeight: 700 }}
+      >
+        Mês
+      </span>
+      <span
+        className="block font-heading text-[2.4rem] leading-none -mt-0.5"
+        style={{ color: "#FFFFFF" }}
+      >
+        {num}
+      </span>
+    </div>
+  </div>
+);
+
+const DoubleChevron = ({ vertical = false }: { vertical?: boolean }) => (
+  <div className={`flex items-center justify-center ${vertical ? "py-2 rotate-90" : ""}`}>
+    <ChevronRight
+      size={22}
+      strokeWidth={2}
+      style={{ color: "var(--ochre)", opacity: 0.5, marginRight: -10 }}
+    />
+    <ChevronRight
+      size={22}
+      strokeWidth={2}
+      style={{ color: "var(--ochre)", opacity: 0.5 }}
+    />
+  </div>
+);
+
 const StepsSection: React.FC = () => {
   const isMobile = useIsMobile();
 
@@ -38,7 +83,6 @@ const StepsSection: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 0.12, filter: "blur(2px)" }}
       />
-      {/* Gradient overlays */}
       <div
         className="absolute inset-0"
         style={{
@@ -68,11 +112,9 @@ const StepsSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Steps container */}
         {isMobile ? (
           /* ── MOBILE: vertical timeline ── */
           <div className="relative pl-8">
-            {/* Vertical line */}
             <div
               className="absolute left-[18px] top-[60px] bottom-[60px] w-[2px]"
               style={{
@@ -81,26 +123,20 @@ const StepsSection: React.FC = () => {
                 opacity: 0.3,
               }}
             />
-
             {steps.map((step, i) => (
               <div key={i} className="reveal relative flex items-start gap-5 mb-10 last:mb-0">
-                {/* Node circle */}
                 <div
                   className="relative z-10 flex-shrink-0 flex items-center justify-center rounded-full"
                   style={{
-                    width: 38,
-                    height: 38,
-                    background: "linear-gradient(135deg, #1A1208 0%, #0F0C06 100%)",
-                    border: "2px solid var(--ochre)",
-                    boxShadow: "0 0 20px rgba(200,148,58,0.25), 0 0 0 6px rgba(200,148,58,0.08)",
+                    width: 44,
+                    height: 44,
+                    background: "radial-gradient(circle at 40% 35%, #3D2B14 0%, #1A1208 60%, #0F0C06 100%)",
+                    border: "2.5px solid var(--ochre)",
+                    boxShadow: "0 0 20px rgba(200,148,58,0.25), 0 0 0 1px rgba(200,148,58,0.08)",
                   }}
                 >
-                  <span className="font-label text-[0.65rem] font-bold" style={{ color: "var(--ochre)" }}>
-                    {step.num}
-                  </span>
+                  <span className="font-heading text-[0.9rem] text-white font-bold">{step.num}</span>
                 </div>
-
-                {/* Card */}
                 <div
                   className="flex-1 rounded-2xl p-5"
                   style={{
@@ -116,16 +152,10 @@ const StepsSection: React.FC = () => {
                   >
                     Mês {step.num}
                   </span>
-                  <h3
-                    className="font-heading text-[1.2rem] mb-2"
-                    style={{ color: "var(--cream-mid)" }}
-                  >
+                  <h3 className="font-heading text-[1.2rem] mb-2" style={{ color: "var(--cream-mid)" }}>
                     {step.title}
                   </h3>
-                  <p
-                    className="text-[0.85rem] leading-relaxed"
-                    style={{ color: "rgba(242,237,224,0.65)" }}
-                  >
+                  <p className="text-[0.85rem] leading-relaxed" style={{ color: "rgba(242,237,224,0.65)" }}>
                     {step.description}
                   </p>
                 </div>
@@ -135,81 +165,62 @@ const StepsSection: React.FC = () => {
         ) : (
           /* ── DESKTOP: horizontal timeline ── */
           <div className="relative">
-            {/* Horizontal connecting line */}
+            {/* Horizontal connecting line behind circles */}
             <div
-              className="absolute left-[16.66%] right-[16.66%] top-[55px] h-[2px]"
+              className="absolute left-[16.66%] right-[16.66%] h-[2px]"
               style={{
+                top: 64,
                 background:
                   "linear-gradient(90deg, transparent 0%, var(--ochre) 10%, var(--ochre) 90%, transparent 100%)",
-                opacity: 0.3,
+                opacity: 0.35,
               }}
             />
 
-            <div className="grid grid-cols-3 gap-8">
+            {/* Steps row with chevrons */}
+            <div className="flex items-start justify-center">
               {steps.map((step, i) => (
-                <div key={i} className="reveal flex flex-col items-center">
-                  {/* Circle node */}
-                  <div
-                    className="relative z-10 flex items-center justify-center rounded-full mb-7"
-                    style={{
-                      width: 110,
-                      height: 110,
-                      background: "linear-gradient(135deg, #1A1208 0%, #0F0C06 100%)",
-                      border: "2px solid rgba(200,148,58,0.5)",
-                      boxShadow:
-                        "0 0 30px rgba(200,148,58,0.2), 0 0 0 8px rgba(200,148,58,0.06), inset 0 0 30px rgba(200,148,58,0.05)",
-                    }}
-                  >
-                    <div className="text-center">
-                      <span
-                        className="block font-label text-[0.65rem] uppercase tracking-[0.15em]"
-                        style={{ color: "var(--ochre)", opacity: 0.8 }}
-                      >
-                        Mês
-                      </span>
-                      <span
-                        className="block font-heading text-[2rem] leading-none"
-                        style={{ color: "var(--cream-mid)" }}
-                      >
-                        {step.num}
-                      </span>
+                <React.Fragment key={i}>
+                  <div className="reveal flex flex-col items-center flex-1 max-w-[320px]">
+                    <div className="mb-7">
+                      <StepCircle num={step.num} />
+                    </div>
+
+                    {/* Glass card */}
+                    <div
+                      className="rounded-2xl p-7 text-center flex-1 w-full transition-all duration-500 hover:-translate-y-1"
+                      style={{
+                        background: "rgba(255,255,255,0.04)",
+                        backdropFilter: "blur(20px)",
+                        border: "1px solid rgba(200,148,58,0.12)",
+                        boxShadow: "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = "rgba(200,148,58,0.35)";
+                        e.currentTarget.style.boxShadow =
+                          "0 16px 48px rgba(0,0,0,0.4), 0 0 30px rgba(200,148,58,0.08), inset 0 1px 0 rgba(255,255,255,0.05)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = "rgba(200,148,58,0.12)";
+                        e.currentTarget.style.boxShadow =
+                          "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03)";
+                      }}
+                    >
+                      <h3 className="font-heading text-[1.35rem] mb-3" style={{ color: "var(--cream-mid)" }}>
+                        {step.title}
+                      </h3>
+                      <p className="text-[0.9rem] leading-relaxed" style={{ color: "rgba(242,237,224,0.6)" }}>
+                        {step.description}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Glass card */}
-                  <div
-                    className="rounded-2xl p-7 text-center flex-1 w-full transition-all duration-500 hover:-translate-y-1"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      backdropFilter: "blur(20px)",
-                      border: "1px solid rgba(200,148,58,0.12)",
-                      boxShadow: "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = "rgba(200,148,58,0.35)";
-                      e.currentTarget.style.boxShadow =
-                        "0 16px 48px rgba(0,0,0,0.4), 0 0 30px rgba(200,148,58,0.08), inset 0 1px 0 rgba(255,255,255,0.05)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = "rgba(200,148,58,0.12)";
-                      e.currentTarget.style.boxShadow =
-                        "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03)";
-                    }}
-                  >
-                    <h3
-                      className="font-heading text-[1.35rem] mb-3"
-                      style={{ color: "var(--cream-mid)" }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      className="text-[0.9rem] leading-relaxed"
-                      style={{ color: "rgba(242,237,224,0.6)" }}
-                    >
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
+                  {/* Double chevron arrows between steps */}
+                  {i < steps.length - 1 && (
+                    <div className="flex items-center justify-center flex-shrink-0" style={{ paddingTop: 52, width: 52 }}>
+                      <DoubleChevron />
+                    </div>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           </div>
