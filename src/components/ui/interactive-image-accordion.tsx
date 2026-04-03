@@ -38,19 +38,29 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
           : "bg-black/50"
       }`} />
 
-      {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-6">
+      {/* Vertical label when collapsed */}
+      <div className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-500 ${
+        isActive ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}>
+        <span
+          className="text-white font-heading text-sm md:text-base whitespace-nowrap tracking-wide"
+          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+        >
+          {item.phase}: {item.title}
+        </span>
+      </div>
+
+      {/* Horizontal content when expanded */}
+      <div className={`absolute bottom-0 left-0 right-0 p-6 transition-opacity duration-500 ${
+        isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}>
         <span className="text-ochre text-xs font-bold uppercase tracking-[0.15em] font-label">
           {item.phase}
         </span>
-        <h3 className={`font-heading text-white mt-1 transition-all duration-500 ${
-          isActive ? "text-xl md:text-2xl" : "text-base"
-        }`}>
+        <h3 className="font-heading text-white mt-1 text-xl md:text-2xl">
           {item.title}
         </h3>
-        <p className={`text-white/70 text-base leading-relaxed mt-2 transition-all duration-500 ${
-          isActive ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden`}>
+        <p className="text-white/70 text-base leading-relaxed mt-2">
           {item.desc}
         </p>
       </div>
