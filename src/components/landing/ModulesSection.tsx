@@ -123,7 +123,7 @@ const ModulesSection = () => {
               Sua hospedagem com vendas previsíveis
             </span>
             <h3 className="font-heading text-[clamp(1.4rem,3vw,2.2rem)] text-night leading-[1.2] mt-3">
-              Com o método, você vai conseguir:
+              Aplicando o Check-in Lotado, você vai conseguir:
             </h3>
           </div>
 
