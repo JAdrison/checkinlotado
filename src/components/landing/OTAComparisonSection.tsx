@@ -65,7 +65,6 @@ const OTAComparisonSection = () => {
         </div>
 
         {/* Cálculo simples */}
-        <div className="max-w-[700px] mx-auto">
 
         {/* Cálculo simples */}
         <div className="max-w-[700px] mx-auto">
