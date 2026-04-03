@@ -79,7 +79,7 @@ const modules = [
 ];
 
 const benefits = [
-  "Entrar mais dinheiro mesmo em fins de semana comuns.",
+  "Mais dinheiro mesmo em fins de semana comuns.",
   "Vender mais diárias sem precisar dar desconto toda hora.",
   "Parar de depender de feriadão para respirar financeiramente.",
   "Reduzir a ansiedade de chegar perto do fim de semana com baixa ocupação.",
