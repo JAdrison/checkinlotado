@@ -17,7 +17,7 @@ const PricingSection = () => {
             Entre no<br />
             <span className="shimmer-text">Check-in Lotado</span>
           </h2>
-          <p className="text-night/85 text-[0.97rem] leading-[1.72] mb-12">
+          <p className="text-night/85 text-lg leading-[1.72] mb-12">
             Você não está comprando apenas aulas. Está adquirindo uma forma mais estratégica de vender sua hospedagem.
           </p>
         </div>
