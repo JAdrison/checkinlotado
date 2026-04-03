@@ -16,7 +16,7 @@ const metrics = [
   {
     icon: TrendingUp,
     value: "Aumento de +23%",
-    label: "Para vender 4 meses de agenda",
+    label: "no valor do final de semana",
   },
 ];
 
