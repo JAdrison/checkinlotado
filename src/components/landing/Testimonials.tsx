@@ -103,7 +103,7 @@ const Testimonials = () => {
                   <p className="text-cream text-base font-semibold">
                     Guilherme Couto
                   </p>
-                  <p className="text-cream/65 text-[0.72rem]">
+                  <p className="text-cream/65 text-sm">
                     Proprietário — Casa Iparaí
                   </p>
                 </div>
