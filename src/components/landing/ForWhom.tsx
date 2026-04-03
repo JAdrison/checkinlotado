@@ -61,7 +61,7 @@ const ForWhom: React.FC = () => {
   return (
     <>
       {/* Card stack section - cream background */}
-      <section style={{ background: "#F2EDE0", padding: isMobile ? "64px 16px 32px" : "96px 28px 48px" }}>
+      <section style={{ background: "#F2EDE0", padding: isMobile ? "48px 16px 24px" : "64px 28px 32px" }}>
         <div className="max-w-[1100px] mx-auto">
           <div className="reveal text-center mb-10">
             <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-4">
