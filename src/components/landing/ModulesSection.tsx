@@ -120,7 +120,7 @@ const ModulesSection = () => {
         <div className="reveal mt-20">
           <div className="text-center mb-10">
             <span className="font-label text-sm tracking-[0.22em] uppercase text-ochre">
-              O que você vai conquistar
+              Sua hospedagem com vendas previsíveis
             </span>
             <h3 className="font-heading text-[clamp(1.4rem,3vw,2.2rem)] text-night leading-[1.2] mt-3">
               Com o método, você vai conseguir:
