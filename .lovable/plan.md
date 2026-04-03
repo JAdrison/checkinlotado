@@ -1,35 +1,21 @@
 
 
-## Bônus no Accordion + Nova Seção de Resultados
+## Hero: Vídeo como protagonista
 
-### Mudança 1 — Bônus dentro do accordion
+Reestruturar o Hero para seguir o layout da referência — headline + subheadline centrados no topo, vídeo grande e centralizado logo abaixo, e os bullets + CTA embaixo do vídeo (em vez do grid lado a lado atual).
 
-Mover os 3 bônus para dentro do mesmo `InteractiveImageAccordion`, adicionando-os ao array `modules` como itens 7, 8 e 9:
+### Mudanças em `src/components/landing/Hero.tsx`
 
-- **+ Bônus 01** — "Como criar seu website com inteligência artificial"
-- **+ Bônus 02** — "Como organizar o perfil do Instagram para vender mais"
-- **+ Bônus 03** — "Como configurar o Google Meu Negócio"
+**Layout atual**: grid de 2 colunas (vídeo à esquerda, bullets à direita)
 
-Cada um com `phase: "+ Bônus 01"`, etc. Reutilizar imagens existentes (module-1 a module-6) para os bônus, ou gerar 3 novas.
+**Novo layout**: tudo empilhado verticalmente e centralizado:
+1. Label + Headline + Subheadline (mantém como está)
+2. Vídeo grande — largura total do container (`max-w-[900px]`), centralizado, sem o texto "Assista à aula de introdução"
+3. Bullets em grid 2x2 abaixo do vídeo, mais compactos
+4. CTA centralizado abaixo dos bullets
 
-Remover o grid de cards de bônus separado (linhas 104-129).
+O vídeo passa a ser o elemento dominante da seção, ocupando quase toda a largura disponível, como na referência.
 
-### Mudança 2 — Substituir seção "3 bônus para acelerar"
-
-Onde estava "Você ainda leva 3 bônus para acelerar seus resultados", substituir por uma lista de benefícios/resultados:
-
-**Label**: "O que você vai conquistar"
-**Headline**: "Com o método, você vai conseguir:"
-
-Lista com check/bullet ochre:
-- Entrar mais dinheiro mesmo em fins de semana comuns.
-- Vender mais diárias sem precisar dar desconto toda hora.
-- Parar de depender de feriadão para respirar financeiramente.
-- Reduzir a ansiedade de chegar perto do fim de semana com baixa ocupação.
-- Fazer a pousada girar melhor também na baixa temporada.
-
-Estilo: cards brancos ou lista simples com ícone check ochre, dentro da mesma section cream-dark.
-
-### Arquivos modificados
-- `src/components/landing/ModulesSection.tsx` — adicionar bônus ao array do accordion, substituir grid de bônus por lista de resultados
+### Arquivo modificado
+- `src/components/landing/Hero.tsx`
 
