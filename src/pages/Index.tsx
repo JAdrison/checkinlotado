@@ -44,6 +44,7 @@ const Index = () => {
       <ForWhom />
       <Testimonials />
       <ModulesSection />
+      <StepsSection />
       <ComparisonTable />
       <ProblemSection />
       <ResultsSection />
