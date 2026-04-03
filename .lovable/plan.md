@@ -1,21 +1,43 @@
 
 
-## Hero: Vídeo como protagonista
+## Corrigir Imagens Repetidas + Aumentar Fontes
 
-Reestruturar o Hero para seguir o layout da referência — headline + subheadline centrados no topo, vídeo grande e centralizado logo abaixo, e os bullets + CTA embaixo do vídeo (em vez do grid lado a lado atual).
+### Problema 1 — Imagens repetidas no accordion
 
-### Mudanças em `src/components/landing/Hero.tsx`
+Os 9 itens do accordion usam apenas 6 imagens, com repetições:
+- `module-6.jpg` é cópia idêntica de `module-5.jpg`
+- Bônus 01 reutiliza `module-1.jpg`, Bônus 02 reutiliza `module-3.jpg`, Bônus 03 reutiliza `module-5.jpg`
 
-**Layout atual**: grid de 2 colunas (vídeo à esquerda, bullets à direita)
+**Solução**: Gerar 4 novas imagens via AI (Nano banana) para os itens que repetem — module-6, bonus-1, bonus-2 e bonus-3. Cada imagem será temática:
+- **Módulo 6** (Otimização e Repetição): gráficos/dashboard de análise
+- **Bônus 1** (Website com IA): tela de laptop com site de hospedagem
+- **Bônus 2** (Instagram): celular com feed do Instagram de pousada
+- **Bônus 3** (Google Meu Negócio): mapa/pin de localização de hospedagem
 
-**Novo layout**: tudo empilhado verticalmente e centralizado:
-1. Label + Headline + Subheadline (mantém como está)
-2. Vídeo grande — largura total do container (`max-w-[900px]`), centralizado, sem o texto "Assista à aula de introdução"
-3. Bullets em grid 2x2 abaixo do vídeo, mais compactos
-4. CTA centralizado abaixo dos bullets
+Serão salvas como `module-6.jpg`, `bonus-1.jpg`, `bonus-2.jpg`, `bonus-3.jpg` em `src/assets/` e importadas no `ModulesSection.tsx`.
 
-O vídeo passa a ser o elemento dominante da seção, ocupando quase toda a largura disponível, como na referência.
+### Problema 2 — Fontes pequenas na landing page
 
-### Arquivo modificado
+Texto de corpo em diversas seções usa `text-sm` (14px), `text-[0.78rem]`, `text-[0.9rem]`, `text-[0.92rem]`, `text-[0.95rem]` — difícil de ler.
+
+**Solução**: Aumentar as fontes de corpo em toda a landing page:
+- `text-sm` → `text-base` (16px)
+- `text-[0.78rem]` → `text-sm` (14px)
+- `text-[0.9rem]` / `text-[0.92rem]` → `text-base` (16px)
+- `text-[0.95rem]` / `text-[0.97rem]` → `text-lg` (18px)
+- Subtítulos/descrições `text-lg` → `text-xl` onde faz sentido
+- Accordion: phase label de `text-[0.7rem]` → `text-xs`, desc de `text-sm` → `text-base`
+
+Arquivos afetados:
 - `src/components/landing/Hero.tsx`
+- `src/components/landing/ProblemSection.tsx`
+- `src/components/landing/ForWhom.tsx`
+- `src/components/landing/StepsSection.tsx`
+- `src/components/landing/Stats.tsx`
+- `src/components/landing/Testimonials.tsx`
+- `src/components/landing/ModulesSection.tsx`
+- `src/components/landing/PricingSection.tsx`
+- `src/components/landing/FinalCTA.tsx`
+- `src/components/landing/OTAComparisonSection.tsx`
+- `src/components/ui/interactive-image-accordion.tsx`
 
