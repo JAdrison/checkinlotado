@@ -15,7 +15,7 @@ import logoButterfly from "@/assets/logos/motel-butterfly.png";
 import logoAgoba from "@/assets/logos/rancho-agoba.png";
 import logoChoca from "@/assets/logos/village-choca.png";
 import logoEncanto from "@/assets/logos/encanto-das-aguas.png";
-import logoCasaTropical from "@/assets/logos/casa-tropical.png";
+
 import logoCasaRobelu from "@/assets/logos/casa-robelu.png";
 import logoPousadaEspraidada from "@/assets/logos/pousada-espraidada.png";
 import logoVillaAzul from "@/assets/logos/villa-azul.png";
@@ -36,7 +36,7 @@ const trustedLogos = [
   { src: logoAgoba, alt: "Rancho Agobá" },
   { src: logoChoca, alt: "Village Choça" },
   { src: logoEncanto, alt: "Encanto das Águas" },
-  { src: logoCasaTropical, alt: "Casa Tropical" },
+  
   { src: logoCasaRobelu, alt: "Casa Robelu" },
   { src: logoPousadaEspraidada, alt: "Pousada Espraidada" },
   { src: logoVillaAzul, alt: "Villa Azul" },
