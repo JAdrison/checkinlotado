@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="flex justify-end">
         <a
           href="#comprar"
-          className="btn-cta btn-cta-sm font-label"
+          className="btn-cta btn-cta-sm font-label hidden sm:inline-flex"
         >
           <span>QUERO ENTRAR →</span>
         </a>

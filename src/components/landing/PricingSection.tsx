@@ -53,7 +53,7 @@ const PricingSection = () => {
         </div>
 
         {/* Guarantee */}
-        <div className="reveal flex items-center gap-6 p-6 bg-white border border-night/10 rounded-lg text-left">
+        <div className="reveal flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-5 sm:p-6 bg-white border border-night/10 rounded-lg text-left text-center sm:text-left">
           <div className="g-circle">
             <span className="text-ochre font-label font-extrabold text-[1.8rem] leading-none">7</span>
             <span className="text-ochre font-label font-bold text-[0.62rem] tracking-[0.1em]">DIAS</span>

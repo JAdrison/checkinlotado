@@ -69,19 +69,19 @@ const ForWhom: React.FC = () => {
 
           <CardStack
             items={items}
-            cardWidth={480}
-            cardHeight={300}
+            cardWidth={isMobile ? 300 : 480}
+            cardHeight={isMobile ? 200 : 300}
             autoAdvance
             intervalMs={3000}
             pauseOnHover
-            overlap={0.45}
-            spreadDeg={40}
-            maxVisible={5}
+            overlap={isMobile ? 0.5 : 0.45}
+            spreadDeg={isMobile ? 30 : 40}
+            maxVisible={isMobile ? 3 : 5}
             activeScale={1.04}
             inactiveScale={0.92}
-            depthPx={120}
-            tiltXDeg={10}
-            activeLiftPx={18}
+            depthPx={isMobile ? 80 : 120}
+            tiltXDeg={isMobile ? 6 : 10}
+            activeLiftPx={isMobile ? 12 : 18}
           />
         </div>
       </section>

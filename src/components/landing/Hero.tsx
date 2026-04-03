@@ -56,7 +56,7 @@ const Hero = () => {
                 </div>
               ))}
             </div>
-            <a href="#comprar" className="btn-cta btn-cta-lg btn-cta-full mt-2">
+            <a href="#comprar" className="btn-cta btn-cta-lg btn-cta-full mt-2 text-center">
               <span>QUERO LOTAR MINHA HOSPEDAGEM</span>
               <span className="relative z-[1]">↗</span>
             </a>

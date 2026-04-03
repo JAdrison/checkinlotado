@@ -54,7 +54,7 @@ const Testimonials = () => {
             <img
               src={whatsappImg}
               alt="Print de conversa no WhatsApp mostrando reservas da Casa Iparaí"
-              className="rounded-lg h-full object-contain"
+              className="rounded-lg h-full max-h-[400px] md:max-h-full object-contain"
             />
           </div>
 

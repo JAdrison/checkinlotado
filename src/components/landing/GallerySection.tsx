@@ -19,7 +19,7 @@ const GallerySection = () => {
               O método funciona para qualquer tipo de hospedagem que quer parar de
               depender de feriado.
             </p>
-            <a href="#comprar" className="btn-cta btn-cta-lg">
+            <a href="#comprar" className="btn-cta btn-cta-lg w-full sm:w-auto text-center">
               <span>QUERO O MESMO RESULTADO</span>
               <span className="relative z-[1]">↗</span>
             </a>
