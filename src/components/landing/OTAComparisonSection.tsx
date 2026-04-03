@@ -15,7 +15,7 @@ const OTAComparisonSection = () => {
   const taxFee = revenue * 0.08;
   const totalLoss = platformFee + taxFee;
   const netPerDay = revenue - totalLoss;
-  const annualLoss = totalLoss * 200;
+  const annualLoss = totalLoss * 120;
 
   return (
     <section className="relative py-16 px-7" style={{ background: "#FFFFFF" }}>
