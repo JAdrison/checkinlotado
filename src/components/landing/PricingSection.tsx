@@ -42,7 +42,7 @@ const PricingSection = () => {
                 R$497
               </span>
             </div>
-            <p className="text-night/65 text-[0.78rem] mt-2">
+            <p className="text-night/65 text-sm mt-2">
               ou 12x de R$49,18
             </p>
           </div>
