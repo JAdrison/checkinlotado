@@ -1,43 +1,71 @@
 
 
-## Plan: Improve all section headlines for better readability and visual hierarchy
+# Plano: Melhorar contraste visual entre as seções
 
-Based on the reference image, the headlines should follow a clear pattern: the descriptive/introductory part of the headline is in a **lighter weight** (normal/medium), while the **key phrase** (the shimmer/emphasized text) stays bold — creating strong contrast and easier scanning.
+## Problema
+De **ComparisonTable** até **FinalCTA**, são 7 seções consecutivas com fundo creme quase idêntico (#EAE3CF, #F2EDE0, cream-dark). Isso cria monotonia visual e dificulta a separação mental entre blocos.
 
-Currently, all headlines use `font-heading` (Playfair Display) without explicit weight differentiation, making them look uniformly heavy and harder to scan.
+## Estratégia
+Alternar entre 3 tonalidades distintas — **escuro (night)**, **branco/claro**, e **creme** — criando ritmo visual sem fugir da paleta existente.
 
-### What changes
+## Nova sequência de backgrounds
 
-Every section headline (`h2`) across all landing sections will be updated to:
+```text
+Seção              Antes              Depois
+─────────────────────────────────────────────────────
+ComparisonTable    cream              #FFFFFF (branco)
+ResultsSection     #EAE3CF            #EAE3CF (mantém — creme)
+GallerySection     #EAE3CF            #1A1208 (night/escuro) + textos claros
+OTAComparison      cream-dark         #FFFFFF (branco)
+PricingSection     #EAE3CF            #1A1208 (night/escuro) + textos claros
+AccordionSection   #F2EDE0            #F2EDE0 (mantém — creme claro)
+FinalCTA           #EAE3CF            #1A1208 (night/escuro) + textos claros
+```
 
-1. **Add `font-normal`** to the `h2` base class (lighter weight for the intro text)
-2. **Add `font-bold`** to the `<em>` / `<span>` shimmer text (the key phrase stays punchy)
-3. **Increase line-height** to `leading-[1.2]` where it's currently tighter, for better readability
-4. Keep font sizes unchanged
+## Detalhes por seção
 
-### Files to edit (12 sections)
+### 1. ComparisonTable → Fundo branco (#FFFFFF)
+- Mudar background de `hsl(var(--cream))` para `#FFFFFF`
+- Cards internos já são brancos, então adicionar sombra sutil ou borda leve para contraste
 
-| File | Headline text |
-|------|--------------|
-| `Hero.tsx` | "Como lotar sua hospedagem em **fins de semana comuns**" |
-| `ProblemSection.tsx` | "Sua hospedagem **depende de feriados** para faturar?" |
-| `ForWhom.tsx` | "Esse método é para o seu tipo de **hospedagem**" |
-| `StepsSection.tsx` | "90 dias para a lapidação e **escala**" |
-| `OTAComparisonSection.tsx` | "Quanto custa depender **só do Airbnb**?" |
-| `Testimonials.tsx` | "4 Meses de Reservas Vendidas **em Apenas 60 Dias**" |
-| `GallerySection.tsx` | "De ponta a ponta do Brasil, **lotando fins de semana**" |
-| `ResultsSection.tsx` | "Quem aplica o método, vende. **Todo. Dia.**" |
-| `ModulesSection.tsx` | "O plano detalhado... **hospedagem decolar**" |
-| `ComparisonTable.tsx` | "O que muda com o **Check-in Lotado**" |
-| `PricingSection.tsx` | "Entre no **Check-in Lotado**" |
-| `FinalCTA.tsx` | "Não deixe o próximo **fim de semana** passar vazio" |
-| `AccordionSection.tsx` | Dynamic headline (via props + dangerouslySetInnerHTML) |
+### 2. GallerySection → Fundo escuro (#1A1208)
+- Background escuro com textos em cream/cream-mid
+- Botão CTA mantém estilo ochre
+- Cria um bloco de ruptura visual forte entre Results e OTA
 
-### Implementation detail
+### 3. OTAComparisonSection → Fundo branco (#FFFFFF)
+- Trocar `bg-cream-dark` por branco
+- Cards e badges internos ganham mais destaque sobre fundo limpo
 
-For each `h2`, add `font-normal` to the className so the base text is lighter weight. The shimmer `<em>`/`<span>` elements already stand out via the shimmer effect, but will also get `font-bold` explicitly for stronger contrast.
+### 4. PricingSection → Fundo escuro (#1A1208)
+- Textos em cream, preço em ochre, botão CTA mantém destaque
+- Cria urgência e premium feel para a seção de compra
+- Card de garantia com borda ochre sutil
 
-For `AccordionSection.tsx`, update the inline HTML template to wrap the shimmer text with `font-bold`.
+### 5. FinalCTA → Fundo escuro (#1A1208)
+- Texto em cream, shimmer-text em ochre
+- Continuidade com Pricing criando um bloco "decisão" unificado dark
 
-For `Hero.tsx`, it already has `font-black` — change to `font-normal` on the `h1`, keep shimmer as `font-black`.
+## Resultado visual
+
+```text
+... Steps (escuro) ...
+ComparisonTable   ██████ BRANCO
+ResultsSection    ▓▓▓▓▓▓ CREME
+GallerySection    ██████ ESCURO
+OTAComparison     ██████ BRANCO
+PricingSection    ██████ ESCURO
+AccordionSection  ▓▓▓▓▓▓ CREME CLARO
+FinalCTA          ██████ ESCURO
+Footer            ██████ ESCURO
+```
+
+Alternância clara: branco → creme → escuro → branco → escuro → creme → escuro → escuro. Nenhuma cor repete mais que 1x consecutivamente (exceto FinalCTA+Footer, que é intencional para criar bloco de fechamento).
+
+## Arquivos editados
+- `src/components/landing/ComparisonTable.tsx` — background
+- `src/components/landing/GallerySection.tsx` — background + cores de texto
+- `src/components/landing/OTAComparisonSection.tsx` — background
+- `src/components/landing/PricingSection.tsx` — background + cores de texto
+- `src/components/landing/FinalCTA.tsx` — background + cores de texto
 
