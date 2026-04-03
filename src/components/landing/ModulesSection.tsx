@@ -60,21 +60,21 @@ const modules = [
     phase: "+ Bônus 01",
     title: "Como criar seu website com inteligência artificial",
     desc: "Tenha um site profissional para sua hospedagem sem precisar de programador ou designer.",
-    imageUrl: module1,
+    imageUrl: bonus1,
   },
   {
     id: 8,
     phase: "+ Bônus 02",
     title: "Como organizar o perfil do Instagram para vender mais",
     desc: "Transforme seu perfil em uma vitrine que atrai e converte seguidores em hóspedes.",
-    imageUrl: module3,
+    imageUrl: bonus2,
   },
   {
     id: 9,
     phase: "+ Bônus 03",
     title: "Como configurar o Google Meu Negócio",
     desc: "Apareça nas buscas locais e no Google Maps para quem procura hospedagem na sua região.",
-    imageUrl: module5,
+    imageUrl: bonus3,
   },
 ];
 
