@@ -2,7 +2,7 @@ import ShuffleGrid from "@/components/ui/shuffle-grid";
 
 const GallerySection = () => {
   return (
-    <section className="py-20 px-7" style={{ background: "#1A1208" }}>
+    <section className="py-14 px-7" style={{ background: "#1A1208" }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text */}

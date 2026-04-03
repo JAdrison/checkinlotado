@@ -90,7 +90,7 @@ const benefits = [
 const ModulesSection = () => {
   return (
     <section style={{ background: "#EAE3CF", overflow: "hidden" }}>
-      <div className="mx-auto max-w-[1200px]" style={{ padding: "96px 28px" }}>
+      <div className="mx-auto max-w-[1200px]" style={{ padding: "64px 28px" }}>
         <div className="reveal text-center mb-16">
           <AnimatedText
             text="Checkin Lotado"

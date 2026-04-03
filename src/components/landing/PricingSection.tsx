@@ -9,7 +9,7 @@ const benefits = [
 
 const PricingSection = () => {
   return (
-    <section id="comprar" style={{ background: "#1A1208", padding: "96px 28px" }}>
+    <section id="comprar" style={{ background: "#1A1208", padding: "64px 28px" }}>
       <div className="max-w-[680px] mx-auto text-center">
         <div className="reveal">
           <div className="label-text text-cream-mid mb-3.5">Sua decisão</div>

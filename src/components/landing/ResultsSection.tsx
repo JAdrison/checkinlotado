@@ -108,7 +108,7 @@ const ResultsSection = () => {
   let globalIndex = 0;
 
   return (
-    <section style={{ background: "#EAE3CF", padding: "96px 28px" }}>
+    <section style={{ background: "#EAE3CF", padding: "64px 28px" }}>
       <div className="max-w-[1000px] mx-auto">
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">Resultados reais</div>

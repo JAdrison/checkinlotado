@@ -93,7 +93,7 @@ const StepsSection: React.FC = () => {
 
       <div
         className="relative z-10 max-w-[1100px] mx-auto"
-        style={{ padding: isMobile ? "64px 20px" : "100px 28px" }}
+        style={{ padding: isMobile ? "48px 20px" : "64px 28px" }}
       >
         {/* Header */}
         <div className="reveal text-center mb-4">

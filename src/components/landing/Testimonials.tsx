@@ -22,7 +22,7 @@ const metrics = [
 
 const Testimonials = () => {
   return (
-    <section className="relative overflow-hidden" style={{ padding: "64px 16px" }}>
+    <section className="relative overflow-hidden" style={{ padding: "48px 16px" }}>
       {/* Video background */}
       <video
         src="/videos/iparai-bg.mp4"

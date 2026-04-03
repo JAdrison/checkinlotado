@@ -20,7 +20,7 @@ const withoutMethod = [
 
 const ComparisonTable = () => {
   return (
-    <section style={{ background: "#FFFFFF" }} className="py-24 px-7">
+    <section style={{ background: "#FFFFFF" }} className="py-16 px-7">
       <div className="max-w-[900px] mx-auto">
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">Antes e depois</div>

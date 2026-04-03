@@ -3,7 +3,7 @@ import reformaImg from "@/assets/reforma-tributaria.png";
 
 const OTAComparisonSection = () => {
   return (
-    <section className="relative py-24 px-7" style={{ background: "#FFFFFF" }}>
+    <section className="relative py-16 px-7" style={{ background: "#FFFFFF" }}>
       <div className="max-w-[1100px] mx-auto">
         {/* Headline */}
         <div className="reveal text-center mb-16">
