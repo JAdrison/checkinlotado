@@ -21,39 +21,39 @@ const OTAComparisonSection = () => {
         <div className="reveal grid lg:grid-cols-2 gap-10 items-center mb-16">
           <div className="space-y-6">
             <div>
-              <h3 className="font-heading text-xl text-night md:text-xl">
+              <h3 className="font-heading text-2xl md:text-3xl font-black text-night">
                 3 coisas que todo dono de pousada precisa saber:
               </h3>
-              <p className="text-night/50 text-sm mt-1">
+              <p className="text-night/60 text-base mt-2">
                 Antes de precificar a próxima temporada
               </p>
             </div>
 
-            <div className="space-y-5">
+            <div className="space-y-6">
               <div className="flex gap-4 items-start">
-                <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">01</span>
+                <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">01</span>
                 <div>
-                  <p className="font-heading text-base text-night">Airbnb cobra 16% de comissão por reserva</p>
-                  <p className="text-night/50 text-sm">Direto do valor da diária, antes de qualquer imposto</p>
+                  <p className="font-heading text-lg font-bold text-night">Airbnb cobra 16% de comissão por reserva</p>
+                  <p className="text-night/60 text-base">Direto do valor da diária, antes de qualquer imposto</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">02</span>
+                <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">02</span>
                 <div>
-                  <p className="font-heading text-base text-night">Nota fiscal será obrigatória a partir de 2026</p>
-                  <p className="text-night/50 text-sm">Reforma Tributária equiparou temporada a hotelaria</p>
+                  <p className="font-heading text-lg font-bold text-night">Nota fiscal será obrigatória a partir de 2026</p>
+                  <p className="text-night/60 text-base">Reforma Tributária equiparou temporada a hotelaria</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">03</span>
+                <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">03</span>
                 <div>
-                  <p className="font-heading text-base text-night">Impostos podem tirar até 20% a mais da diária</p>
-                  <p className="text-night/50 text-sm">ISS municipal + novos tributos federais (IBS e CBS)</p>
+                  <p className="font-heading text-lg font-bold text-night">Impostos podem tirar até 20% a mais da diária</p>
+                  <p className="text-night/60 text-base">ISS municipal + novos tributos federais (IBS e CBS)</p>
                 </div>
               </div>
             </div>
 
-            <p className="text-ochre font-heading text-base">
+            <p className="text-ochre font-heading text-lg font-bold">
               → A conta precisa ser refeita agora.
             </p>
           </div>
