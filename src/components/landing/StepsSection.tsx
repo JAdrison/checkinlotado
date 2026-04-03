@@ -8,19 +8,19 @@ const steps = [
     num: "01",
     title: "Diagnóstico & Estratégia",
     description:
-      "Setup completo. Iniciamos os testes de público e ajustamos a IA para o seu perfil de hóspede.",
+      "Vamos identificar o que está travando hoje a sua hospedagem e fazer o seu plano estratégico.",
   },
   {
     num: "02",
-    title: "Lapidação",
+    title: "Geração de Demanda",
     description:
-      "Pegamos as campanhas e fluxos de atendimento que deram certo e otimizamos o custo por reserva.",
+      "Colocar o plano em prática e gerar pessoas interessadas para a tua hospedagem.",
   },
   {
     num: "03",
-    title: "Escala",
+    title: "Atendimento & Otimização",
     description:
-      "Aceleramos o investimento. Máquina validada operando em alta capacidade para lotar sua agenda.",
+      "Conseguir transformar essa demana em hóspedes que vão pagar pela sua estadia",
   },
 ];
 
@@ -41,7 +41,7 @@ const StepCircle = ({ num }: { num: string }) => (
         className="block font-heading text-[0.85rem] tracking-[0.08em]"
         style={{ color: "rgba(255,255,255,0.85)", fontStyle: "normal", fontWeight: 700 }}
       >
-        Mês
+        Passo
       </span>
       <span
         className="block font-heading text-[2.4rem] leading-none -mt-0.5"
@@ -150,7 +150,7 @@ const StepsSection: React.FC = () => {
                     className="block font-label text-[0.6rem] uppercase tracking-[0.18em] mb-1"
                     style={{ color: "var(--ochre)", opacity: 0.7 }}
                   >
-                    Mês {step.num}
+                    Passo {step.num}
                   </span>
                   <h3 className="font-heading text-[1.2rem] mb-2" style={{ color: "var(--cream-mid)" }}>
                     {step.title}
