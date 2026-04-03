@@ -107,7 +107,7 @@ const ModulesSection = () => {
             O plano detalhado que vai fazer a sua<br />
             <em className="shimmer-text">hospedagem decolar</em>
           </h2>
-          <p className="text-night/80 text-lg max-w-[640px] mx-auto mt-5 leading-relaxed">
+          <p className="text-night/80 text-xl max-w-[640px] mx-auto mt-5 leading-relaxed">
             Uma metodologia que transforma uma operação complexa em passos simples e aplicáveis.
           </p>
         </div>
