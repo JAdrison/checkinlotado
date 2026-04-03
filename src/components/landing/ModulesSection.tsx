@@ -81,6 +81,7 @@ const benefits = [
   "Parar de depender de feriadão para respirar financeiramente.",
   "Reduzir a ansiedade de chegar perto do fim de semana com baixa ocupação.",
   "Fazer a pousada girar melhor também na baixa temporada.",
+  "Parar de depender só de Booking, Airbnb, Hoteis.com e outras OTAs.",
 ];
 
 const ModulesSection = () => {
