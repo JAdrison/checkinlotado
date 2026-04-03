@@ -32,6 +32,7 @@ const items: CardStackItem[] = [
 ];
 
 const trustedLogos = [
+  { src: logoIparai, alt: "Iparaí" },
   { src: logoButterfly, alt: "Motel Butterfly" },
   { src: logoAgoba, alt: "Rancho Agobá" },
   { src: logoChoca, alt: "Village Choça" },
