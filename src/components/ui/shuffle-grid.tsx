@@ -48,32 +48,16 @@ const shuffle = (array: typeof squareData) => {
   return copy;
 };
 
-const generateSquares = () => {
-  return shuffle(squareData).map((sq) => (
-    <motion.div
-      key={sq.id}
-      layout
-      transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full"
-      style={{
-        backgroundImage: `url(${sq.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    />
-  ));
-};
-
 const ShuffleGrid = () => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [squares, setSquares] = useState(generateSquares());
+  const [shuffled, setShuffled] = useState(() => shuffle(squareData));
 
   useEffect(() => {
-    const shuffleSquares = () => {
-      setSquares(generateSquares());
-      timeoutRef.current = setTimeout(shuffleSquares, 3000);
+    const doShuffle = () => {
+      setShuffled(shuffle(squareData));
+      timeoutRef.current = setTimeout(doShuffle, 3000);
     };
-    shuffleSquares();
+    timeoutRef.current = setTimeout(doShuffle, 3000);
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
@@ -81,7 +65,19 @@ const ShuffleGrid = () => {
 
   return (
     <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1 rounded-2xl overflow-hidden">
-      {squares.map((sq) => sq)}
+      {shuffled.map((sq) => (
+        <motion.div
+          key={sq.id}
+          layout
+          transition={{ duration: 1.5, type: "spring" }}
+          className="w-full h-full"
+          style={{
+            backgroundImage: `url(${sq.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      ))}
     </div>
   );
 };
