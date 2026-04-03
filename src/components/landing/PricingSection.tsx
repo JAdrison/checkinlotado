@@ -27,7 +27,7 @@ const PricingSection = () => {
             {benefits.map((b, i) => (
               <div key={i} className="flex gap-2.5">
                 <span className="text-ochre flex-shrink-0">✓</span>
-                <span className="text-night/85 text-[0.87rem]">{b}</span>
+                <span className="text-night/85 text-base">{b}</span>
               </div>
             ))}
           </div>
