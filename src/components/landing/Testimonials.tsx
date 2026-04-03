@@ -111,6 +111,12 @@ const Testimonials = () => {
             </div>
           </div>
         </div>
+        {/* CTA */}
+        <div className="reveal text-center mt-12">
+          <a href="#comprar" className="btn-cta btn-cta-lg">
+            QUERO LOTAR MINHA HOSPEDAGEM →
+          </a>
+        </div>
       </div>
     </section>
   );

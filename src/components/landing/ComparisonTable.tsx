@@ -77,6 +77,12 @@ const ComparisonTable = () => {
             </ul>
           </div>
         </div>
+        {/* CTA */}
+        <div className="reveal text-center mt-12">
+          <a href="#comprar" className="btn-cta btn-cta-lg">
+            QUERO ENTRAR AGORA →
+          </a>
+        </div>
       </div>
     </section>
   );
