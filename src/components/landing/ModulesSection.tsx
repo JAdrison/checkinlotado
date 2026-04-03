@@ -136,7 +136,7 @@ const ModulesSection = () => {
                 <div className="w-6 h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5 text-ochre" />
                 </div>
-                <p className="text-night/80 text-sm leading-relaxed">{benefit}</p>
+                <p className="text-night/80 text-base leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>

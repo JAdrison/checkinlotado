@@ -208,7 +208,7 @@ const StepsSection: React.FC = () => {
                       <h3 className="font-heading text-[1.35rem] mb-3" style={{ color: "var(--cream-mid)" }}>
                         {step.title}
                       </h3>
-                      <p className="text-[0.9rem] leading-relaxed" style={{ color: "rgba(242,237,224,0.6)" }}>
+                      <p className="text-base leading-relaxed" style={{ color: "rgba(242,237,224,0.6)" }}>
                         {step.description}
                       </p>
                     </div>

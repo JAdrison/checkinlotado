@@ -13,8 +13,8 @@ const Stats = () => {
         {stats.map((s, i) => (
           <div key={i} className="reveal text-center" style={{ transitionDelay: `${i * 0.08}s` }}>
             <span className="text-3xl block mb-3">{s.emoji}</span>
-            <p className="font-semibold text-night text-[0.9rem] mb-1">{s.title}</p>
-            <p className="text-night/85 text-[0.78rem] leading-relaxed">{s.desc}</p>
+            <p className="font-semibold text-night text-base mb-1">{s.title}</p>
+            <p className="text-night/85 text-sm leading-relaxed">{s.desc}</p>
           </div>
         ))}
         </div>

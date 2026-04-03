@@ -61,7 +61,7 @@ const PricingSection = () => {
           </div>
           <div>
             <h3 className="font-semibold text-night mb-2">Risco zero por 7 dias</h3>
-            <p className="text-night/85 text-[0.87rem] leading-[1.7]">
+            <p className="text-night/85 text-base leading-[1.7]">
               Entre, assista e avalie com total tranquilidade. Se perceber que não faz sentido para o seu momento, peça reembolso dentro do prazo. Sem burocracia.
             </p>
           </div>

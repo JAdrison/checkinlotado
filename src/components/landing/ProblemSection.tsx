@@ -12,7 +12,7 @@ const ProblemSection = () => {
           </p>
         </div>
         <div className="divider-gold mb-10 reveal" />
-        <p className="text-night/80 text-center text-[0.92rem] leading-relaxed max-w-[580px] mx-auto reveal">
+        <p className="text-night/80 text-center text-base leading-relaxed max-w-[580px] mx-auto reveal">
           A verdade é que a demanda existe — mas ela precisa ser ativada com estratégia, antecedência e comunicação certa. É exatamente isso que o método <strong className="text-night">Check-in Lotado</strong> ensina.
         </p>
       </div>

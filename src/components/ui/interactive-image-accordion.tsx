@@ -48,7 +48,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
         }`}>
           {item.title}
         </h3>
-        <p className={`text-white/70 text-sm leading-relaxed mt-2 transition-all duration-500 ${
+        <p className={`text-white/70 text-base leading-relaxed mt-2 transition-all duration-500 ${
           isActive ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden`}>
           {item.desc}

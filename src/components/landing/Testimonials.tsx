@@ -42,7 +42,7 @@ const Testimonials = () => {
             4 Meses de Reservas Vendidas<br />
             <em className="shimmer-text">em Apenas 60 Dias</em>
           </h2>
-          <p className="text-cream/80 mt-4 text-[0.95rem] max-w-[500px] mx-auto">
+          <p className="text-cream/80 mt-4 text-lg max-w-[500px] mx-auto">
             Todos os finais de semana esgotados até janeiro
           </p>
         </div>
