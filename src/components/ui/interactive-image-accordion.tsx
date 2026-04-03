@@ -43,7 +43,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
         isActive ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}>
         <span
-          className="text-ochre font-heading text-sm md:text-base whitespace-nowrap tracking-wide font-bold"
+          className="text-ochre font-heading text-base md:text-lg whitespace-nowrap tracking-wide font-bold drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
           {item.phase}
@@ -54,7 +54,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
       <div className={`absolute inset-0 flex md:hidden items-center justify-center p-4 transition-opacity duration-500 ${
         isActive ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}>
-        <span className="text-ochre font-heading text-sm font-bold tracking-wide">
+        <span className="text-ochre font-heading text-base font-bold tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
           {item.phase}: {item.title}
         </span>
       </div>
@@ -63,7 +63,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEn
       <div className={`absolute bottom-0 left-0 right-0 p-6 transition-opacity duration-500 ${
         isActive ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}>
-        <span className="text-ochre text-xs font-bold uppercase tracking-[0.15em] font-label">
+        <span className="text-ochre text-sm font-bold uppercase tracking-[0.15em] font-label drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]">
           {item.phase}
         </span>
         <h3 className="font-heading text-white mt-1 text-xl md:text-2xl">
