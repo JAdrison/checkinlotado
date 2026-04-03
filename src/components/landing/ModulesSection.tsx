@@ -39,14 +39,14 @@ const modules = [
     phase: "Fase 04",
     title: "Campanhas de Marketing e Anúncios",
     desc: "Configure e lance campanhas que geram reservas diretas. Segmentação, orçamento e otimização passo a passo.",
-    imageUrl: module4,
+    imageUrl: module5,
   },
   {
     id: 5,
     phase: "Fase 05",
     title: "WhatsApp e Fechamento",
     desc: "Transforme contatos em reservas com scripts de persuasão, follow-up e processo eficiente.",
-    imageUrl: module5,
+    imageUrl: module4,
   },
   {
     id: 6,
