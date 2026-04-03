@@ -41,7 +41,7 @@ const StepCircle = ({ num }: { num: string }) => (
         className="block font-heading text-[0.85rem] tracking-[0.08em]"
         style={{ color: "rgba(255,255,255,0.85)", fontStyle: "normal", fontWeight: 700 }}
       >
-        Mês
+        Passo
       </span>
       <span
         className="block font-heading text-[2.4rem] leading-none -mt-0.5"
