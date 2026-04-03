@@ -5,8 +5,8 @@ import guilhermeImg from "@/assets/case-study/guilherme-couto.png";
 const metrics = [
   {
     icon: Check,
-    value: "4 Reservas",
-    label: "em um único final de semana",
+    value: "+ Faturamento",
+    label: "+71% de aumento no faturamento",
   },
   {
     icon: Calendar,
