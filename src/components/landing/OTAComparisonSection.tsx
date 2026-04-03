@@ -135,7 +135,7 @@ const OTAComparisonSection = () => {
                 <span className="font-heading text-xl text-night">{fmt(revenue)}</span>
               </div>
               <div className="flex justify-between items-center py-4 border-b border-night/5">
-                <span className="text-night/70 text-base">Comissão Airbnb (16%)</span>
+                <span className="text-night/70 text-base">Comissão Plataforma (16%)</span>
                 <span className="font-heading text-xl text-night">− {fmt(airbnbFee)}</span>
               </div>
               <div className="flex justify-between items-center py-4 border-b border-night/5">
