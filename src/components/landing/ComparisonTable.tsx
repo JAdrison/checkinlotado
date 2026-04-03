@@ -24,7 +24,7 @@ const ComparisonTable = () => {
       <div className="max-w-[900px] mx-auto">
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">Antes e depois</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-night leading-[1.2]">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2]">
             O que muda com o<br />
             <em className="shimmer-text font-extrabold">Check-in Lotado</em>
           </h2>

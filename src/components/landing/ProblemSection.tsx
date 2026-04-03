@@ -41,7 +41,7 @@ const ProblemSection = () => {
           {/* Frase 01 */}
           <div className="reveal text-center">
             <div className="label-text mb-3.5">O problema</div>
-            <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-night leading-[1.2] mb-5">
+            <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-5">
               Sua hospedagem <em className="shimmer-text font-extrabold">depende de feriados</em> para faturar?
             </h2>
             <p className="text-night/85 text-lg leading-relaxed max-w-[600px] mx-auto">

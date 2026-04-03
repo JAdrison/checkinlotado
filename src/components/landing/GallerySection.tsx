@@ -10,7 +10,7 @@ const GallerySection = () => {
             <div className="inline-block border border-ochre/30 rounded-full px-6 py-2.5 mb-6">
               <span className="label-text">HOSPEDAGENS QUE APLICARAM O MÉTODO</span>
             </div>
-            <h2 className="font-heading text-[clamp(1.8rem,4vw,3rem)] font-bold text-night leading-[1.2] mb-5">
+            <h2 className="font-heading text-[clamp(1.8rem,4vw,3rem)] font-black text-night leading-[1.2] mb-5">
               De ponta a ponta do Brasil,{" "}
               <em className="shimmer-text font-extrabold">lotando fins de semana</em>
             </h2>

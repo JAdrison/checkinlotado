@@ -10,7 +10,7 @@ const OTAComparisonSection = () => {
           <div className="label-text text-ochre mb-4">
             A conta que ninguém faz
           </div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold leading-[1.2] text-night">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black leading-[1.2] text-night">
             Quanto custa depender
             <br />
             <span className="shimmer-text font-extrabold">só do Airbnb</span>?

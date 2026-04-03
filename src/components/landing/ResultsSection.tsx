@@ -112,7 +112,7 @@ const ResultsSection = () => {
       <div className="max-w-[1000px] mx-auto">
         <div className="reveal text-center mb-14">
           <div className="label-text mb-3.5">Resultados reais</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-bold text-night leading-[1.2] mb-4">
+          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-4">
             Quem aplica o método, vende.<br />
             <em className="shimmer-text font-extrabold">Todo. Dia.</em>
           </h2>
