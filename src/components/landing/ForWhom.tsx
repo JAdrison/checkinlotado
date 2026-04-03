@@ -1,4 +1,5 @@
 import React from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
 import imgApartamento from "@/assets/forwhom/apartamento.png";
