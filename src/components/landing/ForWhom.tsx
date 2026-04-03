@@ -11,7 +11,6 @@ import imgCabana from "@/assets/forwhom/cabana.png";
 import imgPousada from "@/assets/forwhom/pousada.png";
 import imgHotel from "@/assets/forwhom/hotel.png";
 
-import logoIparai from "@/assets/logo-iparai.png";
 import logoButterfly from "@/assets/logos/motel-butterfly.png";
 import logoAgoba from "@/assets/logos/rancho-agoba.png";
 import logoChoca from "@/assets/logos/village-choca.png";
@@ -33,7 +32,6 @@ const items: CardStackItem[] = [
 ];
 
 const trustedLogos = [
-  { src: logoIparai, alt: "Iparaí" },
   { src: logoButterfly, alt: "Motel Butterfly" },
   { src: logoAgoba, alt: "Rancho Agobá" },
   { src: logoChoca, alt: "Village Choça" },
