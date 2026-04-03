@@ -55,7 +55,7 @@ const ComparisonTable = () => {
           </div>
 
           {/* Card negativo */}
-          <div className="bg-white rounded-2xl p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+          <div className="bg-[#FAF8F4] rounded-2xl p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
             <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
               <TrendingDown className="w-6 h-6 text-red-500" />
             </div>
