@@ -44,9 +44,9 @@ const trustedLogos = [
 ];
 
 const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
-  <div className="flex-shrink-0 px-10 flex items-center justify-center" style={{ width: 220, height: 90 }}>
+  <div className="flex-shrink-0 px-12 flex items-center justify-center" style={{ width: 280, height: 120 }}>
     {logo.src ? (
-      <img src={logo.src} alt={logo.alt} className="h-10 w-auto max-w-[140px] object-contain opacity-85 hover:opacity-100 transition-opacity duration-300" style={{ mixBlendMode: 'multiply' }} />
+      <img src={logo.src} alt={logo.alt} className="h-16 w-auto max-w-[200px] object-contain opacity-85 hover:opacity-100 transition-opacity duration-300" style={{ mixBlendMode: 'multiply' }} />
     ) : (
       <div className="h-10 w-28 rounded-lg border border-dashed flex items-center justify-center text-xs font-label uppercase tracking-widest" style={{ borderColor: 'var(--ochre)', color: 'var(--ochre)', opacity: 0.35 }}>
         Logo
