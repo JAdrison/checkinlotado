@@ -24,7 +24,7 @@ const Hero = () => {
             Como lotar sua hospedagem em{" "}
             <em className="shimmer-text">fins de semana comuns</em>
           </h1>
-          <p className="text-night/85 text-lg max-w-[560px] mx-auto leading-relaxed">
+          <p className="text-night/85 text-xl max-w-[560px] mx-auto leading-relaxed">
             Sem depender de feriados, sem baixar preço, sem improvisar campanha em cima da hora.
           </p>
         </div>
