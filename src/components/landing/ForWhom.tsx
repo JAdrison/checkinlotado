@@ -51,6 +51,7 @@ const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
 );
 
 const ForWhom: React.FC = () => {
+  const isMobile = useIsMobile();
 
   return (
     <>
