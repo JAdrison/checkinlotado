@@ -1,9 +1,10 @@
 import { AlertTriangle } from "lucide-react";
+import reformaImg from "@/assets/reforma-tributaria.png";
 
 const OTAComparisonSection = () => {
   return (
     <section className="relative py-24 px-7 bg-cream-dark">
-      <div className="max-w-[700px] mx-auto">
+      <div className="max-w-[1100px] mx-auto">
         {/* Headline */}
         <div className="reveal text-center mb-16">
           <div className="label-text text-ochre mb-4">
@@ -16,47 +17,57 @@ const OTAComparisonSection = () => {
           </h2>
         </div>
 
-        {/* Subheadline — 3 fatos */}
-        <div className="reveal space-y-6 mb-16">
-          <div>
-            <h3 className="font-heading text-xl md:text-2xl text-night">
-              3 coisas que todo dono de pousada precisa saber:
-            </h3>
-            <p className="text-night/50 text-sm mt-1">
-              Antes de precificar a próxima temporada
+        {/* Subheadline — 3 fatos + imagem lado a lado */}
+        <div className="reveal grid lg:grid-cols-2 gap-10 items-center mb-16">
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-heading text-xl md:text-2xl text-night">
+                3 coisas que todo dono de pousada precisa saber:
+              </h3>
+              <p className="text-night/50 text-sm mt-1">
+                Antes de precificar a próxima temporada
+              </p>
+            </div>
+
+            <div className="space-y-5">
+              <div className="flex gap-4 items-start">
+                <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">01</span>
+                <div>
+                  <p className="font-heading text-base text-night">Airbnb cobra 16% de comissão por reserva</p>
+                  <p className="text-night/50 text-sm">Direto do valor da diária, antes de qualquer imposto</p>
+                </div>
+              </div>
+              <div className="flex gap-4 items-start">
+                <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">02</span>
+                <div>
+                  <p className="font-heading text-base text-night">Nota fiscal será obrigatória a partir de 2026</p>
+                  <p className="text-night/50 text-sm">Reforma Tributária equiparou temporada a hotelaria</p>
+                </div>
+              </div>
+              <div className="flex gap-4 items-start">
+                <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">03</span>
+                <div>
+                  <p className="font-heading text-base text-night">Impostos podem tirar até 20% a mais da diária</p>
+                  <p className="text-night/50 text-sm">ISS municipal + novos tributos federais (IBS e CBS)</p>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-ochre font-heading text-base">
+              → A conta precisa ser refeita agora.
             </p>
           </div>
 
-          <div className="space-y-5">
-            <div className="flex gap-4 items-start">
-              <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">01</span>
-              <div>
-                <p className="font-heading text-base text-night">Airbnb cobra 16% de comissão por reserva</p>
-                <p className="text-night/50 text-sm">Direto do valor da diária, antes de qualquer imposto</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start">
-              <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">02</span>
-              <div>
-                <p className="font-heading text-base text-night">Nota fiscal será obrigatória a partir de 2026</p>
-                <p className="text-night/50 text-sm">Reforma Tributária equiparou temporada a hotelaria</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start">
-              <span className="w-10 h-10 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm">03</span>
-              <div>
-                <p className="font-heading text-base text-night">Impostos podem tirar até 20% a mais da diária</p>
-                <p className="text-night/50 text-sm">ISS municipal + novos tributos federais (IBS e CBS)</p>
-              </div>
-            </div>
+          {/* Imagem da reportagem */}
+          <div className="rounded-2xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
+            <img src={reformaImg} alt="Reportagem sobre Reforma Tributária 2026 — nova carga tributária para locação" className="w-full h-auto" />
           </div>
-
-          <p className="text-ochre font-heading text-base">
-            → A conta precisa ser refeita agora.
-          </p>
         </div>
 
         {/* Cálculo simples */}
+
+        {/* Cálculo simples */}
+        <div className="max-w-[700px] mx-auto">
         <div className="reveal rounded-2xl p-8 md:p-10 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
           <div className="space-y-0">
             <div className="flex justify-between items-center py-4 border-b border-night/5">
@@ -86,6 +97,7 @@ const OTAComparisonSection = () => {
               200 diárias/ano × R$ 200 = <strong className="text-night/70">R$ 40.000/ano</strong> saindo do seu faturamento
             </p>
           </div>
+        </div>
         </div>
 
         {/* Bottom text */}
