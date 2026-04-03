@@ -1,47 +1,26 @@
 
 
-## Nova Seção: Comparação Curso vs OTAs (Airbnb/Booking)
+## Redesign da Seção OTA Comparison — Estilo Claro e Premium
 
-### Conceito
-Uma seção impactante antes do pricing que mostra quanto o hoteleiro **perde por ano** com comissões de OTAs, criando o contraste mental para quando ver o valor do curso depois. Inspirada no estilo visual do carrossel (números grandes em destaque, simulações com valores, tons escuros para drama).
+### Problema
+A seção atual usa fundo preto (`#0F0C06`), vermelhos agressivos (`#E74C3C`), e glassmorphism escuro — completamente fora do padrão visual do resto da landing page que usa tons claros (cream `#F5EFE0`, branco, ochre `#C8943A`).
 
-### Estrutura Visual
+### Solução
+Redesenhar o `OTAComparisonSection.tsx` seguindo exatamente o mesmo padrão visual do `ComparisonTable.tsx` e `PricingSection.tsx`:
 
-```text
-┌─────────────────────────────────────────────────────┐
-│  Fundo escuro (#1A1208) + foto hospedagem overlay   │
-│                                                     │
-│  "Quanto você paga para vender pelo Airbnb?"        │
-│                                                     │
-│  ┌──────────────────┐    ┌──────────────────┐       │
-│  │  AIRBNB / OTAs   │    │  CHECK-IN LOTADO │       │
-│  │                  │    │                  │       │
-│  │  16% comissão    │    │  Venda direta    │       │
-│  │  Nota fiscal     │    │  Sem comissão    │       │
-│  │  Sem controle    │    │  Controle total  │       │
-│  │                  │    │                  │       │
-│  │  ─R$24.000/ano   │    │  Investimento    │       │
-│  │  (perdidos)      │    │  único           │       │
-│  └──────────────────┘    └──────────────────┘       │
-│                                                     │
-│  "Em 10 reservas, a plataforma leva R$..."          │
-│  "Com o método, você aprende a não depender mais."  │
-└─────────────────────────────────────────────────────┘
-```
+- **Fundo**: `cream` (`#F5EFE0`) ou `cream-dark` (`#EAE3CF`)
+- **Cards**: Fundo branco com `shadow-[0_2px_20px_rgba(0,0,0,0.06)]` e `rounded-2xl`
+- **Cores**: Ochre para positivo, `night/50` ou cinza suave para negativo (sem vermelho agressivo)
+- **Tipografia**: `font-heading` com `text-night`, labels com `label-text`, shimmer no destaque
+- **Ícones**: Ochre para check, `night/40` para X (tons suaves)
 
-### Layout em 3 blocos
+### Estrutura mantida, visual ajustado
 
-1. **Headline** — Label + título dramático ("Quanto custa depender do Airbnb?")
-2. **Simulação numérica** — Caixa estilo slide 4 do carrossel: diária R$500, comissão 16% = R$80/reserva, 300 diárias/ano = **R$24.000 perdidos**. Números grandes em gold/vermelho.
-3. **Comparação lado a lado** — Dois cards:
-   - **OTAs**: fundo escuro com borda vermelha sutil, lista de desvantagens (comissão, sem controle, dependência)
-   - **Check-in Lotado**: fundo escuro com borda gold, lista de vantagens (venda direta, margem, estratégia). **Sem revelar preço** — apenas "investimento único que se paga na primeira reserva direta"
+1. **Headline** — Mesma estrutura com `label-text` + `font-heading` + `shimmer-text`
+2. **Simulação numérica** — Card branco com sombra suave, números em `text-night` e `text-ochre`, valor perdido em `text-night/60` (sem vermelho)
+3. **Cards de comparação** — Dois cards brancos lado a lado (igual ComparisonTable): card OTA com ícone `TrendingDown` em tom neutro, card Check-in Lotado com ícone `TrendingUp` em ochre
+4. **Bottom text** — `text-night/60` com destaque ochre
 
-### Detalhes Técnicos
-
-- **Novo arquivo**: `src/components/landing/OTAComparisonSection.tsx`
-- **Posição**: Entre `GallerySection` e `PricingSection` no `Index.tsx`
-- **Estilo**: Fundo escuro com imagem de hospedagem (Unsplash) + overlay, glassmorphism cards, tipografia Playfair Display para números grandes, cores ochre/gold para destaque positivo e vermelho warm para valores negativos
-- **Responsivo**: Cards lado a lado no desktop, empilhados no mobile
-- **Animação**: Classes `reveal` existentes
+### Arquivo modificado
+- `src/components/landing/OTAComparisonSection.tsx` — Reescrita completa do estilo, mantendo o mesmo conteúdo/dados
 
