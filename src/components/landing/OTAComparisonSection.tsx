@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { trackEvent } from "@/lib/meta-capi";
 import { AlertTriangle, CheckCircle, XCircle } from "lucide-react";
-import reformaImg from "@/assets/reforma-tributaria.png";
+import reformaImg from "@/assets/reforma-tributaria.webp";
 import { Slider } from "@/components/ui/slider";
 
 const fmt = (v: number) =>
