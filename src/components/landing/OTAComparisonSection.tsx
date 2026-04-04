@@ -86,7 +86,7 @@ const OTAComparisonSection = () => {
             </h3>
 
             {/* Inputs */}
-            <div className="grid sm:grid-cols-2 gap-8 mb-10">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10">
               {/* Diária */}
               <div className="space-y-3">
                 <div className="flex justify-between items-baseline">
