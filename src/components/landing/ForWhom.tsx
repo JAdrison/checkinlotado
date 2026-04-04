@@ -61,13 +61,13 @@ const ForWhom: React.FC = () => {
   return (
     <>
       {/* Card stack section - cream background */}
-      <section style={{ background: "#F2EDE0", padding: isMobile ? "48px 16px 24px" : "64px 28px 32px" }}>
+      <section style={{ background: "#F2EDE0", padding: isMobile ? "40px 16px 20px" : "64px 28px 32px" }}>
         <div className="max-w-[1100px] mx-auto">
-          <div className="reveal text-center mb-10">
-            <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-4">
+          <div className="reveal text-center mb-8 sm:mb-10">
+            <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-3 sm:mb-4">
               Esse método é para o seu tipo de <em className="shimmer-text font-extrabold">hospedagem</em>
             </h2>
-            <p className="text-night/85 text-lg leading-relaxed max-w-[520px] mx-auto">
+            <p className="text-night/85 text-[0.9rem] sm:text-lg leading-relaxed max-w-[520px] mx-auto">
               De apartamentos urbanos a pousadas no interior — o método funciona para quem quer lotar com estratégia.
             </p>
           </div>
