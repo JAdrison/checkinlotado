@@ -117,12 +117,12 @@ const ModulesSection = () => {
         </div>
 
         {/* O que você vai conquistar */}
-        <div className="reveal mt-20">
-          <div className="text-center mb-10">
-            <span className="font-label text-sm tracking-[0.22em] uppercase text-ochre">
+        <div className="reveal mt-14 sm:mt-20">
+          <div className="text-center mb-8 sm:mb-10">
+            <span className="font-label text-xs sm:text-sm tracking-[0.22em] uppercase text-ochre">
               Sua hospedagem com vendas previsíveis
             </span>
-            <h3 className="font-heading text-[clamp(1.4rem,3vw,2.2rem)] text-night leading-[1.2] mt-3">
+            <h3 className="font-heading text-[1.2rem] sm:text-[clamp(1.4rem,3vw,2.2rem)] text-night leading-[1.2] mt-3">
               Aplicando o Check-in Lotado, você vai conseguir:
             </h3>
           </div>
