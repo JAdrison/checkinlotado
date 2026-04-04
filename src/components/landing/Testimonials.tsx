@@ -22,7 +22,7 @@ const metrics = [
 
 const Testimonials = () => {
   return (
-    <section className="relative overflow-hidden" style={{ padding: "48px 16px" }}>
+    <section className="relative overflow-hidden" style={{ padding: "40px 16px" }}>
       {/* Video background */}
       <video
         src="/videos/iparai-bg.mp4"
@@ -36,13 +36,13 @@ const Testimonials = () => {
 
       <div className="relative z-10 max-w-[1100px] mx-auto">
         {/* Header */}
-        <div className="reveal text-center mb-14">
-          <div className="label-text mb-3.5" style={{ color: "rgba(255,255,255,0.7)" }}>Caso real</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.2]">
+        <div className="reveal text-center mb-8 sm:mb-14">
+          <div className="label-text mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Caso real</div>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.15]">
             4 Meses de Reservas Vendidas<br />
             <em className="shimmer-text font-extrabold">em Apenas 60 Dias</em>
           </h2>
-          <p className="text-cream/80 mt-4 text-lg max-w-[500px] mx-auto">
+          <p className="text-cream/80 mt-3 sm:mt-4 text-[0.9rem] sm:text-lg max-w-[500px] mx-auto">
             Todos os finais de semana esgotados
           </p>
         </div>
