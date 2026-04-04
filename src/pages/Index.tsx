@@ -38,6 +38,10 @@ const faq = [
 const Index = () => {
   useReveal();
 
+  useEffect(() => {
+    trackEvent("PageView");
+  }, []);
+
   return (
     <div className="min-h-screen">
       
