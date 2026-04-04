@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/meta-capi";
 
 const StickyBar = () => {
   const [show, setShow] = useState(false);
