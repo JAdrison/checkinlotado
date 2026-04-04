@@ -16,12 +16,12 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
   };
 
   return (
-    <section style={{ background: bgColor, padding: "64px 28px" }}>
+    <section style={{ background: bgColor }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[800px] mx-auto">
-        <div className="reveal text-center mb-14">
-          <div className="label-text mb-3.5">{label}</div>
+        <div className="reveal text-center mb-8 sm:mb-14">
+          <div className="label-text mb-3">{label}</div>
           <h2
-            className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2]"
+            className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15]"
             dangerouslySetInnerHTML={{
               __html: `${titleBefore}<br/><em class="shimmer-text font-extrabold">${titleHighlight}</em>`,
             }}
