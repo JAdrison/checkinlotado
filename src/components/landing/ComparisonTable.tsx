@@ -30,32 +30,32 @@ const ComparisonTable = () => {
           </h2>
         </div>
 
-        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {/* Card positivo */}
-          <div className="bg-[#FAF8F4] rounded-2xl p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
-            <div className="w-12 h-12 rounded-xl bg-ochre/10 flex items-center justify-center mb-5">
-              <TrendingUp className="w-6 h-6 text-ochre" />
+          <div className="bg-[#FAF8F4] rounded-2xl p-5 sm:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
+            <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-ochre/10 flex items-center justify-center mb-4 sm:mb-5">
+              <TrendingUp className="w-5 sm:w-6 h-5 sm:h-6 text-ochre" />
             </div>
-            <h3 className="font-heading text-xl text-night mb-6">
+            <h3 className="font-heading text-lg sm:text-xl text-night mb-4 sm:mb-6">
               Com o <span className="text-ochre font-bold">Check-in Lotado</span>
             </h3>
             <ul className="space-y-0">
               {withMethod.map((item, i) => (
                 <li
                   key={i}
-                  className={`flex items-start gap-3 py-4 ${i < withMethod.length - 1 ? "border-b border-night/5" : ""}`}
+                  className={`flex items-start gap-2.5 sm:gap-3 py-3 sm:py-4 ${i < withMethod.length - 1 ? "border-b border-night/5" : ""}`}
                 >
                   <span className="mt-0.5 w-5 h-5 rounded-full bg-ochre/15 flex items-center justify-center shrink-0">
                     <Check className="w-3 h-3 text-ochre" strokeWidth={3} />
                   </span>
-                  <span className="text-night text-[0.95rem] leading-snug">{item}</span>
+                  <span className="text-night text-[0.85rem] sm:text-[0.95rem] leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Card negativo */}
-          <div className="bg-[#FAF8F4] rounded-2xl p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
+          <div className="bg-[#FAF8F4] rounded-2xl p-5 sm:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
             <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
               <TrendingDown className="w-6 h-6 text-red-500" />
             </div>
