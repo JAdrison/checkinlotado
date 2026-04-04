@@ -90,12 +90,12 @@ const benefits = [
 const ModulesSection = () => {
   return (
     <section style={{ background: "#EAE3CF", overflow: "hidden" }}>
-      <div className="mx-auto max-w-[1200px]" style={{ padding: "64px 28px" }}>
-        <div className="reveal text-center mb-16">
+      <div className="mx-auto max-w-[1200px] py-10 sm:py-16 px-4 sm:px-7">
+        <div className="reveal text-center mb-10 sm:mb-16">
           <AnimatedText
             text="Checkin Lotado"
             as="span"
-            textClassName="font-label text-sm tracking-[0.22em] uppercase"
+            textClassName="font-label text-xs sm:text-sm tracking-[0.22em] uppercase"
             underlineGradient="from-ochre via-ochre-light to-ochre"
             underlineHeight="h-0.5"
             underlineOffset="-bottom-1"
@@ -103,11 +103,11 @@ const ModulesSection = () => {
             delay={0.05}
             className="mb-3.5"
           />
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mt-4">
-            O plano detalhado que vai fazer a sua<br />
-            <em className="shimmer-text font-extrabold">hospedagem decolar</em>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mt-4">
+            O plano detalhado que vai fazer a sua<br className="hidden sm:block" />
+            <em className="shimmer-text font-extrabold"> hospedagem decolar</em>
           </h2>
-          <p className="text-night/80 text-xl max-w-[640px] mx-auto mt-5 leading-relaxed">
+          <p className="text-night/80 text-[0.9rem] sm:text-xl max-w-[640px] mx-auto mt-4 sm:mt-5 leading-relaxed">
             Uma metodologia que transforma uma operação complexa em passos simples e aplicáveis.
           </p>
         </div>
