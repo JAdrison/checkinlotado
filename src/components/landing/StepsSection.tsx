@@ -93,17 +93,17 @@ const StepsSection: React.FC = () => {
 
       <div
         className="relative z-10 max-w-[1100px] mx-auto"
-        style={{ padding: isMobile ? "48px 20px" : "64px 28px" }}
+        style={{ padding: isMobile ? "40px 16px" : "64px 28px" }}
       >
         {/* Header */}
         <div className="reveal text-center mb-4">
           <span className="label-text">Sua jornada</span>
         </div>
-        <div className="reveal text-center" style={{ marginBottom: isMobile ? 48 : 64 }}>
+        <div className="reveal text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
           <h2
             className="font-heading font-black leading-[1.2]"
             style={{
-              fontSize: "clamp(1.9rem, 4vw, 3.3rem)",
+              fontSize: isMobile ? "1.6rem" : "clamp(1.9rem, 4vw, 3.3rem)",
               color: "var(--cream-mid)",
             }}
           >
