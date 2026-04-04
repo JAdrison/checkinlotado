@@ -1,4 +1,5 @@
 import heroBg from "@/assets/hero-bg.jpg";
+import { trackEvent } from "@/lib/meta-capi";
 
 const bullets = [
   "Por que sua hospedagem não lota fins de semana comuns — e como mudar isso",
