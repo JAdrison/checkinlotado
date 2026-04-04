@@ -1,4 +1,5 @@
 import ShuffleGrid from "@/components/ui/shuffle-grid";
+import { trackEvent } from "@/lib/meta-capi";
 
 const GallerySection = () => {
   return (
