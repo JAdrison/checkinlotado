@@ -18,14 +18,14 @@ const OTAComparisonSection = () => {
   const annualLoss = totalLoss * 120;
 
   return (
-    <section className="relative py-16 px-7" style={{ background: "#FFFFFF" }}>
+    <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#FFFFFF" }}>
       <div className="max-w-[1100px] mx-auto">
         {/* Headline */}
-        <div className="reveal text-center mb-16">
-          <div className="label-text text-ochre mb-4">
+        <div className="reveal text-center mb-10 sm:mb-16">
+          <div className="label-text text-ochre mb-3 sm:mb-4">
             A conta que ninguém faz
           </div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black leading-[1.2] text-night">
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black leading-[1.15] text-night">
             Quanto custa depender
             <br />
             <span className="shimmer-text font-extrabold">só de Plataformas</span>?
