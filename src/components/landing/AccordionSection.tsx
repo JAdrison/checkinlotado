@@ -38,7 +38,7 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
                 onClick={() => toggle(i)}
                 className="w-full text-left py-4 sm:py-5 px-4 sm:px-5 flex justify-between items-center bg-transparent border-none cursor-pointer gap-3 sm:gap-4"
               >
-                <span className="text-night font-semibold text-[0.92rem] leading-snug">
+                <span className="text-night font-semibold text-[0.85rem] sm:text-[0.92rem] leading-snug">
                   {item.question}
                 </span>
                 <span

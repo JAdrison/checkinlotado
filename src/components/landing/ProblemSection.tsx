@@ -64,7 +64,7 @@ const ProblemSection = () => {
 
           {/* Frase 02 */}
           <div className="reveal text-center">
-            <p className="text-night/80 text-base leading-relaxed max-w-[580px] mx-auto">
+            <p className="text-night/80 text-sm sm:text-base leading-relaxed max-w-[580px] mx-auto">
               A verdade é que a demanda existe — mas ela precisa ser ativada com estratégia, antecedência e comunicação certa. É exatamente isso que o método <strong className="text-night">Check-in Lotado</strong> ensina.
             </p>
           </div>

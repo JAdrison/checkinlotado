@@ -55,15 +55,15 @@ const PricingSection = () => {
         </div>
 
         {/* Guarantee */}
-        <div className="reveal flex flex-col sm:flex-row items-center gap-4 sm:gap-6 p-5 sm:p-6 border border-ochre/20 rounded-lg text-left text-center sm:text-left" style={{ background: "rgba(234,227,207,0.05)" }}>
+        <div className="reveal flex flex-col sm:flex-row items-center gap-3 sm:gap-6 p-4 sm:p-6 border border-ochre/20 rounded-lg text-left text-center sm:text-left" style={{ background: "rgba(234,227,207,0.05)" }}>
           <div className="g-circle">
             <span className="text-ochre font-label font-extrabold text-[1.8rem] leading-none">7</span>
             <span className="text-ochre font-label font-bold text-[0.62rem] tracking-[0.1em]">DIAS</span>
             <span className="text-cream-mid/50 text-[0.58rem] tracking-[0.05em] mt-[3px]">GARANTIA</span>
           </div>
           <div>
-            <h3 className="font-semibold text-cream mb-2">Risco zero por 7 dias</h3>
-            <p className="text-cream-mid text-base leading-[1.7]">
+            <h3 className="font-semibold text-cream mb-1.5 sm:mb-2 text-sm sm:text-base">Risco zero por 7 dias</h3>
+            <p className="text-cream-mid text-sm sm:text-base leading-[1.7]">
               Entre, assista e avalie com total tranquilidade. Se perceber que não faz sentido para o seu momento, peça reembolso dentro do prazo. Sem burocracia.
             </p>
           </div>
