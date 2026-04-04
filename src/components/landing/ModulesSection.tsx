@@ -127,16 +127,16 @@ const ModulesSection = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[800px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 max-w-[800px] mx-auto">
             {benefits.map((benefit, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-white rounded-xl p-5 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5"
+                className="flex items-start gap-2.5 sm:gap-3 bg-white rounded-xl p-4 sm:p-5 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5"
               >
-                <div className="w-6 h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-ochre" />
+                <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-ochre" />
                 </div>
-                <p className="text-night/80 text-base leading-relaxed">{benefit}</p>
+                <p className="text-night/80 text-sm sm:text-base leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>

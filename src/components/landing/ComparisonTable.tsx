@@ -66,12 +66,12 @@ const ComparisonTable = () => {
               {withoutMethod.map((item, i) => (
                 <li
                   key={i}
-                  className={`flex items-start gap-3 py-4 ${i < withoutMethod.length - 1 ? "border-b border-night/5" : ""}`}
+                  className={`flex items-start gap-2.5 sm:gap-3 py-3 sm:py-4 ${i < withoutMethod.length - 1 ? "border-b border-night/5" : ""}`}
                 >
                   <span className="mt-0.5 w-5 h-5 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
                     <X className="w-3 h-3 text-red-400" strokeWidth={3} />
                   </span>
-                  <span className="text-night/85 text-[0.95rem] leading-snug">{item}</span>
+                  <span className="text-night/85 text-[0.85rem] sm:text-[0.95rem] leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
