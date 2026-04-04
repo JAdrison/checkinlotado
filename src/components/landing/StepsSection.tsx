@@ -114,9 +114,9 @@ const StepsSection: React.FC = () => {
 
         {isMobile ? (
           /* ── MOBILE: vertical timeline ── */
-          <div className="relative pl-8">
+          <div className="relative pl-6">
             <div
-              className="absolute left-[18px] top-[60px] bottom-[60px] w-[2px]"
+              className="absolute left-[14px] top-[40px] bottom-[40px] w-[2px]"
               style={{
                 background:
                   "linear-gradient(180deg, transparent 0%, var(--ochre) 15%, var(--ochre) 85%, transparent 100%)",
@@ -124,21 +124,21 @@ const StepsSection: React.FC = () => {
               }}
             />
             {steps.map((step, i) => (
-              <div key={i} className="reveal relative flex items-start gap-5 mb-10 last:mb-0">
+              <div key={i} className="reveal relative flex items-start gap-3 mb-8 last:mb-0">
                 <div
                   className="relative z-10 flex-shrink-0 flex items-center justify-center rounded-full"
                   style={{
-                    width: 44,
-                    height: 44,
+                    width: 36,
+                    height: 36,
                     background: "radial-gradient(circle at 40% 35%, #3D2B14 0%, #1A1208 60%, #0F0C06 100%)",
-                    border: "2.5px solid var(--ochre)",
+                    border: "2px solid var(--ochre)",
                     boxShadow: "0 0 20px rgba(200,148,58,0.25), 0 0 0 1px rgba(200,148,58,0.08)",
                   }}
                 >
-                  <span className="font-heading text-[0.9rem] text-white font-bold">{step.num}</span>
+                  <span className="font-heading text-[0.8rem] text-white font-bold">{step.num}</span>
                 </div>
                 <div
-                  className="flex-1 rounded-2xl p-5"
+                  className="flex-1 min-w-0 rounded-2xl p-4"
                   style={{
                     background: "rgba(255,255,255,0.04)",
                     backdropFilter: "blur(16px)",
@@ -147,15 +147,15 @@ const StepsSection: React.FC = () => {
                   }}
                 >
                   <span
-                    className="block font-label text-[0.6rem] uppercase tracking-[0.18em] mb-1"
+                    className="block font-label text-[0.55rem] uppercase tracking-[0.18em] mb-1"
                     style={{ color: "var(--ochre)", opacity: 0.7 }}
                   >
                     Passo {step.num}
                   </span>
-                  <h3 className="font-heading text-[1.2rem] mb-2" style={{ color: "var(--cream-mid)" }}>
+                  <h3 className="font-heading text-[1.05rem] mb-1.5" style={{ color: "var(--cream-mid)" }}>
                     {step.title}
                   </h3>
-                  <p className="text-base leading-relaxed" style={{ color: "rgba(242,237,224,0.65)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(242,237,224,0.65)" }}>
                     {step.description}
                   </p>
                 </div>
