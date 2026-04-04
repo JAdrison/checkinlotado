@@ -1,7 +1,7 @@
 import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ChevronRight } from "lucide-react";
-import stepsBg from "@/assets/steps-bg.jpg";
+import stepsBg from "@/assets/steps-bg.webp";
 
 const steps = [
   {

@@ -9,11 +9,11 @@ import print6 from "@/assets/prints/print-6.jpg";
 import print7 from "@/assets/prints/print-7.jpg";
 import print8 from "@/assets/prints/print-8.jpg";
 import print9 from "@/assets/prints/print-9.jpg";
-import print10 from "@/assets/prints/print-10.png";
-import print11 from "@/assets/prints/print-11.png";
-import print12 from "@/assets/prints/print-12.png";
-import print13 from "@/assets/prints/print-13.png";
-import print14 from "@/assets/prints/print-14.png";
+import print10 from "@/assets/prints/print-10.webp";
+import print11 from "@/assets/prints/print-11.webp";
+import print12 from "@/assets/prints/print-12.webp";
+import print13 from "@/assets/prints/print-13.webp";
+import print14 from "@/assets/prints/print-14.webp";
 
 const allPrints = [
   print1, print2, print3, print4, print5, print6, print7,

@@ -103,6 +103,9 @@ const Testimonials = () => {
                   src={guilhermeImg}
                   alt="Guilherme Couto"
                   className="w-11 h-11 rounded-full object-cover"
+                  width={44}
+                  height={44}
+                  loading="lazy"
                 />
                 <div>
                   <p className="text-cream text-base font-semibold">

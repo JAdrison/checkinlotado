@@ -30,19 +30,8 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Video — protagonista */}
-        <div className="reveal w-full max-w-[900px]">
-          <div className="video-box relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/m_EClZVmHXY?modestbranding=1&rel=0&showinfo=0&controls=0&disablekb=1&iv_load_policy=3"
-              title="VSL - Check in Lotado"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
+        {/* Video — protagonista (lazy YouTube facade) */}
+        <YouTubeFacade videoId="m_EClZVmHXY" />
 
         {/* Bullets 2x2 */}
         <p className="reveal text-night/70 text-sm sm:text-base font-heading font-semibold mt-8 sm:mt-10 mb-2">Nessa Aula você vai aprender:</p>
