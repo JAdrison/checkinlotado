@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { trackEvent } from "@/lib/meta-capi";
 
@@ -6,19 +6,18 @@ import Hero from "@/components/landing/Hero";
 import Ticker from "@/components/landing/Ticker";
 import Stats from "@/components/landing/Stats";
 
-import ForWhom from "@/components/landing/ForWhom";
-import ModulesSection from "@/components/landing/ModulesSection";
-import StepsSection from "@/components/landing/StepsSection";
-import ComparisonTable from "@/components/landing/ComparisonTable";
-import AccordionSection from "@/components/landing/AccordionSection";
-import Testimonials from "@/components/landing/Testimonials";
-import ResultsSection from "@/components/landing/ResultsSection";
-import GallerySection from "@/components/landing/GallerySection";
-import OTAComparisonSection from "@/components/landing/OTAComparisonSection";
-import PricingSection from "@/components/landing/PricingSection";
-import FinalCTA from "@/components/landing/FinalCTA";
-import Footer from "@/components/landing/Footer";
-
+const ForWhom = lazy(() => import("@/components/landing/ForWhom"));
+const Testimonials = lazy(() => import("@/components/landing/Testimonials"));
+const ModulesSection = lazy(() => import("@/components/landing/ModulesSection"));
+const StepsSection = lazy(() => import("@/components/landing/StepsSection"));
+const ComparisonTable = lazy(() => import("@/components/landing/ComparisonTable"));
+const AccordionSection = lazy(() => import("@/components/landing/AccordionSection"));
+const ResultsSection = lazy(() => import("@/components/landing/ResultsSection"));
+const GallerySection = lazy(() => import("@/components/landing/GallerySection"));
+const OTAComparisonSection = lazy(() => import("@/components/landing/OTAComparisonSection"));
+const PricingSection = lazy(() => import("@/components/landing/PricingSection"));
+const FinalCTA = lazy(() => import("@/components/landing/FinalCTA"));
+const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const objections = [
   { question: "Aqui só lota em feriado. Fora disso, não tem demanda.", answer: 'Se em algum momento enche, então a procura existe. Feriado não cria interesse do zero — apenas concentra atenção. Você está confundindo <strong style="color:#1A1208">ausência de procura espontânea</strong> com ausência de mercado. O método existe para ativar essa demanda que já existe.' },
@@ -44,30 +43,29 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      
       <Hero />
       <Ticker />
       <Stats />
-      <ForWhom />
-      <Testimonials />
-      <ModulesSection />
-      <StepsSection />
-      <ComparisonTable />
-      
-      <ResultsSection />
-      <GallerySection />
-      <OTAComparisonSection />
-      <PricingSection />
-      <AccordionSection
-        bgColor="#F2EDE0"
-        label="Perguntas frequentes"
-        titleBefore="Ainda tem"
-        titleHighlight="dúvidas?"
-        items={[...objections, ...faq]}
-      />
-      <FinalCTA />
-      <Footer />
-      
+      <Suspense fallback={null}>
+        <ForWhom />
+        <Testimonials />
+        <ModulesSection />
+        <StepsSection />
+        <ComparisonTable />
+        <ResultsSection />
+        <GallerySection />
+        <OTAComparisonSection />
+        <PricingSection />
+        <AccordionSection
+          bgColor="#F2EDE0"
+          label="Perguntas frequentes"
+          titleBefore="Ainda tem"
+          titleHighlight="dúvidas?"
+          items={[...objections, ...faq]}
+        />
+        <FinalCTA />
+        <Footer />
+      </Suspense>
     </div>
   );
 };
