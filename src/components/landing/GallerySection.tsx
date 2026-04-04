@@ -20,7 +20,7 @@ const GallerySection = () => {
               O método funciona para qualquer tipo de hospedagem que quer parar de
               depender de feriado.
             </p>
-            <a href="#comprar" className="btn-cta btn-cta-lg w-full sm:w-auto text-center">
+            <a href="https://pay.kiwify.com.br/Y613pR3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })} className="btn-cta btn-cta-lg w-full sm:w-auto text-center">
               <span>QUERO O MESMO RESULTADO</span>
               <span className="relative z-[1]">↗</span>
             </a>

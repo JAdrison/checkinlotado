@@ -17,7 +17,7 @@ const FinalCTA = () => {
           <p className="text-cream-mid text-[0.9rem] sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-[520px] mx-auto">
             Cada fim de semana sem hóspedes é dinheiro que não volta. O método está pronto. A decisão é sua.
           </p>
-          <a href="#comprar" className="btn-cta btn-cta-lg">
+          <a href="https://pay.kiwify.com.br/Y613pR3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })} className="btn-cta btn-cta-lg">
             <span>QUERO ENTRAR AGORA →</span>
           </a>
         </div>
