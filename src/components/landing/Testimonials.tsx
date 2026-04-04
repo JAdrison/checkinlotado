@@ -64,7 +64,7 @@ const Testimonials = () => {
             {metrics.map((m, i) => (
               <div
                 key={i}
-                className="landing-card p-5 flex items-center gap-4"
+                className="landing-card p-4 sm:p-5 flex items-center gap-3 sm:gap-4"
                 style={{ transitionDelay: `${(i + 1) * 0.05}s`, background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}
               >
                 <div className="w-11 h-11 rounded-full bg-ochre/[0.25] flex items-center justify-center shrink-0">
