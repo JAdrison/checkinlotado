@@ -40,7 +40,7 @@ const OTAComparisonSection = () => {
 
           <div className="space-y-6">
             <div>
-              <h3 className="font-heading text-2xl md:text-3xl font-black text-night">
+              <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-black text-night">
                 3 coisas que todo dono de pousada precisa saber:
               </h3>
               <p className="text-night/60 text-base mt-2">
