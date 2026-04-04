@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackEvent } from "@/lib/meta-capi";
 import { AlertTriangle, CheckCircle, XCircle } from "lucide-react";
 import reformaImg from "@/assets/reforma-tributaria.png";
 import { Slider } from "@/components/ui/slider";
@@ -193,7 +194,7 @@ const OTAComparisonSection = () => {
 
         {/* CTA */}
         <div className="reveal text-center mt-10">
-          <a href="#comprar" className="btn-cta btn-cta-lg">
+          <a href="https://pay.kiwify.com.br/Y613pR3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })} className="btn-cta btn-cta-lg">
             QUERO VENDER DIRETO →
           </a>
         </div>

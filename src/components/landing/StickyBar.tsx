@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/meta-capi";
 
 const StickyBar = () => {
   const [show, setShow] = useState(false);
@@ -22,7 +23,7 @@ const StickyBar = () => {
           12x R$51,40 · Acesso imediato
         </span>
       </div>
-      <a href="#comprar" className="btn-cta btn-cta-sm">
+      <a href="https://pay.kiwify.com.br/Y613pR3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })} className="btn-cta btn-cta-sm">
         <span>QUERO ENTRAR →</span>
       </a>
     </div>
