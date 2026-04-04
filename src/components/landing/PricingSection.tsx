@@ -34,16 +34,16 @@ const PricingSection = () => {
 
           <div className="h-px w-full bg-ochre/20 mb-8" />
 
-          <div className="mb-8">
-            <p className="text-cream-mid/60 text-sm mb-1 line-through">De R$997</p>
+          <div className="mb-6 sm:mb-8">
+            <p className="text-cream-mid/60 text-xs sm:text-sm mb-1 line-through">De R$997</p>
             <div className="flex items-baseline justify-center gap-2">
-              <span className="text-ochre font-label font-bold text-sm">POR APENAS</span>
+              <span className="text-ochre font-label font-bold text-xs sm:text-sm">POR APENAS</span>
             </div>
             <div className="flex items-baseline justify-center gap-1 mt-2">
-              <span className="font-heading font-black text-[2rem] text-cream leading-none">
+              <span className="font-heading font-black text-[1.6rem] sm:text-[2rem] text-cream leading-none">
                 12x
               </span>
-              <span className="font-heading font-black text-[3.2rem] text-cream leading-none">
+              <span className="font-heading font-black text-[2.4rem] sm:text-[3.2rem] text-cream leading-none">
                 R$51,40
               </span>
             </div>
