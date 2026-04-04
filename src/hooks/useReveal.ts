@@ -13,8 +13,22 @@ export function useReveal() {
       { threshold: 0.15 }
     );
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    const observeAll = () => {
+      document.querySelectorAll(".reveal:not(.in)").forEach((el) => observer.observe(el));
+    };
 
-    return () => observer.disconnect();
+    observeAll();
+
+    // Re-observe when lazy-loaded components add new .reveal elements
+    const mutationObserver = new MutationObserver(() => {
+      observeAll();
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 }
