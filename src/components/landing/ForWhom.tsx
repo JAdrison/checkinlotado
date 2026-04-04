@@ -92,7 +92,7 @@ const ForWhom: React.FC = () => {
       </section>
 
       {/* Quem confia no método */}
-      <section style={{ background: "#F2EDE0", padding: "0 28px 48px" }}>
+      <section style={{ background: "#F2EDE0", padding: isMobile ? "0 16px 36px" : "0 28px 48px" }}>
         <div className="max-w-[1100px] mx-auto">
           <div className="reveal text-center">
             <div className="label-text mb-6">Quem confia no método</div>

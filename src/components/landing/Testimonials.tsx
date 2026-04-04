@@ -82,7 +82,7 @@ const Testimonials = () => {
             {/* Testimonial */}
             <div className="p-5 sm:p-7 mt-1 rounded-xl" style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}>
               <div className="text-ochre mb-3">★★★★★</div>
-              <p className="text-cream/85 text-base leading-[1.75] mb-5">
+              <p className="text-cream/85 text-sm sm:text-base leading-[1.75] mb-4 sm:mb-5">
                 "Essa semana a gente completa 7 meses e o salto em reservas foi
                 grande, principalmente nesse final de semana. De sábado até
                 agora já finalizei 04 reservas, fora as que ainda estão com
