@@ -124,7 +124,7 @@ const StepsSection: React.FC = () => {
               }}
             />
             {steps.map((step, i) => (
-              <div key={i} className="reveal relative flex items-start gap-3 mb-8 last:mb-0">
+              <div key={i} className="relative flex items-start gap-3 mb-8 last:mb-0">
                 <div
                   className="relative z-10 flex-shrink-0 flex items-center justify-center rounded-full"
                   style={{
