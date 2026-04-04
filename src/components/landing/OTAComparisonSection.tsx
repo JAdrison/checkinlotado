@@ -159,9 +159,9 @@ const OTAComparisonSection = () => {
               </div>
 
               {/* Você recebe */}
-              <div className="flex justify-between items-center py-4 bg-ochre/5 -mx-8 md:-mx-10 px-8 md:px-10 rounded-b-2xl">
-                <span className="font-heading text-lg font-bold text-night">Você recebe por reserva</span>
-                <span className="font-heading text-xl text-ochre font-black transition-all duration-300">{fmt(netPerDay)}</span>
+              <div className="flex justify-between items-center py-3 sm:py-4 bg-ochre/5 -mx-5 sm:-mx-8 md:-mx-10 px-5 sm:px-8 md:px-10 rounded-b-2xl">
+                <span className="font-heading text-base sm:text-lg font-bold text-night">Você recebe por reserva</span>
+                <span className="font-heading text-lg sm:text-xl text-ochre font-black transition-all duration-300">{fmt(netPerDay)}</span>
               </div>
             </div>
 
