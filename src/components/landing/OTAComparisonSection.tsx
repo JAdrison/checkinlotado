@@ -153,9 +153,9 @@ const OTAComparisonSection = () => {
               </div>
 
               {/* Perda por reserva */}
-              <div className="flex justify-between items-center py-4 border-b border-night/5 bg-red-50/50 -mx-8 md:-mx-10 px-8 md:px-10">
-                <span className="font-heading text-base font-bold text-red-700">A cada reserva você perde</span>
-                <span className="font-heading text-xl text-red-600 font-black transition-all duration-300">− {fmt(totalLoss)}</span>
+              <div className="flex justify-between items-center py-3 sm:py-4 border-b border-night/5 bg-red-50/50 -mx-5 sm:-mx-8 md:-mx-10 px-5 sm:px-8 md:px-10">
+                <span className="font-heading text-sm sm:text-base font-bold text-red-700">A cada reserva você perde</span>
+                <span className="font-heading text-lg sm:text-xl text-red-600 font-black transition-all duration-300">− {fmt(totalLoss)}</span>
               </div>
 
               {/* Você recebe */}
