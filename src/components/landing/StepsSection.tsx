@@ -96,10 +96,10 @@ const StepsSection: React.FC = () => {
         style={{ padding: isMobile ? "40px 16px" : "64px 28px" }}
       >
         {/* Header */}
-        <div className="reveal text-center mb-4">
+        <div className="text-center mb-4">
           <span className="label-text">Sua jornada</span>
         </div>
-        <div className="reveal text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
+        <div className="text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
           <h2
             className="font-heading font-black leading-[1.2]"
             style={{
@@ -124,7 +124,7 @@ const StepsSection: React.FC = () => {
               }}
             />
             {steps.map((step, i) => (
-              <div key={i} className="reveal relative flex items-start gap-3 mb-8 last:mb-0">
+              <div key={i} className="relative flex items-start gap-3 mb-8 last:mb-0">
                 <div
                   className="relative z-10 flex-shrink-0 flex items-center justify-center rounded-full"
                   style={{
