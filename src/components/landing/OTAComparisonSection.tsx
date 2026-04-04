@@ -66,8 +66,8 @@ const OTAComparisonSection = () => {
               <div className="flex gap-4 items-start">
                 <span className="w-9 sm:w-11 h-9 sm:h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm sm:text-base">03</span>
                 <div>
-                  <p className="font-heading text-lg font-bold text-night">Impostos vão em média 8% a mais da diária</p>
-                  <p className="text-night/60 text-base">ISS municipal + novos tributos federais (IBS e CBS)</p>
+                  <p className="font-heading text-base sm:text-lg font-bold text-night">Impostos vão em média 8% a mais da diária</p>
+                  <p className="text-night/60 text-sm sm:text-base">ISS municipal + novos tributos federais (IBS e CBS)</p>
                 </div>
               </div>
             </div>
