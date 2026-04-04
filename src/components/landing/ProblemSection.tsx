@@ -50,7 +50,7 @@ const ProblemSection = () => {
           </div>
 
           {/* Video */}
-          <div className="w-full max-w-[700px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="w-full max-w-[700px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
             <video
               ref={videoRef}
               src="/videos/scroll-animation.mp4"
