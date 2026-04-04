@@ -82,7 +82,7 @@ const OTAComparisonSection = () => {
         <div className="max-w-[700px] mx-auto">
           <div className="reveal rounded-3xl p-8 md:p-10 border border-ochre/20 shadow-[0_4px_32px_rgba(0,0,0,0.08)]" style={{ background: "linear-gradient(180deg, #FAF8F4 0%, #FFFFFF 100%)" }}>
             <h3 className="font-heading text-xl md:text-2xl font-black text-night text-center mb-8">
-              Simule a <span className="text-ochre">sua perda real</span>
+              Simule o <span className="text-ochre">seu potencial de ganho</span>
             </h3>
 
             {/* Inputs */}
