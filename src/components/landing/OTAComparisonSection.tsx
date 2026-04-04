@@ -167,16 +167,16 @@ const OTAComparisonSection = () => {
 
             <div className="h-px w-full my-8 bg-night/10" />
 
-            {/* Impacto anual */}
-            <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+            {/* Potencial de ganho anual */}
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center">
+              <p className="font-heading text-base font-bold text-night/60 mb-1">Potencial de ganho</p>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <AlertTriangle className="w-7 h-7 text-red-500" />
-                <span className="font-heading text-[2.2rem] md:text-[3rem] text-red-600 font-black transition-all duration-300">
-                  −{fmt(annualLoss)}/ano
+                <span className="font-heading text-[2.2rem] md:text-[3rem] text-emerald-600 font-black transition-all duration-300">
+                  +{fmt(annualLoss)}/ano
                 </span>
               </div>
               <p className="text-sm md:text-base text-night/50">
-                10 diárias/mês × 12 meses × {fmt(totalLoss)} = <strong className="text-red-600">{fmt(annualLoss)}/ano</strong> saindo do seu faturamento
+                10 diárias/mês × 12 meses × {fmt(totalLoss)} = <strong className="text-emerald-600">+{fmt(annualLoss)}/ano</strong> vendendo direto
               </p>
             </div>
           </div>
