@@ -1,7 +1,7 @@
 import { Check, Calendar, TrendingUp } from "lucide-react";
 import { trackEvent } from "@/lib/meta-capi";
-import whatsappImg from "@/assets/case-study/whatsapp-iparai.png";
-import guilhermeImg from "@/assets/case-study/guilherme-couto.png";
+import whatsappImg from "@/assets/case-study/whatsapp-iparai.webp";
+import guilhermeImg from "@/assets/case-study/guilherme-couto.webp";
 
 const metrics = [
   {
@@ -31,6 +31,7 @@ const Testimonials = () => {
         loop
         muted
         playsInline
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/60" />
@@ -56,6 +57,9 @@ const Testimonials = () => {
               src={whatsappImg}
               alt="Print de conversa no WhatsApp mostrando reservas da Casa Iparaí"
               className="rounded-lg h-full max-h-[400px] md:max-h-full object-contain"
+              width={500}
+              height={700}
+              loading="lazy"
             />
           </div>
 
@@ -99,6 +103,9 @@ const Testimonials = () => {
                   src={guilhermeImg}
                   alt="Guilherme Couto"
                   className="w-11 h-11 rounded-full object-cover"
+                  width={44}
+                  height={44}
+                  loading="lazy"
                 />
                 <div>
                   <p className="text-cream text-base font-semibold">

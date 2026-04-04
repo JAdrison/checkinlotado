@@ -2,23 +2,23 @@ import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
-import imgApartamento from "@/assets/forwhom/apartamento.png";
+import imgApartamento from "@/assets/forwhom/apartamento.webp";
 import imgQuarto from "@/assets/forwhom/quarto-privativo.jpg";
-import imgPraia from "@/assets/forwhom/casa-praia.png";
-import imgSerra from "@/assets/forwhom/casa-serra.png";
+import imgPraia from "@/assets/forwhom/casa-praia.webp";
+import imgSerra from "@/assets/forwhom/casa-serra.webp";
 import imgChacara from "@/assets/forwhom/chacara.jpg";
-import imgCabana from "@/assets/forwhom/cabana.png";
-import imgPousada from "@/assets/forwhom/pousada.png";
-import imgHotel from "@/assets/forwhom/hotel.png";
+import imgCabana from "@/assets/forwhom/cabana.webp";
+import imgPousada from "@/assets/forwhom/pousada.webp";
+import imgHotel from "@/assets/forwhom/hotel.webp";
 
-import logoButterfly from "@/assets/logos/motel-butterfly.png";
-import logoAgoba from "@/assets/logos/rancho-agoba.png";
-import logoChoca from "@/assets/logos/village-choca.png";
-import logoEncanto from "@/assets/logos/encanto-das-aguas.png";
-import logoIparai from "@/assets/logos/iparai.png";
-import logoCasaRobelu from "@/assets/logos/casa-robelu.png";
-import logoPousadaEspraidada from "@/assets/logos/pousada-espraidada.png";
-import logoVillaAzul from "@/assets/logos/villa-azul.png";
+import logoButterfly from "@/assets/logos/motel-butterfly.webp";
+import logoAgoba from "@/assets/logos/rancho-agoba.webp";
+import logoChoca from "@/assets/logos/village-choca.webp";
+import logoEncanto from "@/assets/logos/encanto-das-aguas.webp";
+import logoIparai from "@/assets/logos/iparai.webp";
+import logoCasaRobelu from "@/assets/logos/casa-robelu.webp";
+import logoPousadaEspraidada from "@/assets/logos/pousada-espraidada.webp";
+import logoVillaAzul from "@/assets/logos/villa-azul.webp";
 
 const items: CardStackItem[] = [
   { id: 1, title: "Apartamentos e Studios", description: "Maximize a ocupação do seu espaço urbano", imageSrc: imgApartamento },
@@ -46,7 +46,7 @@ const trustedLogos = [
 const LogoItem = ({ logo }: { logo: { src: string | null; alt: string } }) => (
   <div className="flex-shrink-0 px-12 flex items-center justify-center" style={{ width: 280, height: 120 }}>
     {logo.src ? (
-      <img src={logo.src} alt={logo.alt} className="h-16 w-auto max-w-[200px] object-contain opacity-85 hover:opacity-100 transition-opacity duration-300" style={{ mixBlendMode: 'multiply' }} />
+      <img src={logo.src} alt={logo.alt} width={128} height={64} className="h-16 w-auto max-w-[200px] object-contain opacity-85 hover:opacity-100 transition-opacity duration-300" style={{ mixBlendMode: 'multiply' }} loading="lazy" />
     ) : (
       <div className="h-10 w-28 rounded-lg border border-dashed flex items-center justify-center text-xs font-label uppercase tracking-widest" style={{ borderColor: 'var(--ochre)', color: 'var(--ochre)', opacity: 0.35 }}>
         Logo

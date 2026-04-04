@@ -1,4 +1,5 @@
-import heroBg from "@/assets/hero-bg.jpg";
+import { useState } from "react";
+import heroBg from "@/assets/hero-bg.webp";
 import { trackEvent } from "@/lib/meta-capi";
 
 const bullets = [
@@ -7,6 +8,48 @@ const bullets = [
   "O que divulgar, quando divulgar e como fechar reservas pelo WhatsApp",
   "Como vender mais sem baixar preço e sair do improviso de vez",
 ];
+
+const YouTubeFacade = ({ videoId }: { videoId: string }) => {
+  const [playing, setPlaying] = useState(false);
+
+  return (
+    <div className="reveal w-full max-w-[900px]">
+      <div
+        className="video-box relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl cursor-pointer"
+        style={{ paddingBottom: "56.25%" }}
+        onClick={() => !playing && setPlaying(true)}
+      >
+        {playing ? (
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=0&disablekb=1&iv_load_policy=3`}
+            title="VSL - Check in Lotado"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <>
+            <img
+              className="absolute inset-0 w-full h-full object-cover"
+              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              alt="VSL - Check in Lotado"
+              width={900}
+              height={506}
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-ochre/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                <svg className="w-7 h-7 sm:w-9 sm:h-9 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const Hero = () => {
   return (
@@ -30,19 +73,8 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Video — protagonista */}
-        <div className="reveal w-full max-w-[900px]">
-          <div className="video-box relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/m_EClZVmHXY?modestbranding=1&rel=0&showinfo=0&controls=0&disablekb=1&iv_load_policy=3"
-              title="VSL - Check in Lotado"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
+        {/* Video — lazy YouTube facade */}
+        <YouTubeFacade videoId="m_EClZVmHXY" />
 
         {/* Bullets 2x2 */}
         <p className="reveal text-night/70 text-sm sm:text-base font-heading font-semibold mt-8 sm:mt-10 mb-2">Nessa Aula você vai aprender:</p>

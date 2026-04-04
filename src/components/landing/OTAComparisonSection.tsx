@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { trackEvent } from "@/lib/meta-capi";
 import { AlertTriangle, CheckCircle, XCircle } from "lucide-react";
-import reformaImg from "@/assets/reforma-tributaria.png";
+import reformaImg from "@/assets/reforma-tributaria.webp";
 import { Slider } from "@/components/ui/slider";
 
 const fmt = (v: number) =>
@@ -36,7 +36,7 @@ const OTAComparisonSection = () => {
         {/* Subheadline — 3 fatos + imagem lado a lado */}
         <div className="reveal grid lg:grid-cols-2 gap-8 sm:gap-10 items-center mb-10 sm:mb-16">
           <div className="rounded-2xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
-            <img src={reformaImg} alt="Reportagem sobre Reforma Tributária 2026 — nova carga tributária para locação" className="w-full h-auto" />
+            <img src={reformaImg} alt="Reportagem sobre Reforma Tributária 2026 — nova carga tributária para locação" className="w-full h-auto" width={600} height={400} loading="lazy" />
           </div>
 
           <div className="space-y-6">
