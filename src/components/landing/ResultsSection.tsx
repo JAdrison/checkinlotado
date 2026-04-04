@@ -108,18 +108,18 @@ const ResultsSection = () => {
   let globalIndex = 0;
 
   return (
-    <section style={{ background: "#EAE3CF", padding: "64px 28px" }}>
+    <section style={{ background: "#EAE3CF" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[1000px] mx-auto">
-        <div className="reveal text-center mb-14">
-          <div className="label-text mb-3.5">Resultados reais</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-4">
+        <div className="reveal text-center mb-8 sm:mb-14">
+          <div className="label-text mb-3">Resultados reais</div>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-3 sm:mb-4">
             Quem aplica o método, vende.<br />
             <em className="shimmer-text font-extrabold">Todo. Dia.</em>
           </h2>
-          <p className="text-night/85 text-[0.95rem] leading-relaxed max-w-[560px] mx-auto mb-6">
+          <p className="text-night/85 text-sm sm:text-[0.95rem] leading-relaxed max-w-[560px] mx-auto mb-4 sm:mb-6">
             Prints reais de hospedagens que aplicaram o método Check-in Lotado e transformaram fins de semana vazios em reservas confirmadas.
           </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ochre/[0.12] text-ochre text-[0.82rem] font-semibold tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-ochre/[0.12] text-ochre text-[0.75rem] sm:text-[0.82rem] font-semibold tracking-wide">
             <span className="w-2 h-2 rounded-full bg-ochre animate-pulse" />
             +300 reservas confirmadas
           </div>

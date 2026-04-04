@@ -22,7 +22,7 @@ const metrics = [
 
 const Testimonials = () => {
   return (
-    <section className="relative overflow-hidden" style={{ padding: "48px 16px" }}>
+    <section className="relative overflow-hidden" style={{ padding: "40px 16px" }}>
       {/* Video background */}
       <video
         src="/videos/iparai-bg.mp4"
@@ -36,13 +36,13 @@ const Testimonials = () => {
 
       <div className="relative z-10 max-w-[1100px] mx-auto">
         {/* Header */}
-        <div className="reveal text-center mb-14">
-          <div className="label-text mb-3.5" style={{ color: "rgba(255,255,255,0.7)" }}>Caso real</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.2]">
+        <div className="reveal text-center mb-8 sm:mb-14">
+          <div className="label-text mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Caso real</div>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.15]">
             4 Meses de Reservas Vendidas<br />
             <em className="shimmer-text font-extrabold">em Apenas 60 Dias</em>
           </h2>
-          <p className="text-cream/80 mt-4 text-lg max-w-[500px] mx-auto">
+          <p className="text-cream/80 mt-3 sm:mt-4 text-[0.9rem] sm:text-lg max-w-[500px] mx-auto">
             Todos os finais de semana esgotados
           </p>
         </div>
@@ -64,7 +64,7 @@ const Testimonials = () => {
             {metrics.map((m, i) => (
               <div
                 key={i}
-                className="landing-card p-5 flex items-center gap-4"
+                className="landing-card p-4 sm:p-5 flex items-center gap-3 sm:gap-4"
                 style={{ transitionDelay: `${(i + 1) * 0.05}s`, background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}
               >
                 <div className="w-11 h-11 rounded-full bg-ochre/[0.25] flex items-center justify-center shrink-0">
@@ -80,9 +80,9 @@ const Testimonials = () => {
             ))}
 
             {/* Testimonial */}
-            <div className="p-7 mt-1 rounded-xl" style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}>
+            <div className="p-5 sm:p-7 mt-1 rounded-xl" style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}>
               <div className="text-ochre mb-3">★★★★★</div>
-              <p className="text-cream/85 text-base leading-[1.75] mb-5">
+              <p className="text-cream/85 text-sm sm:text-base leading-[1.75] mb-4 sm:mb-5">
                 "Essa semana a gente completa 7 meses e o salto em reservas foi
                 grande, principalmente nesse final de semana. De sábado até
                 agora já finalizei 04 reservas, fora as que ainda estão com

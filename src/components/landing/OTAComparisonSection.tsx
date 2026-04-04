@@ -18,14 +18,14 @@ const OTAComparisonSection = () => {
   const annualLoss = totalLoss * 120;
 
   return (
-    <section className="relative py-16 px-7" style={{ background: "#FFFFFF" }}>
+    <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#FFFFFF" }}>
       <div className="max-w-[1100px] mx-auto">
         {/* Headline */}
-        <div className="reveal text-center mb-16">
-          <div className="label-text text-ochre mb-4">
+        <div className="reveal text-center mb-10 sm:mb-16">
+          <div className="label-text text-ochre mb-3 sm:mb-4">
             A conta que ninguém faz
           </div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black leading-[1.2] text-night">
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black leading-[1.15] text-night">
             Quanto custa depender
             <br />
             <span className="shimmer-text font-extrabold">só de Plataformas</span>?
@@ -33,14 +33,14 @@ const OTAComparisonSection = () => {
         </div>
 
         {/* Subheadline — 3 fatos + imagem lado a lado */}
-        <div className="reveal grid lg:grid-cols-2 gap-10 items-center mb-16">
+        <div className="reveal grid lg:grid-cols-2 gap-8 sm:gap-10 items-center mb-10 sm:mb-16">
           <div className="rounded-2xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
             <img src={reformaImg} alt="Reportagem sobre Reforma Tributária 2026 — nova carga tributária para locação" className="w-full h-auto" />
           </div>
 
           <div className="space-y-6">
             <div>
-              <h3 className="font-heading text-2xl md:text-3xl font-black text-night">
+              <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-black text-night">
                 3 coisas que todo dono de pousada precisa saber:
               </h3>
               <p className="text-night/60 text-base mt-2">
@@ -50,24 +50,24 @@ const OTAComparisonSection = () => {
 
             <div className="space-y-6">
               <div className="flex gap-4 items-start">
-                <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">01</span>
+                <span className="w-9 sm:w-11 h-9 sm:h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm sm:text-base">01</span>
                 <div>
-                  <p className="font-heading text-lg font-bold text-night">Plataformas de hospedagens cobra 16% de comissão por reserva</p>
-                  <p className="text-night/60 text-base">Direto do valor da diária, antes de qualquer imposto</p>
+                  <p className="font-heading text-base sm:text-lg font-bold text-night">Plataformas de hospedagens cobra 16% de comissão por reserva</p>
+                  <p className="text-night/60 text-sm sm:text-base">Direto do valor da diária, antes de qualquer imposto</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">02</span>
+                <span className="w-9 sm:w-11 h-9 sm:h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm sm:text-base">02</span>
                 <div>
-                  <p className="font-heading text-lg font-bold text-night">Nota fiscal será obrigatória a partir de 2026</p>
-                  <p className="text-night/60 text-base">Reforma Tributária equiparou temporada a hotelaria</p>
+                  <p className="font-heading text-base sm:text-lg font-bold text-night">Nota fiscal será obrigatória a partir de 2026</p>
+                  <p className="text-night/60 text-sm sm:text-base">Reforma Tributária equiparou temporada a hotelaria</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">03</span>
+                <span className="w-9 sm:w-11 h-9 sm:h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm sm:text-base">03</span>
                 <div>
-                  <p className="font-heading text-lg font-bold text-night">Impostos vão em média 8% a mais da diária</p>
-                  <p className="text-night/60 text-base">ISS municipal + novos tributos federais (IBS e CBS)</p>
+                  <p className="font-heading text-base sm:text-lg font-bold text-night">Impostos vão em média 8% a mais da diária</p>
+                  <p className="text-night/60 text-sm sm:text-base">ISS municipal + novos tributos federais (IBS e CBS)</p>
                 </div>
               </div>
             </div>
@@ -80,13 +80,13 @@ const OTAComparisonSection = () => {
 
         {/* Calculadora interativa */}
         <div className="max-w-[700px] mx-auto">
-          <div className="reveal rounded-3xl p-8 md:p-10 border border-ochre/20 shadow-[0_4px_32px_rgba(0,0,0,0.08)]" style={{ background: "linear-gradient(180deg, #FAF8F4 0%, #FFFFFF 100%)" }}>
-            <h3 className="font-heading text-xl md:text-2xl font-black text-night text-center mb-8">
+          <div className="reveal rounded-3xl p-5 sm:p-8 md:p-10 border border-ochre/20 shadow-[0_4px_32px_rgba(0,0,0,0.08)]" style={{ background: "linear-gradient(180deg, #FAF8F4 0%, #FFFFFF 100%)" }}>
+            <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-black text-night text-center mb-6 sm:mb-8">
               Simule o <span className="text-ochre">seu potencial de ganho</span>
             </h3>
 
             {/* Inputs */}
-            <div className="grid sm:grid-cols-2 gap-8 mb-10">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10">
               {/* Diária */}
               <div className="space-y-3">
                 <div className="flex justify-between items-baseline">
@@ -153,25 +153,25 @@ const OTAComparisonSection = () => {
               </div>
 
               {/* Perda por reserva */}
-              <div className="flex justify-between items-center py-4 border-b border-night/5 bg-red-50/50 -mx-8 md:-mx-10 px-8 md:px-10">
-                <span className="font-heading text-base font-bold text-red-700">A cada reserva você perde</span>
-                <span className="font-heading text-xl text-red-600 font-black transition-all duration-300">− {fmt(totalLoss)}</span>
+              <div className="flex justify-between items-center py-3 sm:py-4 border-b border-night/5 bg-red-50/50 -mx-5 sm:-mx-8 md:-mx-10 px-5 sm:px-8 md:px-10">
+                <span className="font-heading text-sm sm:text-base font-bold text-red-700">A cada reserva você perde</span>
+                <span className="font-heading text-lg sm:text-xl text-red-600 font-black transition-all duration-300">− {fmt(totalLoss)}</span>
               </div>
 
               {/* Você recebe */}
-              <div className="flex justify-between items-center py-4 bg-ochre/5 -mx-8 md:-mx-10 px-8 md:px-10 rounded-b-2xl">
-                <span className="font-heading text-lg font-bold text-night">Você recebe por reserva</span>
-                <span className="font-heading text-xl text-ochre font-black transition-all duration-300">{fmt(netPerDay)}</span>
+              <div className="flex justify-between items-center py-3 sm:py-4 bg-ochre/5 -mx-5 sm:-mx-8 md:-mx-10 px-5 sm:px-8 md:px-10 rounded-b-2xl">
+                <span className="font-heading text-base sm:text-lg font-bold text-night">Você recebe por reserva</span>
+                <span className="font-heading text-lg sm:text-xl text-ochre font-black transition-all duration-300">{fmt(netPerDay)}</span>
               </div>
             </div>
 
             <div className="h-px w-full my-8 bg-night/10" />
 
             {/* Potencial de ganho anual */}
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center">
-              <p className="font-heading text-base font-bold text-night/60 mb-1">Potencial de ganho</p>
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 sm:p-6 text-center">
+              <p className="font-heading text-sm sm:text-base font-bold text-night/60 mb-1">Potencial de ganho</p>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <span className="font-heading text-[2.2rem] md:text-[3rem] text-emerald-600 font-black transition-all duration-300">
+                <span className="font-heading text-[1.6rem] sm:text-[2.2rem] md:text-[3rem] text-emerald-600 font-black transition-all duration-300">
                   +{fmt(annualLoss)}/ano
                 </span>
               </div>

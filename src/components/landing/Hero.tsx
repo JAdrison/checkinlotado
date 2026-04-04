@@ -14,24 +14,24 @@ const Hero = () => {
         <img src={heroBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "rgba(242, 237, 224, 0.88)" }} />
       </div>
-      <div className="relative z-10 pt-24 sm:pt-32 pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
+      <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
         {/* Headline */}
-        <div className="text-center mb-10 reveal">
-          <div className="inline-block border border-ochre/30 rounded-full px-6 py-2.5 mb-6">
-            <span className="label-text">TREINAMENTO ONLINE PARA HOSPEDAGENS</span>
+        <div className="text-center mb-8 sm:mb-10 reveal">
+          <div className="inline-block border border-ochre/30 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 mb-5 sm:mb-6">
+            <span className="label-text text-[0.6rem] sm:text-[0.7rem]">TREINAMENTO ONLINE PARA HOSPEDAGENS</span>
           </div>
-          <h1 className="font-heading text-[clamp(2.2rem,5vw,4.2rem)] font-black text-night leading-[1.2] mb-5">
+          <h1 className="font-heading text-[1.8rem] sm:text-[clamp(2.2rem,5vw,4.2rem)] font-black text-night leading-[1.15] mb-4 sm:mb-5">
             Como lotar sua hospedagem em{" "}
             <em className="shimmer-text font-black">fins de semana comuns</em>
           </h1>
-          <p className="text-night/85 text-xl max-w-[560px] mx-auto leading-relaxed">
+          <p className="text-night/85 text-base sm:text-xl max-w-[560px] mx-auto leading-relaxed">
             Sem depender de feriados, sem baixar preço, sem improvisar campanha em cima da hora.
           </p>
         </div>
 
         {/* Video — protagonista */}
         <div className="reveal w-full max-w-[900px]">
-          <div className="video-box relative w-full rounded-3xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
+          <div className="video-box relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
             <iframe
               className="absolute inset-0 w-full h-full"
               src="https://www.youtube.com/embed/m_EClZVmHXY?modestbranding=1&rel=0&showinfo=0&controls=0&disablekb=1&iv_load_policy=3"
@@ -44,12 +44,12 @@ const Hero = () => {
         </div>
 
         {/* Bullets 2x2 */}
-        <p className="reveal text-night/70 text-base font-heading font-semibold mt-10 mb-2">Nessa Aula você vai aprender:</p>
-        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-[750px]">
+        <p className="reveal text-night/70 text-sm sm:text-base font-heading font-semibold mt-8 sm:mt-10 mb-2">Nessa Aula você vai aprender:</p>
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-4 max-w-[750px]">
           {bullets.map((text, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <span className="text-ochre mt-1 shrink-0">◆</span>
-              <p className="text-night/80 text-lg leading-relaxed">{text}</p>
+            <div key={i} className="flex items-start gap-2.5 sm:gap-3">
+              <span className="text-ochre mt-0.5 sm:mt-1 shrink-0 text-sm">◆</span>
+              <p className="text-night/80 text-[0.9rem] sm:text-lg leading-relaxed">{text}</p>
             </div>
           ))}
         </div>

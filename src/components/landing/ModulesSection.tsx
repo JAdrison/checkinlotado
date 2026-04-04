@@ -90,12 +90,12 @@ const benefits = [
 const ModulesSection = () => {
   return (
     <section style={{ background: "#EAE3CF", overflow: "hidden" }}>
-      <div className="mx-auto max-w-[1200px]" style={{ padding: "64px 28px" }}>
-        <div className="reveal text-center mb-16">
+      <div className="mx-auto max-w-[1200px] py-10 sm:py-16 px-4 sm:px-7">
+        <div className="reveal text-center mb-10 sm:mb-16">
           <AnimatedText
             text="Checkin Lotado"
             as="span"
-            textClassName="font-label text-sm tracking-[0.22em] uppercase"
+            textClassName="font-label text-xs sm:text-sm tracking-[0.22em] uppercase"
             underlineGradient="from-ochre via-ochre-light to-ochre"
             underlineHeight="h-0.5"
             underlineOffset="-bottom-1"
@@ -103,11 +103,11 @@ const ModulesSection = () => {
             delay={0.05}
             className="mb-3.5"
           />
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mt-4">
-            O plano detalhado que vai fazer a sua<br />
-            <em className="shimmer-text font-extrabold">hospedagem decolar</em>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mt-4">
+            O plano detalhado que vai fazer a sua<br className="hidden sm:block" />
+            <em className="shimmer-text font-extrabold"> hospedagem decolar</em>
           </h2>
-          <p className="text-night/80 text-xl max-w-[640px] mx-auto mt-5 leading-relaxed">
+          <p className="text-night/80 text-[0.9rem] sm:text-xl max-w-[640px] mx-auto mt-4 sm:mt-5 leading-relaxed">
             Uma metodologia que transforma uma operação complexa em passos simples e aplicáveis.
           </p>
         </div>
@@ -117,26 +117,26 @@ const ModulesSection = () => {
         </div>
 
         {/* O que você vai conquistar */}
-        <div className="reveal mt-20">
-          <div className="text-center mb-10">
-            <span className="font-label text-sm tracking-[0.22em] uppercase text-ochre">
+        <div className="reveal mt-14 sm:mt-20">
+          <div className="text-center mb-8 sm:mb-10">
+            <span className="font-label text-xs sm:text-sm tracking-[0.22em] uppercase text-ochre">
               Sua hospedagem com vendas previsíveis
             </span>
-            <h3 className="font-heading text-[clamp(1.4rem,3vw,2.2rem)] text-night leading-[1.2] mt-3">
+            <h3 className="font-heading text-[1.2rem] sm:text-[clamp(1.4rem,3vw,2.2rem)] text-night leading-[1.2] mt-3">
               Aplicando o Check-in Lotado, você vai conseguir:
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[800px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 max-w-[800px] mx-auto">
             {benefits.map((benefit, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-white rounded-xl p-5 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5"
+                className="flex items-start gap-2.5 sm:gap-3 bg-white rounded-xl p-4 sm:p-5 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5"
               >
-                <div className="w-6 h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-3.5 h-3.5 text-ochre" />
+                <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-ochre" />
                 </div>
-                <p className="text-night/80 text-base leading-relaxed">{benefit}</p>
+                <p className="text-night/80 text-sm sm:text-base leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>

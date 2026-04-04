@@ -36,21 +36,21 @@ const ProblemSection = () => {
       ref={sectionRef}
       style={{ height: "300vh", position: "relative", background: "#EAE3CF" }}
     >
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-7">
-        <div className="max-w-[800px] mx-auto w-full flex flex-col items-center gap-8">
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-4 sm:px-7">
+        <div className="max-w-[800px] mx-auto w-full flex flex-col items-center gap-6 sm:gap-8">
           {/* Frase 01 */}
           <div className="reveal text-center">
-            <div className="label-text mb-3.5">O problema</div>
-            <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2] mb-5">
+            <div className="label-text mb-3">O problema</div>
+            <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-4 sm:mb-5">
               Sua hospedagem <em className="shimmer-text font-extrabold">depende de feriados</em> para faturar?
             </h2>
-            <p className="text-night/85 text-lg leading-relaxed max-w-[600px] mx-auto">
+            <p className="text-night/85 text-[0.9rem] sm:text-lg leading-relaxed max-w-[600px] mx-auto">
               A maioria dos donos de pousada só tem ocupação alta em feriados prolongados e alta temporada. Nos fins de semana comuns, os quartos ficam vazios, o faturamento cai e a solução parece ser baixar preço.
             </p>
           </div>
 
           {/* Video */}
-          <div className="w-full max-w-[700px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="w-full max-w-[700px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
             <video
               ref={videoRef}
               src="/videos/scroll-animation.mp4"
@@ -64,7 +64,7 @@ const ProblemSection = () => {
 
           {/* Frase 02 */}
           <div className="reveal text-center">
-            <p className="text-night/80 text-base leading-relaxed max-w-[580px] mx-auto">
+            <p className="text-night/80 text-sm sm:text-base leading-relaxed max-w-[580px] mx-auto">
               A verdade é que a demanda existe — mas ela precisa ser ativada com estratégia, antecedência e comunicação certa. É exatamente isso que o método <strong className="text-night">Check-in Lotado</strong> ensina.
             </p>
           </div>

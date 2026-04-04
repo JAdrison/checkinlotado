@@ -7,14 +7,14 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section style={{ background: "#F2EDE0", padding: "40px 28px", borderBottom: "1px solid rgba(200,148,58,0.1)" }}>
+    <section style={{ background: "#F2EDE0", borderBottom: "1px solid rgba(200,148,58,0.1)" }} className="py-8 sm:py-10 px-4 sm:px-7">
       <div className="max-w-[1000px] mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         {stats.map((s, i) => (
           <div key={i} className="reveal text-center" style={{ transitionDelay: `${i * 0.08}s` }}>
-            <span className="text-3xl block mb-3">{s.emoji}</span>
-            <p className="font-semibold text-night text-base mb-1">{s.title}</p>
-            <p className="text-night/85 text-sm leading-relaxed">{s.desc}</p>
+            <span className="text-2xl sm:text-3xl block mb-2 sm:mb-3">{s.emoji}</span>
+            <p className="font-semibold text-night text-sm sm:text-base mb-1">{s.title}</p>
+            <p className="text-night/85 text-xs sm:text-sm leading-relaxed">{s.desc}</p>
           </div>
         ))}
         </div>
