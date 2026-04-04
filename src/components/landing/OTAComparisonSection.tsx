@@ -57,7 +57,7 @@ const OTAComparisonSection = () => {
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <span className="w-11 h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-base">02</span>
+                <span className="w-9 sm:w-11 h-9 sm:h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm sm:text-base">02</span>
                 <div>
                   <p className="font-heading text-lg font-bold text-night">Nota fiscal será obrigatória a partir de 2026</p>
                   <p className="text-night/60 text-base">Reforma Tributária equiparou temporada a hotelaria</p>
