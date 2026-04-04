@@ -1,4 +1,5 @@
 import { Check, X, TrendingUp, TrendingDown } from "lucide-react";
+import { trackEvent } from "@/lib/meta-capi";
 
 const withMethod = [
   "Vende bem em fins de semana comuns",
