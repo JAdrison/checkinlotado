@@ -56,10 +56,10 @@ const ComparisonTable = () => {
 
           {/* Card negativo */}
           <div className="bg-[#FAF8F4] rounded-2xl p-5 sm:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
-            <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
-              <TrendingDown className="w-6 h-6 text-red-500" />
+            <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 sm:mb-5">
+              <TrendingDown className="w-5 sm:w-6 h-5 sm:h-6 text-red-500" />
             </div>
-            <h3 className="font-heading text-xl text-night/80 mb-6">
+            <h3 className="font-heading text-lg sm:text-xl text-night/80 mb-4 sm:mb-6">
               Sem o método
             </h3>
             <ul className="space-y-0">
