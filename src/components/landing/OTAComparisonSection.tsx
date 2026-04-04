@@ -168,10 +168,10 @@ const OTAComparisonSection = () => {
             <div className="h-px w-full my-8 bg-night/10" />
 
             {/* Potencial de ganho anual */}
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center">
-              <p className="font-heading text-base font-bold text-night/60 mb-1">Potencial de ganho</p>
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 sm:p-6 text-center">
+              <p className="font-heading text-sm sm:text-base font-bold text-night/60 mb-1">Potencial de ganho</p>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <span className="font-heading text-[2.2rem] md:text-[3rem] text-emerald-600 font-black transition-all duration-300">
+                <span className="font-heading text-[1.6rem] sm:text-[2.2rem] md:text-[3rem] text-emerald-600 font-black transition-all duration-300">
                   +{fmt(annualLoss)}/ano
                 </span>
               </div>
