@@ -1,29 +1,35 @@
 
 
-# Redesign da Calculadora de Perdas
+## Plano: Configurar Meta Conversions API (CAPI)
 
-## Mudanças solicitadas
+### O que será feito
 
-### 1. Slider da diária até R$ 5.000
-- Alterar `max` de 1500 para 5000 e o label "R$ 1.500" para "R$ 5.000"
+Criar uma Edge Function no Lovable Cloud que envia eventos do servidor diretamente para a API de Conversões da Meta, complementando o Pixel do navegador. Isso melhora a precisão do rastreamento (especialmente com bloqueadores de anúncios e restrições de cookies).
 
-### 2. Trocar "Quartos" por "Hospedagens"
-- Label e referências de "Quartos" → "Hospedagens"
+### Etapas
 
-### 3. Valores de perda em vermelho
-- Comissão Plataforma e Imposto NF: texto do valor em vermelho (`text-red-600`) em vez de `text-night`
-- Valor de perda anual também em vermelho
+1. **Salvar o token como secret**
+   - Armazenar `META_CONVERSIONS_TOKEN` como secret seguro no Lovable Cloud (nunca exposto no código)
 
-### 4. Melhorias de design da calculadora
+2. **Criar Edge Function `meta-conversions`**
+   - Endpoint: `supabase/functions/meta-conversions/index.ts`
+   - Recebe eventos do frontend (PageView, Lead, etc.) via POST
+   - Envia para `https://graph.facebook.com/v21.0/{PIXEL_ID}/events` usando o token
+   - Pixel ID: `1666693307683285`
+   - Inclui CORS headers e validação de input
 
-- **Card mais impactante**: fundo com gradiente sutil (cream → branco), borda fina ochre, border-radius maior
-- **Sliders**: thumb maior e mais visível, track mais espesso
-- **Breakdown**: ícones visuais nas linhas (CheckCircle para faturamento, XCircle vermelho para perdas), tipografia mais contrastada
-- **Bloco de perda anual**: fundo vermelho/rose sutil (`bg-red-50`), borda vermelha, ícone AlertTriangle em vermelho, valor grande e bold em vermelho — criando sensação de urgência
-- **Linha "Você recebe"**: destaque em ochre com fundo sutil para separar do resto
-- **Transição**: adicionar `transition-all duration-300` nos valores para suavizar mudanças
-- **Foco na perda por reserva**: reformular o breakdown para mostrar claramente "A cada reserva você perde X" antes do cálculo anual
+3. **Criar helper no frontend**
+   - Arquivo `src/lib/meta-capi.ts` com função `sendServerEvent(eventName, eventData)`
+   - Chama a Edge Function via `supabase.functions.invoke('meta-conversions', ...)`
 
-## Arquivo editado
-- `src/components/landing/OTAComparisonSection.tsx`
+4. **Integrar eventos na landing page**
+   - **PageView**: disparado ao carregar a página (Index.tsx)
+   - **Lead / InitiateCheckout**: disparado ao clicar no CTA de compra (link Kiwify `https://pay.kiwify.com.br/Y613pR3`)
+   - Atualizar os links `href="#"` no PricingSection e outros CTAs para apontar para o link Kiwify correto
+
+### Detalhes técnicos
+
+- A Edge Function usa `Deno.env.get('META_CONVERSIONS_TOKEN')` para acessar o token
+- Eventos enviados incluem: `event_name`, `event_time`, `action_source: "website"`, `event_source_url`, e hash do user agent
+- O frontend gera um `event_id` único para deduplicação entre Pixel (browser) e CAPI (servidor)
 
