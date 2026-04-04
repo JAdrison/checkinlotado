@@ -96,7 +96,7 @@ const StepsSection: React.FC = () => {
         style={{ padding: isMobile ? "40px 16px" : "64px 28px" }}
       >
         {/* Header */}
-        <div className="reveal text-center mb-4">
+        <div className="text-center mb-4">
           <span className="label-text">Sua jornada</span>
         </div>
         <div className="reveal text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
