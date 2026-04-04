@@ -99,7 +99,7 @@ const StepsSection: React.FC = () => {
         <div className="text-center mb-4">
           <span className="label-text">Sua jornada</span>
         </div>
-        <div className="reveal text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
+        <div className="text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
           <h2
             className="font-heading font-black leading-[1.2]"
             style={{
