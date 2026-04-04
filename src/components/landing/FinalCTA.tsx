@@ -1,3 +1,5 @@
+import { trackEvent } from "@/lib/meta-capi";
+
 const FinalCTA = () => {
   return (
     <section style={{ background: "#1A1208", textAlign: "center", position: "relative", overflow: "hidden" }} className="py-12 sm:py-[72px] px-4 sm:px-7">
