@@ -9,15 +9,15 @@ const benefits = [
 
 const PricingSection = () => {
   return (
-    <section id="comprar" style={{ background: "#1A1208", padding: "64px 28px" }}>
+    <section id="comprar" style={{ background: "#1A1208" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[680px] mx-auto text-center">
         <div className="reveal">
-          <div className="label-text text-cream-mid mb-3.5">Sua decisão</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.2] mb-3.5">
+          <div className="label-text text-cream-mid mb-3">Sua decisão</div>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.15] mb-3">
             Entre no<br />
             <span className="shimmer-text font-extrabold">Check-in Lotado</span>
           </h2>
-          <p className="text-cream-mid text-lg leading-[1.72] mb-12">
+          <p className="text-cream-mid text-[0.9rem] sm:text-lg leading-[1.72] mb-8 sm:mb-12">
             Você não está comprando apenas aulas. Está adquirindo uma forma mais estratégica de vender sua hospedagem.
           </p>
         </div>
