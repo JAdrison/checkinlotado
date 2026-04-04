@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackEvent } from "@/lib/meta-capi";
 
 interface AccordionSectionProps {
   bgColor: string;
