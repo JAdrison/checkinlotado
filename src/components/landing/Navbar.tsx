@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/meta-capi";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
