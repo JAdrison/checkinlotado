@@ -52,8 +52,8 @@ const OTAComparisonSection = () => {
               <div className="flex gap-4 items-start">
                 <span className="w-9 sm:w-11 h-9 sm:h-11 shrink-0 rounded-full bg-ochre/10 text-ochre flex items-center justify-center font-bold text-sm sm:text-base">01</span>
                 <div>
-                  <p className="font-heading text-lg font-bold text-night">Plataformas de hospedagens cobra 16% de comissão por reserva</p>
-                  <p className="text-night/60 text-base">Direto do valor da diária, antes de qualquer imposto</p>
+                  <p className="font-heading text-base sm:text-lg font-bold text-night">Plataformas de hospedagens cobra 16% de comissão por reserva</p>
+                  <p className="text-night/60 text-sm sm:text-base">Direto do valor da diária, antes de qualquer imposto</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
