@@ -82,7 +82,7 @@ const OTAComparisonSection = () => {
         <div className="max-w-[700px] mx-auto">
           <div className="reveal rounded-3xl p-8 md:p-10 border border-ochre/20 shadow-[0_4px_32px_rgba(0,0,0,0.08)]" style={{ background: "linear-gradient(180deg, #FAF8F4 0%, #FFFFFF 100%)" }}>
             <h3 className="font-heading text-xl md:text-2xl font-black text-night text-center mb-8">
-              Simule a <span className="text-ochre">sua perda real</span>
+              Simule o <span className="text-ochre">seu potencial de ganho</span>
             </h3>
 
             {/* Inputs */}
@@ -167,16 +167,16 @@ const OTAComparisonSection = () => {
 
             <div className="h-px w-full my-8 bg-night/10" />
 
-            {/* Impacto anual */}
-            <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+            {/* Potencial de ganho anual */}
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center">
+              <p className="font-heading text-base font-bold text-night/60 mb-1">Potencial de ganho</p>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <AlertTriangle className="w-7 h-7 text-red-500" />
-                <span className="font-heading text-[2.2rem] md:text-[3rem] text-red-600 font-black transition-all duration-300">
-                  −{fmt(annualLoss)}/ano
+                <span className="font-heading text-[2.2rem] md:text-[3rem] text-emerald-600 font-black transition-all duration-300">
+                  +{fmt(annualLoss)}/ano
                 </span>
               </div>
               <p className="text-sm md:text-base text-night/50">
-                10 diárias/mês × 12 meses × {fmt(totalLoss)} = <strong className="text-red-600">{fmt(annualLoss)}/ano</strong> saindo do seu faturamento
+                10 diárias/mês × 12 meses × {fmt(totalLoss)} = <strong className="text-emerald-600">+{fmt(annualLoss)}/ano</strong> vendendo direto
               </p>
             </div>
           </div>
