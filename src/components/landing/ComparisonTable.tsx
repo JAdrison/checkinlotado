@@ -20,11 +20,11 @@ const withoutMethod = [
 
 const ComparisonTable = () => {
   return (
-    <section style={{ background: "#FFFFFF" }} className="py-16 px-7">
+    <section style={{ background: "#FFFFFF" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[900px] mx-auto">
-        <div className="reveal text-center mb-14">
-          <div className="label-text mb-3.5">Antes e depois</div>
-          <h2 className="font-heading text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.2]">
+        <div className="reveal text-center mb-8 sm:mb-14">
+          <div className="label-text mb-3">Antes e depois</div>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15]">
             O que muda com o<br />
             <em className="shimmer-text font-extrabold">Check-in Lotado</em>
           </h2>
