@@ -22,12 +22,12 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="price-box reveal p-5 sm:p-10 mb-6" style={{ background: "rgba(234,227,207,0.07)", border: "1px solid rgba(200,148,58,0.2)" }}>
-          <div className="grid sm:grid-cols-2 gap-3 mb-10 text-left">
+        <div className="price-box reveal p-5 sm:p-10 mb-5 sm:mb-6" style={{ background: "rgba(234,227,207,0.07)", border: "1px solid rgba(200,148,58,0.2)" }}>
+          <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3 mb-8 sm:mb-10 text-left">
             {benefits.map((b, i) => (
-              <div key={i} className="flex gap-2.5">
+              <div key={i} className="flex gap-2 sm:gap-2.5">
                 <span className="text-ochre flex-shrink-0">✓</span>
-                <span className="text-cream-mid text-base">{b}</span>
+                <span className="text-cream-mid text-sm sm:text-base">{b}</span>
               </div>
             ))}
           </div>
