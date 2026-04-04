@@ -1,3 +1,7 @@
+import { trackEvent } from "@/lib/meta-capi";
+
+const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
+
 const benefits = [
   "Curso online gravado — acesso imediato",
   "Método Check-in Lotado completo",
@@ -49,7 +53,13 @@ const PricingSection = () => {
             </div>
           </div>
 
-          <a href="#" className="btn-cta btn-cta-lg btn-cta-full mx-auto">
+          <a
+            href={KIWIFY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })}
+            className="btn-cta btn-cta-lg btn-cta-full mx-auto"
+          >
             <span>QUERO ENTRAR AGORA →</span>
           </a>
         </div>

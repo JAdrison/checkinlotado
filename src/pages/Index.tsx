@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useReveal } from "@/hooks/useReveal";
+import { trackEvent } from "@/lib/meta-capi";
 
 import Hero from "@/components/landing/Hero";
 import Ticker from "@/components/landing/Ticker";
@@ -35,6 +37,10 @@ const faq = [
 
 const Index = () => {
   useReveal();
+
+  useEffect(() => {
+    trackEvent("PageView");
+  }, []);
 
   return (
     <div className="min-h-screen">
