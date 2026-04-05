@@ -65,8 +65,8 @@ const Hero = () => {
             <span className="label-text text-[0.6rem] sm:text-[0.7rem]">TREINAMENTO ONLINE PARA HOSPEDAGENS</span>
           </div>
           <h1 className="font-heading text-[1.8rem] sm:text-[clamp(2.2rem,5vw,4.2rem)] font-black text-night leading-[1.15] mb-4 sm:mb-5">
-            Como lotar sua hospedagem em{" "}
-            <em className="shimmer-text font-black">fins de semana comuns</em>
+            Como lotar sua hospedagem{" "}
+            <em className="shimmer-text font-black">todos os finais de semana</em>
           </h1>
           <p className="text-night/85 text-base sm:text-xl max-w-[560px] mx-auto leading-relaxed">
             Sem depender de feriados, sem baixar preço, sem improvisar campanha em cima da hora.
