@@ -2,6 +2,7 @@ import { Check, Calendar, TrendingUp } from "lucide-react";
 import { trackEvent } from "@/lib/meta-capi";
 import whatsappImg from "@/assets/case-study/whatsapp-iparai.webp";
 import guilhermeImg from "@/assets/case-study/guilherme-couto.webp";
+import iparaiLogo from "@/assets/case-study/iparai-logo.png";
 
 const metrics = [
   {
