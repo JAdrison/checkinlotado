@@ -1,3 +1,4 @@
+import "@/styles/below-fold.css";
 import { useState } from "react";
 import { trackEvent } from "@/lib/meta-capi";
 
