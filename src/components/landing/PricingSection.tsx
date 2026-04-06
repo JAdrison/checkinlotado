@@ -1,3 +1,4 @@
+import "@/styles/below-fold.css";
 import { trackEvent } from "@/lib/meta-capi";
 
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";

@@ -140,8 +140,7 @@ const StepsSection: React.FC = () => {
                 <div
                   className="flex-1 min-w-0 rounded-2xl p-4"
                   style={{
-                    background: "rgba(255,255,255,0.04)",
-                    backdropFilter: "blur(16px)",
+                    background: "rgba(255,255,255,0.06)",
                     border: "1px solid rgba(200,148,58,0.15)",
                     boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
                   }}
@@ -189,8 +188,7 @@ const StepsSection: React.FC = () => {
                     <div
                       className="rounded-2xl p-7 text-center flex-1 w-full transition-all duration-500 hover:-translate-y-1"
                       style={{
-                        background: "rgba(255,255,255,0.04)",
-                        backdropFilter: "blur(20px)",
+                        background: "rgba(255,255,255,0.06)",
                         border: "1px solid rgba(200,148,58,0.12)",
                         boxShadow: "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03)",
                       }}

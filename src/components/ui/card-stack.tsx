@@ -279,7 +279,7 @@ export function CardStack<T extends CardStackItem>({
   );
 }
 
-function DefaultFanCard({ item }: { item: CardStackItem; active: boolean }) {
+function DefaultFanCard({ item, active }: { item: CardStackItem; active: boolean }) {
   return (
     <div className="w-full h-full relative bg-night/5">
       <div className="absolute inset-0">
@@ -291,6 +291,8 @@ function DefaultFanCard({ item }: { item: CardStackItem; active: boolean }) {
             draggable={false}
             width={480}
             height={300}
+            loading={active ? "eager" : "lazy"}
+            fetchPriority={active ? "high" : "auto"}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground text-sm">
