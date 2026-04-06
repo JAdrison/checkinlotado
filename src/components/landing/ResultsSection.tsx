@@ -34,6 +34,8 @@ const Card = ({ img, delay }: { img: string; delay: number }) => (
         src={img}
         alt="Reserva confirmada"
         className="w-full h-auto object-cover"
+        width={378}
+        height={555}
         loading="lazy"
       />
     </div>
