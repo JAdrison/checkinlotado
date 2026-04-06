@@ -6,7 +6,7 @@ import Hero from "@/components/landing/Hero";
 import Ticker from "@/components/landing/Ticker";
 import Stats from "@/components/landing/Stats";
 
-const ForWhom = lazy(() => import("@/components/landing/ForWhom"));
+import ForWhom from "@/components/landing/ForWhom";
 const Testimonials = lazy(() => import("@/components/landing/Testimonials"));
 const ModulesSection = lazy(() => import("@/components/landing/ModulesSection"));
 const StepsSection = lazy(() => import("@/components/landing/StepsSection"));
@@ -46,8 +46,8 @@ const Index = () => {
       <Hero />
       <Ticker />
       <Stats />
+      <ForWhom />
       <Suspense fallback={null}>
-        <ForWhom />
         <Testimonials />
         <ModulesSection />
         <StepsSection />
