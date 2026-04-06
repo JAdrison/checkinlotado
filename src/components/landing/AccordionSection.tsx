@@ -62,7 +62,7 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
 
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <a href="https://pay.kiwify.com.br/Y613pR3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })} className="btn-cta btn-cta-lg">
+          <a href="#comprar" className="btn-cta btn-cta-lg">
             QUERO ENTRAR AGORA →
           </a>
         </div>
