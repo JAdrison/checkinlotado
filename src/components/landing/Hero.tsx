@@ -88,7 +88,7 @@ const Hero = () => {
         </div>
 
         {/* CTA */}
-        <a href="https://pay.kiwify.com.br/Y613pR3" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })} className="btn-cta btn-cta-lg mt-8 text-center reveal">
+        <a href="#comprar" className="btn-cta btn-cta-lg mt-8 text-center reveal">
           <span>QUERO LOTAR MINHA HOSPEDAGEM</span>
           <span className="relative z-[1]">↗</span>
         </a>
