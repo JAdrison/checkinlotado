@@ -60,7 +60,7 @@ const Hero = () => {
       </div>
       <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
         {/* Headline */}
-        <div className="text-center mb-8 sm:mb-10 reveal">
+        <div className="text-center mb-8 sm:mb-10 reveal" style={{ minHeight: '220px' }}>
           <div className="inline-block border border-ochre/30 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 mb-5 sm:mb-6">
             <span className="label-text text-[0.6rem] sm:text-[0.7rem]">TREINAMENTO ONLINE PARA HOSPEDAGENS</span>
           </div>
