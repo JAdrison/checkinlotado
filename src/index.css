@@ -488,8 +488,12 @@
   justify-content: center;
   position: relative;
   z-index: 1;
-  animation: floatY 3s ease-in-out infinite;
   transition: background 0.3s;
+}
+@media (min-width: 641px) {
+  .play-btn {
+    animation: floatY 3s ease-in-out infinite;
+  }
 }
 .video-box:hover .play-btn {
   background: rgba(200,148,58,0.3);
