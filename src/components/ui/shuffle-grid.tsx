@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 import p1 from "@/assets/gallery/pousada-1.jpg";
 import p2 from "@/assets/gallery/pousada-2.jpg";
@@ -50,33 +50,58 @@ const shuffle = (array: typeof squareData) => {
 
 const ShuffleGrid = () => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isVisibleRef = useRef(false);
   const [shuffled, setShuffled] = useState(() => shuffle(squareData));
 
-  useEffect(() => {
-    const doShuffle = () => {
+  const scheduleShuffle = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (!isVisibleRef.current) return;
+    timeoutRef.current = setTimeout(() => {
       setShuffled(shuffle(squareData));
-      timeoutRef.current = setTimeout(doShuffle, 3000);
-    };
-    timeoutRef.current = setTimeout(doShuffle, 3000);
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
+      scheduleShuffle();
+    }, 3000);
   }, []);
 
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          scheduleShuffle();
+        } else if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [scheduleShuffle]);
+
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1 rounded-2xl overflow-hidden">
+    <div ref={containerRef} className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1 rounded-2xl overflow-hidden">
       {shuffled.map((sq) => (
         <motion.div
           key={sq.id}
           layout
           transition={{ duration: 1.5, type: "spring" }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: `url(${sq.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+          className="w-full h-full overflow-hidden"
+        >
+          <img
+            src={sq.src}
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
       ))}
     </div>
   );
