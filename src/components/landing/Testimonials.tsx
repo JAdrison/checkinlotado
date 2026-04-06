@@ -2,6 +2,7 @@ import { Check, Calendar, TrendingUp } from "lucide-react";
 import { trackEvent } from "@/lib/meta-capi";
 import whatsappImg from "@/assets/case-study/whatsapp-iparai.webp";
 import guilhermeImg from "@/assets/case-study/guilherme-couto.webp";
+import iparaiLogo from "@/assets/case-study/iparai-logo.png";
 
 const metrics = [
   {
@@ -100,9 +101,9 @@ const Testimonials = () => {
               </p>
               <div className="flex items-center gap-3">
                 <img
-                  src={guilhermeImg}
-                  alt="Guilherme Couto"
-                  className="w-11 h-11 rounded-full object-cover"
+                  src={iparaiLogo}
+                  alt="Casa Iparaí"
+                  className="w-11 h-11 rounded-full object-cover bg-white"
                   width={44}
                   height={44}
                   loading="lazy"
