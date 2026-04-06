@@ -291,7 +291,6 @@ function DefaultFanCard({ item }: { item: CardStackItem; active: boolean }) {
             draggable={false}
             width={480}
             height={300}
-            loading="lazy"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground text-sm">
