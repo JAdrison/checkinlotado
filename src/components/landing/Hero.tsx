@@ -88,8 +88,8 @@ const Hero = () => {
         </div>
 
         {/* CTA */}
-        <a href="#comprar" className="btn-cta btn-cta-lg mt-8 text-center reveal">
-          <span>QUERO LOTAR MINHA HOSPEDAGEM</span>
+        <a href="#comprar" className="btn-cta btn-cta-lg mt-8 text-center reveal w-full sm:w-auto">
+          <span className="text-[0.75rem] sm:text-base">QUERO LOTAR MINHA HOSPEDAGEM</span>
           <span className="relative z-[1]">↗</span>
         </a>
       </div>
