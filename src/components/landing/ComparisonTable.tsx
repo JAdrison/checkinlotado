@@ -1,4 +1,3 @@
-import "@/styles/below-fold.css";
 import { Check, X, TrendingUp, TrendingDown } from "lucide-react";
 import { trackEvent } from "@/lib/meta-capi";
 

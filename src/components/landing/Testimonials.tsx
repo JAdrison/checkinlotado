@@ -1,6 +1,5 @@
 import { Check, Calendar, TrendingUp } from "lucide-react";
 import { trackEvent } from "@/lib/meta-capi";
-import { useIsMobile } from "@/hooks/use-mobile";
 import whatsappImg from "@/assets/case-study/whatsapp-iparai.webp";
 import guilhermeImg from "@/assets/case-study/guilherme-couto.webp";
 
@@ -22,30 +21,19 @@ const metrics = [
   },
 ];
 
-const cardStyle = {
-  background: "rgba(30,25,15,0.75)",
-  border: "1px solid rgba(255,255,255,0.12)",
-};
-
 const Testimonials = () => {
-  const isMobile = useIsMobile();
-
   return (
     <section className="relative overflow-hidden" style={{ padding: "40px 16px" }}>
-      {/* Video background — desktop only */}
-      {!isMobile ? (
-        <video
-          src="/videos/iparai-bg.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      ) : (
-        <div className="absolute inset-0 bg-night" />
-      )}
+      {/* Video background */}
+      <video
+        src="/videos/iparai-bg.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="none"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 max-w-[1100px] mx-auto">
@@ -82,7 +70,7 @@ const Testimonials = () => {
               <div
                 key={i}
                 className="landing-card p-4 sm:p-5 flex items-center gap-3 sm:gap-4"
-                style={{ ...cardStyle, transitionDelay: `${(i + 1) * 0.05}s` }}
+                style={{ transitionDelay: `${(i + 1) * 0.05}s`, background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}
               >
                 <div className="w-11 h-11 rounded-full bg-ochre/[0.25] flex items-center justify-center shrink-0">
                   <m.icon className="w-5 h-5 text-ochre" />
@@ -97,7 +85,7 @@ const Testimonials = () => {
             ))}
 
             {/* Testimonial */}
-            <div className="p-5 sm:p-7 mt-1 rounded-xl" style={cardStyle}>
+            <div className="p-5 sm:p-7 mt-1 rounded-xl" style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}>
               <div className="text-ochre mb-3">★★★★★</div>
               <p className="text-cream/85 text-sm sm:text-base leading-[1.75] mb-4 sm:mb-5">
                 "Essa semana a gente completa 7 meses e o salto em reservas foi

@@ -1,4 +1,3 @@
-import "@/styles/below-fold.css";
 import { useEffect, useRef } from "react";
 import { Sparkles, Calendar, Megaphone, MessageCircle, Repeat } from "lucide-react";
 
