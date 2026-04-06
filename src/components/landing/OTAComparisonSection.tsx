@@ -194,8 +194,8 @@ const OTAComparisonSection = () => {
 
         {/* CTA */}
         <div className="reveal text-center mt-10">
-          <a href="#comprar" className="btn-cta btn-cta-lg">
-            QUERO VENDER DIRETO →
+          <a href="#comprar" className="btn-cta btn-cta-lg w-full sm:w-auto">
+            <span className="text-[0.75rem] sm:text-base">QUERO VENDER DIRETO →</span>
           </a>
         </div>
       </div>

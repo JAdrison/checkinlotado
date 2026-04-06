@@ -80,8 +80,8 @@ const ComparisonTable = () => {
         </div>
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <a href="#comprar" className="btn-cta btn-cta-lg">
-            QUERO ENTRAR AGORA →
+          <a href="#comprar" className="btn-cta btn-cta-lg w-full sm:w-auto">
+            <span className="text-[0.75rem] sm:text-base">QUERO ENTRAR AGORA →</span>
           </a>
         </div>
       </div>
