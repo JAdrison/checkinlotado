@@ -513,3 +513,16 @@
 #sticky-bar.show {
   display: flex;
 }
+
+/* Mobile performance: reduce heavy animations */
+@media (max-width: 640px) {
+  .btn-cta {
+    animation: none !important;
+  }
+  .btn-cta::after {
+    display: none !important;
+  }
+  .shimmer-text {
+    animation-duration: 6s;
+  }
+}
