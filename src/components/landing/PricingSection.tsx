@@ -39,11 +39,11 @@ const PricingSection = () => {
           <div className="h-px w-full bg-ochre/20 mb-8" />
 
           <div className="mb-6 sm:mb-8">
-            <p className="text-cream-mid/60 text-xs sm:text-sm mb-1 line-through">De R$997</p>
+            <p className="text-cream-mid/60 text-xs sm:text-sm mb-1 line-through">De R$497</p>
             <div className="flex items-baseline justify-center gap-2 mt-2">
               <span className="text-ochre font-label font-bold text-xs sm:text-sm">POR</span>
               <span className="text-cream font-semibold text-lg sm:text-xl leading-none">
-                R$497
+                R$197
               </span>
             </div>
             <div className="flex items-baseline justify-center gap-1 mt-2">
@@ -52,7 +52,7 @@ const PricingSection = () => {
                 12x
               </span>
               <span className="font-heading font-black text-[2.4rem] sm:text-[3.2rem] text-cream leading-none">
-                R$51,40
+                R$20,37
               </span>
             </div>
           </div>
@@ -61,7 +61,7 @@ const PricingSection = () => {
             href={KIWIFY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 51.40, currency: "BRL" })}
+            onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 20.37, currency: "BRL" })}
             className="btn-cta btn-cta-lg btn-cta-full mx-auto"
           >
             <span>QUERO ENTRAR AGORA →</span>
