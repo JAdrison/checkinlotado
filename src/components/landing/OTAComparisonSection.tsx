@@ -1,22 +1,8 @@
-import { useState } from "react";
 import { trackEvent } from "@/lib/meta-capi";
-import { AlertTriangle, CheckCircle, XCircle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import reformaImg from "@/assets/reforma-tributaria.webp";
-import { Slider } from "@/components/ui/slider";
-
-const fmt = (v: number) =>
-  v.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
 const OTAComparisonSection = () => {
-  const [dailyRate, setDailyRate] = useState(300);
-  const [accommodations, setAccommodations] = useState(6);
-
-  const revenue = dailyRate * accommodations;
-  const platformFee = revenue * 0.16;
-  const taxFee = revenue * 0.08;
-  const totalLoss = platformFee + taxFee;
-  const netPerDay = revenue - totalLoss;
-  const annualLoss = totalLoss * 120;
 
   return (
     <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#FFFFFF" }}>
@@ -79,109 +65,6 @@ const OTAComparisonSection = () => {
           </div>
         </div>
 
-        {/* Calculadora interativa */}
-        <div className="max-w-[700px] mx-auto">
-          <div className="reveal rounded-3xl p-5 sm:p-8 md:p-10 border border-ochre/20 shadow-[0_4px_32px_rgba(0,0,0,0.08)]" style={{ background: "linear-gradient(180deg, #FAF8F4 0%, #FFFFFF 100%)" }}>
-            <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-black text-night text-center mb-6 sm:mb-8">
-              Simule o <span className="text-ochre">seu potencial de ganho</span>
-            </h3>
-
-            {/* Inputs */}
-            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10">
-              {/* Diária */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-baseline">
-                  <label className="font-heading text-sm font-bold text-night/70 uppercase tracking-wide">Valor da diária</label>
-                  <span className="font-heading text-2xl font-black text-night transition-all duration-300">{fmt(dailyRate)}</span>
-                </div>
-                <Slider
-                  value={[dailyRate]}
-                  onValueChange={(v) => setDailyRate(v[0])}
-                  min={100}
-                  max={5000}
-                  step={50}
-                  className="[&_[role=slider]]:bg-ochre [&_[role=slider]]:border-ochre [&_[role=slider]]:w-6 [&_[role=slider]]:h-6 [&_.bg-primary]:bg-ochre [&_[data-orientation=horizontal]]:h-3"
-                />
-                <div className="flex justify-between text-xs text-night/40">
-                  <span>R$ 100</span>
-                  <span>R$ 5.000</span>
-                </div>
-              </div>
-
-              {/* Hospedagens */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-baseline">
-                  <label className="font-heading text-sm font-bold text-night/70 uppercase tracking-wide">Hospedagens</label>
-                  <span className="font-heading text-2xl font-black text-night transition-all duration-300">{accommodations}</span>
-                </div>
-                <Slider
-                  value={[accommodations]}
-                  onValueChange={(v) => setAccommodations(v[0])}
-                  min={1}
-                  max={20}
-                  step={1}
-                  className="[&_[role=slider]]:bg-ochre [&_[role=slider]]:border-ochre [&_[role=slider]]:w-6 [&_[role=slider]]:h-6 [&_.bg-primary]:bg-ochre [&_[data-orientation=horizontal]]:h-3"
-                />
-                <div className="flex justify-between text-xs text-night/40">
-                  <span>1</span>
-                  <span>20</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Breakdown */}
-            <div className="space-y-0">
-              <div className="flex justify-between items-center py-4 border-b border-night/5">
-                <span className="flex items-center gap-2 text-night/70 text-base">
-                  <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" />
-                  Faturamento por reserva
-                </span>
-                <span className="font-heading text-xl text-night transition-all duration-300">{fmt(revenue)}</span>
-              </div>
-              <div className="flex justify-between items-center py-4 border-b border-night/5">
-                <span className="flex items-center gap-2 text-night/70 text-base">
-                  <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                  Comissão Plataforma (16%)
-                </span>
-                <span className="font-heading text-xl text-red-600 font-bold transition-all duration-300">− {fmt(platformFee)}</span>
-              </div>
-              <div className="flex justify-between items-center py-4 border-b border-night/5">
-                <span className="flex items-center gap-2 text-night/70 text-base">
-                  <XCircle className="w-5 h-5 text-red-500 shrink-0" />
-                  Imposto NF (8%)
-                </span>
-                <span className="font-heading text-xl text-red-600 font-bold transition-all duration-300">− {fmt(taxFee)}</span>
-              </div>
-
-              {/* Perda por reserva */}
-              <div className="flex justify-between items-center py-3 sm:py-4 border-b border-night/5 bg-red-50/50 -mx-5 sm:-mx-8 md:-mx-10 px-5 sm:px-8 md:px-10">
-                <span className="font-heading text-sm sm:text-base font-bold text-red-700">A cada reserva você perde</span>
-                <span className="font-heading text-lg sm:text-xl text-red-600 font-black transition-all duration-300">− {fmt(totalLoss)}</span>
-              </div>
-
-              {/* Você recebe */}
-              <div className="flex justify-between items-center py-3 sm:py-4 bg-ochre/5 -mx-5 sm:-mx-8 md:-mx-10 px-5 sm:px-8 md:px-10 rounded-b-2xl">
-                <span className="font-heading text-base sm:text-lg font-bold text-night">Você recebe por reserva</span>
-                <span className="font-heading text-lg sm:text-xl text-ochre font-black transition-all duration-300">{fmt(netPerDay)}</span>
-              </div>
-            </div>
-
-            <div className="h-px w-full my-8 bg-night/10" />
-
-            {/* Potencial de ganho anual */}
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 sm:p-6 text-center">
-              <p className="font-heading text-sm sm:text-base font-bold text-night/60 mb-1">Potencial de ganho</p>
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <span className="font-heading text-[1.6rem] sm:text-[2.2rem] md:text-[3rem] text-emerald-600 font-black transition-all duration-300">
-                  +{fmt(annualLoss)}/ano
-                </span>
-              </div>
-              <p className="text-sm md:text-base text-night/50">
-                10 diárias/mês × 12 meses × {fmt(totalLoss)} = <strong className="text-emerald-600">+{fmt(annualLoss)}/ano</strong> vendendo direto
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* Bottom text */}
         <div className="reveal text-center mt-14">
