@@ -1,7 +1,9 @@
 import ShuffleGrid from "@/components/ui/shuffle-grid";
 import { trackEvent } from "@/lib/meta-capi";
+import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const GallerySection = () => {
+  const { setOpen } = useLeadForm();
   return (
     <section className="py-10 sm:py-14 px-4 sm:px-7" style={{ background: "#1A1208" }}>
       <div className="max-w-[1100px] mx-auto">
@@ -20,10 +22,10 @@ const GallerySection = () => {
               O método funciona para qualquer tipo de hospedagem que quer parar de
               depender de feriado.
             </p>
-            <a href="#comprar" className="btn-cta btn-cta-lg w-full sm:w-auto text-center">
+            <button onClick={() => setOpen(true)} className="btn-cta btn-cta-lg w-full sm:w-auto text-center">
               <span className="text-[0.75rem] sm:text-base">QUERO O MESMO RESULTADO</span>
               <span className="relative z-[1]">↗</span>
-            </a>
+            </button>
           </div>
 
           {/* Shuffle Grid */}

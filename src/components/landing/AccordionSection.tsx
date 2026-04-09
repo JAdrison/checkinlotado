@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { trackEvent } from "@/lib/meta-capi";
+import { useLeadForm } from "@/contexts/LeadFormContext";
 
 interface AccordionSectionProps {
   bgColor: string;
@@ -11,6 +12,7 @@ interface AccordionSectionProps {
 
 const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }: AccordionSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { setOpen } = useLeadForm();
 
   const toggle = (i: number) => {
     setOpenIndex(openIndex === i ? null : i);
@@ -62,9 +64,9 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
 
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <a href="#comprar" className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => setOpen(true)} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO ENTRAR AGORA →</span>
-          </a>
+          </button>
         </div>
       </div>
     </section>
