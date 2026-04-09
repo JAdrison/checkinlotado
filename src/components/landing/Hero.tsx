@@ -64,10 +64,9 @@ const Hero = () => {
       <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
         {/* Headline */}
         <div className="text-center mb-8 sm:mb-10 reveal" style={{ minHeight: '220px' }}>
-            <img src={logoImg} alt="Check-in Lotado" className="h-14 sm:h-20 mx-auto mb-5 sm:mb-6" />
-            <div className="inline-block border border-ochre/30 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 mb-5 sm:mb-6">
-              <span className="label-text text-[0.6rem] sm:text-[0.7rem]">TREINAMENTO ONLINE PARA HOSPEDAGENS</span>
-            </div>
+          <img src={logoImg} alt="Check-in Lotado" className="h-14 sm:h-20 mx-auto mb-5 sm:mb-6" />
+          <div className="inline-block border border-ochre/30 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 mb-5 sm:mb-6">
+            <span className="label-text text-[0.6rem] sm:text-[0.7rem]">TREINAMENTO ONLINE PARA HOSPEDAGENS</span>
           </div>
           <h1 className="font-heading text-[1.8rem] sm:text-[clamp(2.2rem,5vw,4.2rem)] font-black text-night leading-[1.15] mb-4 sm:mb-5">
             Como lotar sua hospedagem{" "}
