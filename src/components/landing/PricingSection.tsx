@@ -49,7 +49,7 @@ const PricingSection = () => {
             <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3 pl-1">
               {group1.map((item, i) => (
                 <div key={i} className="flex gap-2.5">
-                  <span className="text-ochre flex-shrink-0 text-sm mt-0.5">✓</span>
+                  <CalendarDays className="text-ochre flex-shrink-0 mt-0.5" size={16} />
                   <span className="text-cream-mid text-sm sm:text-base">{item}</span>
                 </div>
               ))}
