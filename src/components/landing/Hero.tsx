@@ -1,5 +1,6 @@
 import { useState } from "react";
 import heroBg from "@/assets/hero-bg.webp";
+import heroThumb from "@/assets/video-thumbnail.png";
 import { trackEvent } from "@/lib/meta-capi";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 
