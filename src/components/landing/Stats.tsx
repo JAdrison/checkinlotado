@@ -1,7 +1,7 @@
 const stats = [
   { emoji: "🤖", title: "10 Agentes GPTs treinados", desc: "Eles vão te ajudar em todas as etapas da sua hospedagem." },
   { emoji: "🗓", title: "O passo a passo de 90 dias", desc: "Passo a passo completo para sua hospedagem alugar todos os finais de semana do mês em até 90 dias." },
-  { emoji: "💬", title: "Suporte no Wapp ao vivo", desc: "Tire dúvidas com a equipe e siga a jornada com confiança." },
+  { emoji: "💬", title: "Suporte no Exclusivo", desc: "Tire dúvidas com a equipe e siga a jornada com confiança." },
   { emoji: "✅", title: "Garantia de 7 dias", desc: "Reembolso garantido." },
 ];
 
