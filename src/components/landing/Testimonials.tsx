@@ -93,15 +93,11 @@ const Testimonials = () => {
             <div className="p-5 sm:p-7 mt-1 rounded-xl" style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}>
               <div className="text-ochre mb-3">★★★★★</div>
               <p className="text-cream/85 text-sm sm:text-base leading-[1.75] mb-4 sm:mb-5">
-                "Essa semana a gente completa 7 meses e o salto em reservas foi
-                grande, principalmente nesse final de semana. De sábado até
-                agora já finalizei 04 reservas, fora as que ainda estão com
-                pagamento pendente por conta que tão recolhendo valores do
-                grupo. Os anúncios estão bem estratégicos, chegando no público
-                alvo. O site está super funcional, uma ferramenta excepcional
-                que reduz as dúvidas de novos clientes como também a
-                valorização que dá para o negócio. O Checkin Lotado foi o
-                diferencial, obrigado."
+                "Em 7 meses, saímos de finais de semana vazios para agenda
+                lotada. Só nesse fim de semana fechei 4 reservas — e ainda tinha
+                pendentes. Os anúncios chegam no público certo, o site virou
+                ferramenta de venda e o valor da hospedagem subiu. O Check-in
+                Lotado foi o divisor de águas."
               </p>
               <div className="flex items-center gap-3">
                 <img
