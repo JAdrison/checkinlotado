@@ -66,8 +66,8 @@ const Hero = () => {
         <div className="text-center mb-8 sm:mb-10 reveal" style={{ minHeight: '220px' }}>
           
           <h1 className="font-heading text-[2.2rem] sm:text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-black leading-[1.12] mb-4 sm:mb-5">
-            Como lotar sua hospedagem{" "}
-            <em className="shimmer-text font-black">todos os finais de semana</em>
+            Como lotar sua hospedagem de reservas{" "}
+            <em className="shimmer-text font-black">em 30 dias</em>
           </h1>
           <p className="text-black/85 text-xl max-w-[560px] mx-auto leading-relaxed sm:text-4xl font-extrabold">
             Sem depender de feriados, sem baixar preço, sem improvisar campanha em cima da hora.
