@@ -3,6 +3,9 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/meta-capi";
+import logoImg from "@/assets/checkin-lotado-logo.png";
+import { supabase } from "@/integrations/supabase/client";
+import { trackEvent } from "@/lib/meta-capi";
 
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 
@@ -91,11 +94,9 @@ const LeadFormDialog = () => {
       >
         <DialogTitle className="sr-only">Formulário de inscrição</DialogTitle>
         <div className="p-6 sm:p-8">
-          {/* Logo text */}
+          {/* Logo */}
           <div className="text-center mb-6">
-            <span className="font-heading text-3xl sm:text-4xl font-bold text-cream">
-              Check-in <span className="text-ochre">Lotado</span>
-            </span>
+            <img src={logoImg} alt="Check-in Lotado" className="h-16 sm:h-20 mx-auto" />
           </div>
 
           {/* Headline */}
