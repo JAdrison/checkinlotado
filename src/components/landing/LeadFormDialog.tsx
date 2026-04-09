@@ -84,13 +84,13 @@ const LeadFormDialog = () => {
   };
 
   const inputClass =
-    "w-full rounded-lg px-4 py-3 text-sm text-gray-900 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors";
+    "w-full rounded-lg px-4 py-3 text-sm text-cream bg-white/[0.07] border border-ochre/20 placeholder:text-cream/30 focus:outline-none focus:border-ochre/50 focus:ring-1 focus:ring-ochre/20 transition-colors";
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
-        className="max-w-md w-[95vw] p-0 border-gray-200 overflow-hidden rounded-2xl"
-        style={{ background: "#FFF9F0" }}
+        className="max-w-md w-[95vw] p-0 border-ochre/20 overflow-hidden rounded-2xl"
+        style={{ background: "#1A1208" }}
       >
         <DialogTitle className="sr-only">Formulário de inscrição</DialogTitle>
         <div className="p-6 sm:p-8">
@@ -100,7 +100,7 @@ const LeadFormDialog = () => {
           </div>
 
           {/* Headline */}
-          <p className="text-gray-900 text-center text-lg sm:text-xl font-semibold leading-snug mb-6 sm:mb-8">
+          <p className="text-cream text-center text-lg sm:text-xl font-semibold leading-snug mb-6 sm:mb-8">
             Preencha o formulário e descubra como{" "}
             <strong className="text-ochre">faturar alto</strong> com a sua
             hospedagem.
@@ -108,7 +108,7 @@ const LeadFormDialog = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
                 NOME
               </label>
               <input
@@ -120,12 +120,12 @@ const LeadFormDialog = () => {
                 className={inputClass}
               />
               {errors.name && (
-                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                <p className="text-red-400 text-xs mt-1">{errors.name}</p>
               )}
             </div>
 
             <div>
-              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
                 MELHOR E-MAIL
               </label>
               <input
@@ -137,16 +137,16 @@ const LeadFormDialog = () => {
                 className={inputClass}
               />
               {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                <p className="text-red-400 text-xs mt-1">{errors.email}</p>
               )}
             </div>
 
             <div>
-              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
                 WHATSAPP
               </label>
               <div className="flex">
-                <span className="flex items-center px-3 rounded-l-lg text-sm text-gray-600 bg-gray-50 border border-r-0 border-gray-200">
+                <span className="flex items-center px-3 rounded-l-lg text-sm text-cream/50 bg-white/[0.04] border border-r-0 border-ochre/20">
                   +55
                 </span>
                 <input
@@ -160,12 +160,12 @@ const LeadFormDialog = () => {
                 />
               </div>
               {errors.whatsapp && (
-                <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>
+                <p className="text-red-400 text-xs mt-1">{errors.whatsapp}</p>
               )}
             </div>
 
             <div>
-              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
                 TIPO DE HOSPEDAGEM
               </label>
               <select
@@ -180,17 +180,17 @@ const LeadFormDialog = () => {
                   backgroundPosition: "right 12px center",
                 }}
               >
-                <option value="" disabled className="text-gray-400">
+                <option value="" disabled className="bg-[#1A1208] text-cream/50">
                   Selecione...
                 </option>
                 {accommodationTypes.map((type) => (
-                  <option key={type} value={type} className="text-gray-900">
+                  <option key={type} value={type} className="bg-[#1A1208] text-cream">
                     {type}
                   </option>
                 ))}
               </select>
               {errors.accommodation_type && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="text-red-400 text-xs mt-1">
                   {errors.accommodation_type}
                 </p>
               )}
@@ -200,10 +200,10 @@ const LeadFormDialog = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full mt-2 py-4 px-8 rounded-xl font-semibold text-base tracking-wide text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full mt-2 py-4 px-8 rounded-xl font-semibold text-base tracking-wide text-night transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
               style={{
                 background: "linear-gradient(135deg, #C8943A 0%, #E2B868 100%)",
-                boxShadow: "0 4px 20px rgba(200, 148, 58, 0.35)",
+                boxShadow: "0 8px 30px rgba(200, 148, 58, 0.4)",
               }}
             >
               {loading ? "Enviando..." : "Quero faturar alto →"}
