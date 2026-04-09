@@ -65,9 +65,6 @@ const Hero = () => {
         {/* Headline */}
         <div className="text-center mb-8 sm:mb-10 reveal" style={{ minHeight: '220px' }}>
           
-          <div className="inline-block border border-ochre/30 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 mb-5 sm:mb-6">
-            <span className="label-text text-[0.7rem] sm:text-[0.8rem]">TREINAMENTO ONLINE PARA HOSPEDAGENS</span>
-          </div>
           <h1 className="font-heading text-[2.2rem] sm:text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-black leading-[1.12] mb-4 sm:mb-5">
             Como lotar sua hospedagem{" "}
             <em className="shimmer-text font-black">todos os finais de semana</em>
