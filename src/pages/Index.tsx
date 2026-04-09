@@ -46,9 +46,11 @@ const Index = () => {
       <Hero />
       
       <Stats />
-      <ForWhom />
       <Suspense fallback={null}>
         <Testimonials />
+      </Suspense>
+      <ForWhom />
+      <Suspense fallback={null}>
         <ModulesSection />
         <StepsSection />
         <ComparisonTable />
