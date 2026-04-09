@@ -119,7 +119,7 @@ const ResultsSection = () => {
             <em className="shimmer-text font-extrabold">Todo. Dia.</em>
           </h2>
           <p className="text-night/85 text-base sm:text-[1.1rem] leading-relaxed max-w-[620px] mx-auto mb-4 sm:mb-6 font-semibold rounded-xl">
-            Prints reais de hospedagens que aplicaram o método Check-in Lotado e transformaram fins de semana vazios em reservas confirmadas.
+            Olha o resultado que nossas hospedagens tiveram aplicando o método Check-in Lotado 
           </p>
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-ochre/[0.12] text-ochre text-[0.75rem] sm:text-[0.82rem] font-semibold tracking-wide">
             <span className="w-2 h-2 rounded-full bg-ochre animate-pulse" />
