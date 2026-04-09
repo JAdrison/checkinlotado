@@ -70,7 +70,7 @@ const Hero = () => {
             <em className="shimmer-text font-black">em 30 dias</em>
           </h1>
           <p className="text-black/85 text-xl max-w-[560px] mx-auto leading-relaxed sm:text-4xl font-extrabold">
-            Sem depender de feriados, sem baixar preço, sem improvisar campanha em cima da hora.
+            Sem depender de feriados, sem baixar preço, sem aumentar o custo fixo.
           </p>
         </div>
 
