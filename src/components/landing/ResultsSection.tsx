@@ -118,7 +118,7 @@ const ResultsSection = () => {
             Quem aplica o método, vende.<br />
             <em className="shimmer-text font-extrabold">Todo. Dia.</em>
           </h2>
-          <p className="text-night/85 text-sm sm:text-[0.95rem] leading-relaxed max-w-[560px] mx-auto mb-4 sm:mb-6">
+          <p className="text-night/85 text-sm sm:text-[0.95rem] leading-relaxed max-w-[560px] mx-auto mb-4 sm:mb-6 font-semibold rounded-xl">
             Prints reais de hospedagens que aplicaram o método Check-in Lotado e transformaram fins de semana vazios em reservas confirmadas.
           </p>
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-ochre/[0.12] text-ochre text-[0.75rem] sm:text-[0.82rem] font-semibold tracking-wide">
