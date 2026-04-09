@@ -6,7 +6,7 @@ import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const bullets = [
   "Vai entender o que precisa fazer para vender mais na sua estadia para que ela deixe de ser apenas um custo fixo pesado no seu mês",
-  "Como criar campanhas com antecedência sem depender de feriados",
+  "Vai aprender a estruturar o Instagram da hospedagem, como fazer a captação de clientes através de tráfego pago e o mais importante: como fazer o atendimento virar reservas",
   "Você vai aprender a identificar onde está o real problema de poucas reservas da sua hospedagem",
   "Como vender mais sem baixar preço e sair do improviso de vez",
 ];
