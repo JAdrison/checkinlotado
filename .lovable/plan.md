@@ -1,25 +1,25 @@
 
 
-## Problem
+## Plan: Redesign the "Entre no Check-in Lotado" section
 
-On mobile, the accordion only shows one phase at a time — when a new one opens, the previous one closes. This makes it hard to read all phases as you scroll. The IntersectionObserver also struggles because collapsed items are only 60px tall.
+Inspired by the uploaded reference image, we'll restructure the PricingSection to remove all pricing (R$197, R$497, 12x, etc.) and replace it with a grouped benefits layout similar to the reference — organized into 3 distinct blocks with dividers, each with a bold heading and bullet items with icons. A CTA button at the bottom opens the lead form instead of linking to Kiwify.
 
-## Solution
+### New structure
 
-On mobile, change the behavior so that phases **progressively open and stay open** as the user scrolls down. Instead of a single `activeIndex`, track a **Set of active indices**. Once a phase becomes visible, it opens and remains open.
+1. **Header** — Keep "Sua decisão" label + "Entre no Check-in Lotado" title + subtitle
+2. **Card with 3 benefit groups** separated by dividers:
+   - **"Acesso completo ao método Check-in Lotado"** — grid of items with checkmark icons (curso gravado, método completo, calendário 90 dias, scripts, 10 GPTs, etc.)
+   - **"Acesso imediato ao curso e materiais complementares"** — list items with document-style icons (exemplos reais, apostilas, desafios práticos)
+   - **"Acesso a comunidade e suporte"** — list items with green check icons (suporte WhatsApp, atualizações, garantia de 14 dias)
+3. **CTA button** — "QUERO ENTRAR AGORA →" opens the lead form (via `useLeadForm`)
+4. **Guarantee box** — Keep the existing 7-day guarantee block below
 
-## Changes
+### Changes
 
-**File: `src/components/ui/interactive-image-accordion.tsx`**
-
-1. Replace `activeIndex` (single number) with `activeIndices` (Set of numbers) for mobile, keeping single-index behavior on desktop
-2. On mobile, use an IntersectionObserver with a lower threshold (~0.3) on a wrapper/sentinel approach — observe the container and calculate which items should be revealed based on scroll progress
-3. Simpler approach: use a scroll-based counter. Observe the overall container's scroll position and progressively add indices to the active set as the user scrolls deeper
-4. Each item checks `activeIndices.has(index)` on mobile, or `activeIndex === index` on desktop
-5. On mobile, all items start collapsed (60px). As the user scrolls, items open one by one from top to bottom and **stay open**, giving each phase ~350px height with full content visible
-
-**Key behavior:**
-- Desktop: unchanged (hover/click, one active at a time)
-- Mobile: scroll-triggered progressive reveal, phases stay open once activated
-- The container will naturally grow taller as more phases open, creating a smooth reading experience
+- **File**: `src/components/landing/PricingSection.tsx`
+  - Remove all price-related markup (De R$497, POR R$197, 12x R$20,37)
+  - Remove Kiwify link; use `useLeadForm` + `setOpen(true)` on CTA button
+  - Reorganize benefits into 3 grouped sections with headings and dividers
+  - Use ochre checkmarks/icons consistent with the dark theme
+  - Keep the guarantee section as-is
 
