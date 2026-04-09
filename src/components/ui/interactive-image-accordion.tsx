@@ -85,8 +85,10 @@ interface InteractiveImageAccordionProps {
 
 export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndices, setActiveIndices] = useState<Set<number>>(new Set());
   const [isMobile, setIsMobile] = useState(false);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -95,9 +97,12 @@ export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps>
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // Auto-open on scroll for mobile
+  // Mobile: progressive reveal based on scroll
   useEffect(() => {
     if (!isMobile) return;
+
+    // Start with first item open
+    setActiveIndices(new Set([0]));
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -105,12 +110,17 @@ export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps>
           if (entry.isIntersecting) {
             const idx = itemRefs.current.indexOf(entry.target as HTMLDivElement);
             if (idx !== -1) {
-              setActiveIndex(idx);
+              setActiveIndices((prev) => {
+                if (prev.has(idx)) return prev;
+                const next = new Set(prev);
+                next.add(idx);
+                return next;
+              });
             }
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.3 }
     );
 
     itemRefs.current.forEach((ref) => {
@@ -124,15 +134,34 @@ export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps>
     itemRefs.current[index] = el;
   }, []);
 
+  const isItemActive = (index: number) => {
+    if (isMobile) return activeIndices.has(index);
+    return activeIndex === index;
+  };
+
   return (
-    <div className="flex flex-col md:flex-row gap-3 w-full" style={{ minHeight: "450px" }}>
+    <div ref={containerRef} className="flex flex-col md:flex-row gap-3 w-full" style={{ minHeight: "450px" }}>
       {items.map((item, index) => (
         <AccordionItem
           key={item.id}
           item={item}
-          isActive={activeIndex === index}
-          onMouseEnter={() => setActiveIndex(index)}
-          onClick={() => setActiveIndex(index)}
+          isActive={isItemActive(index)}
+          onMouseEnter={() => { if (!isMobile) setActiveIndex(index); }}
+          onClick={() => {
+            if (isMobile) {
+              setActiveIndices((prev) => {
+                const next = new Set(prev);
+                if (next.has(index)) {
+                  next.delete(index);
+                } else {
+                  next.add(index);
+                }
+                return next;
+              });
+            } else {
+              setActiveIndex(index);
+            }
+          }}
           itemRef={setRef(index)}
         />
       ))}
