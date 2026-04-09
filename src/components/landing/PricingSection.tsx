@@ -1,17 +1,30 @@
-import { trackEvent } from "@/lib/meta-capi";
+import { useLeadForm } from "@/contexts/LeadFormContext";
+import { Check, BookOpen, Users } from "lucide-react";
 
-const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
-
-const benefits = [
+const group1 = [
   "Curso online gravado — acesso imediato",
   "Método Check-in Lotado completo",
   "Calendário comercial de 90 dias",
-  "Suporte via WhatsApp",
   "Scripts de atendimento e fechamento",
   "10 GPTs treinados para hospedagens",
+  "Modelos de mensagens prontas",
+];
+
+const group2 = [
+  "Exemplos reais de hospedagens que aplicaram",
+  "Apostilas e materiais complementares",
+  "Desafios práticos para aplicar no seu negócio",
+];
+
+const group3 = [
+  "Suporte via WhatsApp",
+  "Atualizações de conteúdo incluídas",
+  "Garantia incondicional de 7 dias",
 ];
 
 const PricingSection = () => {
+  const { setOpen } = useLeadForm();
+
   return (
     <section id="comprar" style={{ background: "#1A1208" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[680px] mx-auto text-center">
@@ -26,46 +39,66 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="price-box reveal p-5 sm:p-10 mb-5 sm:mb-6" style={{ background: "rgba(234,227,207,0.07)", border: "1px solid rgba(200,148,58,0.2)" }}>
-          <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3 mb-8 sm:mb-10 text-left">
-            {benefits.map((b, i) => (
-              <div key={i} className="flex gap-2 sm:gap-2.5">
-                <span className="text-ochre flex-shrink-0">✓</span>
-                <span className="text-cream-mid text-sm sm:text-base">{b}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="h-px w-full bg-ochre/20 mb-8" />
-
-          <div className="mb-6 sm:mb-8">
-            <p className="text-cream-mid/60 text-xs sm:text-sm mb-1 line-through">De R$497</p>
-            <div className="flex items-baseline justify-center gap-2 mt-2">
-              <span className="text-ochre font-label font-bold text-xs sm:text-sm">POR</span>
-              <span className="text-cream font-semibold text-lg sm:text-xl leading-none">
-                R$197
-              </span>
+        <div className="reveal p-5 sm:p-10 mb-5 sm:mb-6 rounded-xl text-left" style={{ background: "rgba(234,227,207,0.07)", border: "1px solid rgba(200,148,58,0.2)" }}>
+          {/* Group 1 */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2.5 mb-4">
+              <Check className="text-ochre flex-shrink-0" size={20} />
+              <h3 className="font-heading font-bold text-cream text-base sm:text-lg">Acesso completo ao método Check-in Lotado</h3>
             </div>
-            <div className="flex items-baseline justify-center gap-1 mt-2">
-              <span className="text-cream-mid/70 text-sm sm:text-base">ou</span>
-              <span className="font-heading font-black text-[1.6rem] sm:text-[2rem] text-cream leading-none">
-                12x
-              </span>
-              <span className="font-heading font-black text-[2.4rem] sm:text-[3.2rem] text-cream leading-none">
-                R$20,37
-              </span>
+            <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3 pl-1">
+              {group1.map((item, i) => (
+                <div key={i} className="flex gap-2.5">
+                  <span className="text-ochre flex-shrink-0 text-sm mt-0.5">✓</span>
+                  <span className="text-cream-mid text-sm sm:text-base">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <a
-            href={KIWIFY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent("InitiateCheckout", { content_name: "Check-in Lotado", value: 20.37, currency: "BRL" })}
+          <div className="h-px w-full bg-ochre/20 mb-6" />
+
+          {/* Group 2 */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2.5 mb-4">
+              <BookOpen className="text-ochre flex-shrink-0" size={20} />
+              <h3 className="font-heading font-bold text-cream text-base sm:text-lg">Acesso imediato ao curso e materiais complementares</h3>
+            </div>
+            <div className="flex flex-col gap-2.5 pl-1">
+              {group2.map((item, i) => (
+                <div key={i} className="flex gap-2.5">
+                  <span className="text-ochre flex-shrink-0 text-sm mt-0.5">✓</span>
+                  <span className="text-cream-mid text-sm sm:text-base">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="h-px w-full bg-ochre/20 mb-6" />
+
+          {/* Group 3 */}
+          <div className="mb-8">
+            <div className="flex items-center gap-2.5 mb-4">
+              <Users className="text-ochre flex-shrink-0" size={20} />
+              <h3 className="font-heading font-bold text-cream text-base sm:text-lg">Acesso a comunidade e suporte</h3>
+            </div>
+            <div className="flex flex-col gap-2.5 pl-1">
+              {group3.map((item, i) => (
+                <div key={i} className="flex gap-2.5">
+                  <span className="text-ochre flex-shrink-0 text-sm mt-0.5">✓</span>
+                  <span className="text-cream-mid text-sm sm:text-base">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={() => setOpen(true)}
             className="btn-cta btn-cta-lg btn-cta-full mx-auto"
           >
             <span>QUERO ENTRAR AGORA →</span>
-          </a>
+          </button>
         </div>
 
         {/* Guarantee */}
