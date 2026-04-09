@@ -5,7 +5,7 @@ import { trackEvent } from "@/lib/meta-capi";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const bullets = [
-  "Vai entender o que precisa fazer para vender mais na sua estadia para que ela deixe de ser apenas um custo fixo pesado no seu mês",
+  "Como fazer sua hospedagem vender mais e deixar de ser um custo fixo pesado",
   "Vai aprender a estruturar o Instagram da hospedagem, como fazer a captação de clientes através de tráfego pago e o mais importante: como fazer o atendimento virar reservas",
   "Você vai aprender a identificar onde está o real problema de poucas reservas da sua hospedagem",
   "E o melhor, nós oferecemos vídeos e materiais validados e agentes do chat GPT para te auxiliarem a colocar em prática cada passo. Eles vão fazer boa parte do serviço pra você.",
