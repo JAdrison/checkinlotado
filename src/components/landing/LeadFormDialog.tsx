@@ -6,6 +6,7 @@ import { trackEvent } from "@/lib/meta-capi";
 import logoImg from "@/assets/checkin-lotado-logo.png";
 
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbz9W0Azwptr-7e11mF7jg94QymCq7EFAVC7AGGaJzXgZWcgV2gGiN3dRQndWjXiLzif/exec";
 
 const accommodationTypes = [
   "Casa de praia",
@@ -47,13 +48,21 @@ const LeadFormDialog = () => {
 
     const whatsappFull = `+55${form.whatsapp.replace(/\D/g, "")}`;
 
+    const payload = {
+      name: form.name.trim(),
+      email: form.email.trim().toLowerCase(),
+      whatsapp: whatsappFull,
+      accommodation_type: form.accommodation_type,
+    };
+
     try {
-      await supabase.from("leads").insert({
-        name: form.name.trim(),
-        email: form.email.trim().toLowerCase(),
-        whatsapp: whatsappFull,
-        accommodation_type: form.accommodation_type,
-      });
+      await Promise.allSettled([
+        supabase.from("leads").insert(payload),
+        fetch(SHEETS_URL, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }),
+      ]);
 
       trackEvent("Lead", {
         content_name: "Check-in Lotado",
