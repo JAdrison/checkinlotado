@@ -53,11 +53,14 @@ const LeadFormDialog = () => {
 
     const whatsappFull = `+55${form.whatsapp.replace(/\D/g, "")}`;
 
+    const utm_source = getUtmSource();
+
     const payload = {
       name: form.name.trim(),
       email: form.email.trim().toLowerCase(),
       whatsapp: whatsappFull,
       accommodation_type: form.accommodation_type,
+      utm_source,
     };
 
     try {
