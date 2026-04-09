@@ -60,12 +60,12 @@ const LeadFormDialog = () => {
         accommodation_type: form.accommodation_type,
       });
 
-      window.open(KIWIFY_URL, "_blank");
+      window.location.href = KIWIFY_URL;
       setOpen(false);
       setForm({ name: "", email: "", whatsapp: "", accommodation_type: "" });
       setErrors({});
     } catch {
-      window.open(KIWIFY_URL, "_blank");
+      window.location.href = KIWIFY_URL;
     } finally {
       setLoading(false);
     }
