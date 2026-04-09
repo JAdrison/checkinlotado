@@ -68,6 +68,7 @@ const LeadFormDialog = () => {
         supabase.from("leads").insert(payload),
         fetch(SHEETS_URL, {
           method: "POST",
+          mode: "no-cors",
           body: JSON.stringify(payload),
         }),
       ]);
