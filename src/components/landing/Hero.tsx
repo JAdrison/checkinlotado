@@ -83,7 +83,7 @@ const Hero = () => {
           {bullets.map((text, i) => (
             <div key={i} className="flex items-start gap-2.5 sm:gap-3">
               <span className="text-ochre mt-0.5 sm:mt-1 shrink-0 text-base">◆</span>
-              <p className="text-black text-lg sm:text-xl leading-relaxed">{text}</p>
+              <p className="text-black text-lg sm:text-2xl leading-relaxed">{text}</p>
             </div>
           ))}
         </div>
