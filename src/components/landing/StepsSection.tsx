@@ -97,7 +97,7 @@ const StepsSection: React.FC = () => {
       >
         {/* Header */}
         <div className="text-center mb-4">
-          <span className="label-text">Sua jornada</span>
+          <span className="label-text">90 dias para alcançar o potêncial maximo de reservas na sua hospedagem</span>
         </div>
         <div className="text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
           <h2
