@@ -107,8 +107,8 @@ const StepsSection: React.FC = () => {
               color: "var(--cream-mid)",
             }}
           >
-            90 dias para a lapidação e{" "}
-            <em className="shimmer-text font-extrabold">escala</em>
+            Resultados nos primeiros{" "}
+            <em className="shimmer-text font-extrabold">20 dias</em>
           </h2>
         </div>
 
