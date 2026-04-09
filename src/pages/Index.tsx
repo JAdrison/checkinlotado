@@ -53,8 +53,8 @@ const Index = () => {
       <Suspense fallback={null}>
         <ModulesSection />
         <StepsSection />
-        <ComparisonTable />
         <ResultsSection />
+        <ComparisonTable />
         <GallerySection />
         <OTAComparisonSection />
         <PricingSection />
