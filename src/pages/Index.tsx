@@ -3,7 +3,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { trackEvent } from "@/lib/meta-capi";
 
 import Hero from "@/components/landing/Hero";
-import Ticker from "@/components/landing/Ticker";
+
 import Stats from "@/components/landing/Stats";
 
 import ForWhom from "@/components/landing/ForWhom";
@@ -44,7 +44,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
-      <Ticker />
+      
       <Stats />
       <ForWhom />
       <Suspense fallback={null}>
