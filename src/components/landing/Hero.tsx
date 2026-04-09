@@ -80,7 +80,7 @@ const Hero = () => {
         <YouTubeFacade videoId="m_EClZVmHXY" />
 
         {/* Bullets 2x2 */}
-        <p className="reveal text-black/70 text-base sm:text-lg font-heading mt-8 sm:mt-10 mb-2 font-extrabold">Nessa Aula você vai aprender:</p>
+        <p className="reveal text-black/70 text-base sm:text-lg font-heading mt-8 sm:mt-10 mb-2 in font-extrabold">Nessa Aula você vai aprender:</p>
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-4 max-w-[800px]">
           {bullets.map((text, i) => (
             <div key={i} className="flex items-start gap-2.5 sm:gap-3">
