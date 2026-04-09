@@ -105,7 +105,7 @@ const Testimonials = () => {
               </p>
               <div className="flex items-center gap-3">
                 <img
-                  src={iparaiLogo}
+                  src={guilhermeImg}
                   alt="Casa Iparaí"
                   className="w-11 h-11 rounded-full object-cover bg-white"
                   width={44}
