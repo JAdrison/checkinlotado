@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/meta-capi";
+import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const StickyBar = () => {
   const [show, setShow] = useState(false);
+  const { setOpen } = useLeadForm();
 
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 600);
@@ -23,9 +25,9 @@ const StickyBar = () => {
           12x R$20,37 · Acesso imediato
         </span>
       </div>
-      <a href="#comprar" className="btn-cta btn-cta-sm">
+      <button onClick={() => setOpen(true)} className="btn-cta btn-cta-sm">
         <span>QUERO ENTRAR →</span>
-      </a>
+      </button>
     </div>
   );
 };
