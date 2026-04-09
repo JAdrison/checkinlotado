@@ -8,6 +8,11 @@ import logoImg from "@/assets/checkin-lotado-logo.png";
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 const SHEETS_URL = "https://script.google.com/macros/s/AKfycbz9W0Azwptr-7e11mF7jg94QymCq7EFAVC7AGGaJzXgZWcgV2gGiN3dRQndWjXiLzif/exec";
 
+const getUtmSource = () => {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("utm_source") || params.get("ref") || "direto";
+};
+
 const accommodationTypes = [
   "Casa de praia",
   "Casa de serra",
