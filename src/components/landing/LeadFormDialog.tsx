@@ -4,8 +4,6 @@ import { useLeadForm } from "@/contexts/LeadFormContext";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/meta-capi";
 import logoImg from "@/assets/checkin-lotado-logo.png";
-import { supabase } from "@/integrations/supabase/client";
-import { trackEvent } from "@/lib/meta-capi";
 
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 
