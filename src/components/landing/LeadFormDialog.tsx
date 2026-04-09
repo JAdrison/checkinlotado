@@ -48,13 +48,21 @@ const LeadFormDialog = () => {
 
     const whatsappFull = `+55${form.whatsapp.replace(/\D/g, "")}`;
 
+    const payload = {
+      name: form.name.trim(),
+      email: form.email.trim().toLowerCase(),
+      whatsapp: whatsappFull,
+      accommodation_type: form.accommodation_type,
+    };
+
     try {
-      await supabase.from("leads").insert({
-        name: form.name.trim(),
-        email: form.email.trim().toLowerCase(),
-        whatsapp: whatsappFull,
-        accommodation_type: form.accommodation_type,
-      });
+      await Promise.allSettled([
+        supabase.from("leads").insert(payload),
+        fetch(SHEETS_URL, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }),
+      ]);
 
       trackEvent("Lead", {
         content_name: "Check-in Lotado",
