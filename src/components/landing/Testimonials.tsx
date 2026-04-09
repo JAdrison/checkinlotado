@@ -2,7 +2,7 @@ import { Check, Calendar, TrendingUp } from "lucide-react";
 import { trackEvent } from "@/lib/meta-capi";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 import whatsappImg from "@/assets/case-study/whatsapp-iparai.webp";
-import guilhermeImg from "@/assets/case-study/guilherme-couto.webp";
+import guilhermeImg from "@/assets/case-study/guilherme-couto.png";
 import iparaiLogo from "@/assets/case-study/iparai-logo.png";
 import videoThumb from "@/assets/video-thumbnail.png";
 
@@ -105,7 +105,7 @@ const Testimonials = () => {
               </p>
               <div className="flex items-center gap-3">
                 <img
-                  src={iparaiLogo}
+                  src={guilhermeImg}
                   alt="Casa Iparaí"
                   className="w-11 h-11 rounded-full object-cover bg-white"
                   width={44}
