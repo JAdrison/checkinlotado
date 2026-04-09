@@ -83,88 +83,99 @@ interface InteractiveImageAccordionProps {
   items: AccordionItemData[];
 }
 
+const SCROLL_PER_PHASE = 150; // px of scroll per phase reveal
+
 export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeIndices, setActiveIndices] = useState<Set<number>>(new Set());
-  const [isMobile, setIsMobile] = useState(false);
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [revealedCount, setRevealedCount] = useState(0);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null);
 
+  // Calculate how many phases should be revealed based on scroll position
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+    const handleScroll = () => {
+      const outer = outerRef.current;
+      if (!outer) return;
 
-  // Mobile: progressive reveal based on scroll
-  useEffect(() => {
-    if (!isMobile) return;
+      const rect = outer.getBoundingClientRect();
+      // How far past the top of the outer container we've scrolled
+      const scrolledInto = -rect.top;
 
-    // Start with first item open
-    setActiveIndices(new Set([0]));
+      if (scrolledInto < 0) {
+        setRevealedCount(0);
+        return;
+      }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = itemRefs.current.indexOf(entry.target as HTMLDivElement);
-            if (idx !== -1) {
-              setActiveIndices((prev) => {
-                if (prev.has(idx)) return prev;
-                const next = new Set(prev);
-                next.add(idx);
-                return next;
-              });
-            }
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+      // Map scroll position to phase count
+      const count = Math.min(
+        items.length,
+        Math.floor(scrolledInto / SCROLL_PER_PHASE) + 1
+      );
+      setRevealedCount(count);
+    };
 
-    itemRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, [isMobile, items.length]);
-
-  const setRef = useCallback((index: number) => (el: HTMLDivElement | null) => {
-    itemRefs.current[index] = el;
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [items.length]);
 
   const isItemActive = (index: number) => {
-    if (isMobile) return activeIndices.has(index);
+    // During scroll-hijack mode, show items that have been revealed
+    if (revealedCount > 0) {
+      return index < revealedCount;
+    }
     return activeIndex === index;
   };
 
+  // Total spacer height = enough scroll distance for all phases
+  const spacerHeight = items.length * SCROLL_PER_PHASE;
+
   return (
-    <div ref={containerRef} className="flex flex-col md:flex-row gap-3 w-full" style={{ minHeight: "450px" }}>
-      {items.map((item, index) => (
-        <AccordionItem
-          key={item.id}
-          item={item}
-          isActive={isItemActive(index)}
-          onMouseEnter={() => { if (!isMobile) setActiveIndex(index); }}
-          onClick={() => {
-            if (isMobile) {
-              setActiveIndices((prev) => {
-                const next = new Set(prev);
-                if (next.has(index)) {
-                  next.delete(index);
-                } else {
-                  next.add(index);
-                }
-                return next;
-              });
-            } else {
-              setActiveIndex(index);
-            }
-          }}
-          itemRef={setRef(index)}
-        />
-      ))}
+    <div
+      ref={outerRef}
+      style={{ height: `${spacerHeight + 100}vh` }}
+      className="relative"
+    >
+      <div
+        ref={stickyRef}
+        className="sticky top-0 pt-4 pb-4"
+        style={{ height: "auto", maxHeight: "100vh", zIndex: 10 }}
+      >
+        <div className="flex flex-col md:flex-row gap-3 w-full" style={{ minHeight: "450px" }}>
+          {items.map((item, index) => (
+            <AccordionItem
+              key={item.id}
+              item={item}
+              isActive={isItemActive(index)}
+              onMouseEnter={() => {
+                if (revealedCount === 0) setActiveIndex(index);
+              }}
+              onClick={() => {
+                if (revealedCount === 0) setActiveIndex(index);
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Progress indicator */}
+        {revealedCount > 0 && revealedCount < items.length && (
+          <div className="flex items-center justify-center mt-4 gap-2">
+            <div className="flex gap-1.5">
+              {items.map((_, i) => (
+                <div
+                  key={i}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    i < revealedCount ? "bg-ochre scale-100" : "bg-night/20 scale-75"
+                  }`}
+                />
+              ))}
+            </div>
+            <span className="text-night/50 text-xs font-label ml-2">
+              Role para revelar ({revealedCount}/{items.length})
+            </span>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
