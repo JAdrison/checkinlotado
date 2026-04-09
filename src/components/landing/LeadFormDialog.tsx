@@ -65,7 +65,6 @@ const LeadFormDialog = () => {
       setForm({ name: "", email: "", whatsapp: "", accommodation_type: "" });
       setErrors({});
     } catch {
-      // silently fail — redirect anyway
       window.open(KIWIFY_URL, "_blank");
     } finally {
       setLoading(false);
@@ -84,6 +83,9 @@ const LeadFormDialog = () => {
     return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
   };
 
+  const inputClass =
+    "w-full rounded-lg px-4 py-3 text-sm text-gray-900 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors";
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
@@ -98,16 +100,15 @@ const LeadFormDialog = () => {
           </div>
 
           {/* Headline */}
-          <p className="text-gray-700 text-center text-lg sm:text-xl font-semibold leading-snug mb-6 sm:mb-8">
+          <p className="text-gray-900 text-center text-lg sm:text-xl font-semibold leading-snug mb-6 sm:mb-8">
             Preencha o formulário e descubra como{" "}
             <strong className="text-ochre">faturar alto</strong> com a sua
             hospedagem.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Nome */}
             <div>
-              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
                 NOME
               </label>
               <input
@@ -116,16 +117,15 @@ const LeadFormDialog = () => {
                 onChange={(e) => updateField("name", e.target.value)}
                 placeholder="Seu nome completo"
                 maxLength={100}
-                className="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors"
+                className={inputClass}
               />
               {errors.name && (
                 <p className="text-red-500 text-xs mt-1">{errors.name}</p>
               )}
             </div>
 
-            {/* Email */}
             <div>
-              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
                 MELHOR E-MAIL
               </label>
               <input
@@ -134,20 +134,19 @@ const LeadFormDialog = () => {
                 onChange={(e) => updateField("email", e.target.value)}
                 placeholder="seu@email.com"
                 maxLength={255}
-                className="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors"
+                className={inputClass}
               />
               {errors.email && (
                 <p className="text-red-500 text-xs mt-1">{errors.email}</p>
               )}
             </div>
 
-            {/* WhatsApp */}
             <div>
-              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
                 WHATSAPP
               </label>
               <div className="flex">
-                <span className="flex items-center px-3 rounded-l-lg text-sm text-gray-500 bg-gray-50 border border-r-0 border-gray-200">
+                <span className="flex items-center px-3 rounded-l-lg text-sm text-gray-600 bg-gray-50 border border-r-0 border-gray-200">
                   +55
                 </span>
                 <input
@@ -157,7 +156,7 @@ const LeadFormDialog = () => {
                     updateField("whatsapp", formatPhone(e.target.value))
                   }
                   placeholder="(11) 99999-9999"
-                  className="w-full rounded-r-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors"
+                  className={inputClass.replace("rounded-lg", "rounded-r-lg")}
                 />
               </div>
               {errors.whatsapp && (
@@ -165,9 +164,8 @@ const LeadFormDialog = () => {
               )}
             </div>
 
-            {/* Tipo de hospedagem */}
             <div>
-              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-600 text-xs font-label tracking-wider mb-1.5 block">
                 TIPO DE HOSPEDAGEM
               </label>
               <select
@@ -175,7 +173,7 @@ const LeadFormDialog = () => {
                 onChange={(e) =>
                   updateField("accommodation_type", e.target.value)
                 }
-                className="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors appearance-none"
+                className={`${inputClass} appearance-none`}
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C8943A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
                   backgroundRepeat: "no-repeat",
@@ -186,7 +184,7 @@ const LeadFormDialog = () => {
                   Selecione...
                 </option>
                 {accommodationTypes.map((type) => (
-                  <option key={type} value={type} className="text-gray-800">
+                  <option key={type} value={type} className="text-gray-900">
                     {type}
                   </option>
                 ))}
@@ -202,9 +200,13 @@ const LeadFormDialog = () => {
             <button
               type="submit"
               disabled={loading}
-              className="btn-cta btn-cta-lg btn-cta-full w-full mt-2"
+              className="w-full mt-2 py-4 px-8 rounded-xl font-semibold text-base tracking-wide text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
+              style={{
+                background: "linear-gradient(135deg, #C8943A 0%, #E2B868 100%)",
+                boxShadow: "0 4px 20px rgba(200, 148, 58, 0.35)",
+              }}
             >
-              <span>{loading ? "ENVIANDO..." : "QUERO FATURAR ALTO →"}</span>
+              {loading ? "Enviando..." : "Quero faturar alto →"}
             </button>
           </form>
         </div>
