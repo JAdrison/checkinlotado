@@ -6,9 +6,9 @@ import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const bullets = [
   "Como fazer sua hospedagem vender mais e deixar de ser um custo fixo pesado",
-  "Vai aprender a estruturar o Instagram da hospedagem, como fazer a captação de clientes através de tráfego pago e o mais importante: como fazer o atendimento virar reservas",
-  "Você vai aprender a identificar onde está o real problema de poucas reservas da sua hospedagem",
-  "E o melhor, nós oferecemos vídeos e materiais validados e agentes do chat GPT para te auxiliarem a colocar em prática cada passo. Eles vão fazer boa parte do serviço pra você.",
+  "Como estruturar o Instagram, captar clientes com tráfego pago e transformar atendimento em reservas",
+  " Como identificar o real problema por trás das poucas reservas da sua hospedagem",
+  " Vídeos, materiais validados e agentes de IA prontos para fazer boa parte do trabalho por você",
 ];
 
 const YouTubeFacade = ({ videoId }: { videoId: string }) => {
