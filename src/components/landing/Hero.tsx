@@ -5,7 +5,7 @@ import { trackEvent } from "@/lib/meta-capi";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const bullets = [
-  "Como você vai criar a sua própria estrutura de reservas, sem precisar pagar mensalidade, e de forma simples",
+  "Vai entender o que precisa fazer para vender mais na sua estadia para que ela deixe de ser apenas um custo fixo pesado no seu mês",
   "Como criar campanhas com antecedência sem depender de feriados",
   "Você vai aprender a identificar onde está o real problema de poucas reservas da sua hospedagem",
   "Como vender mais sem baixar preço e sair do improviso de vez",
