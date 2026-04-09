@@ -133,7 +133,7 @@ export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps>
   return (
     <div
       ref={outerRef}
-      style={{ height: `${spacerHeight + 100}vh` }}
+      style={{ height: `calc(${spacerHeight}px + 100vh)` }}
       className="relative"
     >
       <div
