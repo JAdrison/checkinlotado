@@ -1,5 +1,6 @@
 import { useState } from "react";
 import heroBg from "@/assets/hero-bg.webp";
+import heroThumb from "@/assets/video-thumbnail.png";
 import { trackEvent } from "@/lib/meta-capi";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 
@@ -33,7 +34,7 @@ const YouTubeFacade = ({ videoId }: { videoId: string }) => {
           <>
             <img
               className="absolute inset-0 w-full h-full object-cover"
-              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              src={heroThumb}
               alt="VSL - Check in Lotado"
               width={900}
               height={506}
