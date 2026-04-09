@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 
 interface AccordionItemData {
   id: number;
@@ -13,17 +13,19 @@ interface AccordionItemProps {
   isActive: boolean;
   onMouseEnter: () => void;
   onClick: () => void;
+  itemRef?: React.Ref<HTMLDivElement>;
 }
 
-const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEnter, onClick }) => {
+const AccordionItem: React.FC<AccordionItemProps> = ({ item, isActive, onMouseEnter, onClick, itemRef }) => {
   return (
     <div
+      ref={itemRef}
       onMouseEnter={onMouseEnter}
       onClick={onClick}
       className={`relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 ease-in-out ${
-        isActive ? "flex-[4]" : "flex-[0.6]"
+        isActive ? "flex-[4] md:flex-[4]" : "flex-[0.6]"
       }`}
-      style={{ minHeight: "450px" }}
+      style={{ minHeight: isActive ? "350px" : "60px" }}
     >
       <img
         src={item.imageUrl}
@@ -83,6 +85,44 @@ interface InteractiveImageAccordionProps {
 
 export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // Auto-open on scroll for mobile
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = itemRefs.current.indexOf(entry.target as HTMLDivElement);
+            if (idx !== -1) {
+              setActiveIndex(idx);
+            }
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, [isMobile, items.length]);
+
+  const setRef = useCallback((index: number) => (el: HTMLDivElement | null) => {
+    itemRefs.current[index] = el;
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row gap-3 w-full" style={{ minHeight: "450px" }}>
@@ -93,6 +133,7 @@ export const InteractiveImageAccordion: React.FC<InteractiveImageAccordionProps>
           isActive={activeIndex === index}
           onMouseEnter={() => setActiveIndex(index)}
           onClick={() => setActiveIndex(index)}
+          itemRef={setRef(index)}
         />
       ))}
     </div>
