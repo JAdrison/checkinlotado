@@ -1,5 +1,5 @@
 import { useLeadForm } from "@/contexts/LeadFormContext";
-import { Check, BookOpen, Users } from "lucide-react";
+import { Check, BookOpen, Users, CalendarDays } from "lucide-react";
 
 const group1 = [
   "Curso online gravado — acesso imediato",
