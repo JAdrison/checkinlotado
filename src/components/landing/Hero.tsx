@@ -80,12 +80,12 @@ const Hero = () => {
         <YouTubeFacade videoId="m_EClZVmHXY" />
 
         {/* Bullets 2x2 */}
-        <p className="reveal text-black/70 text-base sm:text-lg font-heading font-semibold mt-8 sm:mt-10 mb-2">Nessa Aula você vai aprender:</p>
-        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-4 max-w-[750px]">
+        <p className="reveal text-black text-lg sm:text-xl font-heading font-semibold mt-8 sm:mt-10 mb-2">Nessa Aula você vai aprender:</p>
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-4 max-w-[800px]">
           {bullets.map((text, i) => (
             <div key={i} className="flex items-start gap-2.5 sm:gap-3">
-              <span className="text-ochre mt-0.5 sm:mt-1 shrink-0 text-sm">◆</span>
-              <p className="text-black/80 text-base sm:text-lg leading-relaxed">{text}</p>
+              <span className="text-ochre mt-0.5 sm:mt-1 shrink-0 text-base">◆</span>
+              <p className="text-black text-lg sm:text-xl leading-relaxed">{text}</p>
             </div>
           ))}
         </div>
