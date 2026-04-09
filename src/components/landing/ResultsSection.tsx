@@ -113,12 +113,12 @@ const ResultsSection = () => {
     <section style={{ background: "#EAE3CF" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[1000px] mx-auto">
         <div className="reveal text-center mb-8 sm:mb-14">
-          <div className="label-text mb-3">Resultados reais</div>
-          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-3 sm:mb-4">
+          <div className="label-text mb-3 text-base sm:text-lg">Resultados reais</div>
+          <h2 className="font-heading text-[1.8rem] sm:text-[clamp(2.4rem,5vw,4rem)] font-black text-night leading-[1.15] mb-3 sm:mb-4">
             Quem aplica o método, vende.<br />
             <em className="shimmer-text font-extrabold">Todo. Dia.</em>
           </h2>
-          <p className="text-night/85 text-sm sm:text-[0.95rem] leading-relaxed max-w-[560px] mx-auto mb-4 sm:mb-6 font-semibold rounded-xl">
+          <p className="text-night/85 text-base sm:text-[1.1rem] leading-relaxed max-w-[620px] mx-auto mb-4 sm:mb-6 font-semibold rounded-xl">
             Prints reais de hospedagens que aplicaram o método Check-in Lotado e transformaram fins de semana vazios em reservas confirmadas.
           </p>
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-ochre/[0.12] text-ochre text-[0.75rem] sm:text-[0.82rem] font-semibold tracking-wide">
