@@ -87,8 +87,8 @@ const LeadFormDialog = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
-        className="max-w-md w-[95vw] p-0 border-ochre/20 overflow-hidden"
-        style={{ background: "#1A1208" }}
+        className="max-w-md w-[95vw] p-0 border-gray-200 overflow-hidden rounded-2xl"
+        style={{ background: "#FFF9F0" }}
       >
         <DialogTitle className="sr-only">Formulário de inscrição</DialogTitle>
         <div className="p-6 sm:p-8">
@@ -98,7 +98,7 @@ const LeadFormDialog = () => {
           </div>
 
           {/* Headline */}
-          <p className="text-cream/90 text-center text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
+          <p className="text-gray-700 text-center text-lg sm:text-xl font-semibold leading-snug mb-6 sm:mb-8">
             Preencha o formulário e descubra como{" "}
             <strong className="text-ochre">faturar alto</strong> com a sua
             hospedagem.
@@ -107,7 +107,7 @@ const LeadFormDialog = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Nome */}
             <div>
-              <label className="text-cream/70 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
                 NOME
               </label>
               <input
@@ -116,16 +116,16 @@ const LeadFormDialog = () => {
                 onChange={(e) => updateField("name", e.target.value)}
                 placeholder="Seu nome completo"
                 maxLength={100}
-                className="w-full rounded-lg px-4 py-3 text-sm text-cream bg-white/[0.07] border border-ochre/20 placeholder:text-cream/30 focus:outline-none focus:border-ochre/50 transition-colors"
+                className="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors"
               />
               {errors.name && (
-                <p className="text-red-400 text-xs mt-1">{errors.name}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
               )}
             </div>
 
             {/* Email */}
             <div>
-              <label className="text-cream/70 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
                 MELHOR E-MAIL
               </label>
               <input
@@ -134,20 +134,20 @@ const LeadFormDialog = () => {
                 onChange={(e) => updateField("email", e.target.value)}
                 placeholder="seu@email.com"
                 maxLength={255}
-                className="w-full rounded-lg px-4 py-3 text-sm text-cream bg-white/[0.07] border border-ochre/20 placeholder:text-cream/30 focus:outline-none focus:border-ochre/50 transition-colors"
+                className="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors"
               />
               {errors.email && (
-                <p className="text-red-400 text-xs mt-1">{errors.email}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
               )}
             </div>
 
             {/* WhatsApp */}
             <div>
-              <label className="text-cream/70 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
                 WHATSAPP
               </label>
               <div className="flex">
-                <span className="flex items-center px-3 rounded-l-lg text-sm text-cream/60 bg-white/[0.04] border border-r-0 border-ochre/20">
+                <span className="flex items-center px-3 rounded-l-lg text-sm text-gray-500 bg-gray-50 border border-r-0 border-gray-200">
                   +55
                 </span>
                 <input
@@ -157,17 +157,17 @@ const LeadFormDialog = () => {
                     updateField("whatsapp", formatPhone(e.target.value))
                   }
                   placeholder="(11) 99999-9999"
-                  className="w-full rounded-r-lg px-4 py-3 text-sm text-cream bg-white/[0.07] border border-ochre/20 placeholder:text-cream/30 focus:outline-none focus:border-ochre/50 transition-colors"
+                  className="w-full rounded-r-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors"
                 />
               </div>
               {errors.whatsapp && (
-                <p className="text-red-400 text-xs mt-1">{errors.whatsapp}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>
               )}
             </div>
 
             {/* Tipo de hospedagem */}
             <div>
-              <label className="text-cream/70 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-gray-500 text-xs font-label tracking-wider mb-1.5 block">
                 TIPO DE HOSPEDAGEM
               </label>
               <select
@@ -175,24 +175,24 @@ const LeadFormDialog = () => {
                 onChange={(e) =>
                   updateField("accommodation_type", e.target.value)
                 }
-                className="w-full rounded-lg px-4 py-3 text-sm text-cream bg-white/[0.07] border border-ochre/20 focus:outline-none focus:border-ochre/50 transition-colors appearance-none"
+                className="w-full rounded-lg px-4 py-3 text-sm text-gray-800 bg-white border border-gray-200 focus:outline-none focus:border-ochre/60 focus:ring-1 focus:ring-ochre/30 transition-colors appearance-none"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C8943A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right 12px center",
                 }}
               >
-                <option value="" disabled className="bg-[#1A1208] text-cream/50">
+                <option value="" disabled className="text-gray-400">
                   Selecione...
                 </option>
                 {accommodationTypes.map((type) => (
-                  <option key={type} value={type} className="bg-[#1A1208] text-cream">
+                  <option key={type} value={type} className="text-gray-800">
                     {type}
                   </option>
                 ))}
               </select>
               {errors.accommodation_type && (
-                <p className="text-red-400 text-xs mt-1">
+                <p className="text-red-500 text-xs mt-1">
                   {errors.accommodation_type}
                 </p>
               )}
