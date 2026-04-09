@@ -16,7 +16,9 @@ const Stats = () => {
           const Icon = s.icon;
           return (
             <div key={i} className="reveal text-center" style={{ transitionDelay: `${i * 0.08}s` }}>
-              <Icon className="mx-auto mb-2 sm:mb-3 text-ochre" size={32} strokeWidth={2.2} fill="currentColor" />
+              <div className="mx-auto mb-2 sm:mb-3 w-12 h-12 rounded-full bg-ochre flex items-center justify-center shadow-md">
+                <Icon className="text-white" size={24} strokeWidth={2.2} />
+              </div>
               <p className="font-semibold text-night text-sm sm:text-base mb-1">{s.title}</p>
               <p className="text-night/85 text-xs sm:text-sm leading-relaxed">{s.desc}</p>
             </div>
