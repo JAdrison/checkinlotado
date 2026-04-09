@@ -5,7 +5,7 @@ import { trackEvent } from "@/lib/meta-capi";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const bullets = [
-  "Por que sua hospedagem não lota fins de semana comuns — e como mudar isso",
+  "Como você vai criar a sua própria estrutura de reservas, sem precisar pagar mensalidade, e de forma simples",
   "Como criar campanhas com antecedência sem depender de feriados",
   "O que divulgar, quando divulgar e como fechar reservas pelo WhatsApp",
   "Como vender mais sem baixar preço e sair do improviso de vez",
