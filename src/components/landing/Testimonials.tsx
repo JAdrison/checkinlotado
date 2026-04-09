@@ -46,7 +46,7 @@ const Testimonials = () => {
         <div className="reveal text-center mb-8 sm:mb-14">
           <div className="label-text mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Caso real</div>
           <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.15]">
-            Mais de 70 Mil Faturado<br />
+            Mais de R$ 70.000,00 Faturado<br />
             <em className="shimmer-text font-extrabold">em 7 Meses de Checkin Lotado</em>
           </h2>
           <p className="text-cream/80 mt-3 sm:mt-4 text-[0.9rem] sm:text-lg max-w-[500px] mx-auto">
