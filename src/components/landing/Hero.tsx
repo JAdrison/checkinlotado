@@ -34,7 +34,7 @@ const YouTubeFacade = ({ videoId }: { videoId: string }) => {
           <>
             <img
               className="absolute inset-0 w-full h-full object-cover"
-              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              src={heroThumb}
               alt="VSL - Check in Lotado"
               width={900}
               height={506}
