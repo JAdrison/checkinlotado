@@ -108,7 +108,7 @@ const StepsSection: React.FC = () => {
             }}
           >
             Resultados nos primeiros{" "}
-            <em className="shimmer-text font-extrabold">20 dias</em>
+            <em className="shimmer-text font-extrabold">30 dias</em>
           </h2>
         </div>
 
