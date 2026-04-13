@@ -1,20 +1,32 @@
 
 
-## Plan: Fix lead form not showing properly on mobile
+## Plan: Remove lead form, direct CTAs to checkout
 
-### Problem
-The dialog uses `fixed top-[50%] translate-y-[-50%]` centering, which works on desktop but on small mobile screens the form content is taller than the viewport. Combined with `overflow-hidden` on the DialogContent, users can't scroll to see the full form — it gets cut off as shown in the screenshots.
+### What changes
 
-### Fix
+1. **All CTA buttons across the site** (Hero, Navbar, StickyBar, FinalCTA, GallerySection, ComparisonTable, OTAComparisonSection, AccordionSection) — instead of opening the lead form (`setOpen(true)`), they will smooth-scroll to the `#comprar` section ("Entre no Check-in Lotado").
 
-**File: `src/components/landing/LeadFormDialog.tsx`**
-- Change `overflow-hidden` to `overflow-y-auto` on DialogContent
-- Add `max-h-[90vh]` so the dialog never exceeds 90% of viewport height and scrolls when needed
-- Reduce vertical padding/margins on mobile to fit more content (smaller logo, tighter spacing)
+2. **PricingSection CTA button** — instead of opening the lead form, it will navigate directly to the Kiwify checkout URL (`https://pay.kiwify.com.br/Y613pR3`).
 
-**File: `src/components/ui/dialog.tsx`**
-- Update the DialogContent positioning for mobile: replace the centered `top-[50%] translate-y-[-50%]` approach with a mobile-friendly layout that uses `top-[5%]` without vertical translate on small screens, ensuring the form starts near the top and scrolls naturally
+3. **Remove LeadFormDialog** from `App.tsx` rendering (and optionally the import). The form component and context can stay in the codebase but will no longer be active.
 
-### Result
-The form will be fully visible and scrollable on all phone sizes, especially for users coming from Instagram/ad in-app browsers.
+### Files to edit
+
+- **`src/components/landing/PricingSection.tsx`** — Replace `setOpen(true)` with `window.location.href = KIWIFY_URL`
+- **`src/components/landing/Hero.tsx`** — Replace `setOpen(true)` with scroll to `#comprar`
+- **`src/components/landing/Navbar.tsx`** — Same
+- **`src/components/landing/StickyBar.tsx`** — Same
+- **`src/components/landing/FinalCTA.tsx`** — Same
+- **`src/components/landing/GallerySection.tsx`** — Same
+- **`src/components/landing/ComparisonTable.tsx`** — Same
+- **`src/components/landing/OTAComparisonSection.tsx`** — Same
+- **`src/components/landing/AccordionSection.tsx`** — Same
+- **`src/App.tsx`** — Remove `<LeadFormDialog />` rendering
+
+### Scroll helper
+
+Each button will use:
+```ts
+document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" });
+```
 
