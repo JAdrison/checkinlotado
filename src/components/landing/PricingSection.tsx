@@ -1,5 +1,6 @@
-import { useLeadForm } from "@/contexts/LeadFormContext";
 import { Check, BookOpen, Users, CalendarDays } from "lucide-react";
+
+const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 
 const group1 = [
   "Curso online gravado — acesso imediato",
@@ -23,8 +24,6 @@ const group3 = [
 ];
 
 const PricingSection = () => {
-  const { setOpen } = useLeadForm();
-
   return (
     <section id="comprar" style={{ background: "#1A1208" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[680px] mx-auto text-center">
@@ -94,7 +93,7 @@ const PricingSection = () => {
 
           {/* CTA */}
           <button
-            onClick={() => setOpen(true)}
+            onClick={() => { window.location.href = KIWIFY_URL; }}
             className="btn-cta btn-cta-lg btn-cta-full mx-auto"
           >
             <span>QUERO ENTRAR AGORA →</span>
