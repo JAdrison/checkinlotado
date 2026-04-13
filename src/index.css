@@ -61,13 +61,16 @@
     @apply border-border;
   }
   html {
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream-mid);
     color: var(--night);
     overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
   }
 }
 
@@ -409,6 +412,8 @@
   }
   .timeline-card {
     padding: 22px 20px;
+    max-width: calc(100vw - 80px);
+    overflow: hidden;
   }
 }
 

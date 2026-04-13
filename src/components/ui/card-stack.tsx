@@ -143,8 +143,9 @@ export function CardStack<T extends CardStackItem>({
         style={{
           width: cardWidth + cardSpacing * maxOffset * 2 + 40,
           height: cardHeight + activeLiftPx + 60,
-          maxWidth: "100%",
+          maxWidth: "100vw",
           perspective: perspectivePx,
+          overflow: "hidden",
         }}
       >
         <div

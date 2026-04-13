@@ -1,8 +1,10 @@
 import { useRef, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ProblemSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -34,7 +36,7 @@ const ProblemSection = () => {
   return (
     <section
       ref={sectionRef}
-      style={{ height: "300vh", position: "relative", background: "#EAE3CF" }}
+      style={{ height: isMobile ? "200vh" : "300vh", position: "relative", background: "#EAE3CF", overflow: "hidden", touchAction: "pan-y" }}
     >
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-4 sm:px-7">
         <div className="max-w-[800px] mx-auto w-full flex flex-col items-center gap-6 sm:gap-8">

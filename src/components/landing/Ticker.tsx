@@ -9,7 +9,7 @@ const items = [
 
 const Ticker = () => {
   return (
-    <div className="ticker-wrap">
+    <div className="ticker-wrap" style={{ maxWidth: "100vw" }}>
       <div className="ticker-track">
         {[...items, ...items].map((item, i) => (
           <span key={i} className="ticker-item">
