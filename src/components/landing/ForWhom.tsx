@@ -3,10 +3,10 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { CardStack, CardStackItem } from "@/components/ui/card-stack";
 
 import imgApartamento from "@/assets/forwhom/apartamento.webp";
-import imgQuarto from "@/assets/forwhom/quarto-privativo.jpg";
+import imgQuarto from "@/assets/forwhom/quarto-privativo.webp";
 import imgPraia from "@/assets/forwhom/casa-praia.webp";
 import imgSerra from "@/assets/forwhom/casa-serra.webp";
-import imgChacara from "@/assets/forwhom/chacara.jpg";
+import imgChacara from "@/assets/forwhom/chacara.webp";
 import imgCabana from "@/assets/forwhom/cabana.webp";
 import imgPousada from "@/assets/forwhom/pousada.webp";
 import imgHotel from "@/assets/forwhom/hotel.webp";
