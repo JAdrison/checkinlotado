@@ -24,7 +24,6 @@ const metrics = [
 ];
 
 const Testimonials = () => {
-  const { setOpen } = useLeadForm();
   return (
     <section className="relative overflow-hidden" style={{ padding: "40px 16px" }}>
       {/* Video background */}
@@ -121,7 +120,7 @@ const Testimonials = () => {
         </div>
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <button onClick={() => setOpen(true)} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO LOTAR MINHA HOSPEDAGEM →</span>
           </button>
         </div>
