@@ -1,10 +1,8 @@
-import { trackEvent } from "@/lib/meta-capi";
 import { AlertTriangle } from "lucide-react";
-import { useLeadForm } from "@/contexts/LeadFormContext";
 import reformaImg from "@/assets/reforma-tributaria.webp";
 
 const OTAComparisonSection = () => {
-  const { setOpen } = useLeadForm();
+  
   return (
     <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#FFFFFF" }}>
       <div className="max-w-[1100px] mx-auto">
@@ -78,7 +76,7 @@ const OTAComparisonSection = () => {
 
         {/* CTA */}
         <div className="reveal text-center mt-10">
-          <button onClick={() => setOpen(true)} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO VENDER DIRETO →</span>
           </button>
         </div>

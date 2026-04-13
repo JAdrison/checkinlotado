@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import { trackEvent } from "@/lib/meta-capi";
-import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const { setOpen } = useLeadForm();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -28,7 +25,7 @@ const Navbar = () => {
       </div>
       <div className="flex justify-end">
         <button
-          onClick={() => setOpen(true)}
+          onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })}
           className="btn-cta btn-cta-sm font-label hidden sm:inline-flex"
         >
           <span>QUERO ENTRAR →</span>

@@ -1,6 +1,4 @@
 import { Check, X, TrendingUp, TrendingDown } from "lucide-react";
-import { trackEvent } from "@/lib/meta-capi";
-import { useLeadForm } from "@/contexts/LeadFormContext";
 
 const withMethod = [
   "Vende bem em fins de semana comuns",
@@ -21,7 +19,7 @@ const withoutMethod = [
 ];
 
 const ComparisonTable = () => {
-  const { setOpen } = useLeadForm();
+  
   return (
     <section style={{ background: "#FFFFFF" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[900px] mx-auto">
@@ -82,7 +80,7 @@ const ComparisonTable = () => {
         </div>
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <button onClick={() => setOpen(true)} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO ENTRAR AGORA →</span>
           </button>
         </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import heroBg from "@/assets/hero-bg.webp";
 import heroThumb from "@/assets/video-thumbnail.webp";
 import { trackEvent } from "@/lib/meta-capi";
-import { useLeadForm } from "@/contexts/LeadFormContext";
+
 
 const bullets = [
   "Como fazer sua hospedagem vender mais e deixar de ser um custo fixo pesado",
@@ -54,7 +54,7 @@ const YouTubeFacade = ({ videoId }: { videoId: string }) => {
 };
 
 const Hero = () => {
-  const { setOpen } = useLeadForm();
+  
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -89,7 +89,7 @@ const Hero = () => {
         </div>
 
         {/* CTA */}
-        <button onClick={() => setOpen(true)} className="btn-cta btn-cta-lg mt-8 text-center reveal w-full sm:w-auto">
+        <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg mt-8 text-center reveal w-full sm:w-auto">
           <span className="text-[0.75rem] sm:text-base">QUERO LOTAR MINHA HOSPEDAGEM</span>
           <span className="relative z-[1]">↗</span>
         </button>
