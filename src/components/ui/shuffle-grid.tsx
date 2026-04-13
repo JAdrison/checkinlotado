@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import p1 from "@/assets/gallery/pousada-1.jpg";
-import p2 from "@/assets/gallery/pousada-2.jpg";
-import p3 from "@/assets/gallery/pousada-3.jpg";
-import p4 from "@/assets/gallery/pousada-4.jpg";
-import p5 from "@/assets/gallery/pousada-5.jpg";
-import p6 from "@/assets/gallery/pousada-6.jpg";
-import p7 from "@/assets/gallery/pousada-7.jpg";
-import p8 from "@/assets/gallery/pousada-8.jpg";
-import p9 from "@/assets/gallery/pousada-9.jpg";
-import p10 from "@/assets/gallery/pousada-10.jpg";
-import p11 from "@/assets/gallery/pousada-11.jpg";
-import p12 from "@/assets/gallery/pousada-12.jpg";
-import p13 from "@/assets/gallery/pousada-13.jpg";
-import p14 from "@/assets/gallery/pousada-14.jpg";
-import p15 from "@/assets/gallery/pousada-15.jpg";
-import p16 from "@/assets/gallery/pousada-16.jpg";
+import p1 from "@/assets/gallery/pousada-1.webp";
+import p2 from "@/assets/gallery/pousada-2.webp";
+import p3 from "@/assets/gallery/pousada-3.webp";
+import p4 from "@/assets/gallery/pousada-4.webp";
+import p5 from "@/assets/gallery/pousada-5.webp";
+import p6 from "@/assets/gallery/pousada-6.webp";
+import p7 from "@/assets/gallery/pousada-7.webp";
+import p8 from "@/assets/gallery/pousada-8.webp";
+import p9 from "@/assets/gallery/pousada-9.webp";
+import p10 from "@/assets/gallery/pousada-10.webp";
+import p11 from "@/assets/gallery/pousada-11.webp";
+import p12 from "@/assets/gallery/pousada-12.webp";
+import p13 from "@/assets/gallery/pousada-13.webp";
+import p14 from "@/assets/gallery/pousada-14.webp";
+import p15 from "@/assets/gallery/pousada-15.webp";
+import p16 from "@/assets/gallery/pousada-16.webp";
 
 const squareData = [
   { id: 1, src: p1 },
