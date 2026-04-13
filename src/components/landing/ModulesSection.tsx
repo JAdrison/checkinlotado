@@ -2,15 +2,15 @@ import { AnimatedText } from "@/components/ui/animated-text";
 import { InteractiveImageAccordion } from "@/components/ui/interactive-image-accordion";
 import { Check } from "lucide-react";
 
-import module1 from "@/assets/module-1.jpg";
-import module2 from "@/assets/module-2.jpg";
-import module3 from "@/assets/module-3.jpg";
-import module4 from "@/assets/module-4.jpg";
-import module5 from "@/assets/module-5.jpg";
-import module6 from "@/assets/module-6.jpg";
-import bonus1 from "@/assets/bonus-1.jpg";
-import bonus2 from "@/assets/bonus-2.jpg";
-import bonus3 from "@/assets/bonus-3.jpg";
+import module1 from "@/assets/module-1.webp";
+import module2 from "@/assets/module-2.webp";
+import module3 from "@/assets/module-3.webp";
+import module4 from "@/assets/module-4.webp";
+import module5 from "@/assets/module-5.webp";
+import module6 from "@/assets/module-6.webp";
+import bonus1 from "@/assets/bonus-1.webp";
+import bonus2 from "@/assets/bonus-2.webp";
+import bonus3 from "@/assets/bonus-3.webp";
 
 const modules = [
   {
