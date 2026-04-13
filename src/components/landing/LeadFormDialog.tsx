@@ -107,7 +107,7 @@ const LeadFormDialog = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
-        className="max-w-md w-[95vw] p-0 border-ochre/20 overflow-y-auto rounded-2xl max-h-[90vh]"
+        className="max-w-[calc(100vw-2rem)] sm:max-w-md p-0 border-ochre/20 overflow-y-auto rounded-2xl max-h-[85vh]"
         style={{ background: "#1A1208" }}
       >
         <DialogTitle className="sr-only">Formulário de inscrição</DialogTitle>
