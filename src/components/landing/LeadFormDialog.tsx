@@ -118,7 +118,7 @@ const LeadFormDialog = () => {
           </div>
 
           {/* Headline */}
-          <p className="text-cream text-center text-lg sm:text-xl font-semibold leading-snug mb-6 sm:mb-8">
+          <p className="text-cream text-center text-base sm:text-xl font-semibold leading-snug mb-4 sm:mb-8">
             Preencha o formulário e descubra como{" "}
             <strong className="text-ochre">faturar alto</strong> com a sua
             hospedagem.
