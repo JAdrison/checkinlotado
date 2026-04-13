@@ -1,6 +1,6 @@
 import { useState } from "react";
 import heroBg from "@/assets/hero-bg.webp";
-import heroThumb from "@/assets/video-thumbnail.png";
+import heroThumb from "@/assets/video-thumbnail.webp";
 import { trackEvent } from "@/lib/meta-capi";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 
@@ -58,7 +58,7 @@ const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover" fetchPriority="high" />
         <div className="absolute inset-0" style={{ background: "rgba(242, 237, 224, 0.88)" }} />
       </div>
       <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">

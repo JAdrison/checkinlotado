@@ -4,7 +4,7 @@ import { useLeadForm } from "@/contexts/LeadFormContext";
 import whatsappImg from "@/assets/case-study/whatsapp-iparai.webp";
 import guilhermeImg from "@/assets/case-study/guilherme-couto.png";
 import iparaiLogo from "@/assets/case-study/iparai-logo.png";
-import videoThumb from "@/assets/video-thumbnail.png";
+import videoThumb from "@/assets/video-thumbnail.webp";
 
 const metrics = [
   {
