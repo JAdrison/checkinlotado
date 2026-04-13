@@ -96,7 +96,7 @@ const ForWhom: React.FC = () => {
         <div className="max-w-[1100px] mx-auto">
           <div className="reveal text-center">
             <div className="label-text mb-6">Quem confia no método</div>
-            <div className="overflow-hidden w-full">
+            <div className="overflow-hidden w-full" style={{ maxWidth: "100vw" }}>
               <div className="flex whitespace-nowrap" style={{ animation: 'ticker 30s linear infinite' }}>
                 {trustedLogos.map((logo, i) => (
                   <LogoItem key={`a-${i}`} logo={logo} />
