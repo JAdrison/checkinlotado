@@ -1,32 +1,47 @@
 
 
-## Plan: Remove lead form, direct CTAs to checkout
+## Plan: Fix mobile horizontal scroll and auto-scroll-to-top bugs
 
-### What changes
+### Problem 1: Page scrolls sideways on mobile
+Several elements can overflow the viewport width on small phones:
 
-1. **All CTA buttons across the site** (Hero, Navbar, StickyBar, FinalCTA, GallerySection, ComparisonTable, OTAComparisonSection, AccordionSection) — instead of opening the lead form (`setOpen(true)`), they will smooth-scroll to the `#comprar` section ("Entre no Check-in Lotado").
+- **Ticker & Logo strip**: `whitespace-nowrap` elements animate horizontally but aren't properly contained
+- **CardStack**: Calculated width can exceed screen on 320px devices
+- **Timeline (PhaseCards)**: `margin-left: 50%` + padding causes overflow on mobile
+- **Root-level containment**: `overflow-x: hidden` on `body` alone is unreliable in in-app browsers (Instagram, Facebook)
 
-2. **PricingSection CTA button** — instead of opening the lead form, it will navigate directly to the Kiwify checkout URL (`https://pay.kiwify.com.br/Y613pR3`).
+### Problem 2: Page auto-scrolls to top
+- **ProblemSection**: 300vh tall section with `position: sticky` and scroll-driven video creates scroll position conflicts on certain mobile browsers
+- **`scroll-behavior: smooth`** on `html` can cause unexpected scroll jumps when combined with IntersectionObserver and programmatic scroll actions
 
-3. **Remove LeadFormDialog** from `App.tsx` rendering (and optionally the import). The form component and context can stay in the codebase but will no longer be active.
+### Changes
 
-### Files to edit
+**File: `src/index.css`**
+- Add `overflow-x: hidden` to `html` (not just `body`) — this catches overflow that escapes `body` in WebKit-based in-app browsers
+- Remove `scroll-behavior: smooth` from `html` (it causes scroll fights on mobile). The programmatic `scrollIntoView({ behavior: "smooth" })` already handles smooth scrolling where needed
 
-- **`src/components/landing/PricingSection.tsx`** — Replace `setOpen(true)` with `window.location.href = KIWIFY_URL`
-- **`src/components/landing/Hero.tsx`** — Replace `setOpen(true)` with scroll to `#comprar`
-- **`src/components/landing/Navbar.tsx`** — Same
-- **`src/components/landing/StickyBar.tsx`** — Same
-- **`src/components/landing/FinalCTA.tsx`** — Same
-- **`src/components/landing/GallerySection.tsx`** — Same
-- **`src/components/landing/ComparisonTable.tsx`** — Same
-- **`src/components/landing/OTAComparisonSection.tsx`** — Same
-- **`src/components/landing/AccordionSection.tsx`** — Same
-- **`src/App.tsx`** — Remove `<LeadFormDialog />` rendering
+**File: `src/components/landing/ProblemSection.tsx`**
+- Reduce section height from `300vh` to `200vh` on mobile to prevent scroll position conflicts
+- Add `overflow: hidden` to the section wrapper
+- Add touch-action constraint to prevent horizontal swipe interference
 
-### Scroll helper
+**File: `src/components/ui/card-stack.tsx`**
+- Add `overflow: hidden` to the outer wrapper div and constrain max-width to `100vw`
 
-Each button will use:
-```ts
-document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" });
-```
+**File: `src/components/landing/ForWhom.tsx`**
+- Wrap the logo ticker in a container with `overflow: hidden` and `max-width: 100vw`
+
+**File: `src/components/landing/Ticker.tsx`**
+- Add `overflow: hidden` to the ticker wrapper (already has it via `.ticker-wrap` CSS but add explicit containment)
+
+**File: `src/index.css` (timeline mobile rules)**
+- Ensure mobile timeline items don't exceed viewport width by adding `max-width: 100%` and `overflow: hidden` to timeline cards
+
+**File: `src/pages/Index.tsx`**
+- Wrap the entire page content in a div with `overflow-x: hidden` as an extra safety layer
+
+### Result
+- Horizontal scrolling will be blocked at multiple levels (html, body, page wrapper)
+- The scroll-driven video section won't fight with the browser's scroll position on mobile
+- All animated/wide elements are properly contained within viewport bounds
 
