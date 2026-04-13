@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const { setOpen } = useLeadForm();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
