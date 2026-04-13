@@ -107,18 +107,18 @@ const LeadFormDialog = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
-        className="max-w-md w-[95vw] p-0 border-ochre/20 overflow-hidden rounded-2xl"
+        className="max-w-md w-[95vw] p-0 border-ochre/20 overflow-y-auto rounded-2xl max-h-[90vh]"
         style={{ background: "#1A1208" }}
       >
         <DialogTitle className="sr-only">Formulário de inscrição</DialogTitle>
-        <div className="p-6 sm:p-8">
+        <div className="p-4 sm:p-8">
           {/* Logo */}
-          <div className="text-center mb-6">
-            <img src={logoImg} alt="Check-in Lotado" className="h-16 sm:h-20 mx-auto" />
+          <div className="text-center mb-3 sm:mb-6">
+            <img src={logoImg} alt="Check-in Lotado" className="h-12 sm:h-20 mx-auto" />
           </div>
 
           {/* Headline */}
-          <p className="text-cream text-center text-lg sm:text-xl font-semibold leading-snug mb-6 sm:mb-8">
+          <p className="text-cream text-center text-base sm:text-xl font-semibold leading-snug mb-4 sm:mb-8">
             Preencha o formulário e descubra como{" "}
             <strong className="text-ochre">faturar alto</strong> com a sua
             hospedagem.
