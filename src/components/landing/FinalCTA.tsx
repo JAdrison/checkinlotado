@@ -1,3 +1,4 @@
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const FinalCTA = () => {
   
@@ -17,7 +18,7 @@ const FinalCTA = () => {
           <p className="text-cream-mid text-[0.9rem] sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-[520px] mx-auto">
             Cada fim de semana sem hóspedes é dinheiro que não volta. O método está pronto. A decisão é sua.
           </p>
-          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO ENTRAR AGORA →</span>
           </button>
         </div>

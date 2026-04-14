@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 interface AccordionSectionProps {
   bgColor: string;
@@ -62,7 +63,7 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
 
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO ENTRAR AGORA →</span>
           </button>
         </div>

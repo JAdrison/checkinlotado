@@ -2,6 +2,7 @@ import { useState } from "react";
 import heroBg from "@/assets/hero-bg.webp";
 import heroThumb from "@/assets/video-thumbnail.webp";
 import { trackEvent } from "@/lib/meta-capi";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 
 const bullets = [
@@ -89,7 +90,7 @@ const Hero = () => {
         </div>
 
         {/* CTA */}
-        <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg mt-8 text-center reveal w-full sm:w-auto">
+        <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg mt-8 text-center reveal w-full sm:w-auto">
           <span className="text-[0.75rem] sm:text-base">QUERO LOTAR MINHA HOSPEDAGEM</span>
           <span className="relative z-[1]">↗</span>
         </button>

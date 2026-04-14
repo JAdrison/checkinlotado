@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const StickyBar = () => {
   const [show, setShow] = useState(false);
@@ -23,7 +24,7 @@ const StickyBar = () => {
           12x R$20,37 · Acesso imediato
         </span>
       </div>
-      <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-sm">
+      <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-sm">
         <span>QUERO ENTRAR →</span>
       </button>
     </div>

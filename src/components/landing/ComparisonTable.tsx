@@ -1,4 +1,5 @@
 import { Check, X, TrendingUp, TrendingDown } from "lucide-react";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const withMethod = [
   "Vende bem em fins de semana comuns",
@@ -80,7 +81,7 @@ const ComparisonTable = () => {
         </div>
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO ENTRAR AGORA →</span>
           </button>
         </div>

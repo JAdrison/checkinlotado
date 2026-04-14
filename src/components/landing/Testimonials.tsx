@@ -1,5 +1,6 @@
 import { Check, Calendar, TrendingUp } from "lucide-react";
 import { trackEvent } from "@/lib/meta-capi";
+import { scrollToSection } from "@/lib/scrollToSection";
 import whatsappImg from "@/assets/case-study/whatsapp-iparai.webp";
 import guilhermeImg from "@/assets/case-study/guilherme-couto.webp";
 import iparaiLogo from "@/assets/case-study/iparai-logo.png";
@@ -120,7 +121,7 @@ const Testimonials = () => {
         </div>
         {/* CTA */}
         <div className="reveal text-center mt-12">
-          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO LOTAR MINHA HOSPEDAGEM →</span>
           </button>
         </div>
