@@ -94,7 +94,7 @@ const PricingSection = () => {
 
           {/* CTA */}
           <button
-            onClick={() => { window.location.href = KIWIFY_URL; }}
+            onClick={() => { window.open(KIWIFY_URL, "_blank"); }}
             className="btn-cta btn-cta-lg btn-cta-full mx-auto"
           >
             <span>QUERO ENTRAR AGORA →</span>
