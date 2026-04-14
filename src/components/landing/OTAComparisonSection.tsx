@@ -1,4 +1,5 @@
 import { AlertTriangle } from "lucide-react";
+import { scrollToSection } from "@/lib/scrollToSection";
 import reformaImg from "@/assets/reforma-tributaria.webp";
 
 const OTAComparisonSection = () => {
@@ -76,7 +77,7 @@ const OTAComparisonSection = () => {
 
         {/* CTA */}
         <div className="reveal text-center mt-10">
-          <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto">
+          <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto">
             <span className="text-[0.75rem] sm:text-base">QUERO VENDER DIRETO →</span>
           </button>
         </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
       </div>
       <div className="flex justify-end">
         <button
-          onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })}
+          onClick={() => scrollToSection("comprar")}
           className="btn-cta btn-cta-sm font-label hidden sm:inline-flex"
         >
           <span>QUERO ENTRAR →</span>

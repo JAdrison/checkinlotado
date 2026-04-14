@@ -1,4 +1,5 @@
 import ShuffleGrid from "@/components/ui/shuffle-grid";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const GallerySection = () => {
   
@@ -20,7 +21,7 @@ const GallerySection = () => {
               O método funciona para qualquer tipo de hospedagem que quer parar de
               depender de feriado.
             </p>
-            <button onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })} className="btn-cta btn-cta-lg w-full sm:w-auto text-center">
+            <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto text-center">
               <span className="text-[0.75rem] sm:text-base">QUERO O MESMO RESULTADO</span>
               <span className="relative z-[1]">↗</span>
             </button>
