@@ -29,12 +29,11 @@ const AccordionSection = ({ bgColor, label, titleBefore, titleHighlight, items }
             }}
           />
         </div>
-        <div className="flex flex-col gap-2.5">
+        <div className="flex flex-col gap-2.5 reveal">
           {items.map((item, i) => (
             <div
               key={i}
-              className={`landing-card acc-item reveal ${openIndex === i ? "active" : ""}`}
-              style={{ transitionDelay: `${(i + 1) * 0.05}s` }}
+              className={`landing-card acc-item ${openIndex === i ? "active" : ""}`}
             >
               <button
                 onClick={() => toggle(i)}
