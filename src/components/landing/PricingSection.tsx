@@ -4,7 +4,6 @@ const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 
 const group1 = [
   "Curso online gravado — acesso imediato",
-  "Método Check-in Lotado completo",
   "Calendário comercial de 90 dias",
   "Scripts de atendimento e fechamento",
   "10 GPTs treinados para hospedagens",
