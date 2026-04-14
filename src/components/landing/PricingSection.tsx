@@ -6,7 +6,6 @@ const group1 = [
   "Curso online gravado — acesso imediato",
   "Calendário comercial de 90 dias",
   "Scripts de atendimento e fechamento",
-  "10 GPTs treinados para hospedagens",
   "Modelos de mensagens prontas",
 ];
 
@@ -14,6 +13,7 @@ const group2 = [
   "Exemplos reais de hospedagens que aplicaram",
   "Apostilas e materiais complementares",
   "Desafios práticos para aplicar no seu negócio",
+  "10 GPT's treinados para fazer por você",
 ];
 
 const group3 = [
