@@ -3,10 +3,12 @@ import { Check, BookOpen, Users, CalendarDays } from "lucide-react";
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 
 const group1 = [
-  "Curso online gravado — acesso imediato",
-  "Calendário comercial de 90 dias",
-  "Scripts de atendimento e fechamento",
-  "Modelos de mensagens prontas",
+  "Como criar uma estratégia de marketing",
+  "Como fazer anúncios virais",
+  "Como trazer pessoas para sua hospedagem por tráfego pago",
+  "Como vender por WhatsApp",
+  "Como transformar seu Instagram em uma máquina de vendas",
+  "Como fazer seu website premium",
 ];
 
 const group2 = [
