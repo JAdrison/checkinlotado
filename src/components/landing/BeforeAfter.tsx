@@ -1,31 +1,31 @@
 import { ArrowRight } from "lucide-react";
 
 const before = [
-  "Ocupação irregular",
-  "Marketing sem planejamento",
-  "Promoções aleatórias",
-  "Dependência de datas comemorativas",
-  "Atendimento sem processo",
-  "Dificuldade para medir resultados",
+  "Descobre as datas vazias tarde demais.",
+  "Cria promoções sem planejamento.",
+  "Publica sem saber para quem.",
+  "Depende de feriados e OTAs.",
+  "Não acompanha os contatos.",
+  "Não sabe quais ações geram reservas.",
 ];
 
 const after = [
-  "Calendário comercial",
-  "Campanhas planejadas",
-  "Ofertas por público",
-  "Criativos com objetivo",
-  "Atendimento mais preparado",
-  "Acompanhamento dos resultados",
+  "Mapeia os períodos críticos.",
+  "Planeja campanhas com antecedência.",
+  "Cria ofertas para públicos específicos.",
+  "Trabalha diferentes períodos do calendário.",
+  "Organiza atendimento e follow-up.",
+  "Mede ocupação, contatos e reservas.",
 ];
 
 const BeforeAfter = () => {
   return (
     <section style={{ background: "#11100E" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1100px] mx-auto">
-        <div className="reveal text-center mb-10 sm:mb-14 max-w-[720px] mx-auto">
-          <div className="label-text mb-3">Antes e depois</div>
+        <div className="reveal text-center mb-10 sm:mb-14 max-w-[760px] mx-auto">
+          <div className="label-text mb-3">ANTES E DEPOIS</div>
           <h2 className="font-heading text-[1.6rem] sm:text-[clamp(1.9rem,4vw,3.2rem)] text-night leading-[1.15]">
-            A transformação operacional que <em className="shimmer-text font-extrabold">o método provoca</em>
+            A diferença entre <em className="text-ochre font-extrabold not-italic">improvisar</em> e operar com método.
           </h2>
         </div>
 

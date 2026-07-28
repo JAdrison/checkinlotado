@@ -12,14 +12,14 @@ const FinalCTA = () => {
       <div className="max-w-[660px] mx-auto relative">
         <div className="reveal">
           <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-4 sm:mb-5">
-            Não deixe o próximo<br />
-            <em className="shimmer-text font-extrabold">fim de semana</em> passar vazio
+            Pare de esperar o próximo{" "}
+            <em className="text-ochre font-extrabold not-italic">feriado</em> para voltar a vender.
           </h2>
-          <p className="text-night text-[0.9rem] sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-[520px] mx-auto">
-            Cada fim de semana sem hóspedes é dinheiro que não volta. O método está pronto. A decisão é sua.
+          <p className="text-night text-[0.9rem] sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-[560px] mx-auto">
+            Organize sua ocupação, campanhas e atendimento com um método criado para a realidade das hospedagens.
           </p>
           <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto">
-            <span className="text-[0.75rem] sm:text-base">QUERO ENTRAR AGORA →</span>
+            <span className="text-[0.78rem] sm:text-base">QUERO APLICAR O CHECK-IN LOTADO →</span>
           </button>
         </div>
       </div>

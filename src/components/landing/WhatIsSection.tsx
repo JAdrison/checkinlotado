@@ -17,15 +17,19 @@ const WhatIsSection = () => {
     <section style={{ background: "#11100E" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div className="reveal">
-          <div className="label-text mb-3">O que é o Check-in Lotado</div>
+          <div className="label-text mb-3">O MÉTODO</div>
           <h2 className="font-heading text-[1.6rem] sm:text-[clamp(1.9rem,4vw,3.2rem)] text-night leading-[1.15] mb-5">
-            O método criado para transformar temporada em <em className="shimmer-text font-extrabold">rotina de reservas</em>
+            O que é o Método <em className="text-ochre font-extrabold not-italic">Check-in Lotado?</em>
           </h2>
-          <p className="text-night/80 text-[0.95rem] sm:text-lg leading-relaxed mb-5">
-            O Check-in Lotado é um treinamento prático para proprietários e gestores de hospedagens organizarem sua ocupação, estratégia de marketing, campanhas, criativos, tráfego e atendimento.
+          <p className="text-night/80 text-[0.95rem] sm:text-lg leading-relaxed mb-4">
+            O Check-in Lotado é um treinamento prático de marketing, ocupação e vendas para hospedagens.
           </p>
-          <p className="text-night/70 text-sm sm:text-base leading-relaxed mb-7">
-            Um único método conectando as peças que a maioria trata separadas — do diagnóstico à mensuração dos resultados.
+          <p className="text-night/75 text-sm sm:text-base leading-relaxed mb-6">
+            Ele ajuda o proprietário ou gestor a diagnosticar os períodos vazios, definir o público, organizar ofertas, criar campanhas, melhorar o atendimento e acompanhar os resultados.
+          </p>
+
+          <p className="font-heading text-ochre text-lg sm:text-2xl leading-snug mb-7 italic">
+            Da análise da agenda à confirmação da reserva.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">

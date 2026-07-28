@@ -6,10 +6,12 @@ import { scrollToSection } from "@/lib/scrollToSection";
 
 
 const bullets = [
-  "Como fazer sua hospedagem vender mais e deixar de ser um custo fixo pesado",
-  "Como estruturar o Instagram, captar clientes com tráfego pago e transformar atendimento em reservas",
-  " Como identificar o real problema por trás das poucas reservas da sua hospedagem",
-  " Vídeos, materiais validados e agentes de IA prontos para fazer boa parte do trabalho por você",
+  "Identificar os períodos e datas que estão reduzindo sua ocupação.",
+  "Criar ofertas sem transformar desconto no único argumento.",
+  "Planejar campanhas para semana, fim de semana e baixa temporada.",
+  "Atrair o público certo com conteúdo, criativos e tráfego pago.",
+  "Organizar o atendimento para transformar mais contatos em reservas.",
+  "Acompanhar os resultados e corrigir o que não está funcionando.",
 ];
 
 const YouTubeFacade = ({ videoId }: { videoId: string }) => {
@@ -64,36 +66,57 @@ const Hero = () => {
       </div>
       <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
         {/* Headline */}
-        <div className="text-center mb-8 sm:mb-10 reveal" style={{ minHeight: '220px' }}>
-          
-          <h1 className="font-heading text-[2.2rem] sm:text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-night leading-[1.12] mb-4 sm:mb-5">
-            Como lotar sua hospedagem de reservas{" "}
-            <em className="shimmer-text font-black">em 30 dias</em>
+        <div className="text-center mb-8 sm:mb-10 reveal">
+          {/* Label */}
+          <div
+            className="font-label uppercase text-ochre/80 text-[0.68rem] sm:text-[0.78rem] tracking-[0.28em] mb-4 sm:mb-5"
+          >
+            <span className="sm:hidden">MÉTODO PARA HOSPEDAGENS</span>
+            <span className="hidden sm:inline">MÉTODO DE OCUPAÇÃO PARA HOSPEDAGENS</span>
+          </div>
+
+          <h1 className="font-heading text-[1.9rem] sm:text-[clamp(2.4rem,5vw,4.4rem)] font-black text-night leading-[1.15] mb-4 sm:mb-5 max-w-[900px] mx-auto">
+            Aumente a ocupação da sua hospedagem{" "}
+            <em className="text-ochre font-black not-italic">sem baixar o preço</em>{" "}
+            ou depender apenas de feriados.
           </h1>
-          <p className="text-night/85 text-xl max-w-[560px] mx-auto leading-relaxed sm:text-4xl font-extrabold">
-            Sem depender de feriados, sem baixar preço, sem aumentar o custo fixo.
+          <p className="text-night/85 text-base sm:text-xl max-w-[720px] mx-auto leading-relaxed">
+            Aplique o Método Check-in Lotado para identificar os períodos vazios, planejar campanhas, atrair o público certo e transformar mais procura em reservas.
+          </p>
+          <p className="text-night/60 text-sm sm:text-[0.95rem] max-w-[640px] mx-auto leading-relaxed mt-3">
+            Um passo a passo prático para hotéis, pousadas, chalés e casas de temporada que querem vender melhor durante todo o calendário.
           </p>
         </div>
 
         {/* Video — lazy YouTube facade */}
         <YouTubeFacade videoId="m_EClZVmHXY" />
 
-        {/* Bullets 2x2 */}
-        <p className="reveal text-night/70 text-base sm:text-lg font-heading mt-8 sm:mt-10 mb-2 in font-extrabold">O Método ensina:</p>
-        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-4 max-w-[800px]">
+        {/* Disclaimer discreto */}
+        <p className="reveal text-night/50 text-[0.72rem] sm:text-[0.78rem] leading-relaxed max-w-[680px] mx-auto text-center mt-5">
+          Os resultados variam conforme a estrutura da hospedagem, o mercado, a execução e o ponto de partida.
+        </p>
+
+        {/* Bullets */}
+        <p className="reveal text-night/80 text-base sm:text-lg font-heading mt-8 sm:mt-10 mb-3 font-extrabold">
+          O que você vai aprender a fazer:
+        </p>
+        <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-4 max-w-[820px]">
           {bullets.map((text, i) => (
             <div key={i} className="flex items-start gap-2.5 sm:gap-3">
-              <span className="text-ochre mt-0.5 sm:mt-1 shrink-0 text-base">◆</span>
-              <p className="text-night text-lg sm:text-2xl leading-relaxed">{text}</p>
+              <span className="text-ochre mt-1 shrink-0 text-sm">◆</span>
+              <p className="text-night text-base sm:text-lg leading-relaxed">{text}</p>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg mt-8 text-center reveal w-full sm:w-auto">
-          <span className="text-[0.75rem] sm:text-base">QUERO LOTAR MINHA HOSPEDAGEM</span>
+          <span className="text-[0.78rem] sm:text-base">QUERO AUMENTAR MINHA OCUPAÇÃO</span>
           <span className="relative z-[1]">↗</span>
         </button>
+        <p className="reveal text-night/60 text-[0.75rem] sm:text-[0.85rem] mt-3 text-center">
+          Acesso imediato • Método passo a passo • Garantia de 7 dias
+        </p>
       </div>
     </section>
   );

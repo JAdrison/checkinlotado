@@ -6,21 +6,39 @@ import stepsBg from "@/assets/steps-bg.webp";
 const steps = [
   {
     num: "01",
-    title: "Diagnóstico & Estratégia",
+    title: "Diagnóstico da ocupação",
     description:
-      "Vamos identificar o que está travando hoje a sua hospedagem e fazer o seu plano estratégico.",
+      "Identifique sazonalidade, buracos na agenda e dependência de feriados.",
   },
   {
     num: "02",
-    title: "Geração de Demanda",
+    title: "Estratégia e oferta",
     description:
-      "Colocar o plano em prática e gerar pessoas interessadas para a tua hospedagem.",
+      "Defina público, posicionamento e motivos claros para reservar.",
   },
   {
     num: "03",
-    title: "Atendimento & Otimização",
+    title: "Criativos e divulgação",
     description:
-      "Conseguir transformar essa demana em hóspedes que vão pagar pela sua estadia",
+      "Planeje conteúdos, campanhas e materiais que geram interesse.",
+  },
+  {
+    num: "04",
+    title: "Captação e tráfego",
+    description:
+      "Atraia pessoas com maior potencial de reservar.",
+  },
+  {
+    num: "05",
+    title: "Atendimento e conversão",
+    description:
+      "Organize respostas, follow-up e condução da reserva.",
+  },
+  {
+    num: "06",
+    title: "Mensuração e melhoria",
+    description:
+      "Acompanhe resultados e ajuste as próximas ações.",
   },
 ];
 
@@ -97,7 +115,7 @@ const StepsSection: React.FC = () => {
       >
         {/* Header */}
         <div className="text-center mb-4">
-          <span className="label-text">90 dias para alcançar o potêncial maximo de reservas na sua hospedagem</span>
+          <span className="label-text">COMO O MÉTODO FUNCIONA</span>
         </div>
         <div className="text-center" style={{ marginBottom: isMobile ? 36 : 64 }}>
           <h2
@@ -107,8 +125,8 @@ const StepsSection: React.FC = () => {
               color: "var(--night)",
             }}
           >
-            Resultados nos primeiros{" "}
-            <em className="shimmer-text font-extrabold">30 dias</em>
+            Seis etapas para transformar procura em{" "}
+            <em className="text-ochre font-extrabold not-italic">reservas confirmadas</em>
           </h2>
         </div>
 
