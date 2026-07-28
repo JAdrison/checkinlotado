@@ -11,10 +11,10 @@ const GuaranteeSection = () => {
           <div>
             <div className="label-text mb-2">Garantia incondicional</div>
             <h3 className="font-heading text-night text-[1.4rem] sm:text-[1.8rem] leading-tight mb-2">
-              7 dias para testar sem risco
+              Acesse por 7 dias e conheça o método com tranquilidade.
             </h3>
             <p className="text-night/70 text-sm sm:text-base leading-relaxed">
-              Entre, assista e avalie com tranquilidade. Se perceber que não faz sentido para o seu momento, peça reembolso dentro do prazo — sem burocracia.
+              Entre, assista e avalie sem pressão. Se perceber que não faz sentido para o seu momento, peça reembolso dentro do prazo — sem burocracia.
             </p>
           </div>
         </div>

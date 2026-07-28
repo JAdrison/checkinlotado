@@ -4,42 +4,13 @@ import { ChevronRight } from "lucide-react";
 import stepsBg from "@/assets/steps-bg.webp";
 
 const steps = [
-  {
-    num: "01",
-    title: "Diagnóstico da ocupação",
-    description:
-      "Identifique sazonalidade, buracos na agenda e dependência de feriados.",
-  },
-  {
-    num: "02",
-    title: "Estratégia e oferta",
-    description:
-      "Defina público, posicionamento e motivos claros para reservar.",
-  },
-  {
-    num: "03",
-    title: "Criativos e divulgação",
-    description:
-      "Planeje conteúdos, campanhas e materiais que geram interesse.",
-  },
-  {
-    num: "04",
-    title: "Captação e tráfego",
-    description:
-      "Atraia pessoas com maior potencial de reservar.",
-  },
-  {
-    num: "05",
-    title: "Atendimento e conversão",
-    description:
-      "Organize respostas, follow-up e condução da reserva.",
-  },
-  {
-    num: "06",
-    title: "Mensuração e melhoria",
-    description:
-      "Acompanhe resultados e ajuste as próximas ações.",
-  },
+  { num: "01", title: "Diagnosticar", description: "Identificar sazonalidade, períodos vazios e dependência de datas específicas." },
+  { num: "02", title: "Planejar", description: "Organizar calendário, públicos, campanhas e prioridades." },
+  { num: "03", title: "Posicionar", description: "Comunicar melhor os diferenciais e aumentar a percepção de valor." },
+  { num: "04", title: "Criar", description: "Desenvolver ofertas, conteúdos e criativos adequados ao objetivo." },
+  { num: "05", title: "Atrair", description: "Usar divulgação, parcerias e tráfego para alcançar potenciais hóspedes." },
+  { num: "06", title: "Converter", description: "Melhorar atendimento, follow-up e fechamento." },
+  { num: "07", title: "Otimizar", description: "Acompanhar números e ajustar o próximo ciclo." },
 ];
 
 const StepCircle = ({ num }: { num: string }) => (
@@ -125,8 +96,7 @@ const StepsSection: React.FC = () => {
               color: "var(--night)",
             }}
           >
-            Seis etapas para transformar procura em{" "}
-            <em className="text-ochre font-extrabold not-italic">reservas confirmadas</em>
+            Da agenda vazia à <em className="text-ochre font-extrabold not-italic">campanha estruturada</em>.
           </h2>
         </div>
 

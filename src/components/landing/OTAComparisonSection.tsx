@@ -5,18 +5,21 @@ import reformaImg from "@/assets/reforma-tributaria.webp";
 const OTAComparisonSection = () => {
   
   return (
-    <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#FFFFFF" }}>
+    <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#11100E" }}>
       <div className="max-w-[1100px] mx-auto">
         {/* Headline */}
         <div className="reveal text-center mb-10 sm:mb-16">
-          <div className="label-text text-ochre mb-3 sm:mb-4">
-            A conta que ninguém faz
+          <div className="label-text mb-3 sm:mb-4">
+            Reservas diretas e OTAs
           </div>
           <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black leading-[1.15] text-night">
-            Quanto custa depender
+            Não se trata de abandonar as plataformas.
             <br />
-            <span className="shimmer-text font-extrabold">só de Plataformas</span>?
+            <em className="text-ochre font-extrabold not-italic">Trata-se de construir um canal próprio.</em>
           </h2>
+          <p className="text-night/70 text-sm sm:text-base max-w-[720px] mx-auto mt-5 leading-relaxed">
+            As OTAs podem gerar demanda, mas reservas diretas reduzem comissões e dão mais controle. O objetivo é equilibrar os canais — e não depender de apenas um.
+          </p>
         </div>
 
         {/* Subheadline — 3 fatos + imagem lado a lado */}
@@ -68,17 +71,15 @@ const OTAComparisonSection = () => {
 
         {/* Bottom text */}
         <div className="reveal text-center mt-14">
-          <p className="text-base md:text-lg text-night/50">
-            <strong className="text-ochre">
-              Com o método, você aprende a não depender mais.
-            </strong>
+          <p className="text-base md:text-lg text-night/70">
+            <strong className="text-ochre">Com o método, você constrói um canal próprio</strong> — sem abandonar as plataformas.
           </p>
         </div>
 
         {/* CTA */}
         <div className="reveal text-center mt-10">
           <button onClick={() => scrollToSection("comprar")} className="btn-cta btn-cta-lg w-full sm:w-auto">
-            <span className="text-[0.75rem] sm:text-base">QUERO VENDER DIRETO →</span>
+            <span className="text-[0.75rem] sm:text-base">QUERO APLICAR O CHECK-IN LOTADO →</span>
           </button>
         </div>
       </div>
