@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Playfair Display"', 'serif'],
-        body: ['"DM Sans"', 'sans-serif'],
-        label: ['"Syne"', 'sans-serif'],
+        heading: ['"Cormorant Garamond"', '"Playfair Display"', 'serif'],
+        body: ['"Inter"', 'system-ui', 'sans-serif'],
+        label: ['"Syne"', '"Inter"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -25,17 +25,26 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         cream: {
-          DEFAULT: "#F5EFE0",
-          mid: "#F2EDE0",
-          dark: "#EAE3CF",
+          DEFAULT: "#080706",
+          mid: "#11100E",
+          dark: "#171512",
         },
         ochre: {
-          DEFAULT: "#C8943A",
-          light: "#D4A843",
-          pale: "#F5D08A",
+          DEFAULT: "#C9973E",
+          light: "#DAB05C",
+          pale: "#EFD9A0",
         },
-        night: "#1A1208",
-        deep: "#0F0C06",
+        gold: {
+          DEFAULT: "#C9973E",
+          light: "#DAB05C",
+          pale: "#EFD9A0",
+        },
+        surface: {
+          DEFAULT: "#171512",
+          '2': "#1F1C18",
+        },
+        night: "#F5EEDF",
+        deep: "#EFE7D2",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
