@@ -14,6 +14,7 @@ const ModulesSection = lazy(() => import("@/components/landing/ModulesSection"))
 const WhatYouReceive = lazy(() => import("@/components/landing/WhatYouReceive"));
 const BeforeAfter = lazy(() => import("@/components/landing/BeforeAfter"));
 const ResultsSection = lazy(() => import("@/components/landing/ResultsSection"));
+const VideoCase = lazy(() => import("@/components/landing/VideoCase"));
 const Testimonials = lazy(() => import("@/components/landing/Testimonials"));
 const OTAComparisonSection = lazy(() => import("@/components/landing/OTAComparisonSection"));
 const Authority = lazy(() => import("@/components/landing/Authority"));
@@ -72,6 +73,7 @@ const Index = () => {
         {/* 10 — Antes e depois */}
         <BeforeAfter />
         {/* 11 — Estudos de caso e resultados */}
+        <VideoCase />
         <ResultsSection />
         <Testimonials />
         {/* 12 — Reservas diretas e OTAs */}
