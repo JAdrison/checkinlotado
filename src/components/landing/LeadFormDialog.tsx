@@ -108,7 +108,7 @@ const LeadFormDialog = () => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
         className="max-w-[calc(100vw-2rem)] sm:max-w-md p-0 border-ochre/20 overflow-y-auto rounded-2xl max-h-[85vh]"
-        style={{ background: "#080706" }}
+        style={{ background: "#050505" }}
       >
         <DialogTitle className="sr-only">Formulário de inscrição</DialogTitle>
         <div className="p-4 sm:p-8">
@@ -198,11 +198,11 @@ const LeadFormDialog = () => {
                   backgroundPosition: "right 12px center",
                 }}
               >
-                <option value="" disabled className="bg-[#080706] text-night/50">
+                <option value="" disabled className="bg-[#050505] text-night/50">
                   Selecione...
                 </option>
                 {accommodationTypes.map((type) => (
-                  <option key={type} value={type} className="bg-[#080706] text-night">
+                  <option key={type} value={type} className="bg-[#050505] text-night">
                     {type}
                   </option>
                 ))}

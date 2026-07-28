@@ -9,7 +9,7 @@ const benefits = [
 
 const BenefitsStrip = () => {
   return (
-    <section style={{ background: "#0B0A08", borderTop: "1px solid rgba(201,151,62,0.14)", borderBottom: "1px solid rgba(201,151,62,0.14)" }} className="py-10 sm:py-14 px-4 sm:px-7">
+    <section style={{ background: "#0B0A08", borderTop: "1px solid rgba(230,179,106,0.14)", borderBottom: "1px solid rgba(230,179,106,0.14)" }} className="py-10 sm:py-14 px-4 sm:px-7">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
           {benefits.map((b, i) => {

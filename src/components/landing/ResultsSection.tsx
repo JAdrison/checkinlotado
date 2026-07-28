@@ -110,7 +110,7 @@ const ResultsSection = () => {
   let globalIndex = 0;
 
   return (
-    <section style={{ background: "#080706" }} className="py-10 sm:py-16 px-4 sm:px-7">
+    <section style={{ background: "#050505" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[1000px] mx-auto">
         <div className="reveal text-center mb-8 sm:mb-14">
           <div className="label-text mb-3 text-base sm:text-lg">APLICAÇÃO EM HOSPEDAGENS REAIS</div>
@@ -147,7 +147,7 @@ const ResultsSection = () => {
           {!desktopFullyExpanded && (
             <div
               className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-              style={{ background: "linear-gradient(to bottom, transparent, #080706)" }}
+              style={{ background: "linear-gradient(to bottom, transparent, #050505)" }}
             />
           )}
         </div>
@@ -167,7 +167,7 @@ const ResultsSection = () => {
           {!tabletFullyExpanded && (
             <div
               className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-              style={{ background: "linear-gradient(to bottom, transparent, #080706)" }}
+              style={{ background: "linear-gradient(to bottom, transparent, #050505)" }}
             />
           )}
         </div>
@@ -187,7 +187,7 @@ const ResultsSection = () => {
           {!mobileFullyExpanded && (
             <div
               className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-              style={{ background: "linear-gradient(to bottom, transparent, #080706)" }}
+              style={{ background: "linear-gradient(to bottom, transparent, #050505)" }}
             />
           )}
         </div>

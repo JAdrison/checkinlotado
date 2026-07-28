@@ -5,7 +5,7 @@ import reformaImg from "@/assets/reforma-tributaria.webp";
 const OTAComparisonSection = () => {
   
   return (
-    <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#11100E" }}>
+    <section className="relative py-10 sm:py-16 px-4 sm:px-7" style={{ background: "#0B0908" }}>
       <div className="max-w-[1100px] mx-auto">
         {/* Headline */}
         <div className="reveal text-center mb-10 sm:mb-16">

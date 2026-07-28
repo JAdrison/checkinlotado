@@ -11,7 +11,7 @@ const cards = [
 
 const ProblemSection = () => {
   return (
-    <section style={{ background: "#080706" }} className="py-20 sm:py-28 px-4 sm:px-7">
+    <section style={{ background: "#050505" }} className="py-20 sm:py-28 px-4 sm:px-7">
       <div className="max-w-[900px] mx-auto flex flex-col items-center gap-10 sm:gap-14">
         <div className="reveal text-center">
           <div className="label-text mb-3">O PROBLEMA NEM SEMPRE É FALTA DE PROCURA</div>
@@ -28,7 +28,7 @@ const ProblemSection = () => {
             <div
               key={c.t}
               className="p-4 sm:p-5 rounded-sm text-left"
-              style={{ background: "rgba(23,21,18,0.85)", border: "1px solid rgba(201,151,62,0.18)" }}
+              style={{ background: "rgba(23,21,18,0.85)", border: "1px solid rgba(230,179,106,0.18)" }}
             >
               <h3 className="font-heading text-night text-[0.95rem] sm:text-[1.05rem] mb-1 leading-tight">{c.t}</h3>
               <p className="text-night/65 text-[0.78rem] sm:text-[0.85rem] leading-relaxed">{c.d}</p>

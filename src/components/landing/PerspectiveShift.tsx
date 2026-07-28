@@ -18,7 +18,7 @@ const metodo = [
 
 const PerspectiveShift = () => {
   return (
-    <section style={{ background: "#080706" }} className="py-14 sm:py-20 px-4 sm:px-7">
+    <section style={{ background: "#050505" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1100px] mx-auto">
         <div className="reveal text-center mb-10 sm:mb-14">
           <div className="label-text mb-3">Mudança de perspectiva</div>
@@ -31,7 +31,7 @@ const PerspectiveShift = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
-          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "#11100E", border: "1px solid rgba(255,255,255,0.06)" }}>
+          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "#0B0908", border: "1px solid rgba(255,255,255,0.06)" }}>
             <div className="label-text text-night/50 mb-5" style={{ color: "rgba(245,238,223,0.4)" }}>Improviso</div>
             <ul className="flex flex-col gap-3.5">
               {improviso.map((t, i) => (
@@ -43,7 +43,7 @@ const PerspectiveShift = () => {
             </ul>
           </div>
 
-          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "linear-gradient(180deg, rgba(201,151,62,0.06), rgba(201,151,62,0.02))", border: "1px solid rgba(201,151,62,0.35)" }}>
+          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "linear-gradient(180deg, rgba(230,179,106,0.06), rgba(230,179,106,0.02))", border: "1px solid rgba(230,179,106,0.35)" }}>
             <div className="label-text mb-5">Método Check-in Lotado</div>
             <ul className="flex flex-col gap-3.5">
               {metodo.map((t, i) => (

@@ -62,7 +62,7 @@ const Hero = () => {
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" fetchPriority="high" />
-        <div className="absolute inset-0" style={{ background: "rgba(8, 7, 6, 0.72)" }} />
+        <div className="absolute inset-0" style={{ background: "rgba(5,5,5, 0.72)" }} />
       </div>
       <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
         {/* Headline */}

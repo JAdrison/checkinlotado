@@ -2,10 +2,10 @@ import { ShieldCheck } from "lucide-react";
 
 const GuaranteeSection = () => {
   return (
-    <section style={{ background: "#080706" }} className="py-12 sm:py-16 px-4 sm:px-7">
+    <section style={{ background: "#050505" }} className="py-12 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[820px] mx-auto">
-        <div className="reveal rounded-sm p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left" style={{ background: "#11100E", border: "1px solid rgba(201,151,62,0.32)" }}>
-          <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-full flex items-center justify-center" style={{ background: "rgba(201,151,62,0.08)", border: "1px solid rgba(201,151,62,0.5)" }}>
+        <div className="reveal rounded-sm p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left" style={{ background: "#0B0908", border: "1px solid rgba(230,179,106,0.32)" }}>
+          <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-full flex items-center justify-center" style={{ background: "rgba(230,179,106,0.08)", border: "1px solid rgba(230,179,106,0.5)" }}>
             <ShieldCheck className="text-ochre" size={38} strokeWidth={1.4} />
           </div>
           <div>
