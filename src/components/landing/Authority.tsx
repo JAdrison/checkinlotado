@@ -1,4 +1,4 @@
-import logo from "@/assets/checkin-lotado-logo.png";
+import creatorsAsset from "@/assets/authority-creators.png.asset.json";
 
 const stats = [
   { n: "+300", label: "Reservas confirmadas com o método" },
@@ -12,8 +12,8 @@ const Authority = () => {
     <section style={{ background: "#0B0908" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1100px] mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center">
         <div className="reveal">
-          <div className="relative rounded-sm p-8 sm:p-10 flex items-center justify-center" style={{ background: "#050505", border: "1px solid rgba(230,179,106,0.24)", aspectRatio: "1/1" }}>
-            <img src={logo} alt="Check-in Lotado" className="w-full max-w-[240px] h-auto object-contain" />
+          <div className="relative rounded-sm overflow-hidden" style={{ background: "#050505", border: "1px solid rgba(230,179,106,0.24)", aspectRatio: "1/1" }}>
+            <img src={creatorsAsset.url} alt="Criadores do Método Check-in Lotado" className="w-full h-full object-cover" style={{ objectPosition: "center right" }} />
             <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-sm" style={{ background: "#E6B36A" }}>
               <span className="text-[0.65rem] uppercase tracking-[0.24em] font-label font-bold text-cream">Autoridade</span>
             </div>
