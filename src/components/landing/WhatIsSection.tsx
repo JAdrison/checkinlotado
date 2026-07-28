@@ -14,7 +14,7 @@ const pillars = [
 
 const WhatIsSection = () => {
   return (
-    <section style={{ background: "#11100E" }} className="py-14 sm:py-20 px-4 sm:px-7">
+    <section style={{ background: "#0B0908" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div className="reveal">
           <div className="label-text mb-3">UM MÉTODO CRIADO PARA HOSPEDAGENS</div>
@@ -46,11 +46,11 @@ const WhatIsSection = () => {
         </div>
 
         <div className="reveal relative">
-          <div className="relative rounded-sm overflow-hidden" style={{ border: "1px solid rgba(201,151,62,0.24)", aspectRatio: "4/3" }}>
+          <div className="relative rounded-sm overflow-hidden" style={{ border: "1px solid rgba(230,179,106,0.24)", aspectRatio: "4/3" }}>
             <img src={heroBg} alt="Check-in Lotado" className="w-full h-full object-cover" loading="lazy" />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(8,7,6,0.55), rgba(8,7,6,0.15))" }} />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(5,5,5,0.55), rgba(5,5,5,0.15))" }} />
             <div className="absolute bottom-6 left-6 right-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: "rgba(8,7,6,0.7)", border: "1px solid rgba(201,151,62,0.3)" }}>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: "rgba(5,5,5,0.7)", border: "1px solid rgba(230,179,106,0.3)" }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-ochre" />
                 <span className="text-night text-[0.7rem] uppercase tracking-[0.18em] font-label">Treinamento completo</span>
               </div>

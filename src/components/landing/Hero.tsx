@@ -1,8 +1,10 @@
 import { useState } from "react";
-import heroBg from "@/assets/hero-bg.webp";
+import heroBgAsset from "@/assets/hero-boutique-sunset.png.asset.json";
 import heroThumb from "@/assets/video-thumbnail.webp";
 import { trackEvent } from "@/lib/meta-capi";
 import { scrollToSection } from "@/lib/scrollToSection";
+
+const heroBg = heroBgAsset.url;
 
 
 const bullets = [
@@ -61,8 +63,10 @@ const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" fetchPriority="high" />
-        <div className="absolute inset-0" style={{ background: "rgba(8, 7, 6, 0.72)" }} />
+        <img src={heroBg} alt="" className="w-full h-full object-cover" style={{ objectPosition: "center right" }} fetchPriority="high" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(5,5,5,0.94) 0%, rgba(5,5,5,0.82) 45%, rgba(5,5,5,0.55) 75%, rgba(5,5,5,0.35) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(60% 45% at 85% 90%, rgba(230,179,106,0.10) 0%, transparent 70%)" }} />
+        <div className="absolute inset-x-0 bottom-0 h-40" style={{ background: "linear-gradient(180deg, transparent 0%, #050505 100%)" }} />
       </div>
       <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
         {/* Headline */}

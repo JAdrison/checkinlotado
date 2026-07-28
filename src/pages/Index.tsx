@@ -84,7 +84,7 @@ const Index = () => {
         <GuaranteeSection />
         {/* 16 — Perguntas frequentes */}
         <AccordionSection
-          bgColor="#080706"
+          bgColor="#050505"
           label="Perguntas frequentes"
           titleBefore="Ainda tem"
           titleHighlight="dúvidas?"

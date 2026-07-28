@@ -19,7 +19,7 @@ const StepCircle = ({ num }: { num: string }) => (
     style={{
       width: 130,
       height: 130,
-      background: "radial-gradient(circle at 40% 35%, #2A1F10 0%, #080706 60%, #050403 100%)",
+      background: "radial-gradient(circle at 40% 35%, #2A1F10 0%, #050505 60%, #050403 100%)",
       border: "3.5px solid var(--ochre)",
       boxShadow:
         "0 0 40px rgba(200,148,58,0.25), 0 0 0 1px rgba(200,148,58,0.1), inset 0 2px 20px rgba(200,148,58,0.08)",
@@ -118,7 +118,7 @@ const StepsSection: React.FC = () => {
                   style={{
                     width: 36,
                     height: 36,
-                    background: "radial-gradient(circle at 40% 35%, #2A1F10 0%, #080706 60%, #050403 100%)",
+                    background: "radial-gradient(circle at 40% 35%, #2A1F10 0%, #050505 60%, #050403 100%)",
                     border: "2px solid var(--ochre)",
                     boxShadow: "0 0 20px rgba(200,148,58,0.25), 0 0 0 1px rgba(200,148,58,0.08)",
                   }}

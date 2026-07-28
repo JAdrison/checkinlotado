@@ -14,7 +14,7 @@ const items = [
 
 const WhatYouReceive = () => {
   return (
-    <section style={{ background: "#080706" }} className="py-14 sm:py-20 px-4 sm:px-7">
+    <section style={{ background: "#050505" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1200px] mx-auto">
         <div className="reveal text-center mb-10 sm:mb-14 max-w-[720px] mx-auto">
           <div className="label-text mb-3">O que o aluno recebe</div>
@@ -27,7 +27,7 @@ const WhatYouReceive = () => {
           {items.map((it, i) => {
             const Icon = it.icon;
             return (
-              <div key={i} className="reveal p-5 sm:p-6 rounded-sm transition-all" style={{ background: "#11100E", border: "1px solid rgba(201,151,62,0.14)", transitionDelay: `${i * 0.04}s` }}>
+              <div key={i} className="reveal p-5 sm:p-6 rounded-sm transition-all" style={{ background: "#0B0908", border: "1px solid rgba(230,179,106,0.14)", transitionDelay: `${i * 0.04}s` }}>
                 <div className="w-10 h-10 rounded-sm border border-ochre/40 flex items-center justify-center mb-4">
                   <Icon className="text-ochre" size={18} strokeWidth={1.5} />
                 </div>

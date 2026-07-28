@@ -25,7 +25,7 @@ const bonuses = [
 
 const BonusMaterials = () => {
   return (
-    <section style={{ background: "#080706" }} className="py-14 sm:py-20 px-4 sm:px-7">
+    <section style={{ background: "#050505" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1200px] mx-auto">
         <div className="reveal text-center mb-10 sm:mb-14 max-w-[720px] mx-auto">
           <div className="label-text mb-3">Materiais e bônus</div>
@@ -36,10 +36,10 @@ const BonusMaterials = () => {
 
         <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
           {bonuses.map((b, i) => (
-            <div key={i} className="reveal rounded-sm overflow-hidden flex flex-col" style={{ background: "#11100E", border: "1px solid rgba(201,151,62,0.18)", transitionDelay: `${i * 0.08}s` }}>
+            <div key={i} className="reveal rounded-sm overflow-hidden flex flex-col" style={{ background: "#0B0908", border: "1px solid rgba(230,179,106,0.18)", transitionDelay: `${i * 0.08}s` }}>
               <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
                 <img src={b.img} alt={b.title} loading="lazy" className="w-full h-full object-cover" />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(8,7,6,0) 40%, rgba(8,7,6,0.75))" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(5,5,5,0) 40%, rgba(5,5,5,0.75))" }} />
                 <span className="absolute top-4 left-4 font-heading text-ochre text-[0.85rem] tracking-[0.24em] uppercase">Bônus {b.n}</span>
               </div>
               <div className="p-5 sm:p-6 flex-1 flex flex-col">

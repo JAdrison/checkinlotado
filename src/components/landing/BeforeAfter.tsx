@@ -22,7 +22,7 @@ const after = [
 
 const BeforeAfter = () => {
   return (
-    <section style={{ background: "#11100E" }} className="py-14 sm:py-20 px-4 sm:px-7">
+    <section style={{ background: "#0B0908" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1100px] mx-auto">
         <div className="reveal text-center mb-10 sm:mb-14 max-w-[760px] mx-auto">
           <div className="label-text mb-3">ANTES E DEPOIS</div>
@@ -32,7 +32,7 @@ const BeforeAfter = () => {
         </div>
 
         <div className="grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 items-stretch">
-          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "#080706", border: "1px solid rgba(255,255,255,0.06)" }}>
+          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "#050505", border: "1px solid rgba(255,255,255,0.06)" }}>
             <div className="label-text mb-6" style={{ color: "rgba(245,238,223,0.4)" }}>Antes do método</div>
             <ul className="flex flex-col gap-3">
               {before.map((t, i) => (
@@ -49,7 +49,7 @@ const BeforeAfter = () => {
             </div>
           </div>
 
-          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "linear-gradient(180deg, rgba(201,151,62,0.06), rgba(201,151,62,0.02))", border: "1px solid rgba(201,151,62,0.35)" }}>
+          <div className="reveal p-6 sm:p-8 rounded-sm" style={{ background: "linear-gradient(180deg, rgba(230,179,106,0.06), rgba(230,179,106,0.02))", border: "1px solid rgba(230,179,106,0.35)" }}>
             <div className="label-text mb-6">Depois da implementação</div>
             <ul className="flex flex-col gap-3">
               {after.map((t, i) => (
