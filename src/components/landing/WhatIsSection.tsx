@@ -17,9 +17,9 @@ const WhatIsSection = () => {
     <section style={{ background: "#11100E" }} className="py-14 sm:py-20 px-4 sm:px-7">
       <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div className="reveal">
-          <div className="label-text mb-3">O MÉTODO</div>
+          <div className="label-text mb-3">UM MÉTODO CRIADO PARA HOSPEDAGENS</div>
           <h2 className="font-heading text-[1.6rem] sm:text-[clamp(1.9rem,4vw,3.2rem)] text-night leading-[1.15] mb-5">
-            O que é o Método <em className="text-ochre font-extrabold not-italic">Check-in Lotado?</em>
+            Transforme temporada em <em className="text-ochre font-extrabold not-italic">rotina de reservas</em>.
           </h2>
           <p className="text-night/80 text-[0.95rem] sm:text-lg leading-relaxed mb-4">
             O Check-in Lotado é um treinamento prático de marketing, ocupação e vendas para hospedagens.

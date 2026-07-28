@@ -2,8 +2,9 @@ import { ArrowRight } from "lucide-react";
 
 const before = [
   "Descobre as datas vazias tarde demais.",
-  "Cria promoções sem planejamento.",
+  "Faz promoção sem planejamento.",
   "Publica sem saber para quem.",
+  "Reduz o preço para tentar vender.",
   "Depende de feriados e OTAs.",
   "Não acompanha os contatos.",
   "Não sabe quais ações geram reservas.",
@@ -12,10 +13,11 @@ const before = [
 const after = [
   "Mapeia os períodos críticos.",
   "Planeja campanhas com antecedência.",
-  "Cria ofertas para públicos específicos.",
-  "Trabalha diferentes períodos do calendário.",
-  "Organiza atendimento e follow-up.",
-  "Mede ocupação, contatos e reservas.",
+  "Define público e oferta.",
+  "Trabalha diferentes momentos do calendário.",
+  "Organiza o atendimento.",
+  "Acompanha contatos e reservas.",
+  "Usa dados para melhorar.",
 ];
 
 const BeforeAfter = () => {
@@ -25,7 +27,7 @@ const BeforeAfter = () => {
         <div className="reveal text-center mb-10 sm:mb-14 max-w-[760px] mx-auto">
           <div className="label-text mb-3">ANTES E DEPOIS</div>
           <h2 className="font-heading text-[1.6rem] sm:text-[clamp(1.9rem,4vw,3.2rem)] text-night leading-[1.15]">
-            A diferença entre <em className="text-ochre font-extrabold not-italic">improvisar</em> e operar com método.
+            O que muda quando a hospedagem deixa de <em className="text-ochre font-extrabold not-italic">improvisar</em>.
           </h2>
         </div>
 
