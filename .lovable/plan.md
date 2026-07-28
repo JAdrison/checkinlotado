@@ -1,101 +1,63 @@
 
-# Redesign Premium — Check-in Lotado
+# Reconstrução da Landing Check-in Lotado (pós-VSL)
 
-Redesign puramente visual. Nenhum texto, seção, ordem, vídeo, link, checkout, formulário, evento (Meta Pixel/UTM), módulo ou depoimento será alterado. Toda mudança fica em CSS/tokens/markup de apresentação.
+## Princípios inegociáveis
+- **Seção 1 (Hero + VSL) permanece intacta**: `src/components/landing/Hero.tsx` não é tocado. Vídeo, thumbnail, headline, subtítulo, bullets, botão, fundo, `YouTubeFacade`, `scrollToSection("comprar")`, tracking — zero alteração.
+- **Conteúdo real preservado**: nomes de módulos, bônus, depoimentos, cases (Iparaí, Robelú, etc.), preço, parcelamento, link Kiwify, garantia de 7 dias, FAQ atual, textos das objeções.
+- **Sem inventar**: nada de novos números, resultados, depoimentos, bônus ou escassez/cronômetros falsos.
+- **Sem tocar**: Meta Pixel, `meta-capi.ts`, eventos, UTMs, âncora `#comprar`, `LeadFormDialog`, integrações Supabase, `client.ts`, `.env`.
 
-## Princípios
+## Nova ordem de seções em `src/pages/Index.tsx` (após `<Hero />`)
+1. `BenefitsStrip` — faixa 4 ícones dourados lineares (nova)
+2. `ProblemSection` — identificação do problema (reaproveitar/reescrever visual; conteúdo já existe)
+3. `PerspectiveShift` — Improviso vs Método (nova, 2 colunas)
+4. `WhatIsSection` — "O que é o Check-in Lotado" com mockup (nova, usa imagem existente)
+5. `WhatYouReceive` — grid de entregáveis reais (aulas, 10 GPTs, módulos, bônus, suporte, garantia — todos já presentes em `Stats.tsx` e `ModulesSection.tsx`)
+6. `ForWhom` — mantido, apenas redesenhado
+7. `StepsSection` — mantido (já é a metodologia); ajuste visual de timeline
+8. `ModulesSection` — mantido, redesenhado em blocos editoriais alternados (esq/dir no desktop)
+9. `BeforeAfter` — 2 colunas (nova, usando linguagem operacional)
+10. `ResultsSection` + `GallerySection` fundidos em `CaseStudies` premium (mantém logos/imagens atuais)
+11. `BonusMaterials` — bônus 1/2/3 reais em mockups (imagens `bonus-1/2/3.webp` existentes)
+12. `Authority` — nova, com conteúdo/fotos já presentes no projeto (Testimonials tem base; ou seção dedicada equipe/experiência)
+13. `PricingSection` — mantida integralmente (preço, checkout, bônus, garantia), apenas re-skin premium
+14. `GuaranteeSection` — bloco dedicado com escudo (extraído/destacado)
+15. `AccordionSection` (FAQ) — mantida, com todos os itens `objections + faq` atuais; visual acordeão minimalista
+16. `FinalCTA` — mantido com foto premium de hospedagem e CTA para `#comprar`
+17. `Footer` — mantido
 
-- Base preto/grafite + dourado discreto + branco suave.
-- Fotografia cinematográfica de hotelaria como protagonista.
-- Tipografia editorial serifada (títulos) + sans moderna (corpo).
-- Animações contidas: fade-up, opacity, leve translateY. Remover shimmer contínuo, pulseGlow e btnShine.
-- Mobile-first, sem rolagem horizontal, respeito a `prefers-reduced-motion`.
+Ordem final do JSX de `Index.tsx` reflete exatamente essa lista. `Testimonials`, `ComparisonTable`, `OTAComparisonSection` continuam disponíveis: `Testimonials` entra dentro de `CaseStudies`/Authority; `ComparisonTable` e `OTAComparisonSection` são absorvidos em `PerspectiveShift`/`BeforeAfter` (mesma lógica comparativa) para não duplicar mensagem — nenhum conteúdo real perdido.
 
-## 1. Design tokens (base do redesign)
-
-Reescrever `src/index.css` `:root` e utilitários. Mapear tokens semânticos existentes (`--background`, `--foreground`, `--primary`, `--card`, `--border`, `--ring`, etc.) para a nova paleta escura, e adicionar tokens brutos:
-
+## Design system (aplicado em `src/index.css` e `tailwind.config.ts`)
+Tokens exatos da spec:
 ```
---background: #080706
---background-secondary: #11100E
---surface: #171512
---surface-soft: #1D1A16
---gold: #C9973E
---gold-light: #E4BC6A
---gold-muted: #9F7734
---text-primary: #F6F2E9
---text-secondary: #C8C1B5
---text-muted: #928B80
---border: rgba(201,151,62,0.25)
---overlay-hero: linear-gradient(90deg, rgba(5,5,4,0.96) 0%, rgba(5,5,4,0.82) 45%, rgba(5,5,4,0.25) 100%)
+--background: #080706;
+--background-secondary: #11100E;
+--surface: #171512;
+--gold: #C9973E;
+--gold-light: #E4BC6A;
+--text-primary: #F6F2E9;
+--text-secondary: #C8C1B5;
+--border: rgba(201,151,62,0.24);
 ```
+- Headings: Playfair Display (serifada editorial); body: Inter.
+- Dourado só em palavras-chave e ícones lineares, nunca em blocos inteiros.
+- Botão primário: fundo dourado sólido, texto preto, hover suave (sem pulsar/shimmer contínuo). Botão secundário: transparente + borda dourada.
+- Cards: `bg-surface`, borda `--border` 1px, radius discreto, sombra suave.
+- Fotografia hoteleira quente (imagens existentes reaproveitadas; sem novos assets grandes).
 
-Atualizar `tailwind.config.ts` para expor `bg-surface`, `bg-surface-soft`, `text-gold`, `text-gold-light`, `border-gold/25` etc., mantendo os aliases antigos (`ochre`, `cream`, `night`) apontando para os novos valores para não quebrar componentes ainda não migrados.
+## Responsividade
+Mobile-first testado em 360–430px: 1 coluna, CTAs full-width, sem scroll horizontal, imagens `object-cover` com `aspect-ratio`, sticky CTA já existente (`StickyBar`) mantido.
 
-Tipografia:
-- Headings: Cormorant Garamond (fallback Playfair já carregado).
-- Body/UI: Inter (fallback DM Sans já carregado).
-- Carregar via `<link rel="preconnect">` + `<link>` em `index.html` mantendo padrão async atual.
+## Performance
+- Mantém `lazy()` + `Suspense` para tudo pós-hero.
+- Reutiliza `.webp` já no projeto; nenhuma nova lib.
+- Sem animações pesadas, sem autoplay novo.
 
-## 2. Globais e utilitários
+## Arquivos afetados
+- **Editar**: `src/index.css`, `tailwind.config.ts`, `src/pages/Index.tsx`, e re-skin de: `ProblemSection`, `ForWhom`, `StepsSection`, `ModulesSection`, `ResultsSection`, `GallerySection`, `PricingSection`, `AccordionSection`, `FinalCTA`, `Footer`, `Navbar`, `StickyBar`, `Testimonials`, `ComparisonTable`, `OTAComparisonSection`.
+- **Criar**: `BenefitsStrip.tsx`, `PerspectiveShift.tsx`, `WhatIsSection.tsx`, `WhatYouReceive.tsx`, `BeforeAfter.tsx`, `CaseStudies.tsx`, `BonusMaterials.tsx`, `Authority.tsx`, `GuaranteeSection.tsx`.
+- **Não tocar**: `Hero.tsx`, `meta-capi.ts`, `supabase/*`, `LeadFormDialog.tsx`, `.env`, `index.html` (exceto tags de fonte se necessário).
 
-Em `index.css`:
-- `body` → `background: var(--background); color: var(--text-primary)`.
-- Remover animações `shimmer`, `pulseGlow`, `btnShine` do `.btn-cta` (manter classes e nomes para não quebrar chamadas).
-- Novo `.btn-cta`: fundo `--gold`, texto preto, min-height 54px, radius 10px, hover: `translateY(-2px)` + `--gold-light`.
-- `.btn-cta-outline` (novo variante): transparente, borda dourada, texto claro.
-- `.shimmer-text` → gradiente estático dourado (sem animação), preservando destaque da headline.
-- `.landing-card`, `.timeline-card`, `.price-box`, `.acc-item`, `.cmp-row`, `.ticker-wrap`, `.g-circle`, `.video-box`, `.play-btn`, `#sticky-bar` reescritos com paleta escura, bordas `--border`, sombras suaves.
-- `.reveal` mantido. Adicionar `@media (prefers-reduced-motion: reduce)` desativando animações decorativas.
-
-## 3. Redesign por seção (sem alterar conteúdo)
-
-Cada item lista apenas mudanças de classes/estrutura visual dentro do componente existente:
-
-- **Navbar** (`Navbar.tsx`): fundo transparente → preto com blur ao rolar, logo clara, CTA pequeno dourado.
-- **Hero** (`Hero.tsx`): trocar `hero-bg` por overlay escuro + gradiente `--overlay-hero`. Texto branco, palavra destacada em `--gold`. Moldura do vídeo grafite com borda `1px` dourada translúcida, botão play dourado sem pulsar. Layout desktop 2 colunas opcional (headline+bullets à esquerda, VSL à direita) via `lg:grid-cols-2`; mobile mantém ordem atual (logo/headline/subtítulo/CTA/vídeo/bullets — reordenar CTA para antes do vídeo no mobile via `order-*`).
-- **Ticker** (`Ticker.tsx`): faixa preta com texto dourado fino (ou dourado escuro com texto creme), sem CTA de spam.
-- **Stats** (`Stats.tsx`): fundo preto, números grandes em `--gold` serif, labels brancas, divisores verticais `1px --border`, sem caixas.
-- **Testimonials** (`Testimonials.tsx`): cartão escuro, foto real mantida, aspas em serif, números destaque dourado, borda `--border`. Prints existentes envolvidos em mockup simples (frame grafite arredondado).
-- **ForWhom** (`ForWhom.tsx`): fundo com foto de hospedagem + overlay preto, cards em linha com ícones dourados lineares.
-- **ModulesSection** (`ModulesSection.tsx`): layout editorial alternado imagem/texto (`even:flex-row-reverse`), número grande dourado semi-transparente, chips de materiais com borda dourada.
-- **StepsSection / Timeline**: linha `--gold` fina, nós menores, cards grafite, números dourados.
-- **ResultsSection**: fundo com imagem premium + overlay, números dourados grandes, texto branco.
-- **ComparisonTable**: duas colunas — "antes" grafite opaco, "depois" borda dourada, ícones simples.
-- **GallerySection**: grid editorial com proporções variadas, bordas suaves, zoom leve no hover, mantendo lazy loading.
-- **OTAComparisonSection**: fundo grafite, ícones dourados, layout racional.
-- **PricingSection**: caixa central `--surface`, borda dourada, título serif, preço grande, checks dourados, botão dourado. Remover selos/gradientes exagerados. Garantia como bloco simples abaixo (ícone escudo + texto).
-- **AccordionSection (FAQ)**: itens com linhas divisórias `--border`, pergunta branca, ícone dourado (+/−), resposta em `--text-secondary`. Preservar o fix atual de `.reveal` no container pai.
-- **FinalCTA**: imagem de quarto/vista + overlay preto, headline serif branca com palavra dourada, CTA dourado.
-- **Footer**: preto sólido, texto pequeno organizado.
-- **StickyBar**: preto com blur, texto branco, preço dourado, botão compacto, altura controlada.
-
-## 4. Preservação estrita
-
-- Nenhum `bullets`, headline, preço, link Kiwify, evento `trackEvent`, `scrollToSection("comprar")`, formulário/dialog, VSL YouTube ID, ou ordem de seções em `Index.tsx` será tocado.
-- Sem novas dependências. Sem alterar lazy imports, Meta Pixel, UTMs, Supabase, Apps Script.
-- IDs de âncora (`#hero`, `#comprar`, etc.) inalterados.
-
-## 5. Performance e a11y
-
-- Manter WebP e `fetchPriority="high"` no hero.
-- Adicionar `loading="lazy"` + `width/height` em imagens novas usadas como background decorativo (via `<img>` posicionado absoluto quando possível).
-- `prefers-reduced-motion`: desativar reveal/zoom.
-- Contraste AA garantido em texto sobre imagens (overlay ≥ 0.7 alpha).
-
-## 6. Ordem de execução
-
-1. Tokens + Tailwind (base para tudo).
-2. Utilitários globais em `index.css` (botões, cards, ticker, timeline, sticky, video, accordion, price-box).
-3. Hero + Navbar + StickyBar (primeira dobra).
-4. Stats, Testimonials, ForWhom.
-5. Modules, Steps, Results, Comparison, Gallery, OTA.
-6. Pricing + Guarantee + FAQ + FinalCTA + Footer.
-7. Passe de QA responsivo (360/375/390/412/430, tablet, desktop) + verificação de CTAs, VSL, checkout, Pixel.
-
-## Detalhes técnicos
-
-- Não editar `src/integrations/supabase/*`, `.env`, `supabase/config.toml`.
-- Tokens antigos (`--cream`, `--ochre`, `night`, `deep`) permanecem definidos apontando para novos valores para migração incremental sem regressões.
-- Fontes novas carregadas em `index.html` com `rel="preload" as="style"` + swap; fallback para pilha atual.
-- Nenhum novo pacote npm.
+## Validação
+Após implementar: Playwright screenshots em 375px e 1280px, topo/meio/fundo; conferir que Hero está idêntico, link Kiwify e âncora `#comprar` funcionam, evento `PageView` dispara.
