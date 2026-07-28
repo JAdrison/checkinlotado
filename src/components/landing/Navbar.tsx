@@ -12,16 +12,16 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] grid grid-cols-[1fr_auto_1fr] items-center transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] grid grid-cols-[1fr_auto_1fr] items-center transition-all duration-500 ${
         scrolled
-          ? "bg-[rgba(245,238,223,0.96)] backdrop-blur-[20px] py-2.5 px-4 sm:px-10 border-b border-night/10"
+          ? "bg-[rgba(8,7,6,0.85)] backdrop-blur-[24px] py-2.5 px-4 sm:px-10 border-b border-ochre/15"
           : "py-4 px-4 sm:px-10 border-b border-transparent"
       }`}
     >
       <div></div>
       <div className="flex justify-center">
-        <span className="font-heading text-lg font-bold text-night">
-          Check-in <span className="text-ochre">Lotado</span>
+        <span className="font-heading text-2xl font-semibold tracking-tight text-night italic">
+          Check-in <span className="text-ochre not-italic font-medium">Lotado</span>
         </span>
       </div>
       <div className="flex justify-end">
