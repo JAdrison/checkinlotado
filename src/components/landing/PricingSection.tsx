@@ -29,12 +29,12 @@ const PricingSection = () => {
     <section id="comprar" style={{ background: "#080706" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[680px] mx-auto text-center">
         <div className="reveal">
-          <div className="label-text text-cream-mid mb-3">Aumente suas reservas em 30 dias</div>
-          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.15] mb-3">
+          <div className="label-text text-night mb-3">Aumente suas reservas em 30 dias</div>
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-3">
             Entre no<br />
             <span className="shimmer-text font-extrabold">Check-in Lotado</span>
           </h2>
-          <p className="text-cream-mid text-[0.9rem] sm:text-lg leading-[1.72] mb-8 sm:mb-12">
+          <p className="text-night text-[0.9rem] sm:text-lg leading-[1.72] mb-8 sm:mb-12">
             Entre no checkin lotado e aprenda uma forma mais estratégica de vender na sua hospedagem
           </p>
         </div>
@@ -44,13 +44,13 @@ const PricingSection = () => {
           <div className="mb-6">
             <div className="flex items-center gap-2.5 mb-4">
               <Check className="text-ochre flex-shrink-0" size={20} />
-              <h3 className="font-heading font-bold text-cream text-base sm:text-lg">Acesso completo ao método Check-in Lotado</h3>
+              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso completo ao método Check-in Lotado</h3>
             </div>
             <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3 pl-1">
               {group1.map((item, i) => (
                 <div key={i} className="flex gap-2.5">
                   <CalendarDays className="text-ochre flex-shrink-0 mt-0.5" size={16} />
-                  <span className="text-cream-mid text-sm sm:text-base">{item}</span>
+                  <span className="text-night text-sm sm:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -62,13 +62,13 @@ const PricingSection = () => {
           <div className="mb-6">
             <div className="flex items-center gap-2.5 mb-4">
               <BookOpen className="text-ochre flex-shrink-0" size={20} />
-              <h3 className="font-heading font-bold text-cream text-base sm:text-lg">Acesso imediato ao curso e materiais complementares</h3>
+              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso imediato ao curso e materiais complementares</h3>
             </div>
             <div className="flex flex-col gap-2.5 pl-1">
               {group2.map((item, i) => (
                 <div key={i} className="flex gap-2.5">
                   <span className="text-ochre flex-shrink-0 text-sm mt-0.5">✓</span>
-                  <span className="text-cream-mid text-sm sm:text-base">{item}</span>
+                  <span className="text-night text-sm sm:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -80,13 +80,13 @@ const PricingSection = () => {
           <div className="mb-8">
             <div className="flex items-center gap-2.5 mb-4">
               <Users className="text-ochre flex-shrink-0" size={20} />
-              <h3 className="font-heading font-bold text-cream text-base sm:text-lg">Acesso a comunidade e suporte</h3>
+              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso a comunidade e suporte</h3>
             </div>
             <div className="flex flex-col gap-2.5 pl-1">
               {group3.map((item, i) => (
                 <div key={i} className="flex gap-2.5">
                   <span className="text-ochre flex-shrink-0 text-sm mt-0.5">✓</span>
-                  <span className="text-cream-mid text-sm sm:text-base">{item}</span>
+                  <span className="text-night text-sm sm:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -106,11 +106,11 @@ const PricingSection = () => {
           <div className="g-circle">
             <span className="text-ochre font-label font-extrabold text-[1.8rem] leading-none">7</span>
             <span className="text-ochre font-label font-bold text-[0.62rem] tracking-[0.1em]">DIAS</span>
-            <span className="text-cream-mid/50 text-[0.58rem] tracking-[0.05em] mt-[3px]">GARANTIA</span>
+            <span className="text-night/50 text-[0.58rem] tracking-[0.05em] mt-[3px]">GARANTIA</span>
           </div>
           <div>
-            <h3 className="font-semibold text-cream mb-1.5 sm:mb-2 text-sm sm:text-base">Risco zero por 7 dias</h3>
-            <p className="text-cream-mid text-sm sm:text-base leading-[1.7]">
+            <h3 className="font-semibold text-night mb-1.5 sm:mb-2 text-sm sm:text-base">Risco zero por 7 dias</h3>
+            <p className="text-night text-sm sm:text-base leading-[1.7]">
               Entre, assista e avalie com total tranquilidade. Se perceber que não faz sentido para o seu momento, peça reembolso dentro do prazo. Sem burocracia.
             </p>
           </div>

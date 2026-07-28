@@ -20,9 +20,9 @@ const FinalCTA = lazy(() => import("@/components/landing/FinalCTA"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const objections = [
-  { question: "Aqui só lota em feriado. Fora disso, não tem demanda.", answer: 'Se em algum momento enche, então a procura existe. Feriado não cria interesse do zero — apenas concentra atenção. Você está confundindo <strong style="color:#080706">ausência de procura espontânea</strong> com ausência de mercado. O método existe para ativar essa demanda que já existe.' },
+  { question: "Aqui só lota em feriado. Fora disso, não tem demanda.", answer: 'Se em algum momento enche, então a procura existe. Feriado não cria interesse do zero — apenas concentra atenção. Você está confundindo <strong style="color:#C9973E">ausência de procura espontânea</strong> com ausência de mercado. O método existe para ativar essa demanda que já existe.' },
   { question: "Já tentei promoção, já divulguei, e não adiantou.", answer: "Promoção aleatória não é estratégia. O método não ensina a \"postar mais\" — ensina análise de ocupação, definição de público, criativo estratégico, cronograma de disparos, campanha e fechamento. Isso é completamente diferente de simplesmente fazer promoção." },
-  { question: "Meu público decide em cima da hora. Não adianta planejar.", answer: 'Mesmo quando o cliente fecha em cima da hora, a decisão raramente nasce ali. Público de decisão curta exige operação <strong style="color:#080706">pronta</strong> — não improviso. Justamente porque aparece de repente é que a rede precisa estar armada antes.' },
+  { question: "Meu público decide em cima da hora. Não adianta planejar.", answer: 'Mesmo quando o cliente fecha em cima da hora, a decisão raramente nasce ali. Público de decisão curta exige operação <strong style="color:#C9973E">pronta</strong> — não improviso. Justamente porque aparece de repente é que a rede precisa estar armada antes.' },
   { question: "Na minha região tem muita concorrência.", answer: "Concorrência alta não destrói venda — elimina amadorismo. Em mercados saturados, detalhe comercial é a linha que separa a hospedagem lembrada da ignorada." },
   { question: "Não sei se isso vai funcionar para a minha hospedagem.", answer: "O curso foi desenhado para pousadas, hospedagens de praia, casas de serra e flats com ocupação irregular. A comparação honesta é entre ter uma estrutura para agir melhor — ou continuar improvisando esperando resultado diferente." },
 ];
@@ -59,7 +59,7 @@ const Index = () => {
         <OTAComparisonSection />
         <PricingSection />
         <AccordionSection
-          bgColor="#11100E"
+          bgColor="#080706"
           label="Perguntas frequentes"
           titleBefore="Ainda tem"
           titleHighlight="dúvidas?"

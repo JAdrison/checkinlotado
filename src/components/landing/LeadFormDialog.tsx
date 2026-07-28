@@ -102,7 +102,7 @@ const LeadFormDialog = () => {
   };
 
   const inputClass =
-    "w-full rounded-lg px-4 py-3 text-sm text-cream bg-white/[0.07] border border-ochre/20 placeholder:text-cream/30 focus:outline-none focus:border-ochre/50 focus:ring-1 focus:ring-ochre/20 transition-colors";
+    "w-full rounded-lg px-4 py-3 text-sm text-night bg-white/[0.07] border border-ochre/20 placeholder:text-night/30 focus:outline-none focus:border-ochre/50 focus:ring-1 focus:ring-ochre/20 transition-colors";
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -118,7 +118,7 @@ const LeadFormDialog = () => {
           </div>
 
           {/* Headline */}
-          <p className="text-cream text-center text-base sm:text-xl font-semibold leading-snug mb-4 sm:mb-8">
+          <p className="text-night text-center text-base sm:text-xl font-semibold leading-snug mb-4 sm:mb-8">
             Preencha o formulário e descubra como{" "}
             <strong className="text-ochre">faturar alto</strong> com a sua
             hospedagem.
@@ -126,7 +126,7 @@ const LeadFormDialog = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-night/60 text-xs font-label tracking-wider mb-1.5 block">
                 NOME
               </label>
               <input
@@ -143,7 +143,7 @@ const LeadFormDialog = () => {
             </div>
 
             <div>
-              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-night/60 text-xs font-label tracking-wider mb-1.5 block">
                 MELHOR E-MAIL
               </label>
               <input
@@ -160,11 +160,11 @@ const LeadFormDialog = () => {
             </div>
 
             <div>
-              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-night/60 text-xs font-label tracking-wider mb-1.5 block">
                 WHATSAPP
               </label>
               <div className="flex">
-                <span className="flex items-center px-3 rounded-l-lg text-sm text-cream/50 bg-white/[0.04] border border-r-0 border-ochre/20">
+                <span className="flex items-center px-3 rounded-l-lg text-sm text-night/50 bg-white/[0.04] border border-r-0 border-ochre/20">
                   +55
                 </span>
                 <input
@@ -183,7 +183,7 @@ const LeadFormDialog = () => {
             </div>
 
             <div>
-              <label className="text-cream/60 text-xs font-label tracking-wider mb-1.5 block">
+              <label className="text-night/60 text-xs font-label tracking-wider mb-1.5 block">
                 TIPO DE HOSPEDAGEM
               </label>
               <select
@@ -198,11 +198,11 @@ const LeadFormDialog = () => {
                   backgroundPosition: "right 12px center",
                 }}
               >
-                <option value="" disabled className="bg-[#080706] text-cream/50">
+                <option value="" disabled className="bg-[#080706] text-night/50">
                   Selecione...
                 </option>
                 {accommodationTypes.map((type) => (
-                  <option key={type} value={type} className="bg-[#080706] text-cream">
+                  <option key={type} value={type} className="bg-[#080706] text-night">
                     {type}
                   </option>
                 ))}

@@ -44,11 +44,11 @@ const Testimonials = () => {
         {/* Header */}
         <div className="reveal text-center mb-8 sm:mb-14">
           <div className="label-text mb-3" style={{ color: "rgba(255,255,255,0.7)" }}>Veja na prática o que esse cliente conquistou com o método</div>
-          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-cream leading-[1.15]">
+          <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15]">
             Mais de R$ 70.000,00 Faturado<br />
             <em className="shimmer-text font-extrabold">em 7 Meses de Checkin Lotado</em>
           </h2>
-          <p className="text-cream/80 mt-3 sm:mt-4 text-[0.9rem] sm:text-lg max-w-[500px] mx-auto">
+          <p className="text-night/80 mt-3 sm:mt-4 text-[0.9rem] sm:text-lg max-w-[500px] mx-auto">
             Todos os finais de semana esgotados
           </p>
         </div>
@@ -80,10 +80,10 @@ const Testimonials = () => {
                   <m.icon className="w-5 h-5 text-ochre" />
                 </div>
                 <div>
-                  <p className="text-cream font-bold text-[1.15rem] leading-tight">
+                  <p className="text-night font-bold text-[1.15rem] leading-tight">
                     {m.value}
                   </p>
-                  <p className="text-cream/85 text-sm">{m.label}</p>
+                  <p className="text-night/85 text-sm">{m.label}</p>
                 </div>
               </div>
             ))}
@@ -91,7 +91,7 @@ const Testimonials = () => {
             {/* Testimonial */}
             <div className="p-5 sm:p-7 mt-1 rounded-xl" style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.12)" }}>
               <div className="text-ochre mb-3">★★★★★</div>
-              <p className="text-cream/85 text-sm sm:text-base leading-[1.75] mb-4 sm:mb-5">
+              <p className="text-night/85 text-sm sm:text-base leading-[1.75] mb-4 sm:mb-5">
                 "Em 7 meses, saímos de finais de semana vazios para agenda
                 lotada. Só nesse fim de semana fechei 4 reservas — e ainda tinha
                 pendentes. Os anúncios chegam no público certo, o site virou
@@ -108,10 +108,10 @@ const Testimonials = () => {
                   loading="lazy"
                 />
                 <div>
-                  <p className="text-cream text-base font-semibold">
+                  <p className="text-night text-base font-semibold">
                     Guilherme Couto
                   </p>
-                  <p className="text-cream/65 text-sm">
+                  <p className="text-night/65 text-sm">
                     Proprietário — Casa Iparaí
                   </p>
                 </div>
