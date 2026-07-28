@@ -89,7 +89,7 @@ const benefits = [
 
 const ModulesSection = () => {
   return (
-    <section style={{ background: "#EAE3CF", overflow: "hidden" }}>
+    <section style={{ background: "#080706", overflow: "hidden" }}>
       <div className="mx-auto max-w-[1200px] py-10 sm:py-16 px-4 sm:px-7">
         <div className="reveal text-center mb-10 sm:mb-16">
           <AnimatedText
@@ -131,7 +131,7 @@ const ModulesSection = () => {
             {benefits.map((benefit, i) => (
               <div
                 key={i}
-                className="flex items-start gap-2.5 sm:gap-3 bg-white rounded-xl p-4 sm:p-5 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5"
+                className="flex items-start gap-2.5 sm:gap-3 bg-[#11100E] rounded-xl p-4 sm:p-5 shadow-[0_2px_20px_rgba(0,0,0,0.4)] border border-ochre/15"
               >
                 <div className="w-5 sm:w-6 h-5 sm:h-6 rounded-full bg-ochre/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-ochre" />

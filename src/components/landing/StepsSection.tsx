@@ -30,7 +30,7 @@ const StepCircle = ({ num }: { num: string }) => (
     style={{
       width: 130,
       height: 130,
-      background: "radial-gradient(circle at 40% 35%, #3D2B14 0%, #1A1208 60%, #0F0C06 100%)",
+      background: "radial-gradient(circle at 40% 35%, #2A1F10 0%, #080706 60%, #050403 100%)",
       border: "3.5px solid var(--ochre)",
       boxShadow:
         "0 0 40px rgba(200,148,58,0.25), 0 0 0 1px rgba(200,148,58,0.1), inset 0 2px 20px rgba(200,148,58,0.08)",
@@ -72,7 +72,7 @@ const StepsSection: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="relative overflow-hidden" style={{ background: "#0F0C06" }}>
+    <section className="relative overflow-hidden" style={{ background: "#050403" }}>
       {/* Background image */}
       <img
         src={stepsBg}
@@ -87,7 +87,7 @@ const StepsSection: React.FC = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(15,12,6,0.95) 0%, rgba(15,12,6,0.7) 50%, rgba(15,12,6,0.95) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%)",
         }}
       />
 
@@ -104,7 +104,7 @@ const StepsSection: React.FC = () => {
             className="font-heading font-black leading-[1.2]"
             style={{
               fontSize: isMobile ? "1.6rem" : "clamp(1.9rem, 4vw, 3.3rem)",
-              color: "var(--cream-mid)",
+              color: "var(--night)",
             }}
           >
             Resultados nos primeiros{" "}
@@ -130,7 +130,7 @@ const StepsSection: React.FC = () => {
                   style={{
                     width: 36,
                     height: 36,
-                    background: "radial-gradient(circle at 40% 35%, #3D2B14 0%, #1A1208 60%, #0F0C06 100%)",
+                    background: "radial-gradient(circle at 40% 35%, #2A1F10 0%, #080706 60%, #050403 100%)",
                     border: "2px solid var(--ochre)",
                     boxShadow: "0 0 20px rgba(200,148,58,0.25), 0 0 0 1px rgba(200,148,58,0.08)",
                   }}
@@ -152,10 +152,10 @@ const StepsSection: React.FC = () => {
                   >
                     Passo {step.num}
                   </span>
-                  <h3 className="font-heading text-[1.05rem] mb-1.5" style={{ color: "var(--cream-mid)" }}>
+                  <h3 className="font-heading text-[1.05rem] mb-1.5" style={{ color: "var(--night)" }}>
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(242,237,224,0.65)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(245,238,223,0.65)" }}>
                     {step.description}
                   </p>
                 </div>
@@ -205,10 +205,10 @@ const StepsSection: React.FC = () => {
                           "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03)";
                       }}
                     >
-                      <h3 className="font-heading text-[1.35rem] mb-3" style={{ color: "var(--cream-mid)" }}>
+                      <h3 className="font-heading text-[1.35rem] mb-3" style={{ color: "var(--night)" }}>
                         {step.title}
                       </h3>
-                      <p className="text-base leading-relaxed" style={{ color: "rgba(242,237,224,0.6)" }}>
+                      <p className="text-base leading-relaxed" style={{ color: "rgba(245,238,223,0.6)" }}>
                         {step.description}
                       </p>
                     </div>

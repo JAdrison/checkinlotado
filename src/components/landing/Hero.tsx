@@ -60,17 +60,17 @@ const Hero = () => {
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" fetchPriority="high" />
-        <div className="absolute inset-0" style={{ background: "rgba(242, 237, 224, 0.88)" }} />
+        <div className="absolute inset-0" style={{ background: "rgba(8, 7, 6, 0.72)" }} />
       </div>
       <div className="relative z-10 pt-20 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-7 max-w-[1100px] mx-auto flex flex-col items-center">
         {/* Headline */}
         <div className="text-center mb-8 sm:mb-10 reveal" style={{ minHeight: '220px' }}>
           
-          <h1 className="font-heading text-[2.2rem] sm:text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-black leading-[1.12] mb-4 sm:mb-5">
+          <h1 className="font-heading text-[2.2rem] sm:text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-night leading-[1.12] mb-4 sm:mb-5">
             Como lotar sua hospedagem de reservas{" "}
             <em className="shimmer-text font-black">em 30 dias</em>
           </h1>
-          <p className="text-black/85 text-xl max-w-[560px] mx-auto leading-relaxed sm:text-4xl font-extrabold">
+          <p className="text-night/85 text-xl max-w-[560px] mx-auto leading-relaxed sm:text-4xl font-extrabold">
             Sem depender de feriados, sem baixar preço, sem aumentar o custo fixo.
           </p>
         </div>
@@ -79,12 +79,12 @@ const Hero = () => {
         <YouTubeFacade videoId="m_EClZVmHXY" />
 
         {/* Bullets 2x2 */}
-        <p className="reveal text-black/70 text-base sm:text-lg font-heading mt-8 sm:mt-10 mb-2 in font-extrabold">O Método ensina:</p>
+        <p className="reveal text-night/70 text-base sm:text-lg font-heading mt-8 sm:mt-10 mb-2 in font-extrabold">O Método ensina:</p>
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 sm:gap-y-4 max-w-[800px]">
           {bullets.map((text, i) => (
             <div key={i} className="flex items-start gap-2.5 sm:gap-3">
               <span className="text-ochre mt-0.5 sm:mt-1 shrink-0 text-base">◆</span>
-              <p className="text-black text-lg sm:text-2xl leading-relaxed">{text}</p>
+              <p className="text-night text-lg sm:text-2xl leading-relaxed">{text}</p>
             </div>
           ))}
         </div>
