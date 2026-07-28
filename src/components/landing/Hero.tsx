@@ -1,8 +1,10 @@
 import { useState } from "react";
-import heroBg from "@/assets/hero-bg.webp";
+import heroBgAsset from "@/assets/hero-boutique-sunset.png.asset.json";
 import heroThumb from "@/assets/video-thumbnail.webp";
 import { trackEvent } from "@/lib/meta-capi";
 import { scrollToSection } from "@/lib/scrollToSection";
+
+const heroBg = heroBgAsset.url;
 
 
 const bullets = [
