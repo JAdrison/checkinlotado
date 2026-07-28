@@ -9,7 +9,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section style={{ background: "#F2EDE0", borderBottom: "1px solid rgba(200,148,58,0.1)" }} className="py-8 sm:py-10 px-4 sm:px-7">
+    <section style={{ background: "#11100E", borderBottom: "1px solid rgba(200,148,58,0.1)" }} className="py-8 sm:py-10 px-4 sm:px-7">
       <div className="max-w-[1000px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         {stats.map((s, i) => {

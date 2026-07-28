@@ -34,7 +34,7 @@ const ComparisonTable = () => {
 
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {/* Card positivo */}
-          <div className="bg-[#FAF8F4] rounded-2xl p-5 sm:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
+          <div className="bg-[#171512] rounded-2xl p-5 sm:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
             <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-ochre/10 flex items-center justify-center mb-4 sm:mb-5">
               <TrendingUp className="w-5 sm:w-6 h-5 sm:h-6 text-ochre" />
             </div>
@@ -57,7 +57,7 @@ const ComparisonTable = () => {
           </div>
 
           {/* Card negativo */}
-          <div className="bg-[#FAF8F4] rounded-2xl p-5 sm:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
+          <div className="bg-[#171512] rounded-2xl p-5 sm:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.06)] border border-night/5">
             <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 sm:mb-5">
               <TrendingDown className="w-5 sm:w-6 h-5 sm:h-6 text-red-500" />
             </div>

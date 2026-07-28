@@ -3,7 +3,7 @@ import { scrollToSection } from "@/lib/scrollToSection";
 const FinalCTA = () => {
   
   return (
-    <section style={{ background: "#1A1208", textAlign: "center", position: "relative", overflow: "hidden" }} className="py-12 sm:py-[72px] px-4 sm:px-7">
+    <section style={{ background: "#080706", textAlign: "center", position: "relative", overflow: "hidden" }} className="py-12 sm:py-[72px] px-4 sm:px-7">
       {/* Blur glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[300px] sm:h-[400px] rounded-full pointer-events-none"

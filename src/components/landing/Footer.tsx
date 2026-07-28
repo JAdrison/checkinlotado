@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer
       className="text-center py-8 px-7"
-      style={{ background: "#1A1208", borderTop: "1px solid rgba(200,148,58,0.2)" }}
+      style={{ background: "#080706", borderTop: "1px solid rgba(200,148,58,0.2)" }}
     >
       <p className="font-heading text-xl font-bold text-cream-mid mb-1">
         Check-in <span className="text-ochre">Lotado</span>

@@ -26,7 +26,7 @@ const group3 = [
 
 const PricingSection = () => {
   return (
-    <section id="comprar" style={{ background: "#1A1208" }} className="py-10 sm:py-16 px-4 sm:px-7">
+    <section id="comprar" style={{ background: "#080706" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[680px] mx-auto text-center">
         <div className="reveal">
           <div className="label-text text-cream-mid mb-3">Aumente suas reservas em 30 dias</div>

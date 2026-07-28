@@ -4,7 +4,7 @@ import { scrollToSection } from "@/lib/scrollToSection";
 const GallerySection = () => {
   
   return (
-    <section className="py-10 sm:py-14 px-4 sm:px-7" style={{ background: "#1A1208" }}>
+    <section className="py-10 sm:py-14 px-4 sm:px-7" style={{ background: "#080706" }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Text */}
