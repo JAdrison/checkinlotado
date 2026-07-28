@@ -104,7 +104,7 @@ const StepsSection: React.FC = () => {
             className="font-heading font-black leading-[1.2]"
             style={{
               fontSize: isMobile ? "1.6rem" : "clamp(1.9rem, 4vw, 3.3rem)",
-              color: "var(--cream-mid)",
+              color: "var(--night)",
             }}
           >
             Resultados nos primeiros{" "}
@@ -152,7 +152,7 @@ const StepsSection: React.FC = () => {
                   >
                     Passo {step.num}
                   </span>
-                  <h3 className="font-heading text-[1.05rem] mb-1.5" style={{ color: "var(--cream-mid)" }}>
+                  <h3 className="font-heading text-[1.05rem] mb-1.5" style={{ color: "var(--night)" }}>
                     {step.title}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: "rgba(245,238,223,0.65)" }}>
@@ -205,7 +205,7 @@ const StepsSection: React.FC = () => {
                           "0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03)";
                       }}
                     >
-                      <h3 className="font-heading text-[1.35rem] mb-3" style={{ color: "var(--cream-mid)" }}>
+                      <h3 className="font-heading text-[1.35rem] mb-3" style={{ color: "var(--night)" }}>
                         {step.title}
                       </h3>
                       <p className="text-base leading-relaxed" style={{ color: "rgba(245,238,223,0.6)" }}>
