@@ -1,8 +1,8 @@
 import creatorsAsset from "@/assets/authority-creators.png.asset.json";
 
 const stats = [
-  { n: "+300", label: "Reservas confirmadas com o método" },
-  { n: "8+", label: "Hospedagens acompanhadas" },
+  { n: "+5000", label: "Reservas confirmadas com o método" },
+  { n: "80+", label: "Hospedagens acompanhadas" },
   { n: "10", label: "GPTs treinados para hotelaria" },
   { n: "90 dias", label: "De estruturação comercial" },
 ];
