@@ -33,9 +33,10 @@ const objections = [
 ];
 
 const faq = [
-  { question: "Serve para qualquer tipo de hospedagem?", answer: "Sim. Pousadas, hotéis, chalés, flats e casas de temporada que querem aumentar ocupação com estratégia comercial." },
-  { question: "Preciso entender de marketing para aplicar?", answer: "Não. O curso foi estruturado para ser prático e direto, mesmo para quem não domina marketing." },
-  { question: "Em quanto tempo consigo começar a aplicar?", answer: "Desde as primeiras aulas, porque o conteúdo foi pensado para a rotina real de quem trabalha com hospedagem." },
+  { question: "O método serve para uma hospedagem pequena?", answer: "Sim. O conteúdo pode ser adaptado para hotéis, pousadas, chalés, flats e casas de temporada de diferentes tamanhos." },
+  { question: "Preciso baixar o preço para aplicar?", answer: "Não. O método trabalha planejamento, público, oferta, comunicação, campanhas e atendimento. O desconto pode ser uma ferramenta, mas não deve ser o único argumento." },
+  { question: "O resultado acontece em 30 dias?", answer: "É possível começar a aplicar desde as primeiras aulas. O prazo e o resultado dependem do ponto de partida, da demanda, da estrutura e da execução de cada hospedagem." },
+  { question: "O aumento de 80% é garantido?", answer: "Não. O percentual representa um potencial observado em aplicações e projetos. Não existe garantia individual de ocupação ou faturamento." },
   { question: "E se eu entrar e achar que não é para mim?", answer: "Você tem 7 dias de garantia para testar com total tranquilidade. Peça reembolso dentro do prazo, sem burocracia." },
 ];
 

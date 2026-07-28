@@ -3,17 +3,17 @@ import { Check, BookOpen, Users, CalendarDays } from "lucide-react";
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 
 const group1 = [
-  "Como criar uma estratégia de marketing",
-  "Como fazer anúncios virais",
-  "Como trazer pessoas para sua hospedagem por tráfego pago",
-  "Como vender por WhatsApp",
-  "Como transformar seu Instagram em uma máquina de vendas",
-  "Como fazer seu website premium",
+  "Diagnóstico da ocupação",
+  "Planejamento de campanhas",
+  "Estratégia de público e oferta",
+  "Criativos para hospedagens",
+  "Tráfego e captação",
+  "Atendimento e fechamento",
 ];
 
 const group2 = [
+  "Materiais, templates e ferramentas de implementação",
   "Exemplos reais de hospedagens que aplicaram",
-  "Apostilas e materiais complementares",
   "Desafios práticos para aplicar no seu negócio",
   "10 GPT's treinados para fazer por você",
 ];
@@ -29,13 +29,13 @@ const PricingSection = () => {
     <section id="comprar" style={{ background: "#080706" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[680px] mx-auto text-center">
         <div className="reveal">
-          <div className="label-text text-night mb-3">Aumente suas reservas em 30 dias</div>
+          <div className="label-text text-night mb-3">A OFERTA</div>
           <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-3">
-            Entre no<br />
-            <span className="shimmer-text font-extrabold">Check-in Lotado</span>
+            Tenha um plano para aumentar a ocupação durante{" "}
+            <em className="text-ochre font-extrabold not-italic">todo o calendário</em>.
           </h2>
-          <p className="text-night text-[0.9rem] sm:text-lg leading-[1.72] mb-8 sm:mb-12">
-            Entre no checkin lotado e aprenda uma forma mais estratégica de vender na sua hospedagem
+          <p className="text-night/85 text-[0.9rem] sm:text-lg leading-[1.72] mb-8 sm:mb-12">
+            Acesse o Método Check-in Lotado e aprenda a diagnosticar sua agenda, criar campanhas, gerar procura e transformar mais contatos em reservas.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const PricingSection = () => {
           <div className="mb-6">
             <div className="flex items-center gap-2.5 mb-4">
               <Check className="text-ochre flex-shrink-0" size={20} />
-              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso completo ao método Check-in Lotado</h3>
+              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso completo ao Método Check-in Lotado</h3>
             </div>
             <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3 pl-1">
               {group1.map((item, i) => (
@@ -62,7 +62,7 @@ const PricingSection = () => {
           <div className="mb-6">
             <div className="flex items-center gap-2.5 mb-4">
               <BookOpen className="text-ochre flex-shrink-0" size={20} />
-              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso imediato ao curso e materiais complementares</h3>
+              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Materiais, ferramentas e bônus</h3>
             </div>
             <div className="flex flex-col gap-2.5 pl-1">
               {group2.map((item, i) => (
@@ -80,7 +80,7 @@ const PricingSection = () => {
           <div className="mb-8">
             <div className="flex items-center gap-2.5 mb-4">
               <Users className="text-ochre flex-shrink-0" size={20} />
-              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso a comunidade e suporte</h3>
+              <h3 className="font-heading font-bold text-night text-base sm:text-lg">Acesso à comunidade e suporte</h3>
             </div>
             <div className="flex flex-col gap-2.5 pl-1">
               {group3.map((item, i) => (
@@ -97,7 +97,7 @@ const PricingSection = () => {
             onClick={() => { window.open(KIWIFY_URL, "_blank"); }}
             className="btn-cta btn-cta-lg btn-cta-full mx-auto"
           >
-            <span>QUERO ENTRAR AGORA →</span>
+            <span>QUERO APLICAR O CHECK-IN LOTADO →</span>
           </button>
         </div>
 

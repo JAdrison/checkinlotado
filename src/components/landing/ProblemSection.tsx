@@ -42,12 +42,12 @@ const ProblemSection = () => {
         <div className="max-w-[800px] mx-auto w-full flex flex-col items-center gap-6 sm:gap-8">
           {/* Frase 01 */}
           <div className="reveal text-center">
-            <div className="label-text mb-3">O problema</div>
+            <div className="label-text mb-3">O PROBLEMA NEM SEMPRE É FALTA DE PROCURA</div>
             <h2 className="font-heading text-[1.5rem] sm:text-[clamp(1.9rem,4vw,3.3rem)] font-black text-night leading-[1.15] mb-4 sm:mb-5">
-              Sua hospedagem <em className="shimmer-text font-extrabold">depende de feriados</em> para faturar?
+              Sua hospedagem pode estar perdendo reservas por falta de <em className="text-ochre font-extrabold not-italic">planejamento, oferta e acompanhamento</em>.
             </h2>
-            <p className="text-night/85 text-[0.9rem] sm:text-lg leading-relaxed max-w-[600px] mx-auto">
-              A maioria dos donos de pousada só tem ocupação alta em feriados prolongados e alta temporada. Nos fins de semana comuns, os quartos ficam vazios, o faturamento cai e a solução parece ser baixar preço.
+            <p className="text-night/85 text-[0.9rem] sm:text-lg leading-relaxed max-w-[640px] mx-auto">
+              Muitas hospedagens percebem as datas vazias tarde demais, criam uma promoção genérica e esperam que uma publicação resolva o problema.
             </p>
           </div>
 
@@ -66,9 +66,24 @@ const ProblemSection = () => {
 
           {/* Frase 02 */}
           <div className="reveal text-center">
-            <p className="text-night/80 text-sm sm:text-base leading-relaxed max-w-[580px] mx-auto">
-              A verdade é que a demanda existe — mas ela precisa ser ativada com estratégia, antecedência e comunicação certa. É exatamente isso que o método <strong className="text-night">Check-in Lotado</strong> ensina.
+            <p className="text-night/80 text-sm sm:text-base leading-relaxed max-w-[640px] mx-auto">
+              O <strong className="text-night">Check-in Lotado</strong> ensina a analisar a ocupação, antecipar os períodos críticos e estruturar uma estratégia completa para atrair, atender e converter hóspedes.
             </p>
+          </div>
+
+          {/* Cards de dores */}
+          <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-[720px] mx-auto mt-2">
+            {[
+              { t: "Dependência de feriados", d: "A agenda enche em datas comemorativas e esvazia no resto do ano." },
+              { t: "Dias de semana vazios", d: "Segunda a quinta com pouca ocupação e faturamento irregular." },
+              { t: "Promoções feitas em cima da hora", d: "Descontos improvisados quando a data já está próxima." },
+              { t: "Contatos que chegam, mas não reservam", d: "Curiosos entram no WhatsApp e a conversa não vira reserva." },
+            ].map((c) => (
+              <div key={c.t} className="p-4 sm:p-5 rounded-sm text-left" style={{ background: "rgba(23,21,18,0.85)", border: "1px solid rgba(201,151,62,0.18)" }}>
+                <h3 className="font-heading text-night text-[1rem] sm:text-[1.1rem] mb-1">{c.t}</h3>
+                <p className="text-night/65 text-[0.82rem] sm:text-sm leading-relaxed">{c.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

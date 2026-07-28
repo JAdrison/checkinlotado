@@ -113,13 +113,13 @@ const ResultsSection = () => {
     <section style={{ background: "#080706" }} className="py-10 sm:py-16 px-4 sm:px-7">
       <div className="max-w-[1000px] mx-auto">
         <div className="reveal text-center mb-8 sm:mb-14">
-          <div className="label-text mb-3 text-base sm:text-lg">Resultados reais</div>
-          <h2 className="font-heading text-[1.8rem] sm:text-[clamp(2.4rem,5vw,4rem)] font-black text-night leading-[1.15] mb-3 sm:mb-4">
-            Quem aplica o método, vende.<br />
-            <em className="shimmer-text font-extrabold">Todo. Dia.</em>
+          <div className="label-text mb-3 text-base sm:text-lg">APLICAÇÃO EM HOSPEDAGENS REAIS</div>
+          <h2 className="font-heading text-[1.8rem] sm:text-[clamp(2.2rem,4.6vw,3.6rem)] font-black text-night leading-[1.15] mb-3 sm:mb-4 max-w-[820px] mx-auto">
+            Resultados que mostram o que acontece quando marketing, oferta e atendimento{" "}
+            <em className="text-ochre font-extrabold not-italic">trabalham juntos</em>.
           </h2>
-          <p className="text-night/85 text-base sm:text-[1.1rem] leading-relaxed max-w-[620px] mx-auto mb-4 sm:mb-6 font-semibold rounded-xl">
-            Olha o resultado que nossas hospedagens tiveram aplicando o método Check-in Lotado 
+          <p className="text-night/70 text-[0.8rem] sm:text-[0.9rem] leading-relaxed max-w-[640px] mx-auto mb-4 sm:mb-6">
+            Resultados alcançados com aplicação da estratégia e acompanhamento da XPLO em hospedagens reais.
           </p>
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-ochre/[0.12] text-ochre text-[0.75rem] sm:text-[0.82rem] font-semibold tracking-wide">
             <span className="w-2 h-2 rounded-full bg-ochre animate-pulse" />
