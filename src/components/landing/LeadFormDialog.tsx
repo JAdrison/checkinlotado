@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useLeadForm } from "@/contexts/LeadFormContext";
 import { supabase } from "@/integrations/supabase/client";
-import { CHECKIN_PRODUCT_DATA, trackEvent } from "@/lib/meta-capi";
+import { trackEvent } from "@/lib/meta-capi";
 import logoImg from "@/assets/checkin-lotado-logo.png";
 
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
@@ -73,25 +73,10 @@ const LeadFormDialog = () => {
         }),
       ]);
 
-      const [firstName, ...lastNameParts] = form.name.trim().split(/\s+/);
-      const userData = {
-        email: payload.email,
-        phone: payload.whatsapp,
-        firstName,
-        lastName: lastNameParts.join(" ") || undefined,
-      };
-
-      await Promise.allSettled([
-        trackEvent(
-          "Lead",
-          {
-            ...CHECKIN_PRODUCT_DATA,
-            accommodation_type: form.accommodation_type,
-          },
-          userData,
-        ),
-        trackEvent("InitiateCheckout", CHECKIN_PRODUCT_DATA, userData),
-      ]);
+      trackEvent("Lead", {
+        content_name: "Check-in Lotado",
+        accommodation_type: form.accommodation_type,
+      });
 
       window.location.href = KIWIFY_URL;
       setOpen(false);
