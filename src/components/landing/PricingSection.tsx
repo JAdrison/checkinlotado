@@ -1,4 +1,5 @@
 import { Check, BookOpen, Users, CalendarDays } from "lucide-react";
+import { CHECKIN_PRODUCT_DATA, trackEvent } from "@/lib/meta-capi";
 
 const KIWIFY_URL = "https://pay.kiwify.com.br/Y613pR3";
 
@@ -94,7 +95,10 @@ const PricingSection = () => {
 
           {/* CTA */}
           <button
-            onClick={() => { window.open(KIWIFY_URL, "_blank"); }}
+            onClick={() => {
+              void trackEvent("InitiateCheckout", CHECKIN_PRODUCT_DATA);
+              window.open(KIWIFY_URL, "_blank", "noopener,noreferrer");
+            }}
             className="btn-cta btn-cta-lg btn-cta-full mx-auto"
           >
             <span>QUERO APLICAR O CHECK-IN LOTADO →</span>

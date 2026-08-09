@@ -48,7 +48,8 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1666693307683285');
-    fbq('track', 'PageView');
+    // PageView is emitted by src/pages/Index.tsx with a shared event_id
+    // for browser/CAPI deduplication.
     </script>
     <!-- End Meta Pixel Code -->
   </body>

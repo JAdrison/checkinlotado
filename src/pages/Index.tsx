@@ -1,6 +1,6 @@
 import { useEffect, lazy, Suspense } from "react";
 import { useReveal } from "@/hooks/useReveal";
-import { trackEvent } from "@/lib/meta-capi";
+import { CHECKIN_PRODUCT_DATA, trackEvent } from "@/lib/meta-capi";
 
 import Hero from "@/components/landing/Hero";
 import BenefitsStrip from "@/components/landing/BenefitsStrip";
@@ -44,7 +44,8 @@ const Index = () => {
   useReveal();
 
   useEffect(() => {
-    trackEvent("PageView");
+    void trackEvent("PageView");
+    void trackEvent("ViewContent", CHECKIN_PRODUCT_DATA);
   }, []);
 
   return (
